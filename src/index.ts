@@ -1,38 +1,30 @@
 import { ViewManager } from './view-manager/view-manager';
 import { View1 } from './views/view1/view1';
 import { View2 } from './views/view2/view2';
+import { CapabilityView } from './views/capability-view/capability-view';
+import globalData from './data/data.json';
 
-document.addEventListener('DOMContentLoaded', async () => {
-  try {
-    const response = await fetch('./data/data.json');
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const globalData = await response.json();
+document.addEventListener('DOMContentLoaded', () => {
+  const viewManager = new ViewManager('content');
 
-    const viewManager = new ViewManager('content');
+  // Register views
+  viewManager.registerView('view1', new View1('content'));
+  viewManager.registerView('view2', new View2('content'));
+  viewManager.registerView('capability-view', new CapabilityView('content'));
 
-    // Register views
-    viewManager.registerView('view1', new View1('content'));
-    viewManager.registerView('view2', new View2('content'));
-
-    // Set up navigation
-    document.getElementById('view1-btn')?.addEventListener('click', () => {
-      viewManager.switchView('view1', globalData);
-    });
-
-    document.getElementById('view2-btn')?.addEventListener('click', () => {
-      viewManager.switchView('view2', globalData);
-    });
-
-    // Set initial view
+  // Set up navigation
+  document.getElementById('view1-btn')?.addEventListener('click', () => {
     viewManager.switchView('view1', globalData);
+  });
 
-  } catch (error) {
-    console.error('Failed to load or process data:', error);
-    const content = document.getElementById('content');
-    if (content) {
-      content.innerHTML = '<p style="color: red;">Failed to load data. Please check the console for details.</p>';
-    }
-  }
+  document.getElementById('view2-btn')?.addEventListener('click', () => {
+    viewManager.switchView('view2', globalData);
+  });
+
+  document.getElementById('capability-view-btn')?.addEventListener('click', () => {
+    viewManager.switchView('capability-view', globalData);
+  });
+
+  // Set initial view
+  viewManager.switchView('view1', globalData);
 });

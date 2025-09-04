@@ -1,26 +1,169 @@
+:root {
+  --volvo-blue: #003057;
+  --supportive-light-blue: #00A3E0;
+  --volvo-silver: #C8C9C7;
+  --volvo-white: #FFFFFF;
+  --accent-yellow: #FFD100;
+  --dark-gray: #4D4D4D;
+  --light-gray-bg: #F5F5F5;
+}
+
 body {
-  font-family: sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
+  background-color: var(--light-gray-bg);
+  color: var(--dark-gray);
+}
+
+.app-container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  padding: 2rem;
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
 nav {
-  background: #f0f0f0;
+  background: var(--volvo-white);
   padding: 1rem;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid var(--volvo-silver);
+  border-radius: 8px;
 }
 
 nav button {
   margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--volvo-blue);
+  background-color: var(--volvo-white);
+  color: var(--volvo-blue);
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+nav button:hover {
+  background-color: var(--volvo-blue);
+  color: var(--volvo-white);
 }
 
 main {
+  background: var(--volvo-white);
+  border: 1px solid var(--volvo-silver);
+  border-radius: 8px;
   padding: 1rem;
 }
 
 #tooltip {
-  background-color: #333;
-  color: #fff;
-  padding: 0.5rem;
-  border-radius: 4px;
+  position: absolute;
+  opacity: 0;
+  background-color: #fff;
+  color: var(--dark-gray);
+  padding: 1rem;
+  border-radius: 8px;
   font-size: 0.9rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 1px solid var(--volvo-silver);
+  max-width: 350px;
+  transition: opacity 0.2s;
+  pointer-events: none; /* Initially non-interactive */
+}
+
+#tooltip.visible {
+  opacity: 1;
+  pointer-events: auto; /* Interactive when visible */
+}
+
+.tooltip-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tooltip-title {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--volvo-blue);
+}
+
+.tooltip-description {
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+.tooltip-details {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.tooltip-details td {
+  padding: 0.25rem 0;
+  font-size: 0.9em;
+}
+
+.tooltip-details td:first-child {
+  font-weight: bold;
+  padding-right: 1rem;
+}
+
+.tooltip-section {
+  margin-top: 0.5rem;
+}
+
+.tooltip-section-title {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: var(--volvo-blue);
+}
+
+.tooltip-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  list-style-type: disc;
+}
+
+.tooltip-section li {
+  margin-bottom: 0.25rem;
+}
+
+/* Treemap styles */
+.treemap-node rect {
+  rx: 4px;
+}
+
+rect.treemap-cluster {
+  fill: none;
+  stroke: var(--volvo-blue);
+  stroke-width: 2px;
+}
+
+.treemap-capability > .main-rect {
+  fill: #F9F9F9; /* A very light gray, almost white */
+  stroke: var(--volvo-silver);
+  stroke-width: 1px;
+}
+
+.treemap-cluster > text {
+  font-size: 1em;
+  font-weight: bold;
+  fill: var(--volvo-blue);
+}
+
+.treemap-capability-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  line-height: 1.2;
+}
+
+.treemap-capability-title {
+  font-size: 0.9em;
+  color: var(--dark-gray);
+}
+
+.treemap-capability-icon {
+  font-size: 1.5em;
 }

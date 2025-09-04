@@ -1,5 +1,4 @@
 import { View } from '../views/view';
-import { GlobalData } from '../data/global-model';
 
 export class ViewManager {
   private currentView: View | null = null;
@@ -11,7 +10,7 @@ export class ViewManager {
     this.views[name] = view;
   }
 
-  switchView(name: string, data: GlobalData): void {
+  switchView(name: string, data: any): void {
     if (this.currentView) {
       this.currentView.unmount();
     }
@@ -23,6 +22,9 @@ export class ViewManager {
         viewData = data.view1Data;
       } else if (name === 'view2') {
         viewData = data.view2Data;
+      } else if (name === 'capability-view') {
+        viewData = data.capabilitiesData;
+        console.log('ViewManager: Switching to capability-view with data:', viewData);
       }
 
       newView.render(viewData);

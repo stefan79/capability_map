@@ -11,5 +11,165 @@
     { "category": "B", "amount": 25 },
     { "category": "C", "amount": 60 },
     { "category": "D", "amount": 30 }
-  ]
+  ],
+  "capabilitiesData": {
+    "children": [
+      {
+        "title": "Generative AI Solution Development",
+        "description": "Developing solutions using Generative AI.",
+        "children": [
+          {
+            "title": "Information Management",
+            "description": "Managing and processing information.",
+            "children": [
+              { "title": "Document Parsing", "description": "Parsing document structures.", "status": "implemented", "type": "pattern" },
+              { "title": "Dataset Development", "description": "Creating and managing datasets.", "status": "implemented", "type": "pattern" },
+              { "title": "Synthetic Data", "description": "Generating artificial data.", "status": "not implemented", "type": "technology" },
+              { "title": "Document Analysis", "description": "Analyzing document content.", "status": "partially", "type": "pattern" },
+              { "title": "Information Extraction", "description": "Extracting structured information.", "status": "partially", "type": "pattern" },
+              { "title": "Feature Store", "description": "Storing and managing ML features.", "status": "partially", "type": "technology" },
+              { "title": "Vector Storage", "description": "Storing vector embeddings.", "status": "partially", "type": "technology" }
+            ]
+          },
+          {
+            "title": "Embeddings Management",
+            "description": "Managing vector embeddings.",
+            "children": [
+              { "title": "Embeddings Generator", "description": "Generating vector embeddings.", "status": "partially", "type": "technology" },
+              { "title": "Intent Recognition", "description": "Recognizing user intent.", "status": "partially", "type": "pattern" },
+              { "title": "Chunking", "description": "Breaking down large texts.", "status": "partially", "type": "pattern" },
+              { "title": "Index Generator", "description": "Generating search indexes.", "status": "partially", "type": "technology" },
+              { "title": "OCR", "description": "Optical Character Recognition.", "status": "partially", "type": "technology" },
+              { "title": "Tokenization", "description": "Breaking text into tokens.", "status": "partially", "type": "pattern" }
+            ]
+          },
+          {
+            "title": "Development Libra Management",
+            "description": "Managing development libraries.",
+            "children": [
+              { "title": "Parameter Efficient Fine Tuning", "description": "Efficiently fine-tuning models.", "status": "partially", "type": "pattern" },
+              { "title": "Instruction Fine Tuning", "description": "Fine-tuning with instructions.", "status": "partially", "type": "pattern" },
+              { "title": "Model Layers Freezing", "description": "Freezing model layers during training.", "status": "partially", "type": "pattern" }
+            ]
+          },
+          {
+            "title": "Fine Tuning",
+            "description": "Fine-tuning models for specific tasks.",
+            "children": [
+              { "title": "Content Labeling", "description": "Labeling content for training.", "status": "partially", "type": "pattern" },
+              { "title": "Content Annotation", "description": "Annotating content for training.", "status": "partially", "type": "pattern" },
+              { "title": "Model Development", "description": "Developing new models.", "status": "partially", "type": "pattern" }
+            ]
+          },
+          {
+            "title": "Prompt Engineering",
+            "description": "Engineering effective prompts.",
+            "children": [
+              { "title": "Prompt Repository", "description": "Storing and managing prompts.", "status": "implemented", "type": "technology" },
+              { "title": "X-shot Learning", "description": "Learning from few examples.", "status": "not implemented", "type": "pattern" },
+              { "title": "Prompt Generation", "description": "Generating effective prompts.", "status": "partially", "type": "pattern" },
+              { "title": "Prompt Protection", "description": "Protecting against prompt injection.", "status": "partially", "type": "policy" }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Generative AI Governance",
+        "description": "Governing the use of Generative AI.",
+        "children": [
+          {
+            "title": "AI Risk Management",
+            "description": "Managing risks associated with AI.",
+            "children": [
+              { "title": "Content Safety", "description": "Ensuring content safety.", "status": "implemented", "type": "policy" },
+              { "title": "Content Filtering", "description": "Filtering harmful content.", "status": "partially", "type": "policy" },
+              { "title": "Bias Mitigator", "description": "Mitigating biases in models.", "status": "not implemented", "type": "policy" }
+            ]
+          },
+          {
+            "title": "Transparency & Explainability",
+            "description": "Ensuring transparency and explainability.",
+            "children": [
+              { "title": "Feature Importance", "description": "Determining feature importance.", "status": "partially", "type": "pattern" },
+              { "title": "Counterfactual Explanations", "description": "Generating counterfactual explanations.", "status": "partially", "type": "pattern" },
+              { "title": "Feature Attribution", "description": "Attributing predictions to features.", "status": "partially", "type": "pattern" },
+              { "title": "Interpretable Model", "description": "Building interpretable models.", "status": "partially", "type": "pattern" },
+              { "title": "Regulatory Reporting", "description": "Reporting to regulatory bodies.", "status": "partially", "type": "policy" }
+            ]
+          },
+          {
+            "title": "AI Observability",
+            "description": "Observing AI systems in production.",
+            "children": [
+              { "title": "Data Drift", "description": "Monitoring for data drift.", "status": "partially", "type": "pattern" },
+              { "title": "Model Drift", "description": "Monitoring for model drift.", "status": "partially", "type": "pattern" },
+              { "title": "Concept Drift", "description": "Monitoring for concept drift.", "status": "partially", "type": "pattern" }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Generative AI Operations",
+        "description": "Operations for Generative AI systems.",
+        "children": [
+          {
+            "title": "Model Hosting",
+            "description": "Hosting models for inference.",
+            "children": [
+              { "title": "LLMs", "description": "Large Language Models.", "status": "partially", "type": "technology" },
+              { "title": "Datasets Store", "description": "Storing datasets for training.", "status": "partially", "type": "technology" },
+              { "title": "LLM Encoders", "description": "Encoders for LLMs.", "status": "partially", "type": "technology" },
+              { "title": "Model Store", "description": "Storing trained models.", "status": "partially", "type": "technology" },
+              { "title": "Vision Transformers", "description": "Transformers for vision tasks.", "status": "partially", "type": "technology" },
+              { "title": "Model Ensemble", "description": "Ensembling multiple models.", "status": "partially", "type": "pattern" }
+            ]
+          },
+          {
+            "title": "Human Feedback",
+            "description": "Incorporating human feedback.",
+            "children": [
+              { "title": "Collect Feedback", "description": "Collecting feedback from users.", "status": "partially", "type": "pattern" },
+              { "title": "Adjust Dataset", "description": "Adjusting datasets based on feedback.", "status": "partially", "type": "pattern" },
+              { "title": "Workload Management", "description": "Managing human feedback workloads.", "status": "partially", "type": "policy" }
+            ]
+          },
+          {
+            "title": "Model Management",
+            "description": "Managing the lifecycle of models.",
+            "children": [
+              { "title": "Model Training", "description": "Training new models.", "status": "partially", "type": "pattern" },
+              { "title": "Model Evaluation", "description": "Evaluating model performance.", "status": "partially", "type": "pattern" },
+              { "title": "Model Catalog", "description": "Cataloging available models.", "status": "partially", "type": "technology" }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Foundation Services",
+        "description": "Core services for building applications.",
+        "foundational": true,
+        "children": [
+          { "title": "Data Encryption", "description": "Encrypting data at rest and in transit.", "status": "partially", "type": "policy" },
+          { "title": "Data Ingestion", "description": "Ingesting data from various sources.", "status": "partially", "type": "pattern" },
+          { "title": "Data Catalog", "description": "A catalog of available datasets.", "status": "partially", "type": "technology" },
+          { "title": "Data Visualization", "description": "Visualizing data for analysis.", "status": "partially", "type": "technology" },
+          { "title": "Stream Processing", "description": "Processing data in real-time.", "status": "partially", "type": "technology" },
+          { "title": "UX/UI Framework", "description": "A framework for building user interfaces.", "status": "partially", "type": "technology" },
+          { "title": "Reporting", "description": "Generating reports and dashboards.", "status": "partially", "type": "technology" },
+          { "title": "DevSecOps", "description": "Integrating security into DevOps.", "status": "partially", "type": "policy" },
+          { "title": "Version Management", "description": "Managing versions of code and data.", "status": "partially", "type": "policy" },
+          { "title": "Data Transformation", "description": "Transforming data for analysis.", "status": "partially", "type": "pattern" },
+          { "title": "Data Curation", "description": "Curating and cleaning data.", "status": "partially", "type": "pattern" },
+          { "title": "Data Lineage", "description": "Tracking the lineage of data.", "status": "partially", "type": "policy" },
+          { "title": "Caching", "description": "Caching data for performance.", "status": "partially", "type": "technology" },
+          { "title": "Integration", "description": "Integrating with other systems.", "status": "partially", "type": "pattern" },
+          { "title": "Observability", "description": "Observing systems in production.", "status": "partially", "type": "policy" },
+          { "title": "IAM", "description": "Identity and Access Management.", "status": "partially", "type": "policy" },
+          { "title": "Container Management", "description": "Managing application containers.", "status": "partially", "type": "technology" },
+          { "title": "API Management", "description": "Managing APIs for services.", "status": "partially", "type": "policy" },
+          { "title": "Security", "description": "Ensuring the security of the system.", "status": "partially", "type": "policy" }
+        ]
+      }
+    ]
+  }
 }

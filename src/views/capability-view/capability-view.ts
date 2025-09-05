@@ -10,12 +10,10 @@ export class CapabilityView implements View {
   constructor(containerId: string) {
     this.container = d3.select(`#${containerId}`);
     this.tooltip = d3.select<HTMLDivElement, unknown>('#tooltip');
-    console.log('CapabilityView: Tooltip element selected:', this.tooltip.node());
   }
 
   render(data: Cluster): void {
     this.unmount();
-    console.log('CapabilityView: Rendering with data:', data);
 
     const width = 1600;
     const self = this;
@@ -278,7 +276,6 @@ export class CapabilityView implements View {
       .html(d => `<div class="treemap-capability-title">${d.data.title || ''}</div>`);
 
     capabilityNodes.on('mouseover', (event, d) => {
-        console.log('CapabilityView: mouseover event on capability:', d.data.title);
         if (self.hideTooltipTimeout) {
           clearTimeout(self.hideTooltipTimeout);
           self.hideTooltipTimeout = null;

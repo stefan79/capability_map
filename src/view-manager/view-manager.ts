@@ -24,7 +24,6 @@ export class ViewManager {
         viewData = data.view2Data;
       } else if (name === 'capability-view') {
         viewData = data.capabilitiesData;
-        console.log('ViewManager: Switching to capability-view with data:', viewData);
       }
 
       newView.render(viewData);

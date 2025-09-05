@@ -26,5 +26,5 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Set initial view
-  viewManager.switchView('view1', globalData);
+  viewManager.switchView('capability-view', globalData);
 });

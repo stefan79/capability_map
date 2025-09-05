@@ -221,7 +221,7 @@ export class CapabilityView implements View {
 
     const statusColor = d3.scaleOrdinal<string>()
       .domain(['implemented', 'partially', 'not implemented'])
-      .range(['#003057', '#FFD100', '#C8C9C7']);
+      .range(['#5CB85C', '#FFBF00', '#D9534F']);
 
     // Render clusters
     const clusterNodes = nodes.filter('.treemap-cluster-group');

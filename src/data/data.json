@@ -20,38 +20,38 @@
           {
             "title": "Data and Feature Engineering",
             "children": [
-              { "title": "Data Labelling / Annotation", "status": "not implemented", "type": "pattern" },
-              { "title": "Synthetic Data Generation", "status": "not implemented", "type": "technology" },
-              { "title": "Datasets Catalog", "status": "partially", "type": "technology" },
-              { "title": "Exploratory Data Analysis (EDA)", "status": "partially", "type": "pattern" },
-              { "title": "Feature Store", "status": "partially", "type": "technology" }
+              { "title": "Data Labelling / Annotation", "status": "not implemented", "type": "pattern", "description": "Data labeling is the process of identifying raw data (images, text files, videos, etc.) and adding one or more meaningful and informative labels to provide context so that a machine learning model can learn from it. This is a crucial step in creating high-quality training data for supervised learning models.", "link": "https://www.ibm.com/think/topics/data-labeling" },
+              { "title": "Synthetic Data Generation", "status": "not implemented", "type": "technology", "description": "Synthetic data generation is the process of creating artificial data that mimics the statistical properties of real-world data. This is useful for training machine learning models when real data is scarce, sensitive, or imbalanced.", "link": "https://aws.amazon.com/what-is/synthetic-data/" },
+              { "title": "Datasets Catalog", "status": "partially", "type": "technology", "description": "A dataset catalog is a centralized and organized collection of metadata about datasets. It helps data scientists and analysts discover, understand, and use data more effectively.", "link": "https://developers.google.com/earth-engine/datasets" },
+              { "title": "Exploratory Data Analysis (EDA)", "status": "partially", "type": "pattern", "description": "Exploratory Data Analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods. It is used to understand the data, identify patterns, spot anomalies, and check assumptions before formal modeling.", "link": "https://www.ibm.com/think/topics/exploratory-data-analysis" },
+              { "title": "Feature Store", "status": "partially", "type": "technology", "description": "A feature store is a central repository for storing, accessing, and managing curated features for machine learning models. It helps ensure consistency and reusability of features across different models and teams.", "link": "https://www.featurestore.org/" }
             ]
           },
           {
             "title": "Model Development",
             "children": [
-              { "title": "ML libraries: training/tuning", "status": "partially", "type": "technology" },
-              { "title": "Auto ML", "status": "partially", "type": "technology" },
-              { "title": "Training Runtime", "status": "partially", "type": "technology" },
-              { "title": "Feature Importance", "status": "not implemented", "type": "pattern" }
+              { "title": "ML libraries: training/tuning", "status": "partially", "type": "technology", "description": "Collections of code that provide pre-built algorithms and tools for training and optimizing machine learning models. They simplify model creation, allowing developers to focus on experiment design and hyperparameter tuning.", "link": "https://www.digitalocean.com/community/conceptual-articles/python-libraries-for-machine-learning" },
+              { "title": "Auto ML", "status": "partially", "type": "technology", "description": "Automated Machine Learning (AutoML) automates the end-to-end process of applying machine learning to real-world problems. It simplifies tasks like model selection and hyperparameter tuning, making ML more accessible.", "link": "https://www.ibm.com/think/topics/automl" },
+              { "title": "Training Runtime", "status": "partially", "type": "technology", "description": "A training runtime is a pre-configured environment optimized for executing machine learning training jobs. It includes popular ML frameworks and libraries to accelerate the model development lifecycle.", "link": "https://www.databricks.com/product/machine-learning-runtime" },
+              { "title": "Feature Importance", "status": "not implemented", "type": "pattern", "description": "Feature importance techniques assign a score to input features based on how useful they are at predicting a target variable. This helps in model interpretation, feature selection, and improving model performance.", "link": "https://builtin.com/data-science/feature-importance" }
             ]
           },
           {
             "title": "Deployment",
             "children": [
-              { "title": "Batch Inference", "status": "partially", "type": "technology" },
-              { "title": "Online Inference", "status": "partially", "type": "technology" },
-              { "title": "MIP Solver", "status": "not implemented", "type": "technology" }
+              { "title": "Batch Inference", "status": "partially", "type": "technology", "description": "Batch inference, also known as offline inference, processes large datasets to generate predictions in batches. This approach is ideal for scenarios where real-time predictions are not critical and can be performed on a recurring schedule.", "link": "https://ayarlabs.com/glossary/batch-inference/" },
+              { "title": "Online Inference", "status": "partially", "type": "technology", "description": "Online inference, or real-time inference, generates predictions on-demand for single or small batches of data as they are received. It is essential for applications requiring immediate feedback, such as fraud detection or interactive user experiences.", "link": "https://mlinproduction.com/batch-inference-vs-online-inference/" },
+              { "title": "MIP Solver", "status": "not implemented", "type": "technology", "description": "A Mixed-Integer Programming (MIP) solver is a tool for solving optimization problems where some variables are integers. These are critical for complex decision-making in logistics, scheduling, and resource allocation.", "link": "https://developers.google.com/optimization/mip" }
             ]
           },
           {
             "title": "MLOps",
             "children": [
-              { "title": "Data Drift Detection", "status": "partially", "type": "pattern" },
-              { "title": "Model/Concept Drift Detection", "status": "partially", "type": "pattern" },
-              { "title": "Model Retraining (Continuous)", "status": "partially", "type": "pattern" },
-              { "title": "Model Store", "status": "partially", "type": "technology" },
-              { "title": "Experiment Tracking", "status": "partially", "type": "technology" }
+              { "title": "Data Drift Detection", "status": "partially", "type": "pattern", "description": "Data drift is the change in the statistical properties of the input data over time, which can degrade model performance. Detecting data drift is crucial for maintaining model accuracy and reliability in production environments.", "link": "https://www.evidentlyai.com/ml-in-production/data-drift" },
+              { "title": "Model/Concept Drift Detection", "status": "partially", "type": "pattern", "description": "Model drift, or concept drift, refers to the degradation of a model's predictive power due to changes in the underlying relationships between input and output variables. Monitoring for model drift is essential to know when a model needs to be retrained or updated.", "link": "https://www.ibm.com/think/topics/model-drift" },
+              { "title": "Model Retraining (Continuous)", "status": "partially", "type": "pattern", "description": "Continuous model retraining is the process of automatically and periodically retraining machine learning models with new data. This ensures that models adapt to changing data patterns and maintain their performance over time.", "link": "https://www.iguazio.com/glossary/model-retraining/" },
+              { "title": "Model Store", "status": "partially", "type": "technology", "description": "A model store, or model registry, is a centralized repository for managing the entire lifecycle of machine learning models. It versions, stores, and organizes trained models, making them discoverable and ready for deployment.", "link": "https://arize.com/glossary/model-store/" },
+              { "title": "Experiment Tracking", "status": "partially", "type": "technology", "description": "Experiment tracking is the practice of logging all relevant information from machine learning experiments, including code, data, hyperparameters, and results. It enables reproducibility, comparison of different model versions, and collaboration among data scientists.", "link": "https://neptune.ai/blog/best-ml-experiment-tracking-tools" }
             ]
           }
         ]
@@ -62,20 +62,20 @@
           {
             "title": "AI Governance & Guardrails",
             "children": [
-              { "title": "Responsible AI Framework", "status": "not implemented", "type": "policy" },
-              { "title": "PII detection", "status": "not implemented", "type": "technology" },
-              { "title": "Data & Model cards", "status": "not implemented", "type": "policy" },
-              { "title": "Human-assisted Verification", "status": "partially", "type": "pattern" },
-              { "title": "Content Moderation", "status": "not implemented", "type": "policy" },
-              { "title": "Guardrails (toxic, hallucinations...)", "status": "not implemented", "type": "policy" },
-              { "title": "Bias Detection & Mitigation", "status": "not implemented", "type": "pattern" }
+              { "title": "Responsible AI Framework", "status": "not implemented", "type": "policy", "description": "A Responsible AI framework provides a set of principles, guidelines, and best practices for developing and deploying AI systems in an ethical and trustworthy manner. It addresses fairness, accountability, transparency, and the societal impact of AI.", "link": "https://www.ibm.com/think/topics/responsible-ai" },
+              { "title": "PII detection", "status": "not implemented", "type": "technology", "description": "Personally Identifiable Information (PII) detection is the process of identifying and protecting sensitive data within text and other data sources. This is a critical component of data privacy and compliance in AI applications.", "link": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/overview" },
+              { "title": "Data & Model cards", "status": "not implemented", "type": "policy", "description": "Data and model cards are documents that provide standardized information about datasets and machine learning models. They increase transparency by detailing the performance characteristics, intended use cases, and ethical considerations.", "link": "https://modelcards.withgoogle.com/" },
+              { "title": "Human-assisted Verification", "status": "partially", "type": "pattern", "description": "Human-assisted verification combines AI-powered automation with human expertise to validate and review AI-driven decisions. This 'human-in-the-loop' approach is crucial for high-stakes applications where accuracy and accountability are paramount.", "link": "https://www.veriff.com" },
+              { "title": "Content Moderation", "status": "not implemented", "type": "policy", "description": "AI-powered content moderation uses machine learning to automatically detect and filter inappropriate or harmful content from online platforms. It helps maintain a safe and positive user environment by identifying text, images, and videos that violate community guidelines.", "link": "https://getstream.io/blog/ai-content-moderation/" },
+              { "title": "Guardrails (toxic, hallucinations...)", "status": "not implemented", "type": "policy", "description": "AI guardrails are safety measures designed to prevent large language models (LLMs) from generating harmful, toxic, or fabricated content (hallucinations). They enforce rules and constraints to ensure that model outputs are accurate, appropriate, and aligned with safety standards.", "link": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-are-ai-guardrails" },
+              { "title": "Bias Detection & Mitigation", "status": "not implemented", "type": "pattern", "description": "Bias detection and mitigation techniques are used to identify and reduce unfair or discriminatory outcomes in AI systems. These methods help ensure that models are equitable and do not perpetuate societal biases present in the training data.", "link": "https://www.sap.com/resources/what-is-ai-bias" }
             ]
           },
           {
             "title": "Common Operations",
             "children": [
-              { "title": "FinOps", "status": "not implemented", "type": "policy" },
-              { "title": "Collect Feedback", "status": "not implemented", "type": "pattern" }
+              { "title": "FinOps", "status": "not implemented", "type": "policy", "description": "FinOps is a cultural practice that brings financial accountability to the variable spend model of cloud and AI, enabling organizations to get maximum business value. It involves collaboration between finance, technology, and business teams to manage costs effectively.", "link": "https://www.finops.org/wg/finops-for-ai-overview/" },
+              { "title": "Collect Feedback", "status": "not implemented", "type": "pattern", "description": "Collecting user feedback is the process of gathering input from users about the performance and outputs of an AI model. This feedback is essential for identifying issues and providing data for continuous model improvement.", "link": "https://towardsdatascience.com/user-feedback-the-missing-piece-of-your-ml-monitoring-stack-46b2bbf0b5e4" }
             ]
           }
         ]
@@ -86,40 +86,40 @@
           {
             "title": "Agentic AI",
             "children": [
-              { "title": "Agent Registry & Discovery", "status": "not implemented", "type": "technology" },
-              { "title": "Agent Protocols e.g., A2A, ACP", "status": "not implemented", "type": "pattern" },
-              { "title": "Agent SDK + templates", "status": "not implemented", "type": "technology" },
-              { "title": "MCP Registry & Discovery", "status": "not implemented", "type": "technology" },
-              { "title": "Memory Management", "status": "not implemented", "type": "technology" }
+              { "title": "Agent Registry & Discovery", "status": "not implemented", "type": "technology", "description": "An Agent Registry is a centralized service where AI agents can register their capabilities and be discovered by other agents. This enables dynamic and scalable collaboration between different agentic systems, much like a phone book for agents.", "link": "https://dev.to/sreeni5018/building-an-ai-agent-registry-server-with-fastapi-enabling-seamless-agent-discovery-via-a2a-15dj" },
+              { "title": "Agent Protocols e.g., A2A, ACP", "status": "not implemented", "type": "pattern", "description": "Agent-to-Agent (A2A) protocols define a standard way for AI agents, potentially built on different platforms, to communicate and interoperate. This standardization is crucial for creating complex systems where multiple specialized agents collaborate to complete tasks.", "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/" },
+              { "title": "Agent SDK + templates", "status": "not implemented", "type": "technology", "description": "An Agent SDK (Software Development Kit) and templates provide developers with pre-built tools, libraries, and boilerplate code to accelerate the creation of AI agents. They simplify common tasks like connecting to LLMs, managing state, and defining tools.", "link": "https://ai-sdk.dev/docs/introduction" },
+              { "title": "MCP Registry & Discovery", "status": "not implemented", "type": "technology", "description": "A Multi-Capability-Provider (MCP) Registry allows agents to discover and utilize a wide range of tools and services from different providers. This enables agents to dynamically extend their capabilities by finding and integrating the best available resources for a given task.", "link": "https://www.infoq.com/news/2025/06/secure-agent-discovery-ans/" },
+              { "title": "Memory Management", "status": "not implemented", "type": "technology", "description": "Memory management for AI agents involves systems for storing and retrieving information over time, enabling them to maintain context in long conversations and learn from past interactions. It includes both short-term (session) and long-term (persistent) memory.", "link": "https://www.ibm.com/think/topics/ai-agent-memory" }
             ]
           },
           {
             "title": "Model Use & Finetuning",
             "children": [
-              { "title": "Foundation Models", "status": "implemented", "type": "technology" },
-              { "title": "Model Gateway", "status": "not implemented", "type": "technology" },
-              { "title": "Dynamic model routing", "status": "not implemented", "type": "pattern" },
-              { "title": "Libraries: PEFT, SFT, RFT...", "status": "not implemented", "type": "technology" },
-              { "title": "Semantic Cache", "status": "not implemented", "type": "technology" }
+              { "title": "Foundation Models", "status": "implemented", "type": "technology", "description": "Foundation models are large-scale AI models trained on vast amounts of data, designed to be adapted to a wide range of downstream tasks. They serve as a powerful base for developing more specialized AI applications with minimal fine-tuning.", "link": "https://research.ibm.com/blog/what-are-foundation-models" },
+              { "title": "Model Gateway", "status": "not implemented", "type": "technology", "description": "An AI Model Gateway acts as a centralized control plane between applications and various AI models. It manages access, monitors usage, and ensures secure and efficient deployment of large language models (LLMs).", "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway" },
+              { "title": "Dynamic model routing", "status": "not implemented", "type": "pattern", "description": "Dynamic model routing is the process of intelligently directing incoming requests to the most appropriate AI model from a pool of available models. This routing can be based on factors like cost, performance, or the specific nature of the request, optimizing the overall system.", "link": "https://medium.com/@simsketch/model-routing-in-ai-getting-the-right-request-to-the-right-model-dd21bab7c129" },
+              { "title": "Libraries: PEFT, SFT, RFT...", "status": "not implemented", "type": "technology", "description": "Specialized libraries for fine-tuning large models, including Parameter-Efficient Fine-Tuning (PEFT), Supervised Fine-Tuning (SFT), and Reinforcement Fine-Tuning (RFT). These techniques adapt models for specific tasks efficiently.", "link": "https://github.com/huggingface/peft" },
+              { "title": "Semantic Cache", "status": "not implemented", "type": "technology", "description": "A semantic cache stores the results of previous, semantically similar queries to a large language model. When a new, similar query arrives, the cached result can be returned, reducing latency, cost, and redundant computations.", "link": "https://redis.io/blog/what-is-semantic-caching/" }
             ]
           },
           {
             "title": "Data & Embeddings",
             "children": [
-              { "title": "Chunking", "status": "partially", "type": "pattern" },
-              { "title": "OCR", "status": "partially", "type": "technology" },
-              { "title": "Vector Storage", "status": "partially", "type": "technology" },
-              { "title": "Advanced RAG, e.g., reranking", "status": "not implemented", "type": "pattern" },
-              { "title": "Agentic RAG", "status": "not implemented", "type": "pattern" }
+              { "title": "Chunking", "status": "partially", "type": "pattern", "description": "Chunking is the process of breaking down large documents into smaller, semantically relevant pieces of text. This is a critical step in Retrieval-Augmented Generation (RAG) to ensure the most relevant context is provided to the language model.", "link": "https://stackoverflow.blog/2024/12/27/breaking-up-is-hard-to-do-chunking-in-rag-applications/" },
+              { "title": "OCR", "status": "partially", "type": "technology", "description": "Optical Character Recognition (OCR) technology converts images of typed, handwritten, or printed text into machine-encoded text. It is essential for digitizing documents and making their content searchable and usable by AI systems.", "link": "https://aws.amazon.com/what-is/ocr/" },
+              { "title": "Vector Storage", "status": "partially", "type": "technology", "description": "Vector storage, or a vector database, is designed to store and query high-dimensional vector embeddings efficiently. It's a core component for AI applications like semantic search and RAG, enabling fast similarity searches.", "link": "https://www.pinecone.io/learn/vector-database/" },
+              { "title": "Advanced RAG, e.g., reranking", "status": "not implemented", "type": "pattern", "description": "Advanced RAG techniques improve upon basic retrieval by adding steps like reranking, where a more sophisticated model re-orders retrieved documents to improve relevance. This enhances the quality of the context provided to the LLM.", "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/" },
+              { "title": "Agentic RAG", "status": "not implemented", "type": "pattern", "description": "Agentic RAG combines AI agents with retrieval systems, allowing the agent to dynamically decide when and how to retrieve information to solve complex, multi-step problems. This enables more autonomous and intelligent information seeking.", "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/" }
             ]
           },
           {
             "title": "LLMOps",
             "children": [
-              { "title": "Observability & Tracing", "status": "not implemented", "type": "policy" },
-              { "title": "Evaluations incl. dataset creation", "status": "not implemented", "type": "pattern" },
-              { "title": "Prompt Ops & Repository", "status": "not implemented", "type": "technology" },
-              { "title": "Prompt Optimization", "status": "not implemented", "type": "pattern" }
+              { "title": "Observability & Tracing", "status": "not implemented", "type": "policy", "description": "LLM observability involves monitoring and understanding the behavior of large language models in production. Tracing provides detailed insights into the lifecycle of a request, helping to debug issues and optimize performance.", "link": "https://www.akira.ai/insights/llm-observability-and-monitoring" },
+              { "title": "Evaluations incl. dataset creation", "status": "not implemented", "type": "pattern", "description": "This involves creating high-quality datasets specifically for evaluating the performance of LLMs on various tasks. A robust evaluation set is crucial for assessing model accuracy, fairness, and safety before and after deployment.", "link": "https://kili-technology.com/large-language-models-llms/how-to-build-llm-evaluation-datasets-for-your-domain-specific-use-cases" },
+              { "title": "Prompt Ops & Repository", "status": "not implemented", "type": "technology", "description": "Prompt Ops involves managing the entire lifecycle of prompts, from creation and testing to deployment and versioning. A prompt repository is a centralized system for storing, sharing, and collaborating on prompts across teams.", "link": "https://www.promptpanda.io/blog/prompt-repository/" },
+              { "title": "Prompt Optimization", "status": "not implemented", "type": "pattern", "description": "Prompt optimization is the process of refining and improving prompts to elicit the best possible responses from a large language model. This can involve manual tuning or automated techniques to enhance clarity, specificity, and overall performance.", "link": "https://www.promptingguide.ai/guides/optimizing-prompts" }
             ]
           }
         ]
@@ -128,26 +128,26 @@
         "title": "Foundation Services",
         "foundational": true,
         "children": [
-          { "title": "Data Encryption", "status": "implemented", "type": "policy" },
-          { "title": "Data Ingestion", "status": "partially", "type": "pattern" },
-          { "title": "Data Catalog", "status": "implemented", "type": "technology" },
-          { "title": "Data Visualization", "status": "partially", "type": "technology" },
-          { "title": "Stream Processing", "status": "partially", "type": "technology" },
-          { "title": "UX/UI Framework", "status": "partially", "type": "technology" },
-          { "title": "Reporting", "status": "implemented", "type": "technology" },
-          { "title": "DevSecOps", "status": "implemented", "type": "policy" },
-          { "title": "Version Management", "status": "partially", "type": "policy" },
-          { "title": "Security", "status": "implemented", "type": "policy" },
-          { "title": "Data Transformation", "status": "partially", "type": "pattern" },
-          { "title": "Data Curation", "status": "partially", "type": "pattern" },
-          { "title": "Data Lineage", "status": "implemented", "type": "policy" },
-          { "title": "Caching", "status": "partially", "type": "technology" },
-          { "title": "Integration", "status": "partially", "type": "pattern" },
-          { "title": "Observability", "status": "partially", "type": "policy" },
-          { "title": "IAM", "status": "implemented", "type": "policy" },
-          { "title": "Container Management", "status": "implemented", "type": "technology" },
-          { "title": "API Management", "status": "partially", "type": "policy" },
-          { "title": "No/Low Code Builders", "status": "not implemented", "type": "technology" }
+          { "title": "Data Encryption", "status": "implemented", "type": "policy", "description": "Data encryption is the process of converting data into a code to prevent unauthorized access. It is essential for protecting data both at rest (stored) and in transit (moving across a network).", "link": "https://www.digitalguardian.com/blog/data-protection-data-in-transit-vs-data-at-rest" },
+          { "title": "Data Ingestion", "status": "partially", "type": "pattern", "description": "Data ingestion is the process of transporting data from various sources into a storage system where it can be accessed, used, and analyzed. Patterns can range from real-time streaming to batch processing.", "link": "https://docs.aws.amazon.com/whitepapers/latest/aws-cloud-data-ingestion-patterns-practices/data-ingestion-patterns.html" },
+          { "title": "Data Catalog", "status": "implemented", "type": "technology", "description": "A data catalog is an organized inventory of data assets in an organization. It helps data professionals find, understand, and trust the data they need for their work.", "link": "https://www.ibm.com/think/topics/data-catalog" },
+          { "title": "Data Visualization", "status": "partially", "type": "technology", "description": "Data visualization is the graphical representation of information and data. By using visual elements like charts, graphs, and maps, data visualization tools provide an accessible way to see and understand trends, outliers, and patterns in data.", "link": "https://online.hbs.edu/blog/post/data-visualization-techniques" },
+          { "title": "Stream Processing", "status": "partially", "type": "technology", "description": "Stream processing is the practice of taking action on a series of data at the time the data is created. Frameworks like Apache Flink and Kafka Streams are used to process and analyze data in real-time.", "link": "https://www.confluent.io/learn/stream-processing/" },
+          { "title": "UX/UI Framework", "status": "partially", "type": "technology", "description": "A UX/UI framework provides a set of guidelines, components, and best practices to create consistent, high-quality user experiences. It streamlines the design process and ensures a cohesive look and feel across applications.", "link": "https://maze.co/collections/ux-ui-design/ux-design-frameworks/" },
+          { "title": "Reporting", "status": "implemented", "type": "technology", "description": "Reporting tools collect and present data from various sources in an understandable format, such as charts, graphs, and dashboards. They are essential for business intelligence, enabling data-driven decision-making and performance monitoring.", "link": "https://www.tableau.com/learn/articles/business-intelligence/reporting-basics" },
+          { "title": "DevSecOps", "status": "implemented", "type": "policy", "description": "DevSecOps is a cultural shift that integrates security practices into the DevOps process. By automating security checks throughout the software development lifecycle, it aims to build secure software from the ground up.", "link": "https://www.splunk.com/en_us/blog/learn/devsecops-concepts-principles.html" },
+          { "title": "Version Management", "status": "partially", "type": "policy", "description": "Version management, or version control, is the practice of tracking and managing changes to software code. Systems like Git are essential for collaboration, allowing multiple developers to work together on a project efficiently.", "link": "https://www.atlassian.com/git/tutorials/what-is-version-control" },
+          { "title": "Security", "status": "implemented", "type": "policy", "description": "Data security involves protecting digital information from unauthorized access, corruption, or theft throughout its entire lifecycle. It encompasses everything from hardware and software security to access controls and organizational policies.", "link": "https://www.cisa.gov/topics/cybersecurity-best-practices" },
+          { "title": "Data Transformation", "status": "partially", "type": "pattern", "description": "Data transformation is the process of converting data from one format or structure to another. It's a critical step in making data compatible with a destination system or for analysis.", "link": "https://www.rudderstack.com/learn/data-transformation/data-transformation-techniques/" },
+          { "title": "Data Curation", "status": "partially", "type": "pattern", "description": "Data curation is the process of organizing and integrating data collected from various sources. It involves annotation, publication, and presentation to ensure the data is valuable and available for reuse.", "link": "https://en.wikipedia.org/wiki/Data_curation" },
+          { "title": "Data Lineage", "status": "implemented", "type": "policy", "description": "Data lineage provides visibility into the data's lifecycle, from its origin to its consumption. It helps in understanding data flow, which is crucial for data governance and troubleshooting.", "link": "https://openlineage.io/" },
+          { "title": "Caching", "status": "partially", "type": "technology", "description": "Caching is a technique that stores copies of data in a temporary storage location so that they can be accessed more quickly. It's used to reduce latency and improve the performance of applications.", "link": "https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html" },
+          { "title": "Integration", "status": "partially", "type": "pattern", "description": "Data integration is the process of combining data from different sources into a single, unified view. Integration patterns provide standardized methods for moving, transforming, and consolidating data.", "link": "https://www.mulesoft.com/integration/data-integration-patterns" },
+          { "title": "Observability", "status": "partially", "type": "policy", "description": "Observability is the practice of collecting and analyzing data from a system's outputs (logs, metrics, and traces) to understand its internal state. It is crucial for monitoring complex systems and troubleshooting issues.", "link": "https://newrelic.com/blog/best-practices/what-is-observability" },
+          { "title": "IAM", "status": "implemented", "type": "policy", "description": "Identity and Access Management (IAM) is a framework of policies and technologies for ensuring that the right users have the appropriate access to technology resources. It is a critical component of a zero-trust security model.", "link": "https://www.microsoft.com/en-us/security/business/security-101/what-is-identity-access-management-iam" },
+          { "title": "Container Management", "status": "implemented", "type": "technology", "description": "Container management platforms automate the deployment, scaling, and operation of containerized applications. Tools like Kubernetes and Docker are central to modern cloud-native application development.", "link": "https://www.qovery.com/blog/10-best-container-management-tools/" },
+          { "title": "API Management", "status": "partially", "type": "policy", "description": "API management involves the process of designing, publishing, documenting, and analyzing APIs in a secure environment. It provides a centralized way to ensure that APIs are consumed and managed consistently.", "link": "https://cloud.google.com/learn/what-is-api-management" },
+          { "title": "No/Low Code Builders", "status": "not implemented", "type": "technology", "description": "No-code/low-code platforms enable users to build applications with little to no traditional programming. They use visual development interfaces with drag-and-drop components to accelerate the application development process.", "link": "https://www.sap.com/products/technology-platform/build/what-is-low-code-no-code.html" }
         ]
       }
     ]

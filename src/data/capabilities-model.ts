@@ -1,14 +1,16 @@
 export type CapabilityStatus = 'implemented' | 'not implemented' | 'partially';
 export type CapabilityType = 'technology' | 'pattern' | 'policy';
 
-export interface Capability {
+export type Capability = {
+  id: string;
   title: string;
   description: string;
   status: CapabilityStatus;
   type: CapabilityType;
 }
 
-export interface Cluster {
+export type Cluster = {
+  id: string;
   title?: string;
   description?: string;
   foundational?: boolean;

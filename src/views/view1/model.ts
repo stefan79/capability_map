@@ -1,3 +1,3 @@
-export interface View1Model {
+export type View1Model = {
   value: number;
 }

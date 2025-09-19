@@ -1,0 +1,167 @@
+{
+  "id": "fs",
+  "title": "Foundation Services",
+  "foundational": true,
+  "children": [
+    {
+      "id": "de",
+      "title": "Data Encryption",
+      "status": "implemented",
+      "type": "policy",
+      "description": "Data encryption is the process of converting data into a code to prevent unauthorized access. It is essential for protecting data both at rest (stored) and in transit (moving across a network).",
+      "link": "https://www.digitalguardian.com/blog/data-protection-data-in-transit-vs-data-at-rest"
+    },
+    {
+      "id": "di",
+      "title": "Data Ingestion",
+      "status": "partially",
+      "type": "pattern",
+      "description": "Data ingestion is the process of transporting data from various sources into a storage system where it can be accessed, used, and analyzed. Patterns can range from real-time streaming to batch processing.",
+      "link": "https://docs.aws.amazon.com/whitepapers/latest/aws-cloud-data-ingestion-patterns-practices/data-ingestion-patterns.html"
+    },
+    {
+      "id": "dc",
+      "title": "Data Catalog",
+      "status": "implemented",
+      "type": "technology",
+      "description": "A data catalog is an organized inventory of data assets in an organization. It helps data professionals find, understand, and trust the data they need for their work.",
+      "link": "https://www.ibm.com/think/topics/data-catalog"
+    },
+    {
+      "id": "dv",
+      "title": "Data Visualization",
+      "status": "partially",
+      "type": "technology",
+      "description": "Data visualization is the graphical representation of information and data. By using visual elements like charts, graphs, and maps, data visualization tools provide an accessible way to see and understand trends, outliers, and patterns in data.",
+      "link": "https://online.hbs.edu/blog/post/data-visualization-techniques"
+    },
+    {
+      "id": "sp",
+      "title": "Stream Processing",
+      "status": "partially",
+      "type": "technology",
+      "description": "Stream processing is the practice of taking action on a series of data at the time the data is created. Frameworks like Apache Flink and Kafka Streams are used to process and analyze data in real-time.",
+      "link": "https://www.confluent.io/learn/stream-processing/"
+    },
+    {
+      "id": "uf",
+      "title": "UX/UI Framework",
+      "status": "partially",
+      "type": "technology",
+      "description": "A UX/UI framework provides a set of guidelines, components, and best practices to create consistent, high-quality user experiences. It streamlines the design process and ensures a cohesive look and feel across applications.",
+      "link": "https://maze.co/collections/ux-ui-design/ux-design-frameworks/"
+    },
+    {
+      "id": "r",
+      "title": "Reporting",
+      "status": "implemented",
+      "type": "technology",
+      "description": "Reporting tools collect and present data from various sources in an understandable format, such as charts, graphs, and dashboards. They are essential for business intelligence, enabling data-driven decision-making and performance monitoring.",
+      "link": "https://www.tableau.com/learn/articles/business-intelligence/reporting-basics"
+    },
+    {
+      "id": "d",
+      "title": "DevSecOps",
+      "status": "implemented",
+      "type": "policy",
+      "description": "DevSecOps is a cultural shift that integrates security practices into the DevOps process. By automating security checks throughout the software development lifecycle, it aims to build secure software from the ground up.",
+      "link": "https://www.splunk.com/en_us/blog/learn/devsecops-concepts-principles.html"
+    },
+    {
+      "id": "vm",
+      "title": "Version Management",
+      "status": "partially",
+      "type": "policy",
+      "description": "Version management, or version control, is the practice of tracking and managing changes to software code. Systems like Git are essential for collaboration, allowing multiple developers to work together on a project efficiently.",
+      "link": "https://www.atlassian.com/git/tutorials/what-is-version-control"
+    },
+    {
+      "id": "s",
+      "title": "Security",
+      "status": "implemented",
+      "type": "policy",
+      "description": "Data security involves protecting digital information from unauthorized access, corruption, or theft throughout its entire lifecycle. It encompasses everything from hardware and software security to access controls and organizational policies.",
+      "link": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+    },
+    {
+      "id": "dt",
+      "title": "Data Transformation",
+      "status": "partially",
+      "type": "pattern",
+      "description": "Data transformation is the process of converting data from one format or structure to another. It's a critical step in making data compatible with a destination system or for analysis.",
+      "link": "https://www.rudderstack.com/learn/data-transformation/data-transformation-techniques/"
+    },
+    {
+      "id": "dc2",
+      "title": "Data Curation",
+      "status": "partially",
+      "type": "pattern",
+      "description": "Data curation is the process of organizing and integrating data collected from various sources. It involves annotation, publication, and presentation to ensure the data is valuable and available for reuse.",
+      "link": "https://en.wikipedia.org/wiki/Data_curation"
+    },
+    {
+      "id": "dl",
+      "title": "Data Lineage",
+      "status": "implemented",
+      "type": "policy",
+      "description": "Data lineage provides visibility into the data's lifecycle, from its origin to its consumption. It helps in understanding data flow, which is crucial for data governance and troubleshooting.",
+      "link": "https://openlineage.io/"
+    },
+    {
+      "id": "c",
+      "title": "Caching",
+      "status": "partially",
+      "type": "technology",
+      "description": "Caching is a technique that stores copies of data in a temporary storage location so that they can be accessed more quickly. It's used to reduce latency and improve the performance of applications.",
+      "link": "https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html"
+    },
+    {
+      "id": "i",
+      "title": "Integration",
+      "status": "partially",
+      "type": "pattern",
+      "description": "Data integration is the process of combining data from different sources into a single, unified view. Integration patterns provide standardized methods for moving, transforming, and consolidating data.",
+      "link": "https://www.mulesoft.com/integration/data-integration-patterns"
+    },
+    {
+      "id": "o",
+      "title": "Observability",
+      "status": "partially",
+      "type": "policy",
+      "description": "Observability is the practice of collecting and analyzing data from a system's outputs (logs, metrics, and traces) to understand its internal state. It is crucial for monitoring complex systems and troubleshooting issues.",
+      "link": "https://newrelic.com/blog/best-practices/what-is-observability"
+    },
+    {
+      "id": "iam",
+      "title": "IAM",
+      "status": "implemented",
+      "type": "policy",
+      "description": "Identity and Access Management (IAM) is a framework of policies and technologies for ensuring that the right users have the appropriate access to technology resources. It is a critical component of a zero-trust security model.",
+      "link": "https://www.microsoft.com/en-us/security/business/security-101/what-is-identity-access-management-iam"
+    },
+    {
+      "id": "cm",
+      "title": "Container Management",
+      "status": "implemented",
+      "type": "technology",
+      "description": "Container management platforms automate the deployment, scaling, and operation of containerized applications. Tools like Kubernetes and Docker are central to modern cloud-native application development.",
+      "link": "https://www.qovery.com/blog/10-best-container-management-tools/"
+    },
+    {
+      "id": "am",
+      "title": "API Management",
+      "status": "partially",
+      "type": "policy",
+      "description": "API management involves the process of designing, publishing, documenting, and analyzing APIs in a secure environment. It provides a centralized way to ensure that APIs are consumed and managed consistently.",
+      "link": "https://cloud.google.com/learn/what-is-api-management"
+    },
+    {
+      "id": "nlcb",
+      "title": "No/Low Code Builders",
+      "status": "not implemented",
+      "type": "technology",
+      "description": "No-code/low-code platforms enable users to build applications with little to no traditional programming. They use visual development interfaces with drag-and-drop components to accelerate the application development process.",
+      "link": "https://www.sap.com/products/technology-platform/build/what-is-low-code-no-code.html"
+    }
+  ]
+}

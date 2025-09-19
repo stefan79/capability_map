@@ -1,4 +1,4 @@
-export interface View2Model {
+export type View2Model = {
   category: string;
   amount: number;
 }

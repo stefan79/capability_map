@@ -1,6 +1,7 @@
 import * as d3 from 'd3';
+
 import { View } from '../view';
-import { Cluster, Capability, isCluster } from './model';
+import { Capability, Cluster, isCluster } from './model';
 
 export class CapabilityView implements View {
   private hideTooltipTimeout: number | null = null;

@@ -1,1 +1,1 @@
-export { Cluster, Capability, isCluster } from '../../data/capabilities-model';
+export { Capability, Cluster, isCluster } from '../../data/capabilities-model';

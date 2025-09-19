@@ -1,0 +1,166 @@
+{
+  "id": "aaimloro",
+  "title": "Analytical AI (Machine Learning, Operations Research, etc.)",
+  "children": [
+    {
+      "id": "dafe",
+      "title": "Data and Feature Engineering",
+      "children": [
+        {
+          "id": "dla",
+          "title": "Data Labelling / Annotation",
+          "status": "not implemented",
+          "type": "pattern",
+          "description": "Data labeling is the process of identifying raw data (images, text files, videos, etc.) and adding one or more meaningful and informative labels to provide context so that a machine learning model can learn from it. This is a crucial step in creating high-quality training data for supervised learning models.",
+          "link": "https://www.ibm.com/think/topics/data-labeling"
+        },
+        {
+          "id": "sdg",
+          "title": "Synthetic Data Generation",
+          "status": "not implemented",
+          "type": "technology",
+          "description": "Synthetic data generation is the process of creating artificial data that mimics the statistical properties of real-world data. This is useful for training machine learning models when real data is scarce, sensitive, or imbalanced.",
+          "link": "https://aws.amazon.com/what-is/synthetic-data/"
+        },
+        {
+          "id": "dc",
+          "title": "Datasets Catalog",
+          "status": "partially",
+          "type": "technology",
+          "description": "A dataset catalog is a centralized and organized collection of metadata about datasets. It helps data scientists and analysts discover, understand, and use data more effectively.",
+          "link": "https://developers.google.com/earth-engine/datasets"
+        },
+        {
+          "id": "eda",
+          "title": "Exploratory Data Analysis (EDA)",
+          "status": "partially",
+          "type": "pattern",
+          "description": "Exploratory Data Analysis (EDA) is an approach to analyzing data sets to summarize their main characteristics, often with visual methods. It is used to understand the data, identify patterns, spot anomalies, and check assumptions before formal modeling.",
+          "link": "https://www.ibm.com/think/topics/exploratory-data-analysis"
+        },
+        {
+          "id": "fs",
+          "title": "Feature Store",
+          "status": "partially",
+          "type": "technology",
+          "description": "A feature store is a central repository for storing, accessing, and managing curated features for machine learning models. It helps ensure consistency and reusability of features across different models and teams.",
+          "link": "https://www.featurestore.org/"
+        }
+      ]
+    },
+    {
+      "id": "md",
+      "title": "Model Development",
+      "children": [
+        {
+          "id": "mltt",
+          "title": "ML libraries: training/tuning",
+          "status": "partially",
+          "type": "technology",
+          "description": "Collections of code that provide pre-built algorithms and tools for training and optimizing machine learning models. They simplify model creation, allowing developers to focus on experiment design and hyperparameter tuning.",
+          "link": "https://www.digitalocean.com/community/conceptual-articles/python-libraries-for-machine-learning"
+        },
+        {
+          "id": "aml",
+          "title": "Auto ML",
+          "status": "partially",
+          "type": "technology",
+          "description": "Automated Machine Learning (AutoML) automates the end-to-end process of applying machine learning to real-world problems. It simplifies tasks like model selection and hyperparameter tuning, making ML more accessible.",
+          "link": "https://www.ibm.com/think/topics/automl"
+        },
+        {
+          "id": "tr",
+          "title": "Training Runtime",
+          "status": "partially",
+          "type": "technology",
+          "description": "A training runtime is a pre-configured environment optimized for executing machine learning training jobs. It includes popular ML frameworks and libraries to accelerate the model development lifecycle.",
+          "link": "https://www.databricks.com/product/machine-learning-runtime"
+        },
+        {
+          "id": "fi",
+          "title": "Feature Importance",
+          "status": "not implemented",
+          "type": "pattern",
+          "description": "Feature importance techniques assign a score to input features based on how useful they are at predicting a target variable. This helps in model interpretation, feature selection, and improving model performance.",
+          "link": "https://builtin.com/data-science/feature-importance"
+        }
+      ]
+    },
+    {
+      "id": "d",
+      "title": "Deployment",
+      "children": [
+        {
+          "id": "bi",
+          "title": "Batch Inference",
+          "status": "partially",
+          "type": "technology",
+          "description": "Batch inference, also known as offline inference, processes large datasets to generate predictions in batches. This approach is ideal for scenarios where real-time predictions are not critical and can be performed on a recurring schedule.",
+          "link": "https://ayarlabs.com/glossary/batch-inference/"
+        },
+        {
+          "id": "oi",
+          "title": "Online Inference",
+          "status": "partially",
+          "type": "technology",
+          "description": "Online inference, or real-time inference, generates predictions on-demand for single or small batches of data as they are received. It is essential for applications requiring immediate feedback, such as fraud detection or interactive user experiences.",
+          "link": "https://mlinproduction.com/batch-inference-vs-online-inference/"
+        },
+        {
+          "id": "ms",
+          "title": "MIP Solver",
+          "status": "not implemented",
+          "type": "technology",
+          "description": "A Mixed-Integer Programming (MIP) solver is a tool for solving optimization problems where some variables are integers. These are critical for complex decision-making in logistics, scheduling, and resource allocation.",
+          "link": "https://developers.google.com/optimization/mip"
+        }
+      ]
+    },
+    {
+      "id": "m",
+      "title": "MLOps",
+      "children": [
+        {
+          "id": "ddd",
+          "title": "Data Drift Detection",
+          "status": "partially",
+          "type": "pattern",
+          "description": "Data drift is the change in the statistical properties of the input data over time, which can degrade model performance. Detecting data drift is crucial for maintaining model accuracy and reliability in production environments.",
+          "link": "https://www.evidentlyai.com/ml-in-production/data-drift"
+        },
+        {
+          "id": "mcdd",
+          "title": "Model/Concept Drift Detection",
+          "status": "partially",
+          "type": "pattern",
+          "description": "Model drift, or concept drift, refers to the degradation of a model's predictive power due to changes in the underlying relationships between input and output variables. Monitoring for model drift is essential to know when a model needs to be retrained or updated.",
+          "link": "https://www.ibm.com/think/topics/model-drift"
+        },
+        {
+          "id": "mrc",
+          "title": "Model Retraining (Continuous)",
+          "status": "partially",
+          "type": "pattern",
+          "description": "Continuous model retraining is the process of automatically and periodically retraining machine learning models with new data. This ensures that models adapt to changing data patterns and maintain their performance over time.",
+          "link": "https://www.iguazio.com/glossary/model-retraining/"
+        },
+        {
+          "id": "ms2",
+          "title": "Model Store",
+          "status": "partially",
+          "type": "technology",
+          "description": "A model store, or model registry, is a centralized repository for managing the entire lifecycle of machine learning models. It versions, stores, and organizes trained models, making them discoverable and ready for deployment.",
+          "link": "https://arize.com/glossary/model-store/"
+        },
+        {
+          "id": "et",
+          "title": "Experiment Tracking",
+          "status": "partially",
+          "type": "technology",
+          "description": "Experiment tracking is the practice of logging all relevant information from machine learning experiments, including code, data, hyperparameters, and results. It enables reproducibility, comparison of different model versions, and collaboration among data scientists.",
+          "link": "https://neptune.ai/blog/best-ml-experiment-tracking-tools"
+        }
+      ]
+    }
+  ]
+}

@@ -14,10 +14,10 @@
   ],
   "capabilitiesData": {
     "imports": [
-      "./capabilities/analytical-ai.json",
-      "./capabilities/governance-observability.json",
-      "./capabilities/generative-ai.json",
-      "./capabilities/foundation-services.json"
+      "./capabilities/analytical-ai-legacy.json",
+      "./capabilities/governance-observability-legacy.json",
+      "./capabilities/generative-ai-legacy.json",
+      "./capabilities/foundation-services-legacy.json"
     ],
     "children": []
   },

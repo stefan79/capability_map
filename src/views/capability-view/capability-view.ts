@@ -285,6 +285,14 @@ export class CapabilityView implements View {
         self.tooltip.classed('visible', true);
 
         const capability = d.data as Capability;
+        const tool = capability.tool;
+        const useCases = capability.useCases ?? [];
+        const toolHtml = tool
+          ? `<ul><li><a href="${tool.url}" target="_blank" rel="noopener noreferrer">${tool.name}</a></li></ul>`
+          : '<div class="tooltip-empty">No tool linked</div>';
+        const useCasesHtml = useCases.length
+          ? `<ul>${useCases.map(uc => `<li><a href="${uc.url}" target="_blank" rel="noopener noreferrer">${uc.name}</a></li>`).join('')}</ul>`
+          : '<div class="tooltip-empty">No use cases linked</div>';
         const tooltipHtml = `
           <div class="tooltip-content">
             <div class="tooltip-title">${capability.title}</div>
@@ -301,15 +309,11 @@ export class CapabilityView implements View {
             </table>
             <div class="tooltip-section">
               <div class="tooltip-section-title">Implemented in:</div>
-              <ul>
-                <li>GenAI Hub</li>
-              </ul>
+              ${toolHtml}
             </div>
             <div class="tooltip-section">
-              <div class="tooltip-section-title">HVIA:</div>
-              <ul>
-                <li>SOPS / Material management</li>
-              </ul>
+              <div class="tooltip-section-title">HVIA use cases:</div>
+              ${useCasesHtml}
             </div>
           </div>
         `;

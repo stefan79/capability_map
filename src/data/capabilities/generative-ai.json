@@ -120,7 +120,11 @@
           "status": "partially",
           "type": "technology",
           "description": "Vector storage, or a vector database, is designed to store and query high-dimensional vector embeddings efficiently. It's a core component for AI applications like semantic search and RAG, enabling fast similarity searches.",
-          "link": "https://www.pinecone.io/learn/vector-database/"
+          "link": "https://www.pinecone.io/learn/vector-database/",
+          "toolId": "databricks-platform",
+          "useCaseRefs": [
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default" }
+          ]
         },
         {
           "id": "gai-de-are",

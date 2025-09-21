@@ -1,4 +1,4 @@
-import { loadAllData, type GlobalData } from './data/loader/data-loader';
+import {loadAllData } from './data/loader/data-loader';
 import { ViewManager } from './view-manager/view-manager';
 import { CapabilityView } from './views/capability-view/capability-view';
 import { View1 } from './views/view1/view1';

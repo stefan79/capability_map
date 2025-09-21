@@ -1,7 +1,7 @@
-import type { Vendor } from '../tools-model';
+import databricks from '../tools/databricks.json';
 // Statically import vendor JSONs so Parcel bundles them
 import microsoft from '../tools/microsoft.json';
-import databricks from '../tools/databricks.json';
+import type { Vendor } from '../tools-model';
 
 const vendorMap: Record<string, Vendor> = {
   './tools/microsoft.json': microsoft as Vendor,

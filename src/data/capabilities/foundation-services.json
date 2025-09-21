@@ -4,7 +4,7 @@
   "foundational": true,
   "children": [
     {
-      "id": "de",
+      "id": "fs-de",
       "title": "Data Encryption",
       "status": "implemented",
       "type": "policy",
@@ -12,7 +12,7 @@
       "link": "https://www.digitalguardian.com/blog/data-protection-data-in-transit-vs-data-at-rest"
     },
     {
-      "id": "di",
+      "id": "fs-di",
       "title": "Data Ingestion",
       "status": "partially",
       "type": "pattern",
@@ -20,7 +20,7 @@
       "link": "https://docs.aws.amazon.com/whitepapers/latest/aws-cloud-data-ingestion-patterns-practices/data-ingestion-patterns.html"
     },
     {
-      "id": "dc",
+      "id": "fs-dc",
       "title": "Data Catalog",
       "status": "implemented",
       "type": "technology",
@@ -28,7 +28,7 @@
       "link": "https://www.ibm.com/think/topics/data-catalog"
     },
     {
-      "id": "dv",
+      "id": "fs-dv",
       "title": "Data Visualization",
       "status": "partially",
       "type": "technology",
@@ -36,7 +36,7 @@
       "link": "https://online.hbs.edu/blog/post/data-visualization-techniques"
     },
     {
-      "id": "sp",
+      "id": "fs-sp",
       "title": "Stream Processing",
       "status": "partially",
       "type": "technology",
@@ -44,7 +44,7 @@
       "link": "https://www.confluent.io/learn/stream-processing/"
     },
     {
-      "id": "uf",
+      "id": "fs-uf",
       "title": "UX/UI Framework",
       "status": "partially",
       "type": "technology",
@@ -52,7 +52,7 @@
       "link": "https://maze.co/collections/ux-ui-design/ux-design-frameworks/"
     },
     {
-      "id": "r",
+      "id": "fs-r",
       "title": "Reporting",
       "status": "implemented",
       "type": "technology",
@@ -60,7 +60,7 @@
       "link": "https://www.tableau.com/learn/articles/business-intelligence/reporting-basics"
     },
     {
-      "id": "d",
+      "id": "fs-d",
       "title": "DevSecOps",
       "status": "implemented",
       "type": "policy",
@@ -68,7 +68,7 @@
       "link": "https://www.splunk.com/en_us/blog/learn/devsecops-concepts-principles.html"
     },
     {
-      "id": "vm",
+      "id": "fs-vm",
       "title": "Version Management",
       "status": "partially",
       "type": "policy",
@@ -76,7 +76,7 @@
       "link": "https://www.atlassian.com/git/tutorials/what-is-version-control"
     },
     {
-      "id": "s",
+      "id": "fs-s",
       "title": "Security",
       "status": "implemented",
       "type": "policy",
@@ -84,7 +84,7 @@
       "link": "https://www.cisa.gov/topics/cybersecurity-best-practices"
     },
     {
-      "id": "dt",
+      "id": "fs-dt",
       "title": "Data Transformation",
       "status": "partially",
       "type": "pattern",
@@ -92,7 +92,7 @@
       "link": "https://www.rudderstack.com/learn/data-transformation/data-transformation-techniques/"
     },
     {
-      "id": "dc2",
+      "id": "fs-dc2",
       "title": "Data Curation",
       "status": "partially",
       "type": "pattern",
@@ -100,7 +100,7 @@
       "link": "https://en.wikipedia.org/wiki/Data_curation"
     },
     {
-      "id": "dl",
+      "id": "fs-dl",
       "title": "Data Lineage",
       "status": "implemented",
       "type": "policy",
@@ -108,7 +108,7 @@
       "link": "https://openlineage.io/"
     },
     {
-      "id": "c",
+      "id": "fs-c",
       "title": "Caching",
       "status": "partially",
       "type": "technology",
@@ -116,7 +116,7 @@
       "link": "https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html"
     },
     {
-      "id": "i",
+      "id": "fs-i",
       "title": "Integration",
       "status": "partially",
       "type": "pattern",
@@ -124,7 +124,7 @@
       "link": "https://www.mulesoft.com/integration/data-integration-patterns"
     },
     {
-      "id": "o",
+      "id": "fs-o",
       "title": "Observability",
       "status": "partially",
       "type": "policy",
@@ -132,7 +132,7 @@
       "link": "https://newrelic.com/blog/best-practices/what-is-observability"
     },
     {
-      "id": "iam",
+      "id": "fs-iam",
       "title": "IAM",
       "status": "implemented",
       "type": "policy",
@@ -140,7 +140,7 @@
       "link": "https://www.microsoft.com/en-us/security/business/security-101/what-is-identity-access-management-iam"
     },
     {
-      "id": "cm",
+      "id": "fs-cm",
       "title": "Container Management",
       "status": "implemented",
       "type": "technology",
@@ -148,7 +148,7 @@
       "link": "https://www.qovery.com/blog/10-best-container-management-tools/"
     },
     {
-      "id": "am",
+      "id": "fs-am",
       "title": "API Management",
       "status": "partially",
       "type": "policy",
@@ -156,7 +156,7 @@
       "link": "https://cloud.google.com/learn/what-is-api-management"
     },
     {
-      "id": "nlcb",
+      "id": "fs-nlcb",
       "title": "No/Low Code Builders",
       "status": "not implemented",
       "type": "technology",

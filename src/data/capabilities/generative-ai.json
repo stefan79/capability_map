@@ -3,11 +3,11 @@
   "title": "Generative AI incl. Agentic AI",
   "children": [
     {
-      "id": "aa",
+      "id": "gai-aa",
       "title": "Agentic AI",
       "children": [
         {
-          "id": "ard",
+          "id": "gai-aa-ard",
           "title": "Agent Registry & Discovery",
           "status": "not implemented",
           "type": "technology",
@@ -15,7 +15,7 @@
           "link": "https://dev.to/sreeni5018/building-an-ai-agent-registry-server-with-fastapi-enabling-seamless-agent-discovery-via-a2a-15dj"
         },
         {
-          "id": "apeaa",
+          "id": "gai-aa-apeaa",
           "title": "Agent Protocols e.g., A2A, ACP",
           "status": "not implemented",
           "type": "pattern",
@@ -23,7 +23,7 @@
           "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
         },
         {
-          "id": "ast",
+          "id": "gai-aa-ast",
           "title": "Agent SDK + templates",
           "status": "not implemented",
           "type": "technology",
@@ -31,7 +31,7 @@
           "link": "https://ai-sdk.dev/docs/introduction"
         },
         {
-          "id": "mrd",
+          "id": "gai-aa-mrd",
           "title": "MCP Registry & Discovery",
           "status": "not implemented",
           "type": "technology",
@@ -39,7 +39,7 @@
           "link": "https://www.infoq.com/news/2025/06/secure-agent-discovery-ans/"
         },
         {
-          "id": "mm",
+          "id": "gai-aa-mm",
           "title": "Memory Management",
           "status": "not implemented",
           "type": "technology",
@@ -49,11 +49,11 @@
       ]
     },
     {
-      "id": "muf",
+      "id": "gai-muf",
       "title": "Model Use & Finetuning",
       "children": [
         {
-          "id": "fm",
+          "id": "gai-muf-fm",
           "title": "Foundation Models",
           "status": "implemented",
           "type": "technology",
@@ -61,7 +61,7 @@
           "link": "https://research.ibm.com/blog/what-are-foundation-models"
         },
         {
-          "id": "mg",
+          "id": "gai-muf-mg",
           "title": "Model Gateway",
           "status": "not implemented",
           "type": "technology",
@@ -69,7 +69,7 @@
           "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway"
         },
         {
-          "id": "dmr",
+          "id": "gai-muf-dmr",
           "title": "Dynamic model routing",
           "status": "not implemented",
           "type": "pattern",
@@ -77,7 +77,7 @@
           "link": "https://medium.com/@simsketch/model-routing-in-ai-getting-the-right-request-to-the-right-model-dd21bab7c129"
         },
         {
-          "id": "lps",
+          "id": "gai-muf-lps",
           "title": "Libraries: PEFT, SFT, RFT...",
           "status": "not implemented",
           "type": "technology",
@@ -85,7 +85,7 @@
           "link": "https://github.com/huggingface/peft"
         },
         {
-          "id": "sc",
+          "id": "gai-muf-sc",
           "title": "Semantic Cache",
           "status": "not implemented",
           "type": "technology",
@@ -95,11 +95,11 @@
       ]
     },
     {
-      "id": "de",
+      "id": "gai-de",
       "title": "Data & Embeddings",
       "children": [
         {
-          "id": "c",
+          "id": "gai-de-c",
           "title": "Chunking",
           "status": "partially",
           "type": "pattern",
@@ -107,7 +107,7 @@
           "link": "https://stackoverflow.blog/2024/12/27/breaking-up-is-hard-to-do-chunking-in-rag-applications/"
         },
         {
-          "id": "o",
+          "id": "gai-de-o",
           "title": "OCR",
           "status": "partially",
           "type": "technology",
@@ -115,7 +115,7 @@
           "link": "https://aws.amazon.com/what-is/ocr/"
         },
         {
-          "id": "vs",
+          "id": "gai-de-vs",
           "title": "Vector Storage",
           "status": "partially",
           "type": "technology",
@@ -123,7 +123,7 @@
           "link": "https://www.pinecone.io/learn/vector-database/"
         },
         {
-          "id": "are",
+          "id": "gai-de-are",
           "title": "Advanced RAG, e.g., reranking",
           "status": "not implemented",
           "type": "pattern",
@@ -131,7 +131,7 @@
           "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/"
         },
         {
-          "id": "ar",
+          "id": "gai-de-ar",
           "title": "Agentic RAG",
           "status": "not implemented",
           "type": "pattern",
@@ -141,11 +141,11 @@
       ]
     },
     {
-      "id": "l",
+      "id": "gai-l",
       "title": "LLMOps",
       "children": [
         {
-          "id": "ot",
+          "id": "gai-l-ot",
           "title": "Observability & Tracing",
           "status": "not implemented",
           "type": "policy",
@@ -153,7 +153,7 @@
           "link": "https://www.akira.ai/insights/llm-observability-and-monitoring"
         },
         {
-          "id": "eidc",
+          "id": "gai-l-eidc",
           "title": "Evaluations incl. dataset creation",
           "status": "not implemented",
           "type": "pattern",
@@ -161,7 +161,7 @@
           "link": "https://kili-technology.com/large-language-models-llms/how-to-build-llm-evaluation-datasets-for-your-domain-specific-use-cases"
         },
         {
-          "id": "por",
+          "id": "gai-l-por",
           "title": "Prompt Ops & Repository",
           "status": "not implemented",
           "type": "technology",
@@ -169,7 +169,7 @@
           "link": "https://www.promptpanda.io/blog/prompt-repository/"
         },
         {
-          "id": "po",
+          "id": "gai-l-po",
           "title": "Prompt Optimization",
           "status": "not implemented",
           "type": "pattern",

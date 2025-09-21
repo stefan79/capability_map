@@ -3,11 +3,11 @@
   "title": "Governance & Observability",
   "children": [
     {
-      "id": "agg",
+      "id": "go-agg",
       "title": "AI Governance & Guardrails",
       "children": [
         {
-          "id": "raf",
+          "id": "go-agg-raf",
           "title": "Responsible AI Framework",
           "status": "not implemented",
           "type": "policy",
@@ -15,7 +15,7 @@
           "link": "https://www.ibm.com/think/topics/responsible-ai"
         },
         {
-          "id": "pd",
+          "id": "go-agg-pd",
           "title": "PII detection",
           "status": "not implemented",
           "type": "technology",
@@ -23,7 +23,7 @@
           "link": "https://learn.microsoft.com/en-us/azure/ai-services/language-service/personally-identifiable-information/overview"
         },
         {
-          "id": "dmc",
+          "id": "go-agg-dmc",
           "title": "Data & Model cards",
           "status": "not implemented",
           "type": "policy",
@@ -31,7 +31,7 @@
           "link": "https://modelcards.withgoogle.com/"
         },
         {
-          "id": "hav",
+          "id": "go-agg-hav",
           "title": "Human-assisted Verification",
           "status": "partially",
           "type": "pattern",
@@ -39,7 +39,7 @@
           "link": "https://www.veriff.com"
         },
         {
-          "id": "cm",
+          "id": "go-agg-cm",
           "title": "Content Moderation",
           "status": "not implemented",
           "type": "policy",
@@ -47,7 +47,7 @@
           "link": "https://getstream.io/blog/ai-content-moderation/"
         },
         {
-          "id": "gth",
+          "id": "go-agg-gth",
           "title": "Guardrails (toxic, hallucinations...)",
           "status": "not implemented",
           "type": "policy",
@@ -55,7 +55,7 @@
           "link": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-are-ai-guardrails"
         },
         {
-          "id": "bdm",
+          "id": "go-agg-bdm",
           "title": "Bias Detection & Mitigation",
           "status": "not implemented",
           "type": "pattern",
@@ -65,11 +65,11 @@
       ]
     },
     {
-      "id": "co",
+      "id": "go-co",
       "title": "Common Operations",
       "children": [
         {
-          "id": "f",
+          "id": "go-co-f",
           "title": "FinOps",
           "status": "not implemented",
           "type": "policy",
@@ -77,7 +77,7 @@
           "link": "https://www.finops.org/wg/finops-for-ai-overview/"
         },
         {
-          "id": "cf",
+          "id": "go-co-cf",
           "title": "Collect Feedback",
           "status": "not implemented",
           "type": "pattern",

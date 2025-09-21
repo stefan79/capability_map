@@ -3,6 +3,6 @@
   "name": "Software developer Productivity",
   "url": "https://www.volvotrucks.com/",
   "useCases": [
-    { "id": "default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
+    { "id": "dev-productivity-default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
   ]
 }

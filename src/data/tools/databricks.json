@@ -5,21 +5,21 @@
   "logo": "./logos/databricks.svg",
   "tools": [
     {
-      "id": "platform",
+      "id": "databricks-platform",
       "name": "Databricks Platform",
       "description": "",
       "url": "https://www.databricks.com/platform",
       "logo": "./logos/databricks-platform.svg"
     },
     {
-      "id": "unity-catalog",
+      "id": "databricks-unity-catalog",
       "name": "Unity Catalog",
       "description": "",
       "url": "https://www.databricks.com/product/unity-catalog",
       "logo": "./logos/unity-catalog.svg"
     },
     {
-      "id": "mlflow",
+      "id": "databricks-mlflow",
       "name": "MLflow",
       "description": "",
       "url": "https://mlflow.org/",

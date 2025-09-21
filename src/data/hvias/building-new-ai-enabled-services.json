@@ -3,6 +3,6 @@
   "name": "Building new AI-enabled services",
   "url": "https://www.volvotrucks.com/",
   "useCases": [
-    { "id": "default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
+    { "id": "new-ai-services-default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
   ]
 }

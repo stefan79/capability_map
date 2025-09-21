@@ -5,14 +5,14 @@
   "logo": "./logos/microsoft.svg",
   "tools": [
     {
-      "id": "azure",
+      "id": "microsoft-azure",
       "name": "Microsoft Azure",
       "description": "",
       "url": "https://azure.microsoft.com/",
       "logo": "./logos/azure.svg"
     },
     {
-      "id": "azure-ml",
+      "id": "microsoft-azure-ml",
       "name": "Azure Machine Learning",
       "description": "",
       "url": "https://azure.microsoft.com/products/machine-learning/",

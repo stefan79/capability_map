@@ -3,6 +3,6 @@
   "name": "E2E S&OP optimization and automation",
   "url": "https://www.volvotrucks.com/",
   "useCases": [
-    { "id": "default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
+    { "id": "e2e-sop-default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
   ]
 }

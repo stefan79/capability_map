@@ -3,11 +3,11 @@
   "title": "Analytical AI (Machine Learning, Operations Research, etc.)",
   "children": [
     {
-      "id": "dafe",
+      "id": "aaimloro-dafe",
       "title": "Data and Feature Engineering",
       "children": [
         {
-          "id": "dla",
+          "id": "aaimloro-dafe-dla",
           "title": "Data Labelling / Annotation",
           "status": "not implemented",
           "type": "pattern",
@@ -15,7 +15,7 @@
           "link": "https://www.ibm.com/think/topics/data-labeling"
         },
         {
-          "id": "sdg",
+          "id": "aaimloro-dafe-sdg",
           "title": "Synthetic Data Generation",
           "status": "not implemented",
           "type": "technology",
@@ -23,7 +23,7 @@
           "link": "https://aws.amazon.com/what-is/synthetic-data/"
         },
         {
-          "id": "dc",
+          "id": "aaimloro-dafe-dc",
           "title": "Datasets Catalog",
           "status": "partially",
           "type": "technology",
@@ -31,7 +31,7 @@
           "link": "https://developers.google.com/earth-engine/datasets"
         },
         {
-          "id": "eda",
+          "id": "aaimloro-dafe-eda",
           "title": "Exploratory Data Analysis (EDA)",
           "status": "partially",
           "type": "pattern",
@@ -39,7 +39,7 @@
           "link": "https://www.ibm.com/think/topics/exploratory-data-analysis"
         },
         {
-          "id": "fs",
+          "id": "aaimloro-dafe-fs",
           "title": "Feature Store",
           "status": "partially",
           "type": "technology",
@@ -49,11 +49,11 @@
       ]
     },
     {
-      "id": "md",
+      "id": "aaimloro-md",
       "title": "Model Development",
       "children": [
         {
-          "id": "mltt",
+          "id": "aaimloro-md-mltt",
           "title": "ML libraries: training/tuning",
           "status": "partially",
           "type": "technology",
@@ -61,7 +61,7 @@
           "link": "https://www.digitalocean.com/community/conceptual-articles/python-libraries-for-machine-learning"
         },
         {
-          "id": "aml",
+          "id": "aaimloro-md-aml",
           "title": "Auto ML",
           "status": "partially",
           "type": "technology",
@@ -69,7 +69,7 @@
           "link": "https://www.ibm.com/think/topics/automl"
         },
         {
-          "id": "tr",
+          "id": "aaimloro-md-tr",
           "title": "Training Runtime",
           "status": "partially",
           "type": "technology",
@@ -77,7 +77,7 @@
           "link": "https://www.databricks.com/product/machine-learning-runtime"
         },
         {
-          "id": "fi",
+          "id": "aaimloro-md-fi",
           "title": "Feature Importance",
           "status": "not implemented",
           "type": "pattern",
@@ -87,11 +87,11 @@
       ]
     },
     {
-      "id": "d",
+      "id": "aaimloro-d",
       "title": "Deployment",
       "children": [
         {
-          "id": "bi",
+          "id": "aaimloro-d-bi",
           "title": "Batch Inference",
           "status": "partially",
           "type": "technology",
@@ -99,7 +99,7 @@
           "link": "https://ayarlabs.com/glossary/batch-inference/"
         },
         {
-          "id": "oi",
+          "id": "aaimloro-d-oi",
           "title": "Online Inference",
           "status": "partially",
           "type": "technology",
@@ -107,7 +107,7 @@
           "link": "https://mlinproduction.com/batch-inference-vs-online-inference/"
         },
         {
-          "id": "ms",
+          "id": "aaimloro-d-ms",
           "title": "MIP Solver",
           "status": "not implemented",
           "type": "technology",
@@ -117,11 +117,11 @@
       ]
     },
     {
-      "id": "m",
+      "id": "aaimloro-m",
       "title": "MLOps",
       "children": [
         {
-          "id": "ddd",
+          "id": "aaimloro-m-ddd",
           "title": "Data Drift Detection",
           "status": "partially",
           "type": "pattern",
@@ -129,7 +129,7 @@
           "link": "https://www.evidentlyai.com/ml-in-production/data-drift"
         },
         {
-          "id": "mcdd",
+          "id": "aaimloro-m-mcdd",
           "title": "Model/Concept Drift Detection",
           "status": "partially",
           "type": "pattern",
@@ -137,7 +137,7 @@
           "link": "https://www.ibm.com/think/topics/model-drift"
         },
         {
-          "id": "mrc",
+          "id": "aaimloro-m-mrc",
           "title": "Model Retraining (Continuous)",
           "status": "partially",
           "type": "pattern",
@@ -145,7 +145,7 @@
           "link": "https://www.iguazio.com/glossary/model-retraining/"
         },
         {
-          "id": "ms2",
+          "id": "aaimloro-m-ms2",
           "title": "Model Store",
           "status": "partially",
           "type": "technology",
@@ -153,7 +153,7 @@
           "link": "https://arize.com/glossary/model-store/"
         },
         {
-          "id": "et",
+          "id": "aaimloro-m-et",
           "title": "Experiment Tracking",
           "status": "partially",
           "type": "technology",

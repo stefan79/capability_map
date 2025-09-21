@@ -1,0 +1,8 @@
+{
+  "id": "sales-acceleration",
+  "name": "AI-enabled sales acceleration",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
+  ]
+}

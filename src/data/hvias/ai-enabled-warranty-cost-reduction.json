@@ -1,0 +1,8 @@
+{
+  "id": "warranty-cost-reduction",
+  "name": "AI-enabled warranty cost reduction",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "microsoft",
+  "name": "Microsoft",
+  "url": "https://www.microsoft.com/",
+  "logo": "./logos/microsoft.svg",
+  "tools": [
+    {
+      "id": "azure",
+      "name": "Microsoft Azure",
+      "description": "",
+      "url": "https://azure.microsoft.com/",
+      "logo": "./logos/azure.svg"
+    },
+    {
+      "id": "azure-ml",
+      "name": "Azure Machine Learning",
+      "description": "",
+      "url": "https://azure.microsoft.com/products/machine-learning/",
+      "logo": "./logos/azure-ml.svg"
+    }
+  ]
+}

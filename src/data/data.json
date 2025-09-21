@@ -20,5 +20,12 @@
       "./capabilities/foundation-services.json"
     ],
     "children": []
+  },
+  "toolsData": {
+    "imports": [
+      "./tools/microsoft.json",
+      "./tools/databricks.json"
+    ],
+    "children": []
   }
 }

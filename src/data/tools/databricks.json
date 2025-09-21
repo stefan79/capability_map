@@ -1,0 +1,29 @@
+{
+  "id": "databricks",
+  "name": "Databricks",
+  "url": "https://www.databricks.com/",
+  "logo": "./logos/databricks.svg",
+  "tools": [
+    {
+      "id": "platform",
+      "name": "Databricks Platform",
+      "description": "",
+      "url": "https://www.databricks.com/platform",
+      "logo": "./logos/databricks-platform.svg"
+    },
+    {
+      "id": "unity-catalog",
+      "name": "Unity Catalog",
+      "description": "",
+      "url": "https://www.databricks.com/product/unity-catalog",
+      "logo": "./logos/unity-catalog.svg"
+    },
+    {
+      "id": "mlflow",
+      "name": "MLflow",
+      "description": "",
+      "url": "https://mlflow.org/",
+      "logo": "./logos/mlflow.svg"
+    }
+  ]
+}

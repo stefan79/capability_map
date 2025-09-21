@@ -57,17 +57,7 @@ export function loadCapabilities(
     if (!mod) {
       throw new Error(`Capability JSON not bundled: ${p}. Add a static import in capabilities-loader.ts`);
     }
-    const resolved = resolveCluster(mod, toolIndex, hviaIndex) as Cluster;
-    // Debug: verify Data Encryption type from Foundation Services
-    if (p.includes('foundation-services')) {
-      try {
-        const de = (resolved.children || []).find((c: any) => !('children' in c) && c.id === 'fs-de') as any;
-        if (de) {
-          // eslint-disable-next-line no-console
-          console.log('[capabilities] fs-de type:', de.type, 'status:', de.status);
-        }
-      } catch {}
-    }
-    return resolved;
+    // Return a deep-resolved copy so original JSON shape remains untouched
+    return resolveCluster(mod, toolIndex, hviaIndex) as Cluster;
   });
 }

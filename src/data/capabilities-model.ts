@@ -3,13 +3,15 @@ import type { UseCase } from './hvias-model';
 import type { Tool } from './tools-model';
 
 export type CapabilityStatus = 'implemented' | 'not implemented' | 'partially';
+// Some capability JSONs may encode status as a numeric maturity flag (0|1)
+export type CapabilityMaturity = 0 | 1;
 export type CapabilityType = 'technology' | 'pattern' | 'policy';
 
 export type Capability = {
   id: string;
   title: string;
   description: string;
-  status: CapabilityStatus;
+  status: CapabilityStatus | CapabilityMaturity;
   type: CapabilityType;
   // Optional raw references (as present in JSON)
   toolId?: string; // references Tool.id

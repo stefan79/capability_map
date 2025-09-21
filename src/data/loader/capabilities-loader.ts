@@ -1,6 +1,6 @@
 // Statically import known capability JSONs so Parcel bundles them
 import analyticalAi from '../capabilities/analytical-ai-legacy.json';
-import foundationServices from '../capabilities/foundation-services-legacy.json';
+import foundationServices from '../capabilities/foundation-services.json';
 import generativeAi from '../capabilities/generative-ai-legacy.json';
 import governanceObservability from '../capabilities/governance-observability-legacy.json';
 import type { Capability,Cluster } from '../capabilities-model';
@@ -11,7 +11,7 @@ const capabilityMap: Record<string, Cluster> = {
   './capabilities/analytical-ai-legacy.json': analyticalAi as Cluster,
   './capabilities/governance-observability-legacy.json': governanceObservability as Cluster,
   './capabilities/generative-ai-legacy.json': generativeAi as Cluster,
-  './capabilities/foundation-services-legacy.json': foundationServices as Cluster,
+  './capabilities/foundation-services.json': foundationServices as Cluster,
 };
 
 // Helper: deep traverse cluster and resolve capability links
@@ -57,7 +57,17 @@ export function loadCapabilities(
     if (!mod) {
       throw new Error(`Capability JSON not bundled: ${p}. Add a static import in capabilities-loader.ts`);
     }
-    // Return a deep-resolved copy so original JSON shape remains untouched
-    return resolveCluster(mod, toolIndex, hviaIndex) as Cluster;
+    const resolved = resolveCluster(mod, toolIndex, hviaIndex) as Cluster;
+    // Debug: verify Data Encryption type from Foundation Services
+    if (p.includes('foundation-services')) {
+      try {
+        const de = (resolved.children || []).find((c: any) => !('children' in c) && c.id === 'fs-de') as any;
+        if (de) {
+          // eslint-disable-next-line no-console
+          console.log('[capabilities] fs-de type:', de.type, 'status:', de.status);
+        }
+      } catch {}
+    }
+    return resolved;
   });
 }

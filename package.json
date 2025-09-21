@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build --public-url ./",
+    "start": "parcel --no-cache",
+    "build": "parcel build ./",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"

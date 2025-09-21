@@ -1,0 +1,175 @@
+{
+  "id": "fs",
+  "title": "Foundation Services",
+  "foundational": true,
+  "children": [
+    {
+      "id": "fs-de",
+      "title": "Data Encryption",
+      "status": 1,
+      "type": "technology",
+      "description": "Data encryption protects information at rest and in transit using cryptographic algorithms and key management. It reduces risk of unauthorized access and supports compliance across platforms and workloads.",
+      "link": "https://www.digitalguardian.com/blog/data-protection-data-in-transit-vs-data-at-rest"
+    },
+    {
+      "id": "fs-di",
+      "title": "Data Ingestion",
+      "status": 1,
+      "type": "technology",
+      "description": "Data ingestion moves data from operational systems, streams, and files into analytics platforms using batch and real-time pipelines. Robust ingestion underpins reliable downstream processing and governance.",
+      "link": "https://docs.aws.amazon.com/whitepapers/latest/aws-cloud-data-ingestion-patterns-practices/data-ingestion-patterns.html"
+    },
+    {
+      "id": "fs-dc",
+      "title": "Data Catalog",
+      "status": 1,
+      "type": "technology",
+      "description": "A data catalog indexes datasets and metadata to enable discovery, ownership, and governance. It accelerates analytics by improving findability and trust in data assets.",
+      "link": "https://www.ibm.com/think/topics/data-catalog"
+    },
+    {
+      "id": "fs-dv",
+      "title": "Data Visualization",
+      "status": 1,
+      "type": "technology",
+      "description": "Data visualization turns complex data into charts and dashboards for rapid insight. Effective visuals reveal trends and anomalies to guide decision making.",
+      "link": "https://online.hbs.edu/blog/post/data-visualization-techniques"
+    },
+    {
+      "id": "fs-sp",
+      "title": "Stream Processing",
+      "status": 1,
+      "type": "technology",
+      "description": "Stream processing analyzes and transforms events as they arrive using platforms like Kafka Streams or Flink. It enables real-time monitoring, alerting, and low-latency decisioning.",
+      "link": "https://www.confluent.io/learn/stream-processing/"
+    },
+    {
+      "id": "fs-uf",
+      "title": "UX Framework",
+      "status": 1,
+      "type": "technology",
+      "description": "A UX/UI framework provides consistent components, design tokens, and interaction patterns. It accelerates app delivery while maintaining accessibility and brand alignment.",
+      "link": "https://maze.co/collections/ux-ui-design/ux-design-frameworks/"
+    },
+    {
+      "id": "fs-r",
+      "title": "Reporting",
+      "status": 1,
+      "type": "technology",
+      "description": "Reporting aggregates and presents metrics in scheduled or ad‑hoc views for business stakeholders. Strong governance and semantic layers improve accuracy and reuse.",
+      "link": "https://www.tableau.com/learn/articles/business-intelligence/reporting-basics"
+    },
+    {
+      "id": "fs-d",
+      "title": "DevSecOps",
+      "status": 1,
+      "type": "technology",
+      "description": "DevSecOps embeds security controls in CI/CD through automated scans, policies, and runtime protections. It shifts security left and enables continuous compliance.",
+      "link": "https://www.splunk.com/en_us/blog/learn/devsecops-concepts-principles.html"
+    },
+    {
+      "id": "fs-vm",
+      "title": "Version Management",
+      "status": 1,
+      "type": "technology",
+      "description": "Version management tracks changes to code, data, and configuration for reproducibility and rollback. Practices like branching, tagging, and code review improve collaboration.",
+      "link": "https://www.atlassian.com/git/tutorials/what-is-version-control"
+    },
+    {
+      "id": "fs-s",
+      "title": "Security",
+      "status": 1,
+      "type": "technology",
+      "description": "Security spans identity, network, application, and data controls to protect assets from threats. Defense‑in‑depth and least privilege are core operating principles.",
+      "link": "https://www.cisa.gov/topics/cybersecurity-best-practices"
+    },
+    {
+      "id": "fs-nlcb",
+      "title": "No/Low Code Builders",
+      "status": 1,
+      "type": "technology",
+      "description": "No/low‑code platforms enable rapid app creation with visual development and reusable components. They speed delivery of internal tools while reducing engineering overhead.",
+      "link": "https://www.sap.com/products/technology-platform/build/what-is-low-code-no-code.html"
+    },
+    {
+      "id": "fs-dt",
+      "title": "Data Transformation",
+      "status": 1,
+      "type": "technology",
+      "description": "Data transformation reshapes, cleans, and enriches datasets for analytics and ML. Standardized pipelines improve reliability and observability of data products.",
+      "link": "https://www.rudderstack.com/learn/data-transformation/data-transformation-techniques/"
+    },
+    {
+      "id": "fs-dc2",
+      "title": "Data Curation",
+      "status": 1,
+      "type": "technology",
+      "description": "Data curation organizes and documents datasets for reuse by downstream teams. It increases trust, lineage clarity, and governance alignment.",
+      "link": "https://en.wikipedia.org/wiki/Data_curation"
+    },
+    {
+      "id": "fs-dl",
+      "title": "Data Lineage",
+      "status": 1,
+      "type": "technology",
+      "description": "Data lineage traces data origins and transformations to improve auditability and troubleshooting. It is foundational to impact analysis and regulatory reporting.",
+      "link": "https://openlineage.io/"
+    },
+    {
+      "id": "fs-c",
+      "title": "Caching",
+      "status": 1,
+      "type": "technology",
+      "description": "Caching stores frequently accessed data in faster media to reduce latency and cost. It is common across APIs, databases, and analytics serving layers.",
+      "link": "https://docs.aws.amazon.com/whitepapers/latest/database-caching-strategies-using-redis/caching-patterns.html"
+    },
+    {
+      "id": "fs-i",
+      "title": "Integration",
+      "status": 1,
+      "type": "technology",
+      "description": "Integration connects heterogeneous systems using APIs, events, and ETL/ELT. Well‑defined contracts and idempotency make flows reliable at scale.",
+      "link": "https://www.mulesoft.com/integration/data-integration-patterns"
+    },
+    {
+      "id": "fs-o",
+      "title": "Observability",
+      "status": 1,
+      "type": "technology",
+      "description": "Observability collects logs, metrics, and traces to infer internal system state. It enables faster incident response and proactive reliability engineering.",
+      "link": "https://newrelic.com/blog/best-practices/what-is-observability"
+    },
+    {
+      "id": "fs-iam",
+      "title": "IAM",
+      "status": 1,
+      "type": "technology",
+      "description": "Identity and Access Management governs authentication, authorization, and privileged access. Strong IAM reduces blast radius and supports zero‑trust strategies.",
+      "link": "https://www.microsoft.com/en-us/security/business/security-101/what-is-identity-access-management-iam"
+    },
+    {
+      "id": "fs-cm",
+      "title": "Container Management",
+      "status": 1,
+      "type": "technology",
+      "description": "Container management orchestrates deployment, scaling, and updates of containerized apps. Platforms like Kubernetes standardize operations in hybrid and multi‑cloud.",
+      "link": "https://www.qovery.com/blog/10-best-container-management-tools/"
+    },
+    {
+      "id": "fs-am",
+      "title": "API Management",
+      "status": 1,
+      "type": "technology",
+      "description": "API management secures, monitors, and monetizes APIs with gateways, rate limits, and analytics. It provides governance for consistent, discoverable interfaces.",
+      "link": "https://cloud.google.com/learn/what-is-api-management"
+    },
+    {
+      "id": "fs-oss",
+      "title": "OSS Policy Management",
+      "status": 0,
+      "type": "policy",
+      "description": "OSS policy management defines how open‑source components are selected, scanned, and governed. Clear policies reduce license risk and improve supply‑chain security.",
+      "link": "https://opensource.guide/"
+    }
+  ]
+}

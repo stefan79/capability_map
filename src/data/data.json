@@ -27,5 +27,16 @@
       "./tools/databricks.json"
     ],
     "children": []
+  },
+  "hviasData": {
+    "imports": [
+      "./hvias/e2e-sop-optimization-automation.json",
+      "./hvias/ai-enabled-warranty-cost-reduction.json",
+      "./hvias/ai-enabled-sales-acceleration.json",
+      "./hvias/building-new-ai-enabled-services.json",
+      "./hvias/software-developer-productivity.json",
+      "./hvias/white-collar-productivity.json"
+    ],
+    "children": []
   }
 }

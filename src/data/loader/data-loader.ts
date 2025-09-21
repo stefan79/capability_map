@@ -1,9 +1,11 @@
 import type { Cluster, Capability } from '../capabilities-model';
 import type { Vendor } from '../tools-model';
+import type { HVIA } from '../hvias-model';
 
 import globalDataJson from '../data.json';
 import { loadCapabilities } from './capabilities-loader';
 import { loadVendors } from './tools-loader';
+import { loadHVIAs } from './hvias-loader';
 
 export type GlobalData = {
   view1Data: { value: number }[];
@@ -16,6 +18,10 @@ export type GlobalData = {
     imports: string[];
     children: Vendor[];
   };
+  hviasData: {
+    imports: string[];
+    children: HVIA[];
+  };
 };
 
 export async function loadAllData(): Promise<GlobalData> {
@@ -26,6 +32,7 @@ export async function loadAllData(): Promise<GlobalData> {
     view2Data: base.view2Data ?? [],
     capabilitiesData: base.capabilitiesData ?? { imports: [], children: [] },
     toolsData: base.toolsData ?? { imports: [], children: [] },
+    hviasData: base.hviasData ?? { imports: [], children: [] },
   };
 
   // capabilities
@@ -35,6 +42,10 @@ export async function loadAllData(): Promise<GlobalData> {
   // tools
   const vendors = loadVendors(globalData.toolsData.imports || []);
   globalData.toolsData.children.push(...vendors);
+
+  // hvias
+  const hvias = loadHVIAs(globalData.hviasData.imports || []);
+  globalData.hviasData.children.push(...hvias);
 
   return globalData;
 }

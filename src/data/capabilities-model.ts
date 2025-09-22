@@ -11,17 +11,18 @@ export type CapabilityType = 'technology' | 'pattern' | 'policy';
 export type UseCaseRef = {
   hviaId: string;
   useCaseId: string;
-  // 1=requested, 2=in-use, 3=established
-  maturity: 1 | 2 | 3;
+  // 0=not-started, 1=requested, 2=in-use, 3=established
+  maturity: 0 | 1 | 2 | 3;
 };
 
 // Resolved use case record that carries the maturity value forward
-export type ResolvedUseCaseRef = UseCase & { maturity: 1 | 2 | 3 };
+export type ResolvedUseCaseRef = UseCase & { maturity: 0 | 1 | 2 | 3; hviaId: string; hviaName: string };
 
 export type Capability = {
   id: string;
   title: string;
   description: string;
+  link?: string;
   status: CapabilityStatus | CapabilityMaturity;
   type: CapabilityType;
   // Optional raw references (as present in JSON)

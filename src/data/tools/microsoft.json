@@ -7,14 +7,14 @@
     {
       "id": "microsoft-azure",
       "name": "Microsoft Azure",
-      "description": "",
+      "description": "Microsoft Azure is a cloud computing platform offering compute, storage, networking, and managed services across global regions. It provides security, governance, and DevOps integrations to build, deploy, and scale applications and AI workloads.",
       "url": "https://azure.microsoft.com/",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
     },
     {
       "id": "microsoft-azure-ml",
       "name": "Azure Machine Learning",
-      "description": "",
+      "description": "Azure Machine Learning is a managed service for building, training, and deploying ML and generative AI models at scale. It offers MLOps tooling, automated training, model registry, and responsible AI features.",
       "url": "https://azure.microsoft.com/products/machine-learning/",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
     }

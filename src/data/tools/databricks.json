@@ -7,21 +7,21 @@
     {
       "id": "databricks-platform",
       "name": "Databricks Platform",
-      "description": "",
+      "description": "The Databricks Platform unifies data engineering, analytics, and AI on a lakehouse architecture. It provides collaborative notebooks, managed compute, and governance to build and scale data and ML workloads.",
       "url": "https://www.databricks.com/platform",
       "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
     },
     {
       "id": "databricks-unity-catalog",
       "name": "Unity Catalog",
-      "description": "",
+      "description": "Unity Catalog is a unified governance layer for data and AI assets across the Databricks Lakehouse. It centralizes permissions, lineage, and discovery for tables, files, ML models, and notebooks.",
       "url": "https://www.databricks.com/product/unity-catalog",
       "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
     },
     {
       "id": "databricks-mlflow",
       "name": "MLflow",
-      "description": "",
+      "description": "MLflow is an open-source platform for managing the end-to-end ML lifecycle. It provides experiment tracking, model registry, and reproducible packaging and deployment (MLflow Models).",
       "url": "https://mlflow.org/",
       "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/mlflow.svg"
     }

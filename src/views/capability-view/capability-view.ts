@@ -401,35 +401,81 @@ export class CapabilityView implements View {
 
         const capability = d.data as Capability;
         const tool = capability.tool;
-        const useCases = capability.useCases ?? [];
-        const toolHtml = tool
-          ? `<ul><li><a href="${tool.url}" target="_blank" rel="noopener noreferrer">${tool.name}</a></li></ul>`
-          : '<div class="tooltip-empty">No tool linked</div>';
-        const useCasesHtml = useCases.length
-          ? `<ul>${useCases.map(uc => `<li><a href="${uc.url}" target="_blank" rel="noopener noreferrer">${uc.name}</a></li>`).join('')}</ul>`
-          : '<div class="tooltip-empty">No use cases linked</div>';
+        const useCases = (capability.useCases ?? []) as any[];
+        const maturity = getMaturity(capability as any);
+        const maturityLabelMap: Record<number, string> = {
+          0: 'Not Started',
+          1: 'Realized without HVIA Usage',
+          2: 'Requested by HVIA',
+          3: 'In Use by HVIA',
+          4: 'Established by HVIAs',
+        };
+        const maturityLabel = maturityLabelMap[maturity] ?? '';
+
+        // Title + description with details link
+        const titleHtml = `<div class="tooltip-title">${capability.title} ${maturityLabel ? `(${maturityLabel})` : ''}</div>`;
+        const descLink = capability.link ? ` <a href="${capability.link}" target="_blank" rel="noopener noreferrer">Details</a>` : '';
+        const descriptionHtml = `<div class="tooltip-description">${capability.description}${descLink}</div>`;
+
+        // Implementation section (only if a tool is linked)
+        let implementationHtml = '';
+        if (tool) {
+          const vendorHeader = `<div class="vendor-header">${tool.vendorName ? `Implemented with ${tool.vendorName}` : 'Implemented'}</div>`;
+          const logoImg = tool.logo ? `<img class="tool-logo" src="${tool.logo}" alt="${tool.name} logo" />` : '';
+          const toolTitle = `<div class="tool-title">${logoImg}<span>${tool.name}</span></div>`;
+          const toolDescLink = tool.url ? ` <a href="${tool.url}" target="_blank" rel="noopener noreferrer">Details</a>` : '';
+          const toolDesc = `<div class="tool-description">${tool.description || ''}${toolDescLink}</div>`;
+          implementationHtml = `
+            <div class="tooltip-section tooltip-impl">
+              ${vendorHeader}
+              ${toolTitle}
+              ${toolDesc}
+            </div>
+          `;
+        }
+
+        // HVIAS section grouped by HVIA and filtered by maturity > 0; maturity 1 should be greyed
+        let hviasHtml = '';
+        if (useCases.length) {
+          const grouped: Record<string, { name: string; items: any[] }> = {};
+          for (const uc of useCases) {
+            if ((uc as any).maturity <= 0) continue; // skip 0
+            const key = uc.hviaId ?? uc.hviaName ?? 'unknown';
+            if (!grouped[key]) grouped[key] = { name: uc.hviaName ?? 'HVIA', items: [] };
+            grouped[key].items.push(uc);
+          }
+          const groupBlocks = Object.values(grouped)
+            .map(g => {
+              if (!g.items.length) return '';
+              const lis = g.items.map(uc => {
+                const muted = uc.maturity === 1 ? 'muted' : '';
+                const label = uc.maturity === 1 ? 'requested' : (uc.maturity === 2 ? 'in use' : 'established');
+                return `<li class="hvia-uc ${muted}"><span class="hvia-uc-label">${label}:</span> ${uc.name}</li>`;
+              }).join('');
+              return `
+                <div class="hvia-group">
+                  <div class="hvia-group-title">${g.name}</div>
+                  <ul class="hvia-list">${lis}</ul>
+                </div>
+              `;
+            })
+            .join('');
+          if (groupBlocks.trim().length) {
+            hviasHtml = `
+              <div class="tooltip-section hvias-section">
+                <div class="tooltip-section-title">HVIAS</div>
+                ${groupBlocks}
+              </div>
+            `;
+          }
+        }
+
         const tooltipHtml = `
           <div class="tooltip-content">
-            <div class="tooltip-title">${capability.title}</div>
-            <div class="tooltip-description">${capability.description}</div>
-            <table class="tooltip-details">
-              <tr>
-                <td>Status:</td>
-                <td>${capability.status}</td>
-              </tr>
-              <tr>
-                <td>Type:</td>
-                <td>${capability.type}</td>
-              </tr>
-            </table>
-            <div class="tooltip-section">
-              <div class="tooltip-section-title">Implemented in:</div>
-              ${toolHtml}
-            </div>
-            <div class="tooltip-section">
-              <div class="tooltip-section-title">HVIA use cases:</div>
-              ${useCasesHtml}
-            </div>
+            ${titleHtml}
+            ${descriptionHtml}
+            ${implementationHtml}
+            ${hviasHtml}
           </div>
         `;
         self.tooltip.html(tooltipHtml)

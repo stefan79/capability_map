@@ -34,7 +34,7 @@ function resolveCluster(
           if (!hvia) return undefined;
           const uc = hvia.useCases.find((u) => u.id === useCaseId);
           if (!uc) return undefined;
-          return { ...uc, maturity } as ResolvedUseCaseRef;
+          return { ...uc, maturity, hviaId, hviaName: hvia.name } as ResolvedUseCaseRef;
         })
         .filter((v): v is ResolvedUseCaseRef => Boolean(v));
       resolved.useCases = collected;

@@ -17,7 +17,12 @@ export function loadVendors(imports: string[]): Vendor[] {
       throw new Error(`Vendor JSON not bundled: ${p}. Add a static import in tools-loader.ts`);
     }
     // Pass through JSON as-is; logos should already be public URLs
-    const resolvedTools = (mod.tools || []).map((t) => ({ ...t }));
+    const resolvedTools = (mod.tools || []).map((t) => ({
+      ...t,
+      vendorId: mod.id,
+      vendorName: mod.name,
+      vendorLogo: mod.logo,
+    }));
     return {
       ...mod,
       tools: resolvedTools,

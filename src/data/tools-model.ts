@@ -4,6 +4,10 @@ export type Tool = {
   description: string;
   url: string;
   logo: string; // path/URL to logo asset
+  // Optional vendor metadata (enriched during load)
+  vendorId?: string;
+  vendorName?: string;
+  vendorLogo?: string;
 };
 
 export type Vendor = {

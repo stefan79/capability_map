@@ -118,6 +118,59 @@ main {
   color: var(--volvo-blue);
 }
 
+/* Implementation block inside tooltip */
+.tooltip-impl .vendor-header {
+  font-size: 0.85em;
+  color: var(--dark-gray);
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+.tooltip-impl .tool-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+  margin-bottom: 0.25rem;
+}
+.tooltip-impl .tool-logo {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.tooltip-impl .tool-description {
+  font-size: 0.95em;
+  line-height: 1.3;
+}
+.tooltip-impl .tool-description a {
+  margin-left: 0.25rem;
+}
+
+/* HVIAS grouping */
+.hvia-group {
+  margin-top: 0.5rem;
+}
+.hvia-group-title {
+  font-weight: 600;
+  color: var(--volvo-blue);
+  margin-bottom: 0.25rem;
+}
+.hvia-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+.hvia-uc {
+  margin-bottom: 0.25rem;
+}
+.hvia-uc-label {
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+.hvia-uc.muted,
+.hvia-uc.muted a {
+  color: #9E9E9E;
+}
+
 .tooltip-section ul {
   margin: 0;
   padding-left: 1.2rem;

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel --no-cache",
-    "build": "parcel build ./",
+    "start": "parcel src/index.html --dist-dir dist --no-cache",
+    "build": "parcel build ./ && mkdir -p dist && ([ -d public ] && cp -R public/* dist/ || true) && ([ -d assets ] && cp -R assets dist/ || true) && ([ -d src/assets ] && cp -R src/assets dist/ || true)",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"

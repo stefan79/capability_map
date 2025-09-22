@@ -2,28 +2,28 @@
   "id": "databricks",
   "name": "Databricks",
   "url": "https://www.databricks.com/",
-  "logo": "./logos/databricks.svg",
+  "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg",
   "tools": [
     {
       "id": "databricks-platform",
       "name": "Databricks Platform",
       "description": "",
       "url": "https://www.databricks.com/platform",
-      "logo": "./logos/databricks-platform.svg"
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
     },
     {
       "id": "databricks-unity-catalog",
       "name": "Unity Catalog",
       "description": "",
       "url": "https://www.databricks.com/product/unity-catalog",
-      "logo": "./logos/unity-catalog.svg"
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
     },
     {
       "id": "databricks-mlflow",
       "name": "MLflow",
       "description": "",
       "url": "https://mlflow.org/",
-      "logo": "./logos/mlflow.svg"
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/mlflow.svg"
     }
   ]
 }

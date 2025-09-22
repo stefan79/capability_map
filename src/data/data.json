@@ -24,7 +24,8 @@
   "toolsData": {
     "imports": [
       "./tools/microsoft.json",
-      "./tools/databricks.json"
+      "./tools/databricks.json",
+      "./tools/python.json"
     ],
     "children": []
   },

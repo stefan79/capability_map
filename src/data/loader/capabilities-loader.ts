@@ -3,7 +3,7 @@ import analyticalAi from '../capabilities/analytical-ai.json';
 import foundationServices from '../capabilities/foundation-services.json';
 import generativeAi from '../capabilities/generative-ai-legacy.json';
 import governanceObservability from '../capabilities/governance-observability-legacy.json';
-import type { Capability,Cluster } from '../capabilities-model';
+import type { Capability, Cluster, ResolvedUseCaseRef } from '../capabilities-model';
 import type { HVIA } from '../hvias-model';
 import type { Tool } from '../tools-model';
 
@@ -28,14 +28,16 @@ function resolveCluster(
       resolved.tool = toolIndex[cap.toolId];
     }
     if (cap.useCaseRefs && cap.useCaseRefs.length) {
-      const collected = cap.useCaseRefs
-        .map(({ hviaId, useCaseId }) => {
+      const collected: ResolvedUseCaseRef[] = cap.useCaseRefs
+        .map(({ hviaId, useCaseId, maturity }) => {
           const hvia = hviaIndex[hviaId];
           if (!hvia) return undefined;
-          return hvia.useCases.find((u) => u.id === useCaseId);
+          const uc = hvia.useCases.find((u) => u.id === useCaseId);
+          if (!uc) return undefined;
+          return { ...uc, maturity } as ResolvedUseCaseRef;
         })
-        .filter(Boolean);
-      resolved.useCases = collected as NonNullable<Capability['useCases']>;
+        .filter((v): v is ResolvedUseCaseRef => Boolean(v));
+      resolved.useCases = collected;
     }
     return resolved;
   }

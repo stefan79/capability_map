@@ -1,0 +1,15 @@
+{
+  "id": "python",
+  "name": "Python",
+  "url": "https://www.python.org/",
+  "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/python.svg",
+  "tools": [
+    {
+      "id": "python-data-libraries",
+      "name": "Data Libraries",
+      "description": "Core Python data libraries (NumPy, Pandas, SciPy) for data manipulation and analysis.",
+      "url": "https://pandas.pydata.org/",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/python.svg"
+    }
+  ]
+}

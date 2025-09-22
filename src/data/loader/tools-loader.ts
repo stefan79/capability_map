@@ -1,11 +1,13 @@
 import databricks from '../tools/databricks.json';
 // Statically import vendor JSONs so Parcel bundles them
 import microsoft from '../tools/microsoft.json';
+import pyuthon from '../tools/python.json';
 import type { Vendor } from '../tools-model';
 
 const vendorMap: Record<string, Vendor> = {
   './tools/microsoft.json': microsoft as Vendor,
   './tools/databricks.json': databricks as Vendor,
+  './tools/python.json': pyuthon as Vendor,
 };
 
 export function loadVendors(imports: string[]): Vendor[] {
@@ -14,21 +16,10 @@ export function loadVendors(imports: string[]): Vendor[] {
     if (!mod) {
       throw new Error(`Vendor JSON not bundled: ${p}. Add a static import in tools-loader.ts`);
     }
-    // Resolve logo URL via Parcel's URL dependency handling. Our JSON uses './logos/...' relative to tools/ folder.
-    // Build a URL relative to this module file to point at '../tools/logos/...'
-    const logoFileName = (mod.logo || '').split('/').pop() || '';
-    const logoUrl = new URL(`../tools/logos/${logoFileName}`, import.meta.url).toString();
-    const resolvedTools = (mod.tools || []).map((t) => {
-      const tLogoFileName = (t.logo || '').split('/').pop() || '';
-      const tLogoUrl = new URL(`../tools/logos/${tLogoFileName}`, import.meta.url).toString();
-      return {
-        ...t,
-        logo: tLogoUrl,
-      };
-    });
+    // Pass through JSON as-is; logos should already be public URLs
+    const resolvedTools = (mod.tools || []).map((t) => ({ ...t }));
     return {
       ...mod,
-      logo: logoUrl,
       tools: resolvedTools,
     } as Vendor;
   });

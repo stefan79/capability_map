@@ -2,21 +2,21 @@
   "id": "microsoft",
   "name": "Microsoft",
   "url": "https://www.microsoft.com/",
-  "logo": "./logos/microsoft.svg",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg",
   "tools": [
     {
       "id": "microsoft-azure",
       "name": "Microsoft Azure",
       "description": "",
       "url": "https://azure.microsoft.com/",
-      "logo": "./logos/azure.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
     },
     {
       "id": "microsoft-azure-ml",
       "name": "Azure Machine Learning",
       "description": "",
       "url": "https://azure.microsoft.com/products/machine-learning/",
-      "logo": "./logos/azure-ml.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
     }
   ]
 }

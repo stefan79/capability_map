@@ -7,6 +7,17 @@ export type CapabilityStatus = 'implemented' | 'not implemented' | 'partially';
 export type CapabilityMaturity = 0 | 1;
 export type CapabilityType = 'technology' | 'pattern' | 'policy';
 
+// New: explicit HVIA use case reference with maturity per reference
+export type UseCaseRef = {
+  hviaId: string;
+  useCaseId: string;
+  // 1=requested, 2=in-use, 3=established
+  maturity: 1 | 2 | 3;
+};
+
+// Resolved use case record that carries the maturity value forward
+export type ResolvedUseCaseRef = UseCase & { maturity: 1 | 2 | 3 };
+
 export type Capability = {
   id: string;
   title: string;
@@ -15,10 +26,10 @@ export type Capability = {
   type: CapabilityType;
   // Optional raw references (as present in JSON)
   toolId?: string; // references Tool.id
-  useCaseRefs?: { hviaId: string; useCaseId: string }[]; // references UseCase within an HVIA
+  useCaseRefs?: UseCaseRef[]; // references UseCase within an HVIA, each with maturity
   // Exploded/resolved fields for easy UI iteration (populated by loader)
   tool?: Tool; // resolved from toolId
-  useCases?: UseCase[]; // resolved from useCaseRefs
+  useCases?: ResolvedUseCaseRef[]; // resolved from useCaseRefs (includes maturity)
 }
 
 export type Cluster = {

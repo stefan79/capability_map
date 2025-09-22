@@ -167,3 +167,33 @@ rect.treemap-cluster {
 .treemap-capability-icon {
   font-size: 1.5em;
 }
+
+/* HVIA usage badge */
+.hvia-badge .badge-bg {
+  fill: var(--supportive-light-blue);
+}
+.hvia-badge .badge-bg.zero {
+  fill: #E6E6E6; /* ghosted background for zero */
+}
+.hvia-badge .badge-text {
+  fill: #ffffff;
+  font-weight: 700;
+  font-size: 12px;
+}
+.hvia-badge .badge-text.zero {
+  fill: #9E9E9E; /* ghosted text for zero */
+}
+
+/* HVIA compound counter (X / Y) */
+.hvia-counter {
+  text-align: right;
+}
+.hvia-counter .counter-text {
+  fill: var(--dark-gray);
+  font-weight: 700;
+  font-size: 12px;
+}
+.hvia-counter .counter-text.zero {
+  fill: #9E9E9E;
+  font-weight: 600;
+}

@@ -23,7 +23,7 @@ export class CapabilityView implements View {
 
     // Define fixed sizes and paddings
     const capabilityWidth = 200;
-    const capabilityHeight = 50; // Increased height for two lines
+    const capabilityHeight = 50; // Keep current tile size as reference
     const capabilityPadding = 8;
     const clusterTitleHeight = 30;
     const clusterPadding = 10;
@@ -220,9 +220,25 @@ export class CapabilityView implements View {
       .attr('class', d => isCluster(d.data) ? 'treemap-node treemap-cluster-group' : 'treemap-node treemap-capability')
       .attr('transform', d => `translate(${(d as any).x}, ${(d as any).y})`);
 
-    const statusColor = d3.scaleOrdinal<string>()
-      .domain(['implemented', 'partially', 'not implemented'])
-      .range(['#5CB85C', '#FFBF00', '#D9534F']);
+    // Helpers for maturity bar (0..4), fallback mapping from legacy status
+    const maturityColor: Record<number, string> = {
+      0: '#E0E0E0', // not used for filled segments; segments will be grey when unfilled
+      1: '#D9534F', // red
+      2: '#FF8C00', // orange
+      3: '#FFD100', // yellow
+      4: '#5CB85C', // green
+    };
+    function getMaturity(d: Capability): number {
+      const raw = (d as any).maturity as number | undefined;
+      if (raw !== undefined) return Math.max(0, Math.min(4, Math.floor(raw)));
+      // Fallback from status strings
+      if (d.status === 'implemented') return 4;
+      if (d.status === 'partially') return 2;
+      if (d.status === 'not implemented') return 0;
+      // Numeric 0..4 pass-through
+      if (typeof d.status === 'number') return Math.max(0, Math.min(4, Math.floor(d.status)));
+      return 0;
+    }
 
     // Render clusters
     const clusterNodes = nodes.filter('.treemap-cluster-group');
@@ -248,33 +264,132 @@ export class CapabilityView implements View {
       .attr('width', capabilityWidth)
       .attr('height', capabilityHeight);
 
-    capabilityNodes.append('rect')
-      .attr('class', 'status-bar')
-      .attr('width', 5)
-      .attr('height', capabilityHeight)
-      .attr('fill', d => statusColor((d.data as Capability).status));
+    // 5-step vertical maturity bar at the very left
+    const barWidth = 8;
+    const barPadding = 2;
+    const segmentCount = 4; // fixed (four segments)
+    const segmentHeight = (capabilityHeight - (segmentCount - 1) * barPadding) / segmentCount;
 
-    capabilityNodes.append('foreignObject')
-      .attr('x', 10)
-      .attr('y', 13)
-      .attr('width', 24)
-      .attr('height', 24)
-      .html(d => {
-        const type = (d.data as Capability).type;
-        if (type === 'technology') return ICON_TECHNOLOGY;
-        if (type === 'pattern') return ICON_PATTERN;
-        if (type === 'policy') return ICON_POLICY;
-        return '';
-      });
+    const maturityGroups = capabilityNodes.append('g')
+      .attr('class', 'maturity-bar')
+      .attr('transform', `translate(0,0)`);
 
+    maturityGroups.each(function (d) {
+      const g = d3.select(this);
+      const m = getMaturity(d.data as Capability);
+      const color = maturityColor[m];
+      for (let i = 0; i < segmentCount; i++) {
+        const y = capabilityHeight - (i + 1) * segmentHeight - i * barPadding;
+        g.append('rect')
+          .attr('x', 0)
+          .attr('y', y)
+          .attr('width', barWidth)
+          .attr('height', segmentHeight)
+          .attr('rx', 2)
+          .attr('ry', 2)
+          .attr('fill', i < m ? color : '#E0E0E0');
+      }
+    });
+
+    // Icon area: if tool present, show its logo via SVG <image>; otherwise show type icon via foreignObject
+    function asUrl(v: any): string | null {
+      if (!v) return null;
+      if (typeof v === 'string') return v;
+      if (typeof v.href === 'string') return v.href;
+      if (typeof v.default === 'string') return v.default;
+      return null;
+    }
+    const iconGroup = capabilityNodes.append('g').attr('class', 'capability-icon');
+    iconGroup.each(function(d){
+      const g = d3.select(this);
+      const cap = d.data as Capability;
+      // Debug: inspect tool resolution for icon rendering
+      try {
+        // eslint-disable-next-line no-console
+        console.debug('[Capability Icon]', cap.title, { toolId: (cap as any).toolId, tool: cap.tool?.id, logo: (cap.tool as any)?.logo });
+        if (cap.id === 'aaimloro-md-tr') {
+          // eslint-disable-next-line no-console
+          console.debug('[Capability Full JSON] aaimloro-md-tr', JSON.stringify(cap, null, 2));
+        }
+      } catch {}
+      const x = barWidth + 6;
+      const y = 26;
+      const size = 24;
+      if (cap.tool && cap.tool.logo) {
+        const url = asUrl((cap.tool as any).logo);
+        if (url) {
+          g.append('image')
+            .attr('x', x)
+            .attr('y', y)
+            .attr('width', size)
+            .attr('height', size)
+            .attr('preserveAspectRatio', 'xMidYMid meet')
+            .attr('href', url)
+            .attr('xlink:href', url);
+        } else {
+          // Fallback to type icon if we couldn't get a string URL
+          g.append('foreignObject')
+            .attr('x', x)
+            .attr('y', y)
+            .attr('width', size)
+            .attr('height', size)
+            .html(() => {
+              const type = cap.type;
+              if (type === 'technology') return ICON_TECHNOLOGY;
+              if (type === 'pattern') return ICON_PATTERN;
+              if (type === 'policy') return ICON_POLICY;
+              return '';
+            });
+        }
+      } else {
+        g.append('foreignObject')
+          .attr('x', x)
+          .attr('y', y)
+          .attr('width', size)
+          .attr('height', size)
+          .html(() => {
+            const type = cap.type;
+            if (type === 'technology') return ICON_TECHNOLOGY;
+            if (type === 'pattern') return ICON_PATTERN;
+            if (type === 'policy') return ICON_POLICY;
+            return '';
+          });
+      }
+    });
+
+    // Title on first row (top)
     capabilityNodes.append('foreignObject')
-      .attr('x', 40)
-      .attr('y', 0)
-      .attr('width', capabilityWidth - 45)
-      .attr('height', capabilityHeight)
+      .attr('x', barWidth + 36)
+      .attr('y', 2)
+      .attr('width', capabilityWidth - (barWidth + 36) - 8)
+      .attr('height', 22)
       .append('xhtml:div')
       .attr('class', 'treemap-capability-title-wrapper')
       .html(d => `<div class="treemap-capability-title">${d.data.title || ''}</div>`);
+
+    // HVIA compound counter (X / Y), aligned to the right within the capability tile
+    // Y = number of requested HVIA refs (maturity > 0)
+    // X = number of active HVIA refs (maturity > 1)
+    const counterGroup = capabilityNodes.append('g')
+      .attr('class', 'hvia-counter')
+      // position on the second row, right-aligned inside the tile
+      .attr('transform', `translate(${capabilityWidth - 6}, 26)`);
+
+    counterGroup.each(function(d){
+      const g = d3.select(this);
+      const cap = d.data as Capability;
+      const useCases = cap.useCases ?? [];
+      const yTotal = useCases.filter(uc => (uc as any).maturity > 0).length;
+      const xActive = useCases.filter(uc => (uc as any).maturity > 1).length;
+      const isZero = yTotal === 0;
+
+      g.append('text')
+        .attr('x', 0) // anchor point at the right edge of the tile
+        .attr('y', 14)
+        .attr('text-anchor', 'end')
+        .attr('class', isZero ? 'counter-text zero' : 'counter-text')
+        .text(`${xActive} / ${yTotal}`);
+    });
 
     capabilityNodes.on('mouseover', (event, d) => {
         if (self.hideTooltipTimeout) {

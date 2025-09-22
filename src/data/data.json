@@ -16,7 +16,7 @@
     "imports": [
       "./capabilities/analytical-ai.json",
       "./capabilities/governance-observability.json",
-      "./capabilities/generative-ai-legacy.json",
+      "./capabilities/generative-ai.json",
       "./capabilities/foundation-services.json"
     ],
     "children": []

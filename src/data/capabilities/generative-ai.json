@@ -1,0 +1,246 @@
+{
+  "id": "gai",
+  "title": "Generative AI incl. Agentic AI",
+  "children": [
+    {
+      "id": "gai-aa",
+      "title": "Agentic AI",
+      "children": [
+        {
+          "id": "gai-aa-ard",
+          "title": "Agent Registry & Discovery",
+          "status": 0,
+          "type": "technology",
+          "description": "A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
+          "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
+        },
+        {
+          "id": "gai-aa-ao",
+          "title": "Agent Orchestration",
+          "status": 0,
+          "type": "technology",
+          "description": "Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
+          "link": "https://langchain-ai.github.io/langgraph/"
+        },
+        {
+          "id": "gai-aa-ast",
+          "title": "Agent SDK + templates",
+          "status": 1,
+          "type": "technology",
+          "description": "Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
+          "link": "https://ai-sdk.dev/docs/introduction"
+        },
+        {
+          "id": "gai-aa-mrd",
+          "title": "MCP Registry & Discovery",
+          "status": 0,
+          "type": "technology",
+          "description": "Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
+          "link": "https://modelcontextprotocol.org/"
+        },
+        {
+          "id": "gai-aa-mm",
+          "title": "Memory Management",
+          "status": 1,
+          "type": "technology",
+          "description": "Short- and long‑term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
+          "link": "https://www.ibm.com/think/topics/ai-agent-memory"
+        },
+        {
+          "id": "gai-aa-arag",
+          "title": "Agentic RAG",
+          "status": 0,
+          "type": "pattern",
+          "description": "Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
+          "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/"
+        }
+      ]
+    },
+    {
+      "id": "gai-muf",
+      "title": "Model Use & Finetuning",
+      "children": [
+        {
+          "id": "gai-muf-mc",
+          "title": "Model Catalog",
+          "status": 3,
+          "type": "technology",
+          "description": "An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
+          "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog",
+          "useCaseRefs": [
+            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
+            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
+            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
+            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
+            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+          ]
+        },
+        {
+          "id": "gai-muf-fm",
+          "title": "Foundation Models",
+          "status": 1,
+          "type": "technology",
+          "description": "Large pre-trained models adaptable to many downstream tasks via prompting or fine‑tuning. Provide strong baselines for generative use cases.",
+          "link": "https://research.ibm.com/blog/what-are-foundation-models"
+        },
+        {
+          "id": "gai-muf-mg",
+          "title": "Model Gateway",
+          "status": 1,
+          "type": "technology",
+          "description": "Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
+          "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway"
+        },
+        {
+          "id": "gai-muf-dmr",
+          "title": "Dynamic model routing",
+          "status": 1,
+          "type": "pattern",
+          "description": "Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
+          "link": "https://e2eml.school/blog/model_routing/"
+        },
+        {
+          "id": "gai-muf-sc",
+          "title": "Semantic Cache",
+          "status": 0,
+          "type": "technology",
+          "description": "Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
+          "link": "https://redis.io/blog/what-is-semantic-caching/"
+        }
+      ]
+    },
+    {
+      "id": "gai-de",
+      "title": "Data & Embeddings",
+      "children": [
+        {
+          "id": "gai-de-dp",
+          "title": "Document Parsing",
+          "status": 3,
+          "type": "technology",
+          "description": "Extraction of structure and text from PDFs, Office docs, HTML, and images for downstream processing. Handles tables, figures, and layout.",
+          "link": "https://github.com/unstructured-io/unstructured",
+          "useCaseRefs": [
+            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
+            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
+            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
+            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
+            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+          ]
+        },
+        {
+          "id": "gai-de-ocr",
+          "title": "Document Analysis & OCR",
+          "status": 3,
+          "type": "technology",
+          "description": "Optical character recognition and document understanding to convert scans into machine‑readable text and entities. Critical for enterprise content.",
+          "link": "https://aws.amazon.com/textract/",
+          "useCaseRefs": [
+            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
+            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
+            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
+            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
+            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+          ]
+        },
+        {
+          "id": "gai-de-c",
+          "title": "Chunking",
+          "status": 3,
+          "type": "pattern",
+          "description": "Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
+          "link": "https://www.pinecone.io/learn/chunking-strategies/",
+          "useCaseRefs": [
+            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
+            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
+            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
+            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
+            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+          ]
+        },
+        {
+          "id": "gai-de-vs",
+          "title": "Vector Storage",
+          "status": 3,
+          "type": "technology",
+          "description": "Databases for high‑dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
+          "link": "https://www.pinecone.io/learn/vector-database/",
+          "useCaseRefs": [
+            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
+            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
+            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
+            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
+            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+          ]
+        },
+        {
+          "id": "gai-de-are",
+          "title": "Advanced RAG: reranking, hybrid",
+          "status": 1,
+          "type": "pattern",
+          "description": "Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
+          "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/"
+        },
+        {
+          "id": "gai-de-t2sql",
+          "title": "Text 2 SQL",
+          "status": 0,
+          "type": "technology",
+          "description": "Natural‑language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
+          "link": "https://arxiv.org/abs/2204.00498"
+        }
+      ]
+    },
+    {
+      "id": "gai-llmops",
+      "title": "LLMOps",
+      "children": [
+        {
+          "id": "gai-l-ot",
+          "title": "Observability & Tracing",
+          "status": 1,
+          "type": "policy",
+          "description": "Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
+          "link": "https://docs.langfuse.com/"
+        },
+        {
+          "id": "gai-l-por",
+          "title": "Prompt Ops & Repository",
+          "status": 1,
+          "type": "technology",
+          "description": "Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
+          "link": "https://prompttools.readthedocs.io/"
+        },
+        {
+          "id": "gai-l-eidc",
+          "title": "Evaluations incl. dataset creation",
+          "status": 3,
+          "type": "pattern",
+          "description": "Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
+          "link": "https://arize.com/blog/llm-evaluation-guide/",
+          "useCaseRefs": [
+            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
+            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
+            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
+            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
+            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+          ]
+        },
+        {
+          "id": "gai-l-po",
+          "title": "Prompt Optimization",
+          "status": 0,
+          "type": "pattern",
+          "description": "Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self‑reflection and rewriting. Can be manual or programmatic.",
+          "link": "https://www.promptingguide.ai/guides/optimizing-prompts"
+        }
+      ]
+    }
+  ]
+}

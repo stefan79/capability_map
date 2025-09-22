@@ -1,7 +1,7 @@
 // Statically import known capability JSONs so Parcel bundles them
 import analyticalAi from '../capabilities/analytical-ai.json';
 import foundationServices from '../capabilities/foundation-services.json';
-import generativeAi from '../capabilities/generative-ai-legacy.json';
+import generativeAi from '../capabilities/generative-ai.json';
 import governanceObservability from '../capabilities/governance-observability.json';
 import type { Capability, Cluster, ResolvedUseCaseRef } from '../capabilities-model';
 import type { HVIA } from '../hvias-model';
@@ -10,7 +10,7 @@ import type { Tool } from '../tools-model';
 const capabilityMap: Record<string, Cluster> = {
   './capabilities/analytical-ai.json': analyticalAi as Cluster,
   './capabilities/governance-observability.json': governanceObservability as Cluster,
-  './capabilities/generative-ai-legacy.json': generativeAi as Cluster,
+  './capabilities/generative-ai.json': generativeAi as Cluster,
   './capabilities/foundation-services.json': foundationServices as Cluster,
 };
 

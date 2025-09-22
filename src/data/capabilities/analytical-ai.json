@@ -9,7 +9,7 @@
         {
           "id": "aaimloro-dafe-dla",
           "title": "Data Labelling / Annotation",
-          "status": 2,
+          "status": 3,
           "type": "pattern",
           "toolId": "microsoft-azure-ml",
           "description": "Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
@@ -59,7 +59,7 @@
         {
           "id": "aaimloro-dafe-fs",
           "title": "Feature Store",
-          "status": 2,
+          "status": 3,
           "type": "technology",
           "toolId": "databricks-unity-catalog",
           "description": "Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.",
@@ -82,7 +82,7 @@
         {
           "id": "aaimloro-md-tr",
           "title": "Training Runtime",
-          "status": 2,
+          "status": 3,
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Compute environments and schedulers for distributed training jobs. Supports GPUs/accelerators, checkpoints, and scaling.",
@@ -132,7 +132,7 @@
         {
           "id": "aaimloro-md-fi",
           "title": "Feature Importance",
-          "status": 0,
+          "status": 3,
           "type": "pattern",
           "description": "Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
           "link": "https://christophm.github.io/interpretable-ml-book/feature-importance.html",
@@ -170,7 +170,7 @@
         {
           "id": "aaimloro-deploy-batch",
           "title": "Batch Inference",
-          "status": 2,
+          "status": 3,
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Scheduled scoring of large datasets for offline use cases. Integrates with data lake workflows and orchestration.",
@@ -242,7 +242,7 @@
         {
           "id": "aaimloro-mlops-dd",
           "title": "Data Drift Detection",
-          "status": 2,
+          "status": 3,
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Monitoring to detect shifts in input data distributions over time. Triggers retraining or investigation when thresholds are breached.",
@@ -259,7 +259,7 @@
         {
           "id": "aaimloro-mlops-ms",
           "title": "Model Store",
-          "status": 2,
+          "status": 3,
           "type": "technology",
           "toolId": "databricks-unity-catalog",
           "description": "Registry for model versions, artifacts, and lineage. Enables promotion across environments with governance.",
@@ -276,7 +276,7 @@
         {
           "id": "aaimloro-mlops-mcdd",
           "title": "Model/Concept Drift Detection",
-          "status": 2,
+          "status": 3,
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Techniques to detect performance degradation due to changing relationships in data. Supports alerts and retraining workflows.",

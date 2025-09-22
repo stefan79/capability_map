@@ -57,7 +57,7 @@
         {
           "id": "go-agg-cm",
           "title": "Content Moderation",
-          "status": 1,
+          "status": 3,
           "type": "policy",
           "description": "Policies and automated checks to detect abuse, toxicity, and policy violations in AI inputs and outputs. Protects users and brand safety.",
           "link": "https://platform.openai.com/docs/guides/safety-best-practices",
@@ -73,7 +73,7 @@
         {
           "id": "go-agg-gr",
           "title": "Guardrails (toxic, hallucinations…)",
-          "status": 0,
+          "status": 3,
           "type": "policy",
           "description": "Safety controls such as validation, filters, and constrained generation to prevent harmful or fabricated outputs. Enforces organizational and legal standards.",
           "link": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-are-ai-guardrails",
@@ -111,7 +111,7 @@
         {
           "id": "go-co-feedback",
           "title": "Collect Feedback",
-          "status": 1,
+          "status": 3,
           "type": "pattern",
           "description": "Mechanisms to capture user and annotator feedback on model outputs for continuous improvement. Feeds evaluation and retraining loops.",
           "link": "https://evidentlyai.com/blog/ai-feedback-loops",
@@ -127,7 +127,7 @@
         {
           "id": "go-co-sdg",
           "title": "Synthetic Data Generation",
-          "status": 1,
+          "status": 3,
           "type": "technology",
           "description": "Tools and processes to generate privacy‑preserving synthetic datasets for development and testing. Helps overcome data scarcity and privacy limits.",
           "link": "https://www.nist.gov/itl/ai-risk-management-framework/synthetic-data", 

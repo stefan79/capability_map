@@ -217,6 +217,13 @@ rect.treemap-cluster {
   color: var(--dark-gray);
 }
 
+/* New: pure-SVG title text used for export compatibility */
+.capability-title-text {
+  fill: var(--dark-gray);
+  font-size: 12px; /* approximates 0.9em at 12px base */
+  font-weight: 500;
+}
+
 .treemap-capability-icon {
   font-size: 1.5em;
 }

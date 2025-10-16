@@ -327,45 +327,110 @@ export class CapabilityView implements View {
             .attr('href', url)
             .attr('xlink:href', url);
         } else {
-          // Fallback to type icon if we couldn't get a string URL
-          g.append('foreignObject')
-            .attr('x', x)
-            .attr('y', y)
-            .attr('width', size)
-            .attr('height', size)
-            .html(() => {
-              const type = cap.type;
-              if (type === 'technology') return ICON_TECHNOLOGY;
-              if (type === 'pattern') return ICON_PATTERN;
-              if (type === 'policy') return ICON_POLICY;
-              return '';
-            });
-        }
-      } else {
-        g.append('foreignObject')
-          .attr('x', x)
-          .attr('y', y)
-          .attr('width', size)
-          .attr('height', size)
-          .html(() => {
+          // Fallback: inject pure-SVG icon markup inside a translated group
+          const icon = (() => {
             const type = cap.type;
             if (type === 'technology') return ICON_TECHNOLOGY;
             if (type === 'pattern') return ICON_PATTERN;
             if (type === 'policy') return ICON_POLICY;
             return '';
-          });
+          })();
+          const container = g.append('g')
+            .attr('transform', `translate(${x},${y})`);
+          // insert raw SVG markup
+          (container.node() as SVGGElement).innerHTML = icon;
+          // Constrain inserted SVG to the desired icon size
+          const inner = container.select('svg');
+          if (!inner.empty()) {
+            inner
+              .attr('x', 0)
+              .attr('y', 0)
+              .attr('width', size)
+              .attr('height', size)
+              .attr('preserveAspectRatio', 'xMidYMid meet');
+          }
+        }
+      } else {
+        const icon = (() => {
+          const type = cap.type;
+          if (type === 'technology') return ICON_TECHNOLOGY;
+          if (type === 'pattern') return ICON_PATTERN;
+          if (type === 'policy') return ICON_POLICY;
+          return '';
+        })();
+        const container = g.append('g')
+          .attr('transform', `translate(${x},${y})`);
+        (container.node() as SVGGElement).innerHTML = icon;
+        const inner = container.select('svg');
+        if (!inner.empty()) {
+          inner
+            .attr('x', 0)
+            .attr('y', 0)
+            .attr('width', size)
+            .attr('height', size)
+            .attr('preserveAspectRatio', 'xMidYMid meet');
+        }
       }
     });
 
-    // Title on first row (top)
-    capabilityNodes.append('foreignObject')
+    // Helper: wrap SVG text into tspans (maxLines=2) within a given width
+    function wrapSvgText(selection: d3.Selection<SVGTextElement, any, any, any>, width: number, maxLines = 2) {
+      selection.each(function(d) {
+        const textSel = d3.select<SVGTextElement, any>(this);
+        const full = ((d.data as Capability).title || '').trim();
+        textSel.text(null);
+        if (!full) return;
+
+        const words = full.split(/\s+/).filter(Boolean);
+        let line: string[] = [];
+        let lineNumber = 0;
+        const x = +textSel.attr('x');
+        const y = +textSel.attr('y');
+        const lineHeight = 13; // px
+        let tspan = textSel.append('tspan').attr('x', x).attr('y', y).attr('dy', '0');
+
+        for (let i = 0; i < words.length; i++) {
+          line.push(words[i]);
+          tspan.text(line.join(' '));
+          if ((tspan.node()?.getComputedTextLength() || 0) > width) {
+            // overflow, move last word to next line
+            line.pop();
+            tspan.text(line.join(' '));
+            line = [words[i]];
+            lineNumber++;
+            if (lineNumber >= maxLines) {
+              // Need to ellipsize previous line
+              // Back up to previous tspan and append ellipsis within width
+              const ts = textSel.selectAll('tspan').nodes().pop() as SVGTSpanElement;
+              if (ts) {
+                let txt = ts.textContent || '';
+                txt = txt.replace(/\s+$/, '');
+                // append ellipsis by trimming characters
+                ts.textContent = txt + '…';
+                while ((ts.getComputedTextLength() || 0) > width && ts.textContent && ts.textContent.length > 1) {
+                  ts.textContent = ts.textContent.slice(0, -2) + '…';
+                }
+              }
+              return; // stop processing words
+            }
+            tspan = textSel.append('tspan')
+              .attr('x', x)
+              .attr('y', y)
+              .attr('dy', `${lineNumber * lineHeight}px`)
+              .text(line.join(' '));
+          }
+        }
+      });
+    }
+
+    // Title on first row (top) using pure SVG text (avoid foreignObject for export compatibility)
+    const titleWidth = capabilityWidth - (barWidth + 36) - 8;
+    const titleText = capabilityNodes.append('text')
+      .attr('class', 'capability-title-text')
       .attr('x', barWidth + 36)
-      .attr('y', 2)
-      .attr('width', capabilityWidth - (barWidth + 36) - 8)
-      .attr('height', 22)
-      .append('xhtml:div')
-      .attr('class', 'treemap-capability-title-wrapper')
-      .html(d => `<div class="treemap-capability-title">${d.data.title || ''}</div>`);
+      .attr('y', 16)
+      .attr('text-anchor', 'start');
+    wrapSvgText(titleText as any, titleWidth, 2);
 
     // HVIA compound counter (X / Y), aligned to the right within the capability tile
     // Y = number of requested HVIA refs (maturity > 0)

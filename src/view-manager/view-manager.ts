@@ -23,7 +23,10 @@ export class ViewManager {
       } else if (name === 'view2') {
         viewData = data.view2Data;
       } else if (name === 'capability-view') {
-        viewData = data.capabilitiesData;
+        viewData = {
+          root: data.capabilitiesData,
+          hvias: data.hviasData?.children ?? [],
+        };
       }
 
       newView.render(viewData);

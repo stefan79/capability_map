@@ -48,6 +48,38 @@ nav button:hover {
   color: var(--volvo-white);
 }
 
+.capability-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.capability-controls-label {
+  font-weight: 600;
+  color: var(--volvo-blue);
+}
+
+.capability-controls-select {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--volvo-silver);
+  border-radius: 4px;
+  font-size: 0.95rem;
+  background: var(--volvo-white);
+  color: var(--dark-gray);
+}
+
+.capability-controls-select:focus {
+  outline: 2px solid var(--supportive-light-blue);
+  outline-offset: 2px;
+}
+
+.capability-controls-active {
+  margin-left: auto;
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+}
+
 main {
   background: var(--volvo-white);
   border: 1px solid var(--volvo-silver);
@@ -198,6 +230,10 @@ rect.treemap-cluster {
   stroke-width: 1px;
 }
 
+.treemap-capability.hvia-unlinked .capability-title-text {
+  fill: #A0ABB8;
+}
+
 .treemap-cluster > text {
   font-size: 1em;
   font-weight: bold;
@@ -242,6 +278,24 @@ rect.treemap-cluster {
 }
 .hvia-badge .badge-text.zero {
   fill: #9E9E9E; /* ghosted text for zero */
+}
+
+.hvia-group.selected .hvia-group-title {
+  color: var(--volvo-blue);
+}
+
+.hvia-uc.selected {
+  font-weight: 600;
+  color: var(--volvo-blue);
+}
+
+.tooltip-empty {
+  color: #7A7A7A;
+  font-style: italic;
+}
+
+.hvia-selected-empty .tooltip-section-title {
+  color: var(--volvo-blue);
 }
 
 /* HVIA compound counter (X / Y) */

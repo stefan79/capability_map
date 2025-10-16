@@ -159,10 +159,15 @@ async function main(): Promise<void> {
       });
       // Capability tiles should be light gray fill with silver stroke
       clone.querySelectorAll('rect.main-rect').forEach((r) => {
-        (r as SVGRectElement).setAttribute('fill', '#F9F9F9');
-        (r as SVGRectElement).setAttribute('stroke', '#C8C9C7');
-        (r as SVGRectElement).setAttribute('stroke-width', '1');
-        (r as SVGRectElement).setAttribute('shape-rendering', 'crispEdges');
+        const rect = r as SVGRectElement;
+        if (!rect.getAttribute('fill')) {
+          rect.setAttribute('fill', '#F9F9F9');
+        }
+        if (!rect.getAttribute('stroke')) {
+          rect.setAttribute('stroke', '#C8C9C7');
+        }
+        rect.setAttribute('stroke-width', rect.getAttribute('stroke-width') || '1');
+        rect.setAttribute('shape-rendering', 'crispEdges');
       });
       // Ensure cluster titles keep their intended style (blue, bold)
       clone.querySelectorAll('.treemap-cluster-group > text').forEach((t) => {
@@ -252,5 +257,4 @@ document.addEventListener('DOMContentLoaded', (): void => {
     console.error('Failed to initialize application:', err);
   });
 });
-
 

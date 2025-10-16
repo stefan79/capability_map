@@ -36,7 +36,8 @@
       "./hvias/ai-enabled-sales-acceleration.json",
       "./hvias/building-new-ai-enabled-services.json",
       "./hvias/software-developer-productivity.json",
-      "./hvias/white-collar-productivity.json"
+      "./hvias/white-collar-productivity.json",
+      "./hvias/mack.json"
     ],
     "children": []
   }

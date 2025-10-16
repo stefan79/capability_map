@@ -82,7 +82,10 @@
           "status": 1,
           "type": "technology",
           "description": "Large pre-trained models adaptable to many downstream tasks via prompting or fine‑tuning. Provide strong baselines for generative use cases.",
-          "link": "https://research.ibm.com/blog/what-are-foundation-models"
+          "link": "https://research.ibm.com/blog/what-are-foundation-models",
+          "useCaseRefs": [
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+          ]
         },
         {
           "id": "gai-muf-mg",
@@ -90,7 +93,10 @@
           "status": 1,
           "type": "technology",
           "description": "Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
-          "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway"
+          "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway",
+          "useCaseRefs": [
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+          ]
         },
         {
           "id": "gai-muf-dmr",
@@ -127,7 +133,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
           ]
         },
         {
@@ -159,7 +166,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
           ]
         },
         {
@@ -175,7 +183,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
           ]
         },
         {
@@ -184,7 +193,9 @@
           "status": 1,
           "type": "pattern",
           "description": "Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
-          "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/"
+          "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/",
+          "useCaseRefs": [
+          ]
         },
         {
           "id": "gai-de-t2sql",
@@ -206,7 +217,10 @@
           "status": 1,
           "type": "policy",
           "description": "Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
-          "link": "https://docs.langfuse.com/"
+          "link": "https://docs.langfuse.com/",
+          "useCaseRefs": [
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+          ]
         },
         {
           "id": "gai-l-por",
@@ -214,7 +228,10 @@
           "status": 1,
           "type": "technology",
           "description": "Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
-          "link": "https://prompttools.readthedocs.io/"
+          "link": "https://prompttools.readthedocs.io/",
+          "useCaseRefs": [
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+          ]
         },
         {
           "id": "gai-l-eidc",
@@ -229,7 +246,9 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+
           ]
         },
         {

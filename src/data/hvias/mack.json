@@ -1,0 +1,8 @@
+{
+  "id": "mack",
+  "name": "Support for MACK",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "mack-mavis", "name": "MAVIS Sales Support", "url": "https://www.volvotrucks.com/" }
+  ]
+}

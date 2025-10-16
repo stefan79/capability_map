@@ -53,7 +53,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
           ]
         },
         {
@@ -181,7 +182,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 2 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
           ]
         },
         {
@@ -198,7 +200,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
           ]
         },
         {
@@ -270,7 +273,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
           ]
         },
         {
@@ -304,7 +308,8 @@
             { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
             { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
             { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
+            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
           ]
         },
         {

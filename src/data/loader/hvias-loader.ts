@@ -1,8 +1,9 @@
+// Statically import HVIA JSONs so Parcel bundles them
 import salesAcceleration from '../hvias/ai-enabled-sales-acceleration.json';
 import warrantyCost from '../hvias/ai-enabled-warranty-cost-reduction.json';
 import newServices from '../hvias/building-new-ai-enabled-services.json';
-// Statically import HVIA JSONs so Parcel bundles them
 import e2eSop from '../hvias/e2e-sop-optimization-automation.json';
+import mack from '../hvias/mack.json';
 import devProductivity from '../hvias/software-developer-productivity.json';
 import whiteCollar from '../hvias/white-collar-productivity.json';
 import type { HVIA } from '../hvias-model';
@@ -14,6 +15,7 @@ const hviaMap: Record<string, HVIA> = {
   './hvias/building-new-ai-enabled-services.json': newServices as HVIA,
   './hvias/software-developer-productivity.json': devProductivity as HVIA,
   './hvias/white-collar-productivity.json': whiteCollar as HVIA,
+  './hvias/mack.json': mack as HVIA,
 };
 
 export function loadHVIAs(imports: string[]): HVIA[] {

@@ -1,0 +1,26 @@
+modules:
+  macro:
+    - key: volvo-map-macro
+      resource: map-static-ui
+      resolver:
+        function: map-macro-resolver
+      layout: block
+      title: Volvo Map Macro
+      description: Renders the Parcel-generated Volvo map as a Confluence macro.
+      dimensions:
+        width: 100%
+        height: 800px
+  function:
+    - key: map-macro-resolver
+      handler: resolver.handler
+resources:
+  - key: map-static-ui
+    path: static
+app:
+  runtime:
+    name: nodejs20.x
+    #TODO Replace this with a dynamic value
+  id: ari:cloud:ecosystem::app/194e173a-689b-4012-907b-ad6241f58ec4
+permissions:
+  scopes:
+    - read:confluence-content.summary

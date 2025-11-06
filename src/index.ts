@@ -1,10 +1,74 @@
-import {loadAllData } from './data/loader/data-loader';
+import { view } from '@forge/bridge';
+
+import { loadAllData } from './data/loader/data-loader';
 import { ViewManager } from './view-manager/view-manager';
 import { CapabilityView } from './views/capability-view/capability-view';
 import { View1 } from './views/view1/view1';
 import { View2 } from './views/view2/view2';
 
 // Data loading is centralized in data/loader/data-loader.ts
+
+const MACRO_HEIGHT_PADDING = 48;
+let resizeFrameId: number | undefined;
+let forgeResizeDisabled = false;
+let contentResizeObserver: ResizeObserver | undefined;
+
+const isRunningInIframe = (): boolean => {
+  if (typeof window === 'undefined') return false;
+  try {
+    return window.self !== window.top;
+  } catch {
+    return true;
+  }
+};
+
+const scheduleForgeResize = (): void => {
+  if (forgeResizeDisabled || !isRunningInIframe()) return;
+  if (typeof document === 'undefined') return;
+
+  if (resizeFrameId !== undefined) {
+    cancelAnimationFrame(resizeFrameId);
+  }
+
+  resizeFrameId = window.requestAnimationFrame(async () => {
+    resizeFrameId = undefined;
+    const doc = document.documentElement;
+    const body = document.body;
+    const contentHeight =
+      Math.max(
+        doc?.scrollHeight ?? 0,
+        doc?.offsetHeight ?? 0,
+        body?.scrollHeight ?? 0,
+        body?.offsetHeight ?? 0
+      ) + MACRO_HEIGHT_PADDING;
+
+    if (contentHeight <= 0) return;
+
+    try {
+      await view.resize(contentHeight);
+    } catch (error) {
+      forgeResizeDisabled = true;
+      console.warn('Forge auto-resize unavailable; skipping further resize attempts.', error);
+    }
+  });
+};
+
+const initializeForgeResize = (): void => {
+  if (!isRunningInIframe()) return;
+
+  window.addEventListener('resize', scheduleForgeResize);
+
+  if (typeof ResizeObserver !== 'undefined') {
+    const content = document.getElementById('content');
+    if (content) {
+      contentResizeObserver?.disconnect();
+      contentResizeObserver = new ResizeObserver(() => scheduleForgeResize());
+      contentResizeObserver.observe(content);
+    }
+  }
+
+  scheduleForgeResize();
+};
 
 /**
  * Initializes the application after all data has been loaded.
@@ -21,14 +85,17 @@ async function main(): Promise<void> {
   // Set up navigation
   document.getElementById('view1-btn')?.addEventListener('click', (): void => {
     viewManager.switchView('view1', globalData);
+    scheduleForgeResize();
   });
 
   document.getElementById('view2-btn')?.addEventListener('click', (): void => {
     viewManager.switchView('view2', globalData);
+    scheduleForgeResize();
   });
 
   document.getElementById('capability-view-btn')?.addEventListener('click', (): void => {
     viewManager.switchView('capability-view', globalData);
+    scheduleForgeResize();
   });
 
   // Download current SVG
@@ -247,14 +314,15 @@ async function main(): Promise<void> {
 
   // Set initial view
   viewManager.switchView('capability-view', globalData);
+  scheduleForgeResize();
 }
 
 // Start the application once the DOM is fully loaded.
 document.addEventListener('DOMContentLoaded', (): void => {
+  initializeForgeResize();
   main().catch((err) => {
     // Ensure unhandled rejections in the async init do not get swallowed
     // and keep the event listener return type as void.
     console.error('Failed to initialize application:', err);
   });
 });
-

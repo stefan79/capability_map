@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import { view } from '@forge/bridge';
 
+=======
+>>>>>>> 919aaca152c4bf82a87b30128a1426b551750e00
 import { loadAllData } from './data/loader/data-loader';
 import { ViewManager } from './view-manager/view-manager';
 import { CapabilityView } from './views/capability-view/capability-view';
@@ -12,6 +15,12 @@ const MACRO_HEIGHT_PADDING = 48;
 let resizeFrameId: number | undefined;
 let forgeResizeDisabled = false;
 let contentResizeObserver: ResizeObserver | undefined;
+<<<<<<< HEAD
+=======
+let forgeViewPromise: Promise<ForgeViewApi | null> | null = null;
+
+type ForgeViewApi = typeof import('@forge/bridge')['view'];
+>>>>>>> 919aaca152c4bf82a87b30128a1426b551750e00
 
 const isRunningInIframe = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -45,7 +54,9 @@ const scheduleForgeResize = (): void => {
     if (contentHeight <= 0) return;
 
     try {
-      await view.resize(contentHeight);
+      const forgeView = await loadForgeView();
+      if (!forgeView) return;
+      await forgeView.resize(contentHeight);
     } catch (error) {
       forgeResizeDisabled = true;
       console.warn('Forge auto-resize unavailable; skipping further resize attempts.', error);
@@ -56,6 +67,7 @@ const scheduleForgeResize = (): void => {
 const initializeForgeResize = (): void => {
   if (!isRunningInIframe()) return;
 
+  void loadForgeView();
   window.addEventListener('resize', scheduleForgeResize);
 
   if (typeof ResizeObserver !== 'undefined') {
@@ -68,6 +80,22 @@ const initializeForgeResize = (): void => {
   }
 
   scheduleForgeResize();
+};
+
+const loadForgeView = async (): Promise<ForgeViewApi | null> => {
+  if (forgeResizeDisabled || !isRunningInIframe()) return null;
+
+  if (!forgeViewPromise) {
+    forgeViewPromise = import('@forge/bridge')
+      .then((mod) => mod.view)
+      .catch((error) => {
+        forgeResizeDisabled = true;
+        console.warn('Forge bridge is unavailable; falling back to fixed macro height.', error);
+        return null;
+      });
+  }
+
+  return forgeViewPromise;
 };
 
 /**

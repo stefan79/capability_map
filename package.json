@@ -4,10 +4,11 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel src/index.html --dist-dir dist --no-cache",
-    "build": "parcel build ./ && mkdir -p dist && ([ -d public ] && cp -R public/* dist/ || true) && ([ -d assets ] && cp -R assets dist/ || true) && ([ -d src/assets ] && cp -R src/assets dist/ || true)",
+    "build": "parcel build ./ --public-url ./ && mkdir -p dist && ([ -d public ] && cp -R public/* dist/ || true) && ([ -d assets ] && cp -R assets dist/ || true) && ([ -d src/assets ] && cp -R src/assets dist/ || true)",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix"
+    "lint:fix": "eslint \"src/**/*.{ts,tsx}\" --fix",
+    "deploy:forge": "node scripts/deploy-forge.js"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +26,9 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "@forge/bridge": "^5.7.0",
+    "@forge/cli": "^12.7.1",
+    "@forge/resolver": "^1.7.1",
     "d3": "^7.9.0"
   }
 }

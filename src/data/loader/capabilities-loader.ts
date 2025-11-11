@@ -4,7 +4,11 @@ import foundationServices from '../capabilities/foundation-services.json';
 import generativeAi from '../capabilities/generative-ai.json';
 import governanceObservability from '../capabilities/governance-observability.json';
 import type { Capability, Cluster, ResolvedUseCaseRef } from '../capabilities-model';
+import { getStatusMaturity } from '../capability-helpers';
 import type { HVIA } from '../hvias-model';
+import { MATURITY_DIMENSIONS, type MaturitySource } from '../maturity-config';
+import type { CapabilityMaturitySummary, RawMaturityMap } from '../maturity-types';
+import { createZeroMaturitySummary, mergeMaturityMaps, sanitizeMaturityEntries } from '../maturity-utils';
 import type { Tool } from '../tools-model';
 
 const capabilityMap: Record<string, Cluster> = {
@@ -15,6 +19,161 @@ const capabilityMap: Record<string, Cluster> = {
 };
 
 // Helper: deep traverse cluster and resolve capability links
+const defaultReasonBySource: Record<MaturitySource, string> = {
+  capability: 'Baseline capability signal not provided.',
+  implementation: 'Implementation does not expose this maturity data.',
+  hvia: 'No HVIA usage recorded yet.',
+};
+
+const countActiveUseCases = (capability: Capability): { active: number; requested: number } => {
+  const useCases = capability.useCases ?? [];
+  let active = 0;
+  let requested = 0;
+  for (const uc of useCases) {
+    if ((uc as ResolvedUseCaseRef).maturity >= 1) {
+      requested += 1;
+    }
+    if ((uc as ResolvedUseCaseRef).maturity >= 2) {
+      active += 1;
+    }
+  }
+  return { active, requested };
+};
+
+const deriveCapabilityDefaults = (capability: Capability): RawMaturityMap => {
+  const statusScore = Math.max(1, getStatusMaturity(capability) || 1);
+  const { active } = countActiveUseCases(capability);
+  const documentationLength = (capability.description ?? '').length;
+  let documentationValue = 1;
+  if (documentationLength > 400) documentationValue = 4;
+  else if (documentationLength > 250) documentationValue = 3;
+  else if (documentationLength > 120) documentationValue = 2;
+  if (capability.link) documentationValue = Math.min(4, documentationValue + 1);
+
+  const devBoost = active >= 5 ? 1 : active >= 2 ? 0.5 : 0;
+  const developmentValue = Math.min(4, statusScore + devBoost);
+
+  return {
+    'technology.adoption-effort': {
+      value: Math.min(4, statusScore),
+      reason: `Derived from capability status "${capability.status}".`,
+    },
+    'technology.development-activity': {
+      value: developmentValue,
+      reason: active > 0 ? `Active in ${active} HVIA use cases.` : 'No HVIA activity yet.',
+    },
+    'process.documentation': {
+      value: documentationValue,
+      reason: capability.link ? 'Detailed description with external reference.' : 'Limited documentation available.',
+    },
+  };
+};
+
+const deriveHviaDefaults = (capability: Capability): RawMaturityMap => {
+  const { active, requested } = countActiveUseCases(capability);
+  const reason = active > 0
+    ? `Active in ${active} HVIA use case${active === 1 ? '' : 's'}.`
+    : requested > 0
+      ? 'Requested by HVIA teams but not in active use.'
+      : 'No linked HVIA use cases.';
+
+  let value = 1;
+  if (active === 0) value = 1;
+  else if (active <= 2) value = 1;
+  else if (active <= 5) value = 2;
+  else if (active <= 10) value = 3;
+  else value = 4;
+
+  return {
+    'adoption.use-case': {
+      value,
+      reason,
+    },
+  };
+};
+
+const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityMaturitySummary; inputs: RawMaturityMap } => {
+  if (!capability.tool) {
+    return {
+      summary: createZeroMaturitySummary('Capability has no linked implementation.'),
+      inputs: {},
+    };
+  }
+
+  const defaults = deriveCapabilityDefaults(capability);
+  const overrides = sanitizeMaturityEntries(`Capability ${capability.id}`, capability.maturityInputs, ['capability']);
+  const capabilityInputs = mergeMaturityMaps(defaults, overrides);
+  const hviaInputs = deriveHviaDefaults(capability);
+  const implementationInputs = mergeMaturityMaps({}, capability.tool.maturityInputs ?? {});
+
+  const summary: CapabilityMaturitySummary = {
+    total: 0,
+    dimensions: {},
+  };
+
+  let totalWeight = 0;
+  let weightedSum = 0;
+
+  for (const dimension of MATURITY_DIMENSIONS) {
+    const subSnapshots: CapabilityMaturitySummary['dimensions'][string]['subdimensions'] = {};
+    let dimensionWeightSum = 0;
+    let dimensionValueSum = 0;
+
+    for (const subdimension of dimension.subdimensions) {
+      let sourceMap: RawMaturityMap;
+      if (subdimension.source === 'capability') sourceMap = capabilityInputs;
+      else if (subdimension.source === 'implementation') sourceMap = implementationInputs;
+      else sourceMap = hviaInputs;
+
+      const entry = sourceMap[subdimension.id];
+      let value = entry?.value ?? 0;
+      let reason = entry?.reason;
+
+      if (!capability.tool) {
+        value = 0;
+      }
+
+      if (!reason) {
+        if (subdimension.source === 'implementation' && !capability.tool) {
+          reason = 'No implementation linked to this capability.';
+        } else {
+          reason = defaultReasonBySource[subdimension.source];
+        }
+      }
+
+      subSnapshots[subdimension.id] = {
+        id: subdimension.id,
+        name: subdimension.name,
+        weight: subdimension.weight,
+        value,
+        reason,
+      };
+
+      dimensionWeightSum += subdimension.weight;
+      dimensionValueSum += value * subdimension.weight;
+    }
+
+    const dimensionValue = dimensionWeightSum ? dimensionValueSum / dimensionWeightSum : 0;
+    summary.dimensions[dimension.id] = {
+      id: dimension.id,
+      name: dimension.name,
+      color: dimension.color,
+      iconPath: dimension.iconPath,
+      iconViewBox: dimension.iconViewBox,
+      weight: dimension.weight,
+      value: Number(dimensionValue.toFixed(2)),
+      subdimensions: subSnapshots,
+    };
+
+    totalWeight += dimension.weight;
+    weightedSum += dimensionValue * dimension.weight;
+  }
+
+  summary.total = totalWeight ? Number((weightedSum / totalWeight).toFixed(2)) : 0;
+
+  return { summary, inputs: capabilityInputs };
+};
+
 function resolveCluster(
   node: Cluster | Capability,
   toolIndex: Record<string, Tool>,
@@ -23,7 +182,10 @@ function resolveCluster(
   // If it's a capability, resolve its links
   if ((node as Capability).type) {
     const cap = node as Capability;
-    const resolved: Capability = { ...cap };
+    const resolved: Capability = {
+      ...cap,
+      reviewed: cap.reviewed ?? false,
+    };
     if (cap.toolId) {
       resolved.tool = toolIndex[cap.toolId];
     }
@@ -39,6 +201,9 @@ function resolveCluster(
         .filter((v): v is ResolvedUseCaseRef => Boolean(v));
       resolved.useCases = collected;
     }
+    const { summary, inputs } = buildCapabilityMaturity(resolved);
+    resolved.maturityInputs = inputs;
+    resolved.maturity = summary;
     return resolved;
   }
 

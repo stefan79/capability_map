@@ -7,6 +7,7 @@ import mack from '../hvias/mack.json';
 import devProductivity from '../hvias/software-developer-productivity.json';
 import whiteCollar from '../hvias/white-collar-productivity.json';
 import type { HVIA } from '../hvias-model';
+import { sanitizeMaturityEntries } from '../maturity-utils';
 
 const hviaMap: Record<string, HVIA> = {
   './hvias/e2e-sop-optimization-automation.json': e2eSop as HVIA,
@@ -24,6 +25,10 @@ export function loadHVIAs(imports: string[]): HVIA[] {
     if (!mod) {
       throw new Error(`HVIA JSON not bundled: ${p}. Add a static import in hvias-loader.ts`);
     }
-    return mod;
+    return {
+      ...mod,
+      reviewed: mod.reviewed ?? false,
+      maturityInputs: sanitizeMaturityEntries(`HVIA ${mod.id}`, mod.maturityInputs, ['hvia']),
+    };
   });
 }

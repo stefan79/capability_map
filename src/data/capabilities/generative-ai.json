@@ -1,6 +1,7 @@
 {
   "id": "gai",
   "title": "Generative AI incl. Agentic AI",
+  "productId": "volvo-gpt",
   "children": [
     {
       "id": "gai-aa",

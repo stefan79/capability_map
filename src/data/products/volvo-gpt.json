@@ -1,0 +1,15 @@
+{
+  "id": "volvo-gpt",
+  "name": "Volvo GPT Platform",
+  "teamName": "Volvo GPT Core Team",
+  "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
+  "dpo": { "name": "Ingrid Holm", "email": "ingrid.holm@volvo.com" },
+  "sa": { "name": "Martin Ek", "email": "martin.ek@volvo.com" },
+  "maturityInputs": {
+    "process.self-service": { "value": 2, "reason": "Baseline." },
+    "people.roles": { "value": 2, "reason": "Baseline." },
+    "people.skills": { "value": 2, "reason": "Baseline." },
+    "people.capacity": { "value": 2, "reason": "Baseline." },
+    "people.product-guidance": { "value": 2, "reason": "Baseline." }
+  }
+}

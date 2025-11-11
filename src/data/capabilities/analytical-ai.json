@@ -1,6 +1,7 @@
 {
   "id": "aaimloro",
   "title": "Analytical AI (Machine Learning, Operations Research, etc.)",
+  "productId": "mlops",
   "children": [
     {
       "id": "aaimloro-dafe",

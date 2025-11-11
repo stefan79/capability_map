@@ -1,4 +1,4 @@
-export type MaturitySource = 'capability' | 'implementation' | 'hvia';
+export type MaturitySource = 'capability' | 'implementation' | 'hvia' | 'product';
 
 export type MaturitySubdimensionDefinition = {
   id: string;
@@ -87,7 +87,7 @@ const dimensionData: MaturityDimensionDefinition[] = [
         id: 'process.self-service',
         dimensionId: 'process',
         name: 'Self-service',
-        source: 'implementation',
+        source: 'product',
         weight: 1,
         description: 'Ability to provision and onboard without central teams.',
       },
@@ -105,7 +105,7 @@ const dimensionData: MaturityDimensionDefinition[] = [
         id: 'people.roles',
         dimensionId: 'people',
         name: 'Roles & Responsibilities',
-        source: 'implementation',
+        source: 'product',
         weight: 1,
         description: 'Clarity of ownership and governance touchpoints.',
       },
@@ -113,7 +113,7 @@ const dimensionData: MaturityDimensionDefinition[] = [
         id: 'people.skills',
         dimensionId: 'people',
         name: 'Skills',
-        source: 'implementation',
+        source: 'product',
         weight: 1,
         description: 'Availability of required technical and domain skills.',
       },
@@ -121,7 +121,7 @@ const dimensionData: MaturityDimensionDefinition[] = [
         id: 'people.capacity',
         dimensionId: 'people',
         name: 'Capacity',
-        source: 'implementation',
+        source: 'product',
         weight: 1,
         description: 'Ability to support demand at the needed pace.',
       },
@@ -129,7 +129,7 @@ const dimensionData: MaturityDimensionDefinition[] = [
         id: 'people.product-guidance',
         dimensionId: 'people',
         name: 'Product Guidance',
-        source: 'implementation',
+        source: 'product',
         weight: 1,
         description: 'Strength of playbooks, enablement, and support paths.',
       },

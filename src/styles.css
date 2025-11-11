@@ -162,6 +162,52 @@ main {
   margin-left: 0.35rem;
 }
 
+.product-section {
+  border-top: 1px solid #eaecef;
+  padding-top: 0.5rem;
+}
+
+.product-team-name {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  font-weight: 600;
+  color: #1f2d3d;
+  margin-bottom: 0.25rem;
+}
+
+.product-team-name .product-name {
+  color: #0b3c61;
+}
+
+.product-team-name .team-link a {
+  font-weight: 500;
+}
+
+.product-team-contacts {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  font-size: 0.9em;
+  color: #4b5664;
+}
+
+.product-team-contacts li {
+  margin-bottom: 0.2rem;
+}
+
+.product-team-contacts .contact-label {
+  font-weight: 600;
+  margin-right: 0.25rem;
+  color: #1b2a3a;
+}
+
+.product-team-description {
+  font-size: 0.9em;
+  color: #4b5664;
+  margin-bottom: 0.35rem;
+}
+
 .maturity-section {
   border-top: 1px solid #e4e7ec;
   padding-top: 0.5rem;

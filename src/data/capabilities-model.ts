@@ -1,6 +1,7 @@
 // Import resolved object types for exploded details
 import type { UseCase } from './hvias-model';
-import type { CapabilityMaturitySummary,RawMaturityMap } from './maturity-types';
+import type { CapabilityMaturitySummary, RawMaturityMap } from './maturity-types';
+import type { Product } from './products-model';
 import type { Tool } from './tools-model';
 
 export type CapabilityStatus = 'implemented' | 'not implemented' | 'partially';
@@ -27,6 +28,8 @@ export type Capability = {
   reviewed?: boolean;
   status: CapabilityStatus | CapabilityMaturity;
   type: CapabilityType;
+  productId?: string;
+  productOverrides?: RawMaturityMap;
   // Optional raw references (as present in JSON)
   toolId?: string; // references Tool.id
   useCaseRefs?: UseCaseRef[]; // references UseCase within an HVIA, each with maturity
@@ -34,6 +37,7 @@ export type Capability = {
   // Exploded/resolved fields for easy UI iteration (populated by loader)
   tool?: Tool; // resolved from toolId
   useCases?: ResolvedUseCaseRef[]; // resolved from useCaseRefs (includes maturity)
+  product?: Product;
   maturity?: CapabilityMaturitySummary;
 };
 
@@ -42,6 +46,7 @@ export type Cluster = {
   title?: string;
   description?: string;
   foundational?: boolean;
+  productId?: string;
   children: (Cluster | Capability)[];
 }
 

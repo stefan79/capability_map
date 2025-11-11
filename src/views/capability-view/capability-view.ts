@@ -180,13 +180,13 @@ const buildRadarSvg = (summary: CapabilityMaturitySummary): string => {
 const buildMaturitySection = (summary?: CapabilityMaturitySummary): string => {
   if (!summary || summary.total <= 0) return '';
   const radarSvg = buildRadarSvg(summary);
-    const legendItems = MATURITY_DIMENSIONS.map((dimension) => {
-      const dimensionSummary = summary.dimensions[dimension.id];
-      if (!dimensionSummary) return '';
-      const iconBackground = lightenHexColor(dimension.color, 0.8);
-      const subList = Object.values(dimensionSummary.subdimensions)
-        .map(
-          (sub) => `
+  const legendItems = MATURITY_DIMENSIONS.map((dimension) => {
+    const dimensionSummary = summary.dimensions[dimension.id];
+    if (!dimensionSummary) return '';
+    const iconBackground = lightenHexColor(dimension.color, 0.8);
+    const subList = Object.values(dimensionSummary.subdimensions)
+      .map(
+        (sub) => `
           <li>
             <span class="sub-name">${sub.name}</span>
             <span class="sub-value">${sub.value.toFixed(1)}</span>
@@ -195,7 +195,7 @@ const buildMaturitySection = (summary?: CapabilityMaturitySummary): string => {
       )
       .join('');
 
-        return `
+    return `
       <li>
         <div class="legend-header">
           <span class="legend-icon" style="color:${dimension.color};background:${iconBackground}">
@@ -222,6 +222,39 @@ const buildMaturitySection = (summary?: CapabilityMaturitySummary): string => {
       <ul class="maturity-legend">
         ${legendItems}
       </ul>
+    </div>
+  `;
+};
+
+const buildProductSection = (product?: Capability['product']): string => {
+  if (!product) return '';
+  const teamLink = product.teamName
+    ? (product.teamLink
+        ? `<a href="${product.teamLink}" target="_blank" rel="noopener noreferrer">${product.teamName}</a>`
+        : `<span>${product.teamName}</span>`)
+    : '';
+
+  const buildContact = (label: string, contact?: { name: string; email: string }): string => {
+    if (!contact?.name) return '';
+    const link = contact.email
+      ? `<a href="mailto:${contact.email}">${contact.name}</a>`
+      : contact.name;
+    return `<li><span class="contact-label">${label}:</span> ${link}</li>`;
+  };
+
+  const contacts = [buildContact('DPO', product.dpo), buildContact('SA', product.sa)].filter(Boolean).join('');
+  const contactsList = contacts ? `<ul class="product-team-contacts">${contacts}</ul>` : '';
+  const description = product.description ? `<div class="product-team-description">${product.description}</div>` : '';
+
+  return `
+    <div class="tooltip-section product-section">
+      <div class="tooltip-section-title">Product Team</div>
+      <div class="product-team-name">
+        <span class="product-name">${product.name}</span>
+        ${teamLink ? `<span class="team-link">${teamLink}</span>` : ''}
+      </div>
+      ${description}
+      ${contactsList}
     </div>
   `;
 };
@@ -779,6 +812,7 @@ export class CapabilityView implements View {
 
         const capability = d.data as Capability;
         const tool = capability.tool;
+        const product = capability.product;
         const useCases = (capability.useCases ?? []) as any[];
         const state = ((d as any).visualState as CapabilityVisualState) ?? null;
         const hviaTag = hviaSelected && state?.hviaTooltipLabel
@@ -861,6 +895,7 @@ export class CapabilityView implements View {
           hviasHtml += missingBlock;
         }
 
+        const productHtml = buildProductSection(product);
         const maturityHtml = buildMaturitySection(capability.maturity);
 
         const tooltipHtml = `
@@ -868,6 +903,7 @@ export class CapabilityView implements View {
             ${titleHtml}
             ${descriptionHtml}
             ${implementationHtml}
+            ${productHtml}
             ${maturityHtml}
             ${hviasHtml}
           </div>

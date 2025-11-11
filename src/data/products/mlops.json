@@ -1,0 +1,15 @@
+{
+  "id": "mlops",
+  "name": "MLOps Platform",
+  "teamName": "MLOps & Data Products",
+  "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
+  "dpo": { "name": "Sareena Samad", "email": "sareena.samad@volvo.com" },
+  "sa": { "name": "Sasi Sekhar Sadam", "email": "sasi.sekhar.sadam@volvo.com" },
+  "maturityInputs": {
+    "process.self-service": { "value": 2, "reason": "Baseline." },
+    "people.roles": { "value": 2, "reason": "Baseline." },
+    "people.skills": { "value": 2, "reason": "Baseline." },
+    "people.capacity": { "value": 2, "reason": "Baseline." },
+    "people.product-guidance": { "value": 2, "reason": "Baseline." }
+  }
+}

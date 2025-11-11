@@ -1,6 +1,7 @@
 {
   "id": "fs",
   "title": "Foundation Services",
+  "productId": "mlops",
   "foundational": true,
   "children": [
     {

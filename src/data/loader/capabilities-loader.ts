@@ -9,6 +9,7 @@ import type { HVIA } from '../hvias-model';
 import { MATURITY_DIMENSIONS, type MaturitySource } from '../maturity-config';
 import type { CapabilityMaturitySummary, RawMaturityMap } from '../maturity-types';
 import { createZeroMaturitySummary, mergeMaturityMaps, sanitizeMaturityEntries } from '../maturity-utils';
+import type { Product } from '../products-model';
 import type { Tool } from '../tools-model';
 
 const capabilityMap: Record<string, Cluster> = {
@@ -105,6 +106,10 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
   const capabilityInputs = mergeMaturityMaps(defaults, overrides);
   const hviaInputs = deriveHviaDefaults(capability);
   const implementationInputs = mergeMaturityMaps({}, capability.tool.maturityInputs ?? {});
+  const productBase = capability.product?.maturityInputs ?? {};
+  const productInputs = capability.productOverrides
+    ? mergeMaturityMaps(productBase, capability.productOverrides)
+    : { ...productBase };
 
   const summary: CapabilityMaturitySummary = {
     total: 0,
@@ -123,6 +128,7 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
       let sourceMap: RawMaturityMap;
       if (subdimension.source === 'capability') sourceMap = capabilityInputs;
       else if (subdimension.source === 'implementation') sourceMap = implementationInputs;
+      else if (subdimension.source === 'product') sourceMap = productInputs;
       else sourceMap = hviaInputs;
 
       const entry = sourceMap[subdimension.id];
@@ -177,7 +183,9 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
 function resolveCluster(
   node: Cluster | Capability,
   toolIndex: Record<string, Tool>,
-  hviaIndex: Record<string, HVIA>
+  hviaIndex: Record<string, HVIA>,
+  productIndex: Record<string, Product>,
+  inheritedProductId?: string
 ): Cluster | Capability {
   // If it's a capability, resolve its links
   if ((node as Capability).type) {
@@ -186,6 +194,7 @@ function resolveCluster(
       ...cap,
       reviewed: cap.reviewed ?? false,
     };
+    const productId = resolved.productId ?? inheritedProductId;
     if (cap.toolId) {
       resolved.tool = toolIndex[cap.toolId];
     }
@@ -201,6 +210,18 @@ function resolveCluster(
         .filter((v): v is ResolvedUseCaseRef => Boolean(v));
       resolved.useCases = collected;
     }
+    if (productId) {
+      resolved.productId = productId;
+      resolved.product = productIndex[productId];
+    }
+    const productOverrides = sanitizeMaturityEntries(
+      `Capability ${cap.id} product overrides`,
+      cap.productOverrides,
+      ['product']
+    );
+    if (Object.keys(productOverrides).length) {
+      resolved.productOverrides = productOverrides;
+    }
     const { summary, inputs } = buildCapabilityMaturity(resolved);
     resolved.maturityInputs = inputs;
     resolved.maturity = summary;
@@ -209,22 +230,26 @@ function resolveCluster(
 
   // Otherwise it's a cluster; recurse into children
   const cluster = node as Cluster;
-  const newChildren = (cluster.children || []).map((child) => resolveCluster(child, toolIndex, hviaIndex));
+  const nextProductId = cluster.productId ?? inheritedProductId;
+  const newChildren = (cluster.children || []).map((child) =>
+    resolveCluster(child, toolIndex, hviaIndex, productIndex, nextProductId)
+  );
   return { ...cluster, children: newChildren };
 }
 
 export function loadCapabilities(
   imports: string[],
-  opts?: { toolIndex?: Record<string, Tool>; hviaIndex?: Record<string, HVIA> }
+  opts?: { toolIndex?: Record<string, Tool>; hviaIndex?: Record<string, HVIA>; productIndex?: Record<string, Product> }
 ): Cluster[] {
   const toolIndex = opts?.toolIndex ?? {};
   const hviaIndex = opts?.hviaIndex ?? {};
+  const productIndex = opts?.productIndex ?? {};
   return imports.map((p) => {
     const mod = capabilityMap[p];
     if (!mod) {
       throw new Error(`Capability JSON not bundled: ${p}. Add a static import in capabilities-loader.ts`);
     }
     // Return a deep-resolved copy so original JSON shape remains untouched
-    return resolveCluster(mod, toolIndex, hviaIndex) as Cluster;
+    return resolveCluster(mod, toolIndex, hviaIndex, productIndex) as Cluster;
   });
 }

@@ -40,5 +40,13 @@
       "./hvias/mack.json"
     ],
     "children": []
+  },
+  "productsData": {
+    "imports": [
+      "./products/volvo-gpt.json",
+      "./products/genai-hub.json",
+      "./products/mlops.json"
+    ],
+    "children": []
   }
 }

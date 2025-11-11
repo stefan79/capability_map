@@ -1,6 +1,7 @@
 {
   "id": "go",
   "title": "Governance & Observability",
+  "productId": "genai-hub",
   "children": [
     {
       "id": "go-agg",

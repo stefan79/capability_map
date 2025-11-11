@@ -21,6 +21,7 @@ type CapabilityViewData = {
 };
 
 type Rgb = [number, number, number];
+type Point = { x: number; y: number };
 
 const hexToRgb = (hex: string): Rgb => {
   const normalized = hex.replace('#', '');
@@ -56,6 +57,8 @@ const RADAR_RADIUS = RADAR_SIZE / 2 - 28;
 const RADAR_CENTER = RADAR_SIZE / 2;
 const TWO_PI = Math.PI * 2;
 const RADAR_ANGLE_OFFSET = -Math.PI / 2;
+const clampMaturityValue = (value?: number): number => Math.max(0, Math.min(MAX_MATURITY_LEVEL, value ?? 0));
+const valueToRadius = (value: number): number => (RADAR_RADIUS * value) / MAX_MATURITY_LEVEL;
 
 const polarToCartesian = (cx: number, cy: number, radius: number, angle: number) => ({
   x: cx + radius * Math.cos(angle),
@@ -87,6 +90,28 @@ const renderDimensionIcon = (iconPath: string, color: string): string => {
   return `<g transform="translate(-${iconSize / 2}, -${iconSize / 2}) scale(${scale})"><path d="${iconPath}" fill="${color}" /></g>`;
 };
 
+const buildBlobPath = (() => {
+  const lineGenerator = d3
+    .line<Point>()
+    .x((point) => point.x)
+    .y((point) => point.y)
+    .curve(d3.curveCatmullRomClosed.alpha(0.5));
+  // Centripetal Catmull-Rom keeps the blob rounded without self-intersections.
+  return (points: Point[]): string => {
+    if (points.length === 0) {
+      return `M ${RADAR_CENTER} ${RADAR_CENTER} Z`;
+    }
+    if (points.length === 1) {
+      const [point] = points;
+      return `M ${point.x} ${point.y} Z`;
+    }
+    if (points.length === 2) {
+      return `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y} Z`;
+    }
+    return lineGenerator(points) ?? `M ${RADAR_CENTER} ${RADAR_CENTER} Z`;
+  };
+})();
+
 const buildRadarSvg = (summary: CapabilityMaturitySummary): string => {
   const segments: string[] = [];
   const arcs: string[] = [];
@@ -96,38 +121,29 @@ const buildRadarSvg = (summary: CapabilityMaturitySummary): string => {
   const dimCount = MATURITY_DIMENSIONS.length || 1;
   const step = TWO_PI / dimCount;
 
-  const polygonPoints = MATURITY_DIMENSIONS.map((dimension, index) => {
+  const polygonPoints: Point[] = [];
+  MATURITY_DIMENSIONS.forEach((dimension, index) => {
     const dimensionSummary = summary.dimensions[dimension.id];
-    const value = Math.max(0, Math.min(MAX_MATURITY_LEVEL, dimensionSummary?.value ?? 0));
-    const normalized = value / MAX_MATURITY_LEVEL;
-    const radius = RADAR_RADIUS * normalized;
-    const angle = RADAR_ANGLE_OFFSET + index * step + step / 2;
-    return polarToCartesian(RADAR_CENTER, RADAR_CENTER, radius, angle);
-  });
-
-  const handlePoints = polygonPoints.map((point, index) => {
-    const nextPoint = polygonPoints[(index + 1) % polygonPoints.length];
-    return {
-      x: (point.x + nextPoint.x) / 2,
-      y: (point.y + nextPoint.y) / 2,
-    };
-  });
-
-  let blobPath = '';
-  handlePoints.forEach((handle, index) => {
-    if (index === 0) {
-      blobPath += `M ${handle.x} ${handle.y}`;
+    const startAngle = RADAR_ANGLE_OFFSET + index * step;
+    const definitionIds = dimension.subdimensions.map((subdefinition) => subdefinition.id);
+    const summaryIds = Object.keys(dimensionSummary?.subdimensions ?? {});
+    const orderedSubIds = definitionIds.concat(summaryIds.filter((id) => !definitionIds.includes(id)));
+    if (orderedSubIds.length === 0) {
+      const value = clampMaturityValue(dimensionSummary?.value);
+      const angle = startAngle + step / 2;
+      polygonPoints.push(polarToCartesian(RADAR_CENTER, RADAR_CENTER, valueToRadius(value), angle));
       return;
     }
-    const vertex = polygonPoints[index];
-    const nextHandle = handlePoints[(index + 1) % handlePoints.length];
-    blobPath += ` Q ${vertex.x} ${vertex.y} ${nextHandle.x} ${nextHandle.y}`;
+    const subStep = step / orderedSubIds.length;
+    orderedSubIds.forEach((subId, subIndex) => {
+      const subSummary = dimensionSummary?.subdimensions[subId];
+      const value = clampMaturityValue(subSummary?.value);
+      const angle = startAngle + subIndex * subStep + subStep / 2;
+      polygonPoints.push(polarToCartesian(RADAR_CENTER, RADAR_CENTER, valueToRadius(value), angle));
+    });
   });
-  if (handlePoints.length) {
-    const firstVertex = polygonPoints[0];
-    blobPath += ` Q ${firstVertex.x} ${firstVertex.y} ${handlePoints[0].x} ${handlePoints[0].y}`;
-  }
-  blobPath += ' Z';
+
+  const blobPath = buildBlobPath(polygonPoints);
 
   MATURITY_DIMENSIONS.forEach((dimension, index) => {
     const dimensionSummary = summary.dimensions[dimension.id];
@@ -136,9 +152,10 @@ const buildRadarSvg = (summary: CapabilityMaturitySummary): string => {
     const segmentFill = lightenHexColor(dimension.color, 0.55);
     segments.push(`<path class="radar-segment" d="${describeSegmentPath(RADAR_RADIUS, startAngle, endAngle)}" fill="${segmentFill}" />`);
 
-    const arcRadius = Math.max(6, RADAR_RADIUS * Math.max(0, Math.min(MAX_MATURITY_LEVEL, dimensionSummary?.value ?? 0)) / MAX_MATURITY_LEVEL);
-    if (arcRadius > 6 && dimensionSummary?.value) {
-      arcs.push(`<path class="radar-arc" d="${describeArc(arcRadius, startAngle, endAngle)}" stroke="${dimension.color}" />`);
+    const dimensionValue = clampMaturityValue(dimensionSummary?.value);
+    const dimensionArcRadius = valueToRadius(dimensionValue);
+    if (dimensionArcRadius > 0 && dimensionValue > 0) {
+      arcs.push(`<path class="radar-arc radar-arc--average" d="${describeArc(dimensionArcRadius, startAngle, endAngle)}" stroke="${dimension.color}" />`);
     }
 
     const iconAngle = startAngle + step / 2;

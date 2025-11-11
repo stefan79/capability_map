@@ -191,6 +191,11 @@ main {
   opacity: 0.85;
 }
 
+.maturity-radar-svg .radar-arc--average {
+  stroke-width: 3.25;
+  opacity: 0.9;
+}
+
 .maturity-radar-svg .radar-icon {
   pointer-events: none;
 }

@@ -8,51 +8,135 @@
       "children": [
         {
           "id": "gai-aa-ard",
-          "title": "Agent Registry & Discovery",
-          "status": 0,
+          "title": "Agent Registry & Discovery",          
+          "reviewd": "false",
           "type": "technology",
           "description": "A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
-          "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/"
+          "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }          
         },
         {
           "id": "gai-aa-ao",
           "title": "Agent Orchestration",
-          "status": 0,
+          "reviewd": "false",
           "type": "technology",
           "description": "Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
-          "link": "https://langchain-ai.github.io/langgraph/"
+          "link": "https://langchain-ai.github.io/langgraph/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }          
         },
         {
           "id": "gai-aa-ast",
           "title": "Agent SDK + templates",
-          "status": 1,
+          "reviewd": "false",
           "type": "technology",
           "description": "Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
-          "link": "https://ai-sdk.dev/docs/introduction"
+          "link": "https://ai-sdk.dev/docs/introduction",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }          
         },
         {
           "id": "gai-aa-mrd",
           "title": "MCP Registry & Discovery",
-          "status": 0,
+          "reviewd": "false",
           "type": "technology",
           "description": "Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
-          "link": "https://modelcontextprotocol.org/"
+          "link": "https://modelcontextprotocol.org/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }          
         },
         {
           "id": "gai-aa-mm",
           "title": "Memory Management",
-          "status": 1,
+          "reviewd": "false",
           "type": "technology",
           "description": "Short- and long‑term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
-          "link": "https://www.ibm.com/think/topics/ai-agent-memory"
+          "link": "https://www.ibm.com/think/topics/ai-agent-memory",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }          
         },
         {
           "id": "gai-aa-arag",
           "title": "Agentic RAG",
-          "status": 0,
+          "reviewd": "false",
           "type": "pattern",
           "description": "Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
-          "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/"
+          "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }          
         }
       ]
     },
@@ -63,7 +147,7 @@
         {
           "id": "gai-muf-mc",
           "title": "Model Catalog",
-          "status": 3,
+          "reviewd": "false",
           "type": "technology",
           "description": "An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
           "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog",
@@ -79,7 +163,6 @@
         {
           "id": "gai-muf-fm",
           "title": "Foundation Models",
-          "status": 1,
           "type": "technology",
           "description": "Large pre-trained models adaptable to many downstream tasks via prompting or fine‑tuning. Provide strong baselines for generative use cases.",
           "link": "https://research.ibm.com/blog/what-are-foundation-models",
@@ -90,10 +173,24 @@
         {
           "id": "gai-muf-mg",
           "title": "Model Gateway",
-          "status": 1,
+          "reviewd": "false",
           "type": "technology",
           "description": "Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
           "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },          
           "useCaseRefs": [
             { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
           ]
@@ -101,18 +198,46 @@
         {
           "id": "gai-muf-dmr",
           "title": "Dynamic model routing",
-          "status": 1,
+          "reviewd": "false",
           "type": "pattern",
           "description": "Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
-          "link": "https://e2eml.school/blog/model_routing/"
+          "link": "https://e2eml.school/blog/model_routing/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }
         },
         {
           "id": "gai-muf-sc",
           "title": "Semantic Cache",
-          "status": 0,
+          "reviewd": "false",
           "type": "technology",
           "description": "Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
-          "link": "https://redis.io/blog/what-is-semantic-caching/"
+          "link": "https://redis.io/blog/what-is-semantic-caching/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }
         }
       ]
     },
@@ -123,10 +248,24 @@
         {
           "id": "gai-de-dp",
           "title": "Document Parsing",
-          "status": 3,
+          "reviewd": "false",
           "type": "technology",
           "description": "Extraction of structure and text from PDFs, Office docs, HTML, and images for downstream processing. Handles tables, figures, and layout.",
           "link": "https://github.com/unstructured-io/unstructured",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
             { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
@@ -140,10 +279,24 @@
         {
           "id": "gai-de-ocr",
           "title": "Document Analysis & OCR",
-          "status": 3,
+          "reviewd": "false",
           "type": "technology",
           "description": "Optical character recognition and document understanding to convert scans into machine‑readable text and entities. Critical for enterprise content.",
           "link": "https://aws.amazon.com/textract/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
             { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
@@ -156,10 +309,24 @@
         {
           "id": "gai-de-c",
           "title": "Chunking",
-          "status": 3,
+          "reviewd": "false",
           "type": "pattern",
           "description": "Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
           "link": "https://www.pinecone.io/learn/chunking-strategies/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },          
           "useCaseRefs": [
             { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
             { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
@@ -173,10 +340,24 @@
         {
           "id": "gai-de-vs",
           "title": "Vector Storage",
-          "status": 3,
+          "reviewd": "false",
           "type": "technology",
           "description": "Databases for high‑dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
           "link": "https://www.pinecone.io/learn/vector-database/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
             { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
@@ -190,20 +371,49 @@
         {
           "id": "gai-de-are",
           "title": "Advanced RAG: reranking, hybrid",
-          "status": 1,
+          "reviewd": "false",
           "type": "pattern",
           "description": "Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
           "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
           ]
         },
         {
           "id": "gai-de-t2sql",
           "title": "Text 2 SQL",
+          "reviewd": "false",
           "status": 0,
           "type": "technology",
           "description": "Natural‑language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
-          "link": "https://arxiv.org/abs/2204.00498"
+          "link": "https://arxiv.org/abs/2204.00498",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          }
         }
       ]
     },
@@ -214,10 +424,24 @@
         {
           "id": "gai-l-ot",
           "title": "Observability & Tracing",
-          "status": 1,
+          "reviewd": "false",
           "type": "policy",
           "description": "Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
           "link": "https://docs.langfuse.com/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },          
           "useCaseRefs": [
             { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
           ]
@@ -225,10 +449,24 @@
         {
           "id": "gai-l-por",
           "title": "Prompt Ops & Repository",
-          "status": 1,
+          "reviewd": "false",
           "type": "technology",
           "description": "Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
           "link": "https://prompttools.readthedocs.io/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
           ]
@@ -236,10 +474,24 @@
         {
           "id": "gai-l-eidc",
           "title": "Evaluations incl. dataset creation",
-          "status": 3,
+          "reviewd": "false",
           "type": "pattern",
           "description": "Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
           "link": "https://arize.com/blog/llm-evaluation-guide/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
             { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
@@ -254,10 +506,25 @@
         {
           "id": "gai-l-po",
           "title": "Prompt Optimization",
-          "status": 0,
+          "reviewd": "false",
           "type": "pattern",
           "description": "Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self‑reflection and rewriting. Can be manual or programmatic.",
-          "link": "https://www.promptingguide.ai/guides/optimizing-prompts"
+          "link": "https://www.promptingguide.ai/guides/optimizing-prompts",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
+
         }
       ]
     }

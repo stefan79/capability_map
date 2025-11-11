@@ -9,69 +9,225 @@
         {
           "id": "aaimloro-dafe-dla",
           "title": "Data Labelling / Annotation",
-          "status": 3,
+          "reviewed": "false",
           "type": "pattern",
           "toolId": "microsoft-azure-ml",
           "description": "Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
           "link": "https://www.ibm.com/think/topics/data-labeling",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-dafe-dsc",
           "title": "Datasets Catalog",
-          "status": 2,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-unity-catalog",
           "description": "Catalog for discovering datasets, owners, and metadata. Improves findability and governance for analytics and ML.",
           "link": "https://www.ibm.com/think/topics/data-catalog",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         },
         {
           "id": "aaimloro-dafe-eda",
           "title": "Exploratory Data Analysis (EDA)",
-          "status": 2,
+          "reviewed": "false",
           "type": "pattern",
           "description": "Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.",
           "link": "https://en.wikipedia.org/wiki/Exploratory_data_analysis",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-dafe-fs",
           "title": "Feature Store",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-unity-catalog",
           "description": "Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.",
           "link": "https://www.featureform.com/post/what-is-a-feature-store",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            }
           ]
         }
       ]
@@ -83,83 +239,273 @@
         {
           "id": "aaimloro-md-tr",
           "title": "Training Runtime",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Compute environments and schedulers for distributed training jobs. Supports GPUs/accelerators, checkpoints, and scaling.",
           "link": "https://www.tensorflow.org/guide/distributed_training",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 2 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 2 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         },
         {
           "id": "aaimloro-md-libs",
           "title": "ML/DL libraries: training/tuning",
-          "status": 2,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "python-data-libraries",
           "description": "Frameworks and toolkits for model training, tuning, and evaluation. Includes hyperparameter search and experiment tracking hooks.",
           "link": "https://scikit-learn.org/stable/modules/grid_search.html",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         },
         {
           "id": "aaimloro-md-automl",
           "title": "Auto ML",
-          "status": 0,
+          "reviewed": "false",
           "type": "technology",
           "description": "Automated pipelines to select features, models, and hyperparameters. Accelerates prototyping with guardrails for quality.",
           "link": "https://cloud.google.com/automl",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         },
         {
           "id": "aaimloro-md-fi",
           "title": "Feature Importance",
-          "status": 3,
+          "reviewed": "false",
           "type": "pattern",
           "description": "Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
           "link": "https://christophm.github.io/interpretable-ml-book/feature-importance.html",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-md-ort",
           "title": "OR Tooling",
-          "status": 0,
+          "reviewed": "false",
           "type": "technology",
           "description": "Operations Research solvers and modeling tools (e.g., MILP, CP) for optimization problems. Provides prescriptive analytics beyond prediction.",
           "link": "https://developers.google.com/optimization",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         }
       ]
@@ -171,69 +517,229 @@
         {
           "id": "aaimloro-deploy-batch",
           "title": "Batch Inference",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Scheduled scoring of large datasets for offline use cases. Integrates with data lake workflows and orchestration.",
           "link": "https://docs.databricks.com/en/machine-learning/model-serving/batch.html",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 2 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 2 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-deploy-online",
           "title": "Online Inference",
-          "status": 2,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Low-latency model serving via APIs for realtime predictions. Requires autoscaling, monitoring, and rollback.",
           "link": "https://seldon.io/solutions/model-serving/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-deploy-sim",
           "title": "Simulation",
-          "status": 1,
+          "reviewed": "false",
           "type": "technology",
           "description": "Scenario simulation and what-if analysis engines to test policies and systems. Useful for planning and risk analysis.",
-          "link": "https://en.wikipedia.org/wiki/Discrete-event_simulation",  
+          "link": "https://en.wikipedia.org/wiki/Discrete-event_simulation",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         },
         {
           "id": "aaimloro-deploy-mps",
           "title": "Mathematical Problem Solver",
-          "status": 1,
+          "reviewed": "false",
           "type": "technology",
           "description": "Services to formulate and solve mathematical optimization and equation systems. Targets complex planning and scheduling problems.",
           "link": "https://www.gurobi.com/resources/what-is-mathematical-optimization/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         }
       ]
@@ -245,105 +751,341 @@
         {
           "id": "aaimloro-mlops-dd",
           "title": "Data Drift Detection",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Monitoring to detect shifts in input data distributions over time. Triggers retraining or investigation when thresholds are breached.",
           "link": "https://docs.whylabs.ai/docs/glossary/data-drift/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-mlops-ms",
           "title": "Model Store",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-unity-catalog",
           "description": "Registry for model versions, artifacts, and lineage. Enables promotion across environments with governance.",
           "link": "https://mlflow.org/docs/latest/model-registry.html",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-mlops-mcdd",
           "title": "Model/Concept Drift Detection",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Techniques to detect performance degradation due to changing relationships in data. Supports alerts and retraining workflows.",
           "link": "https://docs.evidentlyai.com/user-guide/concept-drift/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            }
           ]
         },
         {
           "id": "aaimloro-mlops-et",
           "title": "Experiment Tracking",
-          "status": 2,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-mlflow",
           "description": "Track runs, parameters, metrics, and artifacts for reproducibility. Facilitates collaboration and comparison across experiments.",
           "link": "https://mlflow.org/docs/latest/tracking.html",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
           ]
         },
         {
           "id": "aaimloro-mlops-mr",
           "title": "Model Retraining (Continuous)",
-          "status": 2,
+          "reviewed": "false",
           "type": "process",
           "toolId": "databricks-platform",
           "description": "Automated pipelines to retrain and redeploy models as data or performance changes. Ensures models remain accurate and compliant.",
-          "link": "https://aws.amazon.com/blogs/machine-learning/building-mlops-pipelines/",  
+          "link": "https://aws.amazon.com/blogs/machine-learning/building-mlops-pipelines/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         },
         {
           "id": "aaimloro-mlops-sdk",
           "title": "SDK / Templates / Blueprints",
-          "status": 2,
+          "reviewed": "false",
           "type": "technology",
           "toolId": "databricks-platform",
           "description": "Reusable code, templates, and scaffolding for common ML patterns. Reduces boilerplate and enforces best practices.",
           "link": "https://cookiecutter-data-science.drivendata.org/",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 1
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 0
+            }
           ]
         }
       ]

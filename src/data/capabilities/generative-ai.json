@@ -10,7 +10,8 @@
         {
           "id": "gai-aa-ard",
           "title": "Agent Registry & Discovery",          
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
           "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
@@ -32,7 +33,8 @@
         {
           "id": "gai-aa-ao",
           "title": "Agent Orchestration",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
           "link": "https://langchain-ai.github.io/langgraph/",
@@ -54,7 +56,8 @@
         {
           "id": "gai-aa-ast",
           "title": "Agent SDK + templates",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
           "link": "https://ai-sdk.dev/docs/introduction",
@@ -76,7 +79,8 @@
         {
           "id": "gai-aa-mrd",
           "title": "MCP Registry & Discovery",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
           "link": "https://modelcontextprotocol.org/",
@@ -98,7 +102,8 @@
         {
           "id": "gai-aa-mm",
           "title": "Memory Management",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Short- and long‑term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
           "link": "https://www.ibm.com/think/topics/ai-agent-memory",
@@ -120,7 +125,8 @@
         {
           "id": "gai-aa-arag",
           "title": "Agentic RAG",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "pattern",
           "description": "Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
           "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/",
@@ -148,10 +154,26 @@
         {
           "id": "gai-muf-mc",
           "title": "Model Catalog",
-          "reviewd": "false",
-          "type": "technology",
+          "reviewed": "false",
+          "productId": "genai-hub",
+          "type": "technology",          
+          "toolId": "microsoft-azure-ai-studio",
           "description": "An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
           "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
             { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
@@ -165,8 +187,24 @@
           "id": "gai-muf-fm",
           "title": "Foundation Models",
           "type": "technology",
+          "productId": "genai-hub",
+          "toolId": "microsoft-azure-openai",
           "description": "Large pre-trained models adaptable to many downstream tasks via prompting or fine‑tuning. Provide strong baselines for generative use cases.",
           "link": "https://research.ibm.com/blog/what-are-foundation-models",
+          "maturityInputs": {
+            "technology.adoption-effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            }
+          },
           "useCaseRefs": [
             { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
           ]
@@ -174,7 +212,8 @@
         {
           "id": "gai-muf-mg",
           "title": "Model Gateway",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
           "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway",
@@ -199,7 +238,8 @@
         {
           "id": "gai-muf-dmr",
           "title": "Dynamic model routing",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "pattern",
           "description": "Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
           "link": "https://e2eml.school/blog/model_routing/",
@@ -221,7 +261,8 @@
         {
           "id": "gai-muf-sc",
           "title": "Semantic Cache",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
           "link": "https://redis.io/blog/what-is-semantic-caching/",
@@ -249,8 +290,10 @@
         {
           "id": "gai-de-dp",
           "title": "Document Parsing",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
+          "toolId": "microsoft-azure-ai-document-intelligence",
           "description": "Extraction of structure and text from PDFs, Office docs, HTML, and images for downstream processing. Handles tables, figures, and layout.",
           "link": "https://github.com/unstructured-io/unstructured",
           "maturityInputs": {
@@ -280,8 +323,10 @@
         {
           "id": "gai-de-ocr",
           "title": "Document Analysis & OCR",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
+          "toolId": "microsoft-azure-ai-document-intelligence",
           "description": "Optical character recognition and document understanding to convert scans into machine‑readable text and entities. Critical for enterprise content.",
           "link": "https://aws.amazon.com/textract/",
           "maturityInputs": {
@@ -310,8 +355,10 @@
         {
           "id": "gai-de-c",
           "title": "Chunking",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "pattern",
+          "toolId": "microsoft-azure-ai-search",
           "description": "Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
           "link": "https://www.pinecone.io/learn/chunking-strategies/",
           "maturityInputs": {
@@ -341,8 +388,10 @@
         {
           "id": "gai-de-vs",
           "title": "Vector Storage",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
+          "toolId": "microsoft-azure-ai-search",
           "description": "Databases for high‑dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
           "link": "https://www.pinecone.io/learn/vector-database/",
           "maturityInputs": {
@@ -372,7 +421,8 @@
         {
           "id": "gai-de-are",
           "title": "Advanced RAG: reranking, hybrid",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "pattern",
           "description": "Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
           "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/",
@@ -396,8 +446,8 @@
         {
           "id": "gai-de-t2sql",
           "title": "Text 2 SQL",
-          "reviewd": "false",
-          "status": 0,
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Natural‑language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
           "link": "https://arxiv.org/abs/2204.00498",
@@ -425,7 +475,8 @@
         {
           "id": "gai-l-ot",
           "title": "Observability & Tracing",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "policy",
           "description": "Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
           "link": "https://docs.langfuse.com/",
@@ -450,7 +501,8 @@
         {
           "id": "gai-l-por",
           "title": "Prompt Ops & Repository",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "technology",
           "description": "Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
           "link": "https://prompttools.readthedocs.io/",
@@ -475,8 +527,10 @@
         {
           "id": "gai-l-eidc",
           "title": "Evaluations incl. dataset creation",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "pattern",
+          "toolId": "microsoft-azure-ai-studio",
           "description": "Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
           "link": "https://arize.com/blog/llm-evaluation-guide/",
           "maturityInputs": {
@@ -507,7 +561,8 @@
         {
           "id": "gai-l-po",
           "title": "Prompt Optimization",
-          "reviewd": "false",
+          "reviewed": "false",
+          "productId": "genai-hub",
           "type": "pattern",
           "description": "Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self‑reflection and rewriting. Can be manual or programmatic.",
           "link": "https://www.promptingguide.ai/guides/optimizing-prompts",

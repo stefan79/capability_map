@@ -125,6 +125,7 @@
           "reviewed": "false",
           "productId": "mlops",
           "type": "pattern",
+          "toolId": "databricks-notebooks",
           "description": "Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.",
           "link": "https://en.wikipedia.org/wiki/Exploratory_data_analysis",
           "maturityInputs": {
@@ -359,6 +360,7 @@
           "reviewed": "false",
           "type": "technology",
           "productId": "mlops",
+          "toolId": "databricks-automl",
           "description": "Automated pipelines to select features, models, and hyperparameters. Accelerates prototyping with guardrails for quality.",
           "link": "https://cloud.google.com/automl",
           "maturityInputs": {
@@ -414,6 +416,7 @@
           "reviewed": "false",
           "productId": "mlops",
           "type": "pattern",
+          "toolId": "databricks-automl",
           "description": "Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
           "link": "https://christophm.github.io/interpretable-ml-book/feature-importance.html",
           "maturityInputs": {

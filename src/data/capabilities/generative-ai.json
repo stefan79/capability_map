@@ -157,31 +157,8 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",          
-          "toolId": "microsoft-azure-ai-studio",
           "description": "An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
-          "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog",
-          "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            }
-          },
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+          "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog"
         },
         {
           "id": "gai-muf-fm",
@@ -530,33 +507,8 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "toolId": "microsoft-azure-ai-studio",
           "description": "Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
-          "link": "https://arize.com/blog/llm-evaluation-guide/",
-          "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            }
-          },
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
-
-          ]
+          "link": "https://arize.com/blog/llm-evaluation-guide/"
         },
         {
           "id": "gai-l-po",

@@ -280,6 +280,29 @@ async function main(): Promise<void> {
       console.warn('Failed to enforce rect styles for export', e);
     }
 
+    // Inject clickable links for documented capabilities so exported SVG retains hyperlinks
+    const applyDocumentationLinks = (root: SVGSVGElement): void => {
+      const ns = 'http://www.w3.org/2000/svg';
+      const xlinkNs = 'http://www.w3.org/1999/xlink';
+      const groups = Array.from(root.querySelectorAll('g.treemap-capability[data-doc-url]')) as SVGGElement[];
+      groups.forEach((group) => {
+        const url = group.getAttribute('data-doc-url');
+        if (!url) return;
+        const anchor = document.createElementNS(ns, 'a');
+        anchor.setAttribute('class', 'svg-doc-link');
+        anchor.setAttribute('target', '_blank');
+        anchor.setAttribute('rel', 'noopener noreferrer');
+        anchor.setAttribute('href', url);
+        anchor.setAttributeNS(xlinkNs, 'href', url);
+        while (group.firstChild) {
+          anchor.appendChild(group.firstChild);
+        }
+        group.appendChild(anchor);
+      });
+    };
+
+    applyDocumentationLinks(clone);
+
     // Inline external images (<image href=...>) as data URIs so converters don't need network
     async function inlineExternalImages(root: SVGSVGElement): Promise<void> {
       const images = Array.from(root.querySelectorAll('image')) as SVGImageElement[];

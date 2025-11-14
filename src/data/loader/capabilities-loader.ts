@@ -3,13 +3,18 @@ import analyticalAi from '../capabilities/analytical-ai.json';
 import foundationServices from '../capabilities/foundation-services.json';
 import generativeAi from '../capabilities/generative-ai.json';
 import governanceObservability from '../capabilities/governance-observability.json';
-import type { Capability, Cluster, ResolvedUseCaseRef } from '../capabilities-model';
+import type {
+  Capability,
+  CapabilityDocumentationLink,
+  Cluster,
+  ResolvedUseCaseRef,
+} from '../capabilities-model';
 import { getStatusMaturity } from '../capability-helpers';
 import type { HVIA } from '../hvias-model';
 import { MATURITY_DIMENSIONS, type MaturitySource } from '../maturity-config';
 import type { CapabilityMaturitySummary, RawMaturityMap } from '../maturity-types';
 import { createZeroMaturitySummary, mergeMaturityMaps, sanitizeMaturityEntries } from '../maturity-utils';
-import type { Product } from '../products-model';
+import type { Product, ProductDocumentationLink } from '../products-model';
 import type { Tool } from '../tools-model';
 
 const capabilityMap: Record<string, Cluster> = {
@@ -24,6 +29,39 @@ const defaultReasonBySource: Record<MaturitySource, string> = {
   capability: 'Baseline capability signal not provided.',
   implementation: 'Implementation does not expose this maturity data.',
   hvia: 'No HVIA usage recorded yet.',
+};
+
+const hasDocLink = (doc?: ProductDocumentationLink | null): doc is ProductDocumentationLink =>
+  Boolean(doc && typeof doc.url === 'string' && doc.url.trim().length > 0);
+
+const normalizeDocLink = (doc: ProductDocumentationLink): ProductDocumentationLink => ({
+  url: doc.url,
+  title: doc.title ?? doc.description,
+  description: doc.description,
+});
+
+const resolveDocumentationLink = (
+  capability: Capability,
+  product?: Product
+): CapabilityDocumentationLink | undefined => {
+  if (hasDocLink(capability.productDocumentation)) {
+    const normalized = normalizeDocLink(capability.productDocumentation);
+    return {
+      ...normalized,
+      productId: capability.productId ?? product?.id,
+      source: 'capability',
+    };
+  }
+  if (product && hasDocLink(product.documentation)) {
+    const normalized = normalizeDocLink(product.documentation);
+    return {
+      ...normalized,
+      title: normalized.title ?? product.name,
+      productId: product.id,
+      source: 'product',
+    };
+  }
+  return undefined;
 };
 
 const countActiveUseCases = (capability: Capability): { active: number; requested: number } => {
@@ -221,6 +259,10 @@ function resolveCluster(
     );
     if (Object.keys(productOverrides).length) {
       resolved.productOverrides = productOverrides;
+    }
+    const documentationLink = resolveDocumentationLink(resolved, resolved.product);
+    if (documentationLink) {
+      resolved.documentationLink = documentationLink;
     }
     const { summary, inputs } = buildCapabilityMaturity(resolved);
     resolved.maturityInputs = inputs;

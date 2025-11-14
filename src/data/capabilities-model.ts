@@ -1,7 +1,7 @@
 // Import resolved object types for exploded details
 import type { UseCase } from './hvias-model';
 import type { CapabilityMaturitySummary, RawMaturityMap } from './maturity-types';
-import type { Product } from './products-model';
+import type { Product, ProductDocumentationLink } from './products-model';
 import type { Tool } from './tools-model';
 
 export type CapabilityStatus = 'implemented' | 'not implemented' | 'partially';
@@ -20,6 +20,13 @@ export type UseCaseRef = {
 // Resolved use case record that carries the maturity value forward
 export type ResolvedUseCaseRef = UseCase & { maturity: 0 | 1 | 2 | 3; hviaId: string; hviaName: string };
 
+export type CapabilityDocumentationSource = 'capability' | 'product';
+
+export type CapabilityDocumentationLink = ProductDocumentationLink & {
+  productId?: string;
+  source: CapabilityDocumentationSource;
+};
+
 export type Capability = {
   id: string;
   title: string;
@@ -30,6 +37,7 @@ export type Capability = {
   type: CapabilityType;
   productId?: string;
   productOverrides?: RawMaturityMap;
+  productDocumentation?: ProductDocumentationLink;
   // Optional raw references (as present in JSON)
   toolId?: string; // references Tool.id
   useCaseRefs?: UseCaseRef[]; // references UseCase within an HVIA, each with maturity
@@ -38,6 +46,7 @@ export type Capability = {
   tool?: Tool; // resolved from toolId
   useCases?: ResolvedUseCaseRef[]; // resolved from useCaseRefs (includes maturity)
   product?: Product;
+  documentationLink?: CapabilityDocumentationLink;
   maturity?: CapabilityMaturitySummary;
 };
 

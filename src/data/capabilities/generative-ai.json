@@ -217,6 +217,10 @@
           "title": "Dynamic model routing",
           "reviewed": "false",
           "productId": "genai-hub",
+          "productDocumentation": {
+            "url": "https://www.volvogroup.com/en/innovation.html#genai-model-routing",
+            "title": "Model Routing Guide"
+          },
           "type": "pattern",
           "toolId": "microsoft-azure-llm-modelrouter",
           "description": "Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",

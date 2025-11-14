@@ -12,22 +12,26 @@
           "title": "Data Labelling / Annotation",
           "reviewed": "false",
           "productId": "mlops",
+          "productDocumentation": {
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/422446905/AIS+-+Data+Labeling",
+            "title": "Connfluece: AIS Data Labeling"
+          },
           "type": "pattern",
           "toolId": "microsoft-azure-ml",
           "description": "Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
           "link": "https://www.ibm.com/think/topics/data-labeling",
           "maturityInputs": {
             "technology.adoption-effort": {
-              "value": 1.4,
+              "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 2.5,
+              "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 3.9,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 2,
+              "reason": "Documentation covers main process, documentation processes still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -72,6 +76,11 @@
           "toolId": "databricks-unity-catalog",
           "description": "Catalog for discovering datasets, owners, and metadata. Improves findability and governance for analytics and ML.",
           "link": "https://www.ibm.com/think/topics/data-catalog",
+          "productDocumentation":{
+            "title": "Confluence: AIS -Model Catalog",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/420708673/AIS+-+Model+Catalog"
+
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -82,8 +91,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -128,6 +137,10 @@
           "toolId": "databricks-unity-catalog",
           "description": "Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.",
           "link": "https://en.wikipedia.org/wiki/Exploratory_data_analysis",
+          "productDocumentation": {
+            "title": "Confluence: AIS - EDA-Exploratory Data Analysis",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/454820517/AIS+-+EDA-Exploratory+Data+Analysis"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -138,8 +151,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -189,6 +202,10 @@
           "toolId": "databricks-unity-catalog",
           "description": "Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.",
           "link": "https://www.featureform.com/post/what-is-a-feature-store",
+          "productDocumentation": {
+            "title": "Confluence: AIS - Feature Store",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/374933943/AIS+-+Feature+Store"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -199,8 +216,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -261,8 +278,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -317,8 +334,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -373,8 +390,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -428,8 +445,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -483,8 +500,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -535,6 +552,10 @@
           "toolId": "mlops-runtime-sdk",
           "description": "Scheduled scoring of large datasets for offline use cases. Integrates with data lake workflows and orchestration.",
           "link": "https://docs.databricks.com/en/machine-learning/model-serving/batch.html",
+          "productDocumentation": {
+            "title": "Confluece: AIS - Inference/Prediction Integration",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -545,8 +566,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -596,6 +617,10 @@
           "toolId": "mlops-runtime-sdk",
           "description": "Low-latency model serving via APIs for realtime predictions. Requires autoscaling, monitoring, and rollback.",
           "link": "https://seldon.io/solutions/model-serving/",
+          "productDocumentation": {
+            "title": "Confluece: AIS - Inference/Prediction Integration",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -606,8 +631,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -666,8 +691,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -721,8 +746,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -783,8 +808,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -828,6 +853,10 @@
           "type": "technology",
           "description": "Registry for model versions, artifacts, and lineage. Enables promotion across environments with governance.",
           "link": "https://mlflow.org/docs/latest/model-registry.html",
+          "productDocumentation": {
+            "title": "Confluence: AIS Model Store",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/384796651/AIS+-+Model+Store"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -838,8 +867,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
             }
           },
           "useCaseRefs": [
@@ -899,8 +928,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -955,8 +984,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -1015,8 +1044,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -1061,6 +1090,10 @@
           "toolId": "databricks-platform",
           "description": "Reusable code, templates, and scaffolding for common ML patterns. Reduces boilerplate and enforces best practices.",
           "link": "https://cookiecutter-data-science.drivendata.org/",
+          "productDocumentation": {
+            "title": "Confluence: AIS - SDK & DevOps Templates",
+            "url" : "https://confluence.it.volvo.net/spaces/IBT/pages/429720260/AIS+-+SDK+DevOps+Templates"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -1072,7 +1105,7 @@
             },
             "process.documentation": {
               "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "reason": "Documentation covers main process, documentation processes still needs to be reviewed."
             }
           },
           "useCaseRefs": [

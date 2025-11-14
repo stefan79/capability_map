@@ -5,6 +5,12 @@ export type ProductContact = {
   email: string;
 };
 
+export type ProductDocumentationLink = {
+  url: string;
+  title?: string;
+  description?: string;
+};
+
 export type Product = {
   id: string;
   name: string;
@@ -14,5 +20,6 @@ export type Product = {
   dpo: ProductContact;
   sa: ProductContact;
   reviewed?: boolean;
+  documentation?: ProductDocumentationLink;
   maturityInputs?: RawMaturityMap;
 };

@@ -5,6 +5,10 @@
   "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
   "dpo": { "name": "Ingrid Holm", "email": "ingrid.holm@volvo.com" },
   "sa": { "name": "Martin Ek", "email": "martin.ek@volvo.com" },
+  "documentation": {
+    "url": "https://www.volvogroup.com/en/innovation.html#volvo-gpt-playbook",
+    "title": "Volvo GPT Platform Playbook"
+  },
   "maturityInputs": {
     "process.self-service": { "value": 2, "reason": "Baseline." },
     "people.roles": { "value": 2, "reason": "Baseline." },

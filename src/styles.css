@@ -208,6 +208,77 @@ main {
   margin-bottom: 0.35rem;
 }
 
+.documentation-section {
+  border-top: 1px solid #eaecef;
+  padding-top: 0.5rem;
+}
+
+.doc-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #dbe3ef;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #f7f9fc;
+  color: #0b3c61;
+}
+
+.doc-link:hover,
+.doc-link:focus-visible {
+  background: #eef4fb;
+  border-color: #c5d6ef;
+}
+
+.doc-link-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-link-label {
+  font-weight: 600;
+  color: #0b3c61;
+}
+
+.doc-link-url {
+  font-size: 0.8em;
+  color: #4b5664;
+  word-break: break-all;
+}
+
+.doc-link-icon {
+  color: #0b3c61;
+}
+
+.doc-source-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.4rem;
+  margin-left: 0.5rem;
+  border-radius: 999px;
+  background: rgba(11, 60, 97, 0.08);
+  color: #0b3c61;
+  font-size: 0.65em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 .maturity-section {
   border-top: 1px solid #e4e7ec;
   padding-top: 0.5rem;

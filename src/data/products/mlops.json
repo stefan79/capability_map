@@ -5,6 +5,10 @@
   "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
   "dpo": { "name": "Sareena Samad", "email": "sareena.samad@volvo.com" },
   "sa": { "name": "Sasi Sekhar Sadam", "email": "sasi.sekhar.sadam@volvo.com" },
+  "documentation": {
+    "url": "https://confluence.it.volvo.net/spaces/IBT/pages/381160901/AI+Strategy+-+Analytical+AI",
+    "title": "Confluence: AI Strategy - Analytical AI"
+  },
   "maturityInputs": {
     "process.self-service": { "value": 1.2, "reason": "Baseline." },
     "people.roles": { "value": 3, "reason": "Baseline." },

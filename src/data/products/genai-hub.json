@@ -5,6 +5,10 @@
   "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
   "dpo": { "name": "Kumara Datta Malladi", "email": "kumara.datta.malladi@volvo.com" },
   "sa": { "name": "Ipsum Lipsum", "email": "ipsum.lipsum@volvo.com" },
+  "documentation": {
+    "url": "https://www.volvogroup.com/en/innovation.html#genai-hub-docs",
+    "title": "GenAI Hub Runbook"
+  },
   "maturityInputs": {
     "process.self-service": { "value": 2, "reason": "Baseline." },
     "people.roles": { "value": 2, "reason": "Baseline." },

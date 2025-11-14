@@ -218,6 +218,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
+          "toolId": "microsoft-azure-llm-modelrouter",
           "description": "Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
           "link": "https://e2eml.school/blog/model_routing/",
           "maturityInputs": {
@@ -335,7 +336,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "toolId": "microsoft-azure-ai-search",
+          "toolId": "genai-hub-custom-chunker",
           "description": "Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
           "link": "https://www.pinecone.io/learn/chunking-strategies/",
           "maturityInputs": {
@@ -425,6 +426,7 @@
           "title": "Text 2 SQL",
           "reviewed": "false",
           "productId": "genai-hub",
+          "toolId": "databricks-genie",
           "type": "technology",
           "description": "Natural‑language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
           "link": "https://arxiv.org/abs/2204.00498",

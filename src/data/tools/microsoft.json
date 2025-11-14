@@ -9,91 +9,98 @@
       "name": "Microsoft Azure",
       "description": "Microsoft Azure is a cloud computing platform offering compute, storage, networking, and managed services across global regions. It provides security, governance, and DevOps integrations to build, deploy, and scale applications and AI workloads.",
       "url": "https://azure.microsoft.com/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-ml",
       "name": "Azure Machine Learning",
       "description": "Azure Machine Learning is a managed service for building, training, and deploying ML and generative AI models at scale. It offers MLOps tooling, automated training, model registry, and responsible AI features.",
       "url": "https://azure.microsoft.com/products/machine-learning/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-openai",
       "name": "Azure OpenAI Service",
       "description": "Azure OpenAI Service provides enterprise access to GPT, Phi, and other frontier foundation models with Azure RBAC, network isolation, and responsible AI guardrails. It supports fine-tuning, provisioned throughput, and On Your Data for grounded responses.",
       "url": "https://azure.microsoft.com/products/ai-services/openai-service/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-ai-studio",
       "name": "Azure AI Studio",
       "description": "Azure AI Studio (formerly Azure AI Foundry) is the control plane for building generative AI apps with model catalog access, prompt flow, evaluations, deployment endpoints, and governance integrations.",
       "url": "https://ai.azure.com/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-ai-agent-service",
       "name": "Azure AI Agent Service",
       "description": "Azure AI Agent Service provides agent runtime, registry, and orchestration capabilities with managed memory, connectors, and tool-calling so developers can compose multi-agent solutions on Azure.",
       "url": "https://learn.microsoft.com/azure/ai-services/agents/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-api-center",
       "name": "Azure API Center",
       "description": "Azure API Center is a centralized inventory for discovering, governing, and sharing internal and external APIs. It powers searchable registries, lifecycle tracking, and integration with API Management.",
       "url": "https://azure.microsoft.com/products/api-center/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-ai-search",
       "name": "Azure AI Search",
       "description": "Azure AI Search combines vector, hybrid, and semantic search with integrated indexing pipelines, chunking, enrichment skills, and Azure OpenAI re-rankers for high-quality RAG experiences.",
       "url": "https://azure.microsoft.com/products/search/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-ai-document-intelligence",
       "name": "Azure AI Document Intelligence",
       "description": "Azure AI Document Intelligence (Form Recognizer) extracts structured data, OCR text, tables, and layout insights from scanned documents, PDFs, and images with prebuilt and custom models.",
       "url": "https://azure.microsoft.com/products/ai-services/document-intelligence/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-cosmos-db",
       "name": "Azure Cosmos DB",
       "description": "Azure Cosmos DB is a globally distributed, multi-model database with low-latency reads, automatic scaling, and vector/JSON storage options ideal for agent memory and grounding state.",
       "url": "https://azure.microsoft.com/products/cosmos-db/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-cache-redis",
       "name": "Azure Cache for Redis Enterprise",
       "description": "Azure Cache for Redis Enterprise offers managed Redis with modules for search and vector similarity, enabling semantic caching, session state, and ultra-low latency agent memory.",
       "url": "https://azure.microsoft.com/products/cache/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-api-management",
       "name": "Azure API Management",
       "description": "Azure API Management provides a global gateway with authentication, throttling, versioning, developer portal, and observability to securely expose and govern APIs and model endpoints.",
       "url": "https://azure.microsoft.com/products/api-management/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-application-insights",
       "name": "Azure Monitor - Application Insights",
       "description": "Application Insights captures distributed traces, metrics, and logs for applications and AI workloads with live dashboards, anomaly detection, and cost tracking.",
       "url": "https://learn.microsoft.com/azure/azure-monitor/app/app-insights-overview",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     },
     {
       "id": "microsoft-azure-sql",
       "name": "Azure SQL Database",
       "description": "Azure SQL Database is a fully managed relational database with built-in security, hyperscale storage, and integration with Azure OpenAI for natural-language-to-SQL experiences.",
       "url": "https://azure.microsoft.com/products/azure-sql/database/",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg"
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
+    },
+    {
+      "id": "microsoft-azure-llm-modelrouter",
+      "name": "LLM Mode;router",
+      "description": "Azure AI LLM Moderouter orchestrates acontent safety pipelines by routing prompts and responses through policy checks, filtering, and mitigation flows before they dynamically reach downstream models.",
+      "url": "https://azure.microsoft.com/products/ai-services/",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg"
     }
   ]
 }

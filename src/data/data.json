@@ -25,7 +25,9 @@
     "imports": [
       "./tools/microsoft.json",
       "./tools/databricks.json",
-      "./tools/python.json"
+      "./tools/python.json",
+      "./tools/genai-hub.json",
+      "./tools/mlops.json"
     ],
     "children": []
   },

@@ -3,7 +3,9 @@ import { MATURITY_SUBDIMENSION_MAP } from '../maturity-config';
 import type { RawMaturityMap } from '../maturity-types';
 import { mergeMaturityMaps, sanitizeMaturityEntries } from '../maturity-utils';
 import databricks from '../tools/databricks.json';
+import genaiHub from '../tools/genai-hub.json';
 import microsoft from '../tools/microsoft.json';
+import mlops from '../tools/mlops.json';
 import pyuthon from '../tools/python.json';
 import type { Vendor } from '../tools-model';
 
@@ -11,6 +13,8 @@ const vendorMap: Record<string, Vendor> = {
   './tools/microsoft.json': microsoft as Vendor,
   './tools/databricks.json': databricks as Vendor,
   './tools/python.json': pyuthon as Vendor,
+  './tools/genai-hub.json': genaiHub as Vendor,
+  './tools/mlops.json': mlops as Vendor,
 };
 
 const implementationSubdimensions = Object.values(MATURITY_SUBDIMENSION_MAP)
@@ -38,6 +42,20 @@ const vendorImplementationProfiles: Record<string, Record<string, number>> = {
     'people.skills': 3,
     'people.capacity': 2,
     'people.product-guidance': 2,
+  },
+  'genai-hub': {
+    'process.self-service': 3,
+    'people.roles': 3,
+    'people.skills': 3,
+    'people.capacity': 2.5,
+    'people.product-guidance': 3,
+  },
+  mlops: {
+    'process.self-service': 3.5,
+    'people.roles': 3.5,
+    'people.skills': 3.5,
+    'people.capacity': 3,
+    'people.product-guidance': 3.5,
   },
   default: {
     'process.self-service': 2.5,

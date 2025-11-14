@@ -6,10 +6,10 @@
   "dpo": { "name": "Sareena Samad", "email": "sareena.samad@volvo.com" },
   "sa": { "name": "Sasi Sekhar Sadam", "email": "sasi.sekhar.sadam@volvo.com" },
   "maturityInputs": {
-    "process.self-service": { "value": 2, "reason": "Baseline." },
-    "people.roles": { "value": 2, "reason": "Baseline." },
-    "people.skills": { "value": 2, "reason": "Baseline." },
-    "people.capacity": { "value": 2, "reason": "Baseline." },
-    "people.product-guidance": { "value": 2, "reason": "Baseline." }
+    "process.self-service": { "value": 1.2, "reason": "Baseline." },
+    "people.roles": { "value": 3, "reason": "Baseline." },
+    "people.skills": { "value": 0.5, "reason": "Baseline." },
+    "people.capacity": { "value": 1.5, "reason": "Baseline." },
+    "people.product-guidance": { "value": 2.8, "reason": "Baseline." }
   }
 }

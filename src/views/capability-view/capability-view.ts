@@ -369,9 +369,11 @@ export class CapabilityView implements View {
     };
     const computeVisualState = (cap: Capability): CapabilityVisualState => {
       const total = cap.maturity?.total ?? 0;
-      const tileFill = total > 0 ? getMaturityBandColor(total) : '#EFF1F4';
-      const textColor = getReadableTextColor(tileFill);
-      const secondaryTextColor = textColor === '#FFFFFF' ? 'rgba(255,255,255,0.85)' : '#2F3A45';
+      let tileFill = total > 0 ? getMaturityBandColor(total) : '#EFF1F4';
+      let tileStroke = total > 0 ? darkenHexColor(tileFill, 0.35) : '#CFD3DA';
+      let textColor = getReadableTextColor(tileFill);
+      let secondaryTextColor = textColor === '#FFFFFF' ? 'rgba(255,255,255,0.85)' : '#2F3A45';
+      let iconColor = textColor;
 
       let hviaLinked = true;
       let hviaStatusLabel = '';
@@ -392,14 +394,31 @@ export class CapabilityView implements View {
           hviaTooltipLabel = selectedHviaName ? `Not linked to ${selectedHviaName}` : 'Not linked to selected HVIA';
           opacity = 0.45;
         }
+
+        const hviaUsed = hviaStatusLevel >= 2;
+        const hviaRequested = hviaStatusLevel === 1;
+        const hviaUsedFill = '#5CB85C';
+        const hviaRequestedFill = '#FFB300';
+        const hviaUnusedFill = '#E3E6EA';
+        if (hviaUsed) {
+          tileFill = hviaUsedFill;
+        } else if (hviaRequested) {
+          tileFill = hviaRequestedFill;
+        } else {
+          tileFill = hviaUnusedFill;
+        }
+        tileStroke = hviaUsed ? darkenHexColor(tileFill, 0.35) : hviaRequested ? darkenHexColor(tileFill, 0.3) : '#C0C6D0';
+        textColor = getReadableTextColor(tileFill);
+        secondaryTextColor = textColor === '#FFFFFF' ? 'rgba(255,255,255,0.85)' : '#5F6B7A';
+        iconColor = textColor;
       }
 
       return {
         tileFill,
-        tileStroke: total > 0 ? darkenHexColor(tileFill, 0.35) : '#CFD3DA',
+        tileStroke,
         textColor,
         secondaryTextColor,
-        iconColor: textColor,
+        iconColor,
         hviaLinked,
         hviaStatusLabel,
         hviaTooltipLabel,

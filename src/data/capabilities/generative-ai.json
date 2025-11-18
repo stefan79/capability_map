@@ -9,11 +9,11 @@
       "children": [
         {
           "id": "gai-aa-ard",
-          "title": "Agent Registry & Discovery",          
+          "title": "Agent Registry & Discovery",
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
+          "description": "Catalog of available and curated agents, alongside metadata e.g., owners. It can be queried by other agents (\u201cdiscovery\u201d). A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
           "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -28,7 +28,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          }          
+          }
         },
         {
           "id": "gai-aa-ao",
@@ -36,7 +36,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
+          "description": "Multi-step tool-using agents with planning/execution. Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
           "link": "https://langchain-ai.github.io/langgraph/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -51,7 +51,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          }          
+          }
         },
         {
           "id": "gai-aa-ast",
@@ -59,7 +59,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
+          "description": "Standard toolkit for building and publishing agents. Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
           "link": "https://ai-sdk.dev/docs/introduction",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -74,7 +74,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          }          
+          }
         },
         {
           "id": "gai-aa-mrd",
@@ -82,7 +82,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
+          "description": "Model Context Protocol endpoints and tools catalog. Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
           "link": "https://modelcontextprotocol.org/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -97,7 +97,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          }          
+          }
         },
         {
           "id": "gai-aa-mm",
@@ -105,7 +105,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Short- and long‑term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
+          "description": "Short/long-term memory stores for agents. Short- and long\u2011term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
           "link": "https://www.ibm.com/think/topics/ai-agent-memory",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -120,7 +120,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          }          
+          }
         },
         {
           "id": "gai-aa-arag",
@@ -128,7 +128,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "description": "Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
+          "description": "Retrieval-augmented generation with agent tool-use and feedback loops. Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
           "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -143,7 +143,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          }          
+          }
         }
       ]
     },
@@ -156,8 +156,8 @@
           "title": "Model Catalog",
           "reviewed": "false",
           "productId": "genai-hub",
-          "type": "technology",          
-          "description": "An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
+          "type": "technology",
+          "description": "Inventory of supported foundation models. An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
           "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog"
         },
         {
@@ -166,7 +166,7 @@
           "type": "technology",
           "productId": "genai-hub",
           "toolId": "microsoft-azure-openai",
-          "description": "Large pre-trained models adaptable to many downstream tasks via prompting or fine‑tuning. Provide strong baselines for generative use cases.",
+          "description": "Managed access to general-purpose models. Large pre-trained models adaptable to many downstream tasks via prompting or fine\u2011tuning. Provide strong baselines for generative use cases.",
           "link": "https://research.ibm.com/blog/what-are-foundation-models",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -183,7 +183,11 @@
             }
           },
           "useCaseRefs": [
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
           ]
         },
         {
@@ -192,7 +196,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
+          "description": "Single API routing to multiple providers with common auth/logging. Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
           "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -207,9 +211,13 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          },          
+          },
           "useCaseRefs": [
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
           ]
         },
         {
@@ -223,7 +231,7 @@
           },
           "type": "pattern",
           "toolId": "microsoft-azure-llm-modelrouter",
-          "description": "Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
+          "description": "Policy-based model selection by task, cost, or sensitivity. Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
           "link": "https://e2eml.school/blog/model_routing/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -246,7 +254,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
+          "description": "Cache LLM responses by embedding similarity. Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
           "link": "https://redis.io/blog/what-is-semantic-caching/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -276,7 +284,7 @@
           "productId": "genai-hub",
           "type": "technology",
           "toolId": "microsoft-azure-ai-document-intelligence",
-          "description": "Extraction of structure and text from PDFs, Office docs, HTML, and images for downstream processing. Handles tables, figures, and layout.",
+          "description": "Ingest PDFs/Office/HTML with layout structure. Extraction of structure and text from PDFs, Office docs, HTML, and images for downstream processing. Handles tables, figures, and layout.",
           "link": "https://github.com/unstructured-io/unstructured",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -293,13 +301,41 @@
             }
           },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
           ]
         },
         {
@@ -309,7 +345,7 @@
           "productId": "genai-hub",
           "type": "technology",
           "toolId": "microsoft-azure-ai-document-intelligence",
-          "description": "Optical character recognition and document understanding to convert scans into machine‑readable text and entities. Critical for enterprise content.",
+          "description": "OCR and table/form extraction with post-processing. Optical character recognition and document understanding to convert scans into machine\u2011readable text and entities. Critical for enterprise content.",
           "link": "https://aws.amazon.com/textract/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -326,12 +362,36 @@
             }
           },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            }
           ]
         },
         {
@@ -341,7 +401,7 @@
           "productId": "genai-hub",
           "type": "pattern",
           "toolId": "genai-hub-custom-chunker",
-          "description": "Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
+          "description": "Split documents effectively for retrieval. Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
           "link": "https://www.pinecone.io/learn/chunking-strategies/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -356,15 +416,43 @@
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             }
-          },          
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
           ]
         },
         {
@@ -374,7 +462,7 @@
           "productId": "genai-hub",
           "type": "technology",
           "toolId": "microsoft-azure-ai-search",
-          "description": "Databases for high‑dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
+          "description": "Embedding store with filters. Databases for high\u2011dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
           "link": "https://www.pinecone.io/learn/vector-database/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -391,13 +479,41 @@
             }
           },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+            {
+              "hviaId": "sales-acceleration",
+              "useCaseId": "sales-acceleration-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "warranty-cost-reduction",
+              "useCaseId": "warranty-cost-reduction-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "new-ai-services",
+              "useCaseId": "new-ai-services-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "e2e-sop",
+              "useCaseId": "e2e-sop-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "dev-productivity",
+              "useCaseId": "dev-productivity-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "white-collar-productivity",
+              "useCaseId": "white-collar-productivity-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
           ]
         },
         {
@@ -406,7 +522,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "description": "Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
+          "description": "Blueprint of several advanced RAG patterns, incl. hybrid search, re-ranking, multi-query, etc. Enhancements like cross\u2011encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
           "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -422,8 +538,7 @@
               "reason": "Initial Suggestion from Stijn."
             }
           },
-          "useCaseRefs": [
-          ]
+          "useCaseRefs": []
         },
         {
           "id": "gai-de-t2sql",
@@ -432,7 +547,7 @@
           "productId": "genai-hub",
           "toolId": "databricks-genie",
           "type": "technology",
-          "description": "Natural‑language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
+          "description": "Natural-language to governed SQL with guardrails. Natural\u2011language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
           "link": "https://arxiv.org/abs/2204.00498",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -461,7 +576,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "policy",
-          "description": "Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
+          "description": "Step-level traces, token metrics, latency, and costs. Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
           "link": "https://docs.langfuse.com/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -476,9 +591,13 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          },          
+          },
           "useCaseRefs": [
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
           ]
         },
         {
@@ -487,7 +606,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "technology",
-          "description": "Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
+          "description": "Versioned prompts, tests, and rollout controls. Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
           "link": "https://prompttools.readthedocs.io/",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -504,7 +623,11 @@
             }
           },
           "useCaseRefs": [
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
           ]
         },
         {
@@ -513,7 +636,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "description": "Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
+          "description": "Golden sets and automatic task-level evals. Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
           "link": "https://arize.com/blog/llm-evaluation-guide/"
         },
         {
@@ -522,7 +645,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "description": "Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self‑reflection and rewriting. Can be manual or programmatic.",
+          "description": "Improve quality and token efficiency via techniques/tools. Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self\u2011reflection and rewriting. Can be manual or programmatic.",
           "link": "https://www.promptingguide.ai/guides/optimizing-prompts",
           "maturityInputs": {
             "technology.adoption-effort": {
@@ -537,8 +660,7 @@
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             }
-          },
-
+          }
         }
       ]
     }

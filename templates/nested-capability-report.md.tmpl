@@ -1,0 +1,31 @@
+# Capability Report by Cluster
+
+{{#renderClusters}}
+# {{title}}
+{{#subclusters}}
+## {{title}}
+{{#capabilities}}
+### {{title}}
+{{#description}}{{description}}{{/description}}{{#link}} ([details]({{link}})){{/link}}
+
+{{#productDisplay}}- Product: {{productDisplay}}{{/productDisplay}}
+{{#tool}}- Tool: {{name}}{{#vendorName}} ({{vendorName}}){{/vendorName}}{{#url}} ([link]({{url}})){{/url}}{{/tool}}
+{{#documentationLink}}- Documentation: [{{title}}]({{url}}){{/documentationLink}}
+
+{{#maturityRows.length}}
+| Subdimension | Score | Weight | Reason |
+| --- | --- | --- | --- |
+{{#maturityRows}}| {{name}} | {{value}} | {{weight}} | {{reason}} |
+{{/maturityRows}}
+{{/maturityRows.length}}
+
+{{#useCaseRows.length}}
+| HVIA | Use Case | Maturity |
+| --- | --- | --- |
+{{#useCaseRows}}| {{hviaName}} | {{name}} | {{maturity}} |
+{{/useCaseRows}}
+{{/useCaseRows.length}}
+
+{{/capabilities}}
+{{/subclusters}}
+{{/renderClusters}}

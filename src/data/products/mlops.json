@@ -10,7 +10,7 @@
     "title": "Confluence: AI Strategy - Analytical AI"
   },
   "maturityInputs": {
-    "process.self-service": { "value": 1.2, "reason": "Baseline." },
+    "process.self-service": { "value": 2, "reason": "Basic self-service via forms; approval mostly manual." },
     "people.roles": { "value": 3, "reason": "Baseline." },
     "people.skills": { "value": 0.5, "reason": "Baseline." },
     "people.capacity": { "value": 1.5, "reason": "Baseline." },

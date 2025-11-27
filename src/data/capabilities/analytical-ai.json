@@ -435,18 +435,6 @@
           "description": "Global/local explainability for models (e.g., SHAP/IG). Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
           "link": "https://christophm.github.io/interpretable-ml-book/feature-importance.html",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
-            }
           },
           "useCaseRefs": [
             {
@@ -490,18 +478,6 @@
           "description": "Operations research modeling (LP/MIP/CP). Operations Research solvers and modeling tools (e.g., MILP, CP) for optimization problems. Provides prescriptive analytics beyond prediction.",
           "link": "https://developers.google.com/optimization",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
-            }
           },
           "useCaseRefs": [
             {
@@ -1104,7 +1080,7 @@
             },
             "process.documentation": {
               "value": 0,
-              "reason": "The provided documentation is a PDF file that appears to be corrupted or unreadable, making it unusable as a source of information or guidance."
+              "reason": "The document contains only a placeholder introduction with no actual content, guidance, or usable templates."
             }
           },
           "useCaseRefs": [

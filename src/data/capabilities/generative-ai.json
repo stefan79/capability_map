@@ -16,18 +16,6 @@
           "description": "Catalog of available and curated agents, alongside metadata e.g., owners. It can be queried by other agents (\u201cdiscovery\u201d). A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
           "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           }
         },
         {
@@ -39,18 +27,6 @@
           "description": "Multi-step tool-using agents with planning/execution. Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
           "link": "https://langchain-ai.github.io/langgraph/",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           }
         },
         {
@@ -62,18 +38,6 @@
           "description": "Standard toolkit for building and publishing agents. Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
           "link": "https://ai-sdk.dev/docs/introduction",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           }
         },
         {
@@ -84,18 +48,14 @@
           "type": "technology",
           "description": "Model Context Protocol endpoints and tools catalog. Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
           "link": "https://modelcontextprotocol.org/",
+          "productDocumentation": {
+            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/.vscode/mcp.json",
+            "title": "MCP Confluence configuration"
+          },
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No usable documentation or cannot locate it."
             }
           }
         },
@@ -108,18 +68,6 @@
           "description": "Short/long-term memory stores for agents. Short- and long\u2011term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
           "link": "https://www.ibm.com/think/topics/ai-agent-memory",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           }
         },
         {
@@ -131,18 +79,6 @@
           "description": "Retrieval-augmented generation with agent tool-use and feedback loops. Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
           "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           }
         }
       ]
@@ -168,6 +104,11 @@
           "toolId": "microsoft-azure-openai",
           "description": "Managed access to general-purpose models. Large pre-trained models adaptable to many downstream tasks via prompting or fine\u2011tuning. Provide strong baselines for generative use cases.",
           "link": "https://research.ibm.com/blog/what-are-foundation-models",
+          "productDocumentation": {
+            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/openai_model_call.ipynb",
+            "title": "Azure Foundry chat completion example",
+            "description": "Additional LangChain/agent usage notebook: https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -178,8 +119,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "The documentation provides comprehensive coverage of the Foundation Models capability, including detailed code examples for multiple models, API usage, authentication methods, and integration with various SDKs. It includes reusable code templates, versioning information, and clear instructions for different tasks such as model calls, document processing, embedding generation, indexing, and audio transcription. The documentation appears actively maintained and well-structured, serving as a single source of truth."
             }
           },
           "useCaseRefs": [
@@ -198,6 +139,11 @@
           "type": "technology",
           "description": "Single API routing to multiple providers with common auth/logging. Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.",
           "link": "https://konghq.com/blog/enterprise/what-is-an-ai-gateway",
+          "productDocumentation": {
+            "url": "https://github.com/VolvoGroup-Internal/genaihub-ipynb-openai-v1/tree/main",
+            "title": "LLM response API notebooks",
+            "description": "Inference example: https://github.com/VolvoGroup-Internal/genaihub-ipynb-openai-data-inference/blob/main/inference.ipynb"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 1,
@@ -208,8 +154,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "The documentation is provided as a detailed Jupyter notebook with multiple code examples demonstrating various API usages including chat, embeddings, responses with code interpreter and codex, as well as error handling for unavailable APIs. It covers most capabilities of the Model Gateway and is actively updated with clear examples, but lacks explicit mention of version control or ownership."
             }
           },
           "useCaseRefs": [
@@ -225,10 +171,6 @@
           "title": "Dynamic model routing",
           "reviewed": "false",
           "productId": "genai-hub",
-          "productDocumentation": {
-            "url": "https://www.volvogroup.com/en/innovation.html#genai-model-routing",
-            "title": "Model Routing Guide"
-          },
           "type": "pattern",
           "toolId": "microsoft-azure-llm-modelrouter",
           "description": "Policy-based model selection by task, cost, or sensitivity. Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
@@ -243,8 +185,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           }
         },
@@ -257,18 +199,6 @@
           "description": "Cache LLM responses by embedding similarity. Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
           "link": "https://redis.io/blog/what-is-semantic-caching/",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           }
         }
       ]
@@ -286,6 +216,10 @@
           "toolId": "microsoft-azure-ai-document-intelligence",
           "description": "Ingest PDFs/Office/HTML with layout structure. Extraction of structure and text from PDFs, Office docs, HTML, and images for downstream processing. Handles tables, figures, and layout.",
           "link": "https://github.com/unstructured-io/unstructured",
+          "productDocumentation": {
+            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb",
+            "title": "Starter kit: parsing & OCR notebook"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -296,8 +230,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Only has starter kit documentation."
             }
           },
           "useCaseRefs": [
@@ -347,6 +281,10 @@
           "toolId": "microsoft-azure-ai-document-intelligence",
           "description": "OCR and table/form extraction with post-processing. Optical character recognition and document understanding to convert scans into machine\u2011readable text and entities. Critical for enterprise content.",
           "link": "https://aws.amazon.com/textract/",
+          "productDocumentation": {
+            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb",
+            "title": "Starter kit: parsing & OCR notebook"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -357,8 +295,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Only has starter kit documentation."
             }
           },
           "useCaseRefs": [
@@ -403,6 +341,11 @@
           "toolId": "genai-hub-custom-chunker",
           "description": "Split documents effectively for retrieval. Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
           "link": "https://www.pinecone.io/learn/chunking-strategies/",
+          "productDocumentation": {
+            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb",
+            "title": "Starter kit: fixed-size chunking",
+            "description": "Advanced configurable chunking walkthrough: https://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_git/GenAIHub-AdvanceChunking?path=/sample_usage/USAGE_COMPREHENSIVE.md"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -413,8 +356,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Only has starter kit documentation."
             }
           },
           "useCaseRefs": [
@@ -474,8 +417,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           },
           "useCaseRefs": [
@@ -525,18 +468,6 @@
           "description": "Blueprint of several advanced RAG patterns, incl. hybrid search, re-ranking, multi-query, etc. Enhancements like cross\u2011encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
           "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/",
           "maturityInputs": {
-            "technology.adoption-effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            },
-            "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
-            }
           },
           "useCaseRefs": []
         },
@@ -559,8 +490,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 0,
+              "reason": "No documentation found."
             }
           }
         }

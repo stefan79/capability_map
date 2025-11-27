@@ -10,7 +10,7 @@
     "title": "GenAI Hub Runbook"
   },
   "maturityInputs": {
-    "process.self-service": { "value": 2, "reason": "Baseline." },
+    "process.self-service": { "value": 2, "reason": "Basic self-service via forms; approval mostly manual." },
     "people.roles": { "value": 2, "reason": "Baseline." },
     "people.skills": { "value": 2, "reason": "Baseline." },
     "people.capacity": { "value": 2, "reason": "Baseline." },

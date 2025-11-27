@@ -31,7 +31,7 @@
             },
             "process.documentation": {
               "value": 2,
-              "reason": "Documentation covers main process, documentation processes still needs to be reviewed."
+              "reason": "The documentation includes core processes related to Data Labelling / Annotation, with some version control evident. However, the documentation is incomplete and lacks full coverage and reusable templates. It appears to be actively maintained but does not fully meet the highest standards of completeness and ownership."
             }
           },
           "useCaseRefs": [
@@ -90,8 +90,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
+              "value": 2,
+              "reason": "The documentation explains the core model lifecycle and centralization flow, but lacks operational depth, troubleshooting guidance, setup details, and reusable templates needed for higher maturity."
             }
           },
           "useCaseRefs": [
@@ -150,8 +150,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
+              "value": 3,
+              "reason": "The documentation for Exploratory Data Analysis (EDA) is available as a detailed PDF document with multiple pages and links, indicating coverage of most capabilities. It includes references and appears to be actively maintained and updated, though there is no explicit evidence of reusable templates or formal ownership stated."
             }
           },
           "useCaseRefs": [
@@ -215,8 +215,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
+              "value": 3,
+              "reason": "The documentation includes detailed functional specifications, links to external resources, and covers most aspects of the Feature Store capability including online/offline serving, lineage, governance, and reuse. It appears actively maintained with examples and references to related documentation, though it does not explicitly mention reusable templates or established version control and ownership to merit a score of 4."
             }
           },
           "useCaseRefs": [
@@ -565,8 +565,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
+              "value": 3,
+              "reason": "The documentation includes detailed information on batch inference, integration with data lake workflows, orchestration, and links to relevant resources. It covers most capabilities and includes examples, indicating active maintenance and updates. However, there is no explicit mention of reusable templates or established version control and ownership to justify a score of 4."
             }
           },
           "useCaseRefs": [
@@ -630,8 +630,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
+              "value": 3,
+              "reason": "The documentation provides comprehensive coverage of the Online Inference capability, including details on low-latency API serving, autoscaling, monitoring, rollback, and security considerations. It includes links to external resources and examples, and appears to be actively maintained and updated. However, there is no explicit mention of reusable templates or established version control and ownership, so it does not meet the highest rubric level."
             }
           },
           "useCaseRefs": [
@@ -866,8 +866,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Minimal Documentation available, documentation process still needs to be reviewed."
+              "value": 3,
+              "reason": "The provided documentation includes a detailed functional specification document with links to related resources and images. It covers most aspects of the Model Store capability, including versioning, lineage, governance, and environment promotion. The documentation appears to be actively maintained and updated, with examples and references to governance and security practices. However, there is no explicit mention of reusable templates or established version control and ownership, so it does not reach the highest level."
             }
           },
           "useCaseRefs": [
@@ -1103,8 +1103,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "Documentation covers main process, documentation processes still needs to be reviewed."
+              "value": 0,
+              "reason": "The provided documentation is a PDF file that appears to be corrupted or unreadable, making it unusable as a source of information or guidance."
             }
           },
           "useCaseRefs": [

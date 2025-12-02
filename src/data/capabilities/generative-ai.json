@@ -342,7 +342,7 @@
           "description": "Split documents effectively for retrieval. Split documents into semantically coherent passages optimized for retrieval and context windows. Improves precision and grounding.",
           "link": "https://www.pinecone.io/learn/chunking-strategies/",
           "productDocumentation": {
-            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb",
+            "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/custom-search-capabilities/advancechunking/docs/USAGE_COMPREHENSIVE.md",
             "title": "Starter kit: fixed-size chunking",
             "description": "Advanced configurable chunking walkthrough: https://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_git/GenAIHub-AdvanceChunking?path=/sample_usage/USAGE_COMPREHENSIVE.md"
           },
@@ -356,8 +356,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 1,
-              "reason": "Only has starter kit documentation."
+              "value": 4,
+              "reason": "Detaile description given. Is up to date."
             }
           },
           "useCaseRefs": [
@@ -407,6 +407,11 @@
           "toolId": "microsoft-azure-ai-search",
           "description": "Embedding store with filters. Databases for high\u2011dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
           "link": "https://www.pinecone.io/learn/vector-database/",
+          "productDocumentation": {
+            "url": "httpshttps://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_wiki/wikis/GenAI-Hub.wiki/6292/Custom-indexes-migration-guide",
+            "title": "Migration Concept for Indexes",
+            "description": "Overview for https://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_wiki/wikis/GenAI-Hub.wiki/6246/Vectorizer-Custom-Skill"
+          },
           "maturityInputs": {
             "technology.adoption-effort": {
               "value": 2,
@@ -417,8 +422,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 1,
+              "reason": "Basic documentation found, no coverage oc core processes or single truth."
             }
           },
           "useCaseRefs": [

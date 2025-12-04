@@ -520,37 +520,47 @@ function main() {
   };
   clusters.forEach(walk);
 
+  const buildTemplateFields = (cap) => {
+    const maturityRows = [];
+    const technologyDimension = cap.maturity?.dimensions?.technology;
+    const documentationSnapshot = cap.maturity?.dimensions?.process?.subdimensions?.['process.documentation'];
+    if (cap.maturity?.dimensions) {
+      Object.values(cap.maturity.dimensions).forEach((dim) => {
+        Object.values(dim.subdimensions || {}).forEach((subdim) => {
+          maturityRows.push(subdim);
+        });
+      });
+    }
+    return {
+      ...cap,
+      maturityRows,
+      technologyRows: technologyDimension ? Object.values(technologyDimension.subdimensions || {}) : [],
+      technologyScore: technologyDimension?.value,
+      documentationSnapshot,
+      documentationScore: documentationSnapshot?.value,
+      documentationReason: documentationSnapshot?.reason,
+      useCaseRows: cap.useCases || [],
+    };
+  };
+
   const normalizeForTemplate = (cluster) => {
     const subclusters = (cluster.children || [])
       .filter((child) => Array.isArray(child.children))
       .map((sub) => {
         const capabilities = (sub.children || [])
           .filter((c) => c && typeof c === 'object' && c.type)
-          .map((cap) => {
-            const maturityRows = [];
-            if (cap.maturity?.dimensions) {
-              Object.values(cap.maturity.dimensions).forEach((dim) => {
-                Object.values(dim.subdimensions || {}).forEach((subdim) => {
-                  maturityRows.push(subdim);
-                });
-              });
-            }
-            return {
-              ...cap,
-              maturityRows,
-              useCaseRows: cap.useCases || [],
-            };
-          });
+          .map(buildTemplateFields);
         return { ...sub, capabilities };
       });
     return { ...cluster, subclusters };
   };
 
   const renderClusters = clusters.map(normalizeForTemplate);
+  const templateCapabilities = [...capabilities].sort((a, b) => a.title.localeCompare(b.title)).map(buildTemplateFields);
 
   const aggregated = {
     clusters,
-    capabilities: [...capabilities].sort((a, b) => a.title.localeCompare(b.title)),
+    capabilities: templateCapabilities,
     products,
     tools: Object.values(toolIndex),
     vendors,

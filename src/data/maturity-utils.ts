@@ -20,6 +20,13 @@ export const sanitizeMaturityEntries = (
     if (allowed && !allowed.has(definition.source)) {
       throw new Error(`${entityLabel} cannot set ${definition.name} because it belongs to ${definition.source}.`);
     }
+    if (value?.value === null) {
+      acc[key] = {
+        value: null,
+        reason: value?.reason,
+      };
+      return acc;
+    }
     acc[key] = {
       value: clampMaturityValue(value?.value),
       reason: value?.reason,

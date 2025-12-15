@@ -29,6 +29,7 @@ const defaultReasonBySource: Record<MaturitySource, string> = {
   capability: 'Baseline capability signal not provided.',
   implementation: 'Implementation does not expose this maturity data.',
   hvia: 'No HVIA usage recorded yet.',
+  product: 'Product maturity signal not provided.',
 };
 
 const hasDocLink = (doc?: ProductDocumentationLink | null): doc is ProductDocumentationLink =>
@@ -93,7 +94,7 @@ const deriveCapabilityDefaults = (capability: Capability): RawMaturityMap => {
   const developmentValue = Math.min(4, statusScore + devBoost);
 
   return {
-    'technology.adoption-effort': {
+    'adoption.effort': {
       value: Math.min(4, statusScore),
       reason: `Derived from capability status "${capability.status}".`,
     },
@@ -170,7 +171,9 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
       else sourceMap = hviaInputs;
 
       const entry = sourceMap[subdimension.id];
-      let value = entry?.value ?? 0;
+      const rawValue = entry?.value;
+      const isSkipped = rawValue === null;
+      let value = isSkipped ? 0 : rawValue ?? 0;
       let reason = entry?.reason;
 
       if (!capability.tool) {
@@ -178,7 +181,9 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
       }
 
       if (!reason) {
-        if (subdimension.source === 'implementation' && !capability.tool) {
+        if (isSkipped) {
+          reason = 'Not scored; excluded from maturity calculation.';
+        } else if (subdimension.source === 'implementation' && !capability.tool) {
           reason = 'No implementation linked to this capability.';
         } else {
           reason = defaultReasonBySource[subdimension.source];
@@ -193,11 +198,14 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
         reason,
       };
 
-      dimensionWeightSum += subdimension.weight;
-      dimensionValueSum += value * subdimension.weight;
+      if (!isSkipped) {
+        dimensionWeightSum += subdimension.weight;
+        dimensionValueSum += value * subdimension.weight;
+      }
     }
 
-    const dimensionValue = dimensionWeightSum ? dimensionValueSum / dimensionWeightSum : 0;
+    const hasScoredSubdimensions = dimensionWeightSum > 0;
+    const dimensionValue = hasScoredSubdimensions ? dimensionValueSum / dimensionWeightSum : 0;
     summary.dimensions[dimension.id] = {
       id: dimension.id,
       name: dimension.name,
@@ -209,8 +217,10 @@ const buildCapabilityMaturity = (capability: Capability): { summary: CapabilityM
       subdimensions: subSnapshots,
     };
 
-    totalWeight += dimension.weight;
-    weightedSum += dimensionValue * dimension.weight;
+    if (hasScoredSubdimensions) {
+      totalWeight += dimension.weight;
+      weightedSum += dimensionValue * dimension.weight;
+    }
   }
 
   summary.total = totalWeight ? Number((weightedSum / totalWeight).toFixed(2)) : 0;

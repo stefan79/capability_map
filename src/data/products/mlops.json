@@ -11,9 +11,9 @@
   },
   "maturityInputs": {
     "process.self-service": { "value": 2, "reason": "Basic self-service via forms; approval mostly manual." },
-    "people.roles": { "value": 3, "reason": "Baseline." },
-    "people.skills": { "value": 0.5, "reason": "Baseline." },
-    "people.capacity": { "value": 1.5, "reason": "Baseline." },
-    "people.product-guidance": { "value": 2.8, "reason": "Baseline." }
+    "people.roles": { "value": 3.5, "reason": "Escalation Paths and Back-Ups available ad-hoc, group mailboxes existent, main documentaiton in confluence" },
+    "people.skills": { "value": 3.5, "reason": "Two established experts available, onboarding two additional experts at the moment." },
+    "people.capacity": { "value": 2.5, "reason": "Capacity sufficient to support a small group of use-cases withouth introducing lead times." },
+    "people.product-guidance": { "value": 3, "reason": "Playbook exists, constantly updated by/for new develoeprs, but no learning paths or dedicated trainings." }
   }
 }

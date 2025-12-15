@@ -56,6 +56,10 @@
             "process.documentation": {
               "value": 0,
               "reason": "No usable documentation or cannot locate it."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           }
         },
@@ -110,7 +114,7 @@
             "description": "Additional LangChain/agent usage notebook: https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -121,6 +125,10 @@
             "process.documentation": {
               "value": 4,
               "reason": "The documentation provides comprehensive coverage of the Foundation Models capability, including detailed code examples for multiple models, API usage, authentication methods, and integration with various SDKs. It includes reusable code templates, versioning information, and clear instructions for different tasks such as model calls, document processing, embedding generation, indexing, and audio transcription. The documentation appears actively maintained and well-structured, serving as a single source of truth."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -145,7 +153,7 @@
             "description": "Inference example: https://github.com/VolvoGroup-Internal/genaihub-ipynb-openai-data-inference/blob/main/inference.ipynb"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -156,6 +164,10 @@
             "process.documentation": {
               "value": 3,
               "reason": "The documentation is provided as a detailed Jupyter notebook with multiple code examples demonstrating various API usages including chat, embeddings, responses with code interpreter and codex, as well as error handling for unavailable APIs. It covers most capabilities of the Model Gateway and is actively updated with clear examples, but lacks explicit mention of version control or ownership."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -176,7 +188,7 @@
           "description": "Policy-based model selection by task, cost, or sensitivity. Automatically select the best model per request based on cost, latency, capability, or content. Optimizes quality and spend.",
           "link": "https://e2eml.school/blog/model_routing/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -187,6 +199,10 @@
             "process.documentation": {
               "value": 0,
               "reason": "No documentation found."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           }
         },
@@ -221,7 +237,7 @@
             "title": "Starter kit: parsing & OCR notebook"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -232,6 +248,10 @@
             "process.documentation": {
               "value": 1,
               "reason": "Only has starter kit documentation."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -286,7 +306,7 @@
             "title": "Starter kit: parsing & OCR notebook"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -297,7 +317,12 @@
             "process.documentation": {
               "value": 1,
               "reason": "Only has starter kit documentation."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
+
           },
           "useCaseRefs": [
             {
@@ -347,7 +372,7 @@
             "description": "Advanced configurable chunking walkthrough: https://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_git/GenAIHub-AdvanceChunking?path=/sample_usage/USAGE_COMPREHENSIVE.md"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -357,7 +382,11 @@
             },
             "process.documentation": {
               "value": 4,
-              "reason": "Detaile description given. Is up to date."
+              "reason": "Detailed description given. Is up to date."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -413,7 +442,7 @@
             "description": "Overview for https://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_wiki/wikis/GenAI-Hub.wiki/6246/Vectorizer-Custom-Skill"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -424,6 +453,10 @@
             "process.documentation": {
               "value": 1,
               "reason": "Basic documentation found, no coverage oc core processes or single truth."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -486,7 +519,7 @@
           "description": "Natural-language to governed SQL with guardrails. Natural\u2011language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
           "link": "https://arxiv.org/abs/2204.00498",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -497,6 +530,10 @@
             "process.documentation": {
               "value": 0,
               "reason": "No documentation found."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           }
         }
@@ -515,7 +552,7 @@
           "description": "Step-level traces, token metrics, latency, and costs. Monitoring prompts, model calls, costs, and latencies with request traces and metrics. Supports debugging, governance, and optimization.",
           "link": "https://docs.langfuse.com/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -526,6 +563,10 @@
             "process.documentation": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -545,7 +586,7 @@
           "description": "Versioned prompts, tests, and rollout controls. Versioned storage and workflows for prompt design, testing, and rollout. Enables collaboration and safe iteration.",
           "link": "https://prompttools.readthedocs.io/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -556,6 +597,10 @@
             "process.documentation": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           },
           "useCaseRefs": [
@@ -584,7 +629,7 @@
           "description": "Improve quality and token efficiency via techniques/tools. Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self\u2011reflection and rewriting. Can be manual or programmatic.",
           "link": "https://www.promptingguide.ai/guides/optimizing-prompts",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -595,6 +640,10 @@
             "process.documentation": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": 3,
+              "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
           }
         }

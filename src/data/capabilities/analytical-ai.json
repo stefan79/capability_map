@@ -21,13 +21,17 @@
           "description": "Human-in-the-loop tools to tag data (text/images/tables) with QA workflows. Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
           "link": "https://www.ibm.com/think/topics/data-labeling",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 2,
@@ -81,13 +85,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/420708673/AIS+-+Model+Catalog"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 2,
@@ -141,13 +149,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/454820517/AIS+-+EDA-Exploratory+Data+Analysis"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 3,
@@ -206,13 +218,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/374933943/AIS+-+Feature+Store"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 3,
@@ -268,13 +284,17 @@
           "description": "Standard containers/runtimes (CUDA/drivers/libs) for model training. Compute environments and schedulers for distributed training jobs. Supports GPUs/accelerators, checkpoints, and scaling.",
           "link": "https://www.tensorflow.org/guide/distributed_training",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -324,13 +344,17 @@
           "description": "Curated libraries for training and hyper-parameter tuning. Frameworks and toolkits for model training, tuning, and evaluation. Includes hyperparameter search and experiment tracking hooks.",
           "link": "https://scikit-learn.org/stable/modules/grid_search.html",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -380,13 +404,17 @@
           "description": "Automated baseline model building with search and leaderboard. Automated pipelines to select features, models, and hyperparameters. Accelerates prototyping with guardrails for quality.",
           "link": "https://cloud.google.com/automl",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -532,13 +560,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 3,
@@ -597,13 +629,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 3,
@@ -657,7 +693,7 @@
           "description": "Scenario engines/digital twins to test decisions. Scenario simulation and what-if analysis engines to test policies and systems. Useful for planning and risk analysis.",
           "link": "https://en.wikipedia.org/wiki/Discrete-event_simulation",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
@@ -712,13 +748,17 @@
           "description": "Services for solving mathematical problems (LP/MIP/CP). Services to formulate and solve mathematical optimization and equation systems. Targets complex planning and scheduling problems.",
           "link": "https://www.gurobi.com/resources/what-is-mathematical-optimization/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -774,13 +814,17 @@
           "description": "Detect training vs. production data distribution shifts. Monitoring to detect shifts in input data distributions over time. Triggers retraining or investigation when thresholds are breached.",
           "link": "https://docs.whylabs.ai/docs/glossary/data-drift/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -833,13 +877,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/384796651/AIS+-+Model+Store"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 3,
@@ -894,13 +942,17 @@
           "description": "Track performance and ground-truth drift over time. Techniques to detect performance degradation due to changing relationships in data. Supports alerts and retraining workflows.",
           "link": "https://docs.evidentlyai.com/user-guide/concept-drift/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 1,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -950,9 +1002,13 @@
           "description": "Params/metrics/artifacts captured per run. Track runs, parameters, metrics, and artifacts for reproducibility. Facilitates collaboration and comparison across experiments.",
           "link": "https://mlflow.org/docs/latest/tracking.html",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "technology.development-activity": {
               "value": 2,
@@ -1010,13 +1066,17 @@
           "description": "Automated retrain pipelines with approvals/rollbacks. Automated pipelines to retrain and redeploy models as data or performance changes. Ensures models remain accurate and compliant.",
           "link": "https://aws.amazon.com/blogs/machine-learning/building-mlops-pipelines/",
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,
@@ -1070,13 +1130,17 @@
             "url": "https://confluence.it.volvo.net/spaces/IBT/pages/429720260/AIS+-+SDK+DevOps+Templates"
           },
           "maturityInputs": {
-            "technology.adoption-effort": {
+            "adoption.effort": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
               "value": 2,
               "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
             },
             "process.documentation": {
               "value": 0,

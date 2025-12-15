@@ -1,5 +1,5 @@
 export type RawMaturityEntry = {
-  value: number;
+  value: number | null;
   reason?: string;
 };
 

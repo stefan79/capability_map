@@ -38,7 +38,7 @@ const MATURITY_DIMENSIONS = [
   {
     id: 'adoption',
     name: 'Adoption',
-    weight: 1,
+    weight: 20,
     color: '#1E88E5',
     iconViewBox: '0 0 24 24',
     iconPath: 'M12 2l7 7h-4v9h-6v-9H5l7-7z',
@@ -48,38 +48,45 @@ const MATURITY_DIMENSIONS = [
         dimensionId: 'adoption',
         name: 'Use Case Adoption',
         source: 'hvia',
-        weight: 1,
+        weight: 5,
+      },
+      {
+        id: 'adoption.effort',
+        dimensionId: 'technology',
+        name: 'Adoption Effort',
+        source: 'capability',
+        weight: 15,
       },
     ],
   },
   {
     id: 'technology',
     name: 'Technology',
-    weight: 1,
+    weight: 20,
     color: '#6A1B9A',
     iconViewBox: '0 0 24 24',
     iconPath: 'M12 8a4 4 0 100 8 4 4 0 000-8zm9 4l2-2-2-2-2 2a7.96 7.96 0 00-2.34-1.35l-.33-2.82h-4.66l-.33 2.82A7.96 7.96 0 006.99 10L5 8l-2 2 2 2a7.96 7.96 0 001.35 2.34l-2.82.33v4.66l2.82.33A7.96 7.96 0 0010 21l2 2 2-2a7.96 7.96 0 002.34-1.35l2.82.33v-4.66l-2.82-.33A7.96 7.96 0 0021 12z',
     subdimensions: [
       {
-        id: 'technology.adoption-effort',
-        dimensionId: 'technology',
-        name: 'Adoption Effort',
-        source: 'capability',
-        weight: 1,
-      },
-      {
         id: 'technology.development-activity',
         dimensionId: 'technology',
         name: 'Development Activity',
         source: 'capability',
-        weight: 1,
+        weight: 10,
+      },
+      {
+        id: 'technology.operations',
+        dimensionId: 'technology',
+        name: 'Operations',
+        source: 'capability',
+        weight: 10,
       },
     ],
   },
   {
     id: 'process',
     name: 'Process',
-    weight: 1,
+    weight: 30,
     color: '#F57C00',
     iconViewBox: '0 0 24 24',
     iconPath: 'M4 4h16v4H4V4zm0 6h10v4H4v-4zm0 6h16v4H4v-4z',
@@ -89,29 +96,29 @@ const MATURITY_DIMENSIONS = [
         dimensionId: 'process',
         name: 'Documentation',
         source: 'capability',
-        weight: 1,
+        weight: 15,
       },
       {
         id: 'process.self-service',
         dimensionId: 'process',
         name: 'Self-service',
         source: 'product',
-        weight: 1,
+        weight: 15,
       },
     ],
   },
   {
     id: 'people',
     name: 'People',
-    weight: 1,
+    weight: 25,
     color: '#2E7D32',
     iconViewBox: '0 0 24 24',
     iconPath: 'M12 12a4 4 0 10-4-4 4 4 0 004 4zm-6 8a6 6 0 0112 0v2H6z M17 8a3 3 0 103-3 3 3 0 00-3 3zm-1 12h8v-1a4 4 0 00-5-3.87 6.92 6.92 0 01-2.8 2.37V20z',
     subdimensions: [
-      { id: 'people.roles', dimensionId: 'people', name: 'Roles & Responsibilities', source: 'product', weight: 1 },
-      { id: 'people.skills', dimensionId: 'people', name: 'Skills', source: 'product', weight: 1 },
-      { id: 'people.capacity', dimensionId: 'people', name: 'Capacity', source: 'product', weight: 1 },
-      { id: 'people.product-guidance', dimensionId: 'people', name: 'Product Guidance', source: 'product', weight: 1 },
+      { id: 'people.roles', dimensionId: 'people', name: 'Roles & Responsibilities', source: 'product', weight: 5 },
+      { id: 'people.skills', dimensionId: 'people', name: 'Skills', source: 'product', weight: 5 },
+      { id: 'people.capacity', dimensionId: 'people', name: 'Capacity', source: 'product', weight: 10 },
+      { id: 'people.product-guidance', dimensionId: 'people', name: 'Product Guidance', source: 'product', weight: 5 },
     ],
   },
 ];
@@ -137,6 +144,13 @@ const sanitizeMaturityEntries = (entityLabel, raw, allowedSources) => {
     }
     if (allowed && !allowed.has(definition.source)) {
       throw new Error(`${entityLabel} cannot set ${definition.name} because it belongs to ${definition.source}.`);
+    }
+    if (entry?.value === null) {
+      acc[key] = {
+        value: null,
+        reason: entry?.reason,
+      };
+      return acc;
     }
     acc[key] = {
       value: clampMaturityValue(entry?.value),
@@ -215,7 +229,7 @@ const deriveCapabilityDefaults = (cap) => {
   const developmentValue = Math.min(4, statusScore + devBoost);
 
   return {
-    'technology.adoption-effort': {
+    'adoption.effort': {
       value: Math.min(4, statusScore),
       reason: `Derived from capability status "${cap.status}".`,
     },
@@ -253,6 +267,13 @@ const deriveHviaDefaults = (cap) => {
   };
 };
 
+const defaultReasonBySource = {
+  capability: 'Baseline capability signal not provided.',
+  implementation: 'Implementation does not expose this maturity data.',
+  hvia: 'No HVIA usage recorded yet.',
+  product: 'Product maturity signal not provided.',
+};
+
 const buildCapabilityMaturity = (cap) => {
   if (!cap.tool) {
     return {
@@ -288,15 +309,19 @@ const buildCapabilityMaturity = (cap) => {
       else sourceMap = hviaInputs;
 
       const entry = sourceMap[sub.id];
-      let value = entry?.value ?? 0;
+      const rawValue = entry?.value;
+      const isSkipped = rawValue === null;
+      let value = isSkipped ? 0 : rawValue ?? 0;
       let reason = entry?.reason;
 
       if (!cap.tool) value = 0;
       if (!reason) {
-        if (sub.source === 'implementation' && !cap.tool) {
+        if (isSkipped) {
+          reason = 'Not scored; excluded from maturity calculation.';
+        } else if (sub.source === 'implementation' && !cap.tool) {
           reason = 'No implementation linked to this capability.';
         } else {
-          reason = 'Baseline capability signal not provided.';
+          reason = defaultReasonBySource[sub.source];
         }
       }
 
@@ -308,11 +333,14 @@ const buildCapabilityMaturity = (cap) => {
         reason,
       };
 
-      dimensionWeightSum += sub.weight;
-      dimensionValueSum += value * sub.weight;
+      if (!isSkipped) {
+        dimensionWeightSum += sub.weight;
+        dimensionValueSum += value * sub.weight;
+      }
     }
 
-    const dimensionValue = dimensionWeightSum ? dimensionValueSum / dimensionWeightSum : 0;
+    const hasScoredSubdimensions = dimensionWeightSum > 0;
+    const dimensionValue = hasScoredSubdimensions ? dimensionValueSum / dimensionWeightSum : 0;
     summary.dimensions[dimension.id] = {
       id: dimension.id,
       name: dimension.name,
@@ -324,8 +352,10 @@ const buildCapabilityMaturity = (cap) => {
       subdimensions: subSnapshots,
     };
 
-    totalWeight += dimension.weight;
-    weightedSum += dimensionValue * dimension.weight;
+    if (hasScoredSubdimensions) {
+      totalWeight += dimension.weight;
+      weightedSum += dimensionValue * dimension.weight;
+    }
   }
 
   summary.total = totalWeight ? Number((weightedSum / totalWeight).toFixed(2)) : 0;

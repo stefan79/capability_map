@@ -574,14 +574,24 @@ function main() {
   };
 
   const normalizeForTemplate = (cluster) => {
-    const subclusters = (cluster.children || [])
-      .filter((child) => Array.isArray(child.children))
-      .map((sub) => {
-        const capabilities = (sub.children || [])
-          .filter((c) => c && typeof c === 'object' && c.type)
-          .map(buildTemplateFields);
-        return { ...sub, capabilities };
+    const childClusters = (cluster.children || []).filter((child) => Array.isArray(child.children));
+    const subclusters = childClusters.map((sub) => {
+      const capabilities = (sub.children || [])
+        .filter((c) => c && typeof c === 'object' && c.type)
+        .map(buildTemplateFields);
+      return { ...sub, capabilities };
+    });
+
+    // Handle clusters that own capabilities directly (no nested subclusters)
+    const directCapabilities = (cluster.children || []).filter((child) => child && typeof child === 'object' && child.type);
+    if (directCapabilities.length > 0) {
+      subclusters.push({
+        title: cluster.title,
+        id: cluster.id,
+        capabilities: directCapabilities.map(buildTemplateFields),
       });
+    }
+
     return { ...cluster, subclusters };
   };
 

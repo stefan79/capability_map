@@ -17,6 +17,7 @@
       "./capabilities/analytical-ai.json",
       "./capabilities/governance-observability.json",
       "./capabilities/generative-ai.json",
+      "./capabilities/agentic-ai.json",
       "./capabilities/foundation-services.json"
     ],
     "children": []

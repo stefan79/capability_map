@@ -329,7 +329,8 @@ export class CapabilityView implements View {
     const data = payload.root;
     const hvias = payload.hvias;
 
-    const width = 1600;
+    const containerRect = this.container.node()?.getBoundingClientRect();
+    const width = Math.max(1600, Math.floor(containerRect?.width ?? 0));
     const self = this;
 
     this.renderFilterControls(hvias);
@@ -467,10 +468,14 @@ export class CapabilityView implements View {
         }
       }
 
+      const clusterColsFor = (current: d3.HierarchyNode<Cluster | Capability>, clustersForRow: d3.HierarchyNode<Cluster | Capability>[]) => {
+        return current.depth === 0 ? Math.max(1, clustersForRow.length) : 2;
+      };
+
       if (regularClusters.length > 0) {
         if (capabilities.length > 0) requiredHeight += clusterPadding;
 
-        const clusterCols = node.depth === 0 ? 3 : 2;
+        const clusterCols = clusterColsFor(node, regularClusters);
         const rows: d3.HierarchyNode<Cluster | Capability>[][] = [];
         // Special grouping for non-top-level clusters to isolate large ones
         if (node.depth > 0) {
@@ -548,6 +553,9 @@ export class CapabilityView implements View {
       const clusters = node.children.filter(c => isCluster(c.data));
       const regularClusters = clusters.filter(c => !(c.data as Cluster).foundational);
       const foundationalClusters = clusters.filter(c => (c.data as Cluster).foundational);
+      const clusterColsFor = (current: d3.HierarchyNode<Cluster | Capability>, clustersForRow: d3.HierarchyNode<Cluster | Capability>[]) => {
+        return current.depth === 0 ? Math.max(1, clustersForRow.length) : 2;
+      };
 
       if (capabilities.length > 0) {
         const isFoundational = (node.data as Cluster).foundational;
@@ -567,7 +575,7 @@ export class CapabilityView implements View {
 
       if (regularClusters.length > 0) {
         if (capabilities.length > 0) y_cursor += clusterPadding;
-        const clusterCols = node.depth === 0 ? 3 : 2;
+        const clusterCols = clusterColsFor(node, regularClusters);
         const rows: d3.HierarchyNode<Cluster | Capability>[][] = [];
         if (node.depth > 0) {
           let i = 0;
@@ -616,12 +624,13 @@ export class CapabilityView implements View {
     }
 
     calculateSizes(root);
-    (root as any).width = Math.max((root as any).width, width); // Ensure root is at least the minimum width
+    const canvasWidth = Math.max((root as any).width, width);
+    (root as any).width = canvasWidth; // Keep layout consistent with rendered width
     setPositions(root, 0, 0);
 
     const totalHeight = (root as any).height;
     const svg = this.container.append('svg')
-      .attr('width', width)
+      .attr('width', canvasWidth)
       .attr('height', totalHeight)
       .style('font', '12px sans-serif');
 

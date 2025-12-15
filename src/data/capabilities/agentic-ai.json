@@ -1,0 +1,85 @@
+{
+  "id": "agentic-ai",
+  "title": "Agentic AI",
+  "productId": "genai-hub",
+  "children": [
+    {
+      "id": "gai-aa-ard",
+      "title": "Agent Registry & Discovery",
+      "reviewed": "false",
+      "productId": "genai-hub",
+      "type": "technology",
+      "description": "Catalog of available and curated agents, alongside metadata e.g., owners. It can be queried by other agents (\u201cdiscovery\u201d). A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
+      "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
+      "maturityInputs": {
+      }
+    },
+    {
+      "id": "gai-aa-ao",
+      "title": "Agent Orchestration",
+      "reviewed": "false",
+      "productId": "genai-hub",
+      "type": "technology",
+      "description": "Multi-step tool-using agents with planning/execution. Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
+      "link": "https://langchain-ai.github.io/langgraph/",
+      "maturityInputs": {
+      }
+    },
+    {
+      "id": "gai-aa-ast",
+      "title": "Agent SDK + templates",
+      "reviewed": "false",
+      "productId": "genai-hub",
+      "type": "technology",
+      "description": "Standard toolkit for building and publishing agents. Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
+      "link": "https://ai-sdk.dev/docs/introduction",
+      "maturityInputs": {
+      }
+    },
+    {
+      "id": "gai-aa-mrd",
+      "title": "MCP Registry & Discovery",
+      "reviewed": "false",
+      "productId": "genai-hub",
+      "type": "technology",
+      "description": "Model Context Protocol endpoints and tools catalog. Discovery layer for Model/Capability Providers so agents can dynamically find tools and skills at runtime. Supports extensibility and governance.",
+      "link": "https://modelcontextprotocol.org/",
+      "productDocumentation": {
+        "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/.vscode/mcp.json",
+        "title": "MCP Confluence configuration"
+      },
+      "maturityInputs": {
+        "process.documentation": {
+          "value": 0,
+          "reason": "No usable documentation or cannot locate it."
+        },
+        "technology.operations": {
+          "value": 3,
+          "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
+        }
+      }
+    },
+    {
+      "id": "gai-aa-mm",
+      "title": "Memory Management",
+      "reviewed": "false",
+      "productId": "genai-hub",
+      "type": "technology",
+      "description": "Short/long-term memory stores for agents. Short- and long\u2011term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
+      "link": "https://www.ibm.com/think/topics/ai-agent-memory",
+      "maturityInputs": {
+      }
+    },
+    {
+      "id": "gai-aa-arag",
+      "title": "Agentic RAG",
+      "reviewed": "false",
+      "productId": "genai-hub",
+      "type": "pattern",
+      "description": "Retrieval-augmented generation with agent tool-use and feedback loops. Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
+      "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/",
+      "maturityInputs": {
+      }
+    }
+  ]
+}

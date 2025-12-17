@@ -112,19 +112,16 @@ const deriveCapabilityDefaults = (capability: Capability): RawMaturityMap => {
 };
 
 const deriveHviaDefaults = (capability: Capability): RawMaturityMap => {
-  const { active, requested } = countActiveUseCases(capability);
-  const reason = active > 0
-    ? `Active in ${active} HVIA use case${active === 1 ? '' : 's'}.`
-    : requested > 0
-      ? 'Requested by HVIA teams but not in active use.'
-      : 'No linked HVIA use cases.';
-
+  const useCaseCount = capability.useCases?.length ?? 0;
   let value = 1;
-  if (active === 0) value = 1;
-  else if (active <= 2) value = 1;
-  else if (active <= 5) value = 2;
-  else if (active <= 10) value = 3;
-  else value = 4;
+  if (useCaseCount >= 10) value = 4;
+  else if (useCaseCount >= 5) value = 3;
+  else if (useCaseCount >= 2) value = 2;
+
+  const reason =
+    useCaseCount === 0
+      ? 'No use cases implemented.'
+      : `${useCaseCount} use case${useCaseCount === 1 ? '' : 's'} implemented.`;
 
   return {
     'adoption.use-case': {

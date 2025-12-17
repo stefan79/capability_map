@@ -1,0 +1,8 @@
+{
+  "id": "renault",
+  "name": "HVIA: Renault Trucks",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "renault-scoring", "name": "Renault Trucks Lead Scoring", "url": "https://www.volvotrucks.com/" }
+  ]
+}

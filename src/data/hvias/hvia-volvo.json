@@ -1,0 +1,8 @@
+{
+  "id": "volvo",
+  "name": "HVIA: Volvo Trucks",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "volvo-warranty", "name": "Volvo Trucks Warranty", "url": "https://www.volvotrucks.com/" }
+  ]
+}

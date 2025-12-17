@@ -1,0 +1,19 @@
+{
+  "id": "non-hvia",
+  "name": "Non HVIA Use Cases",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "non-hvia-default", "name": "General Non-HVIA Use Case", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-finance-agent", "name": "Bespoke Finance (Fin AI Agent)", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-gtt-dsl", "name": "GTT DSL - White Collar Productivity", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-volvo-gpt", "name": "Volvo GPT", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-gto-sml", "name": "GTO SML EU - Dealer Claim Processing Automation", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-ai-principles", "name": "AI in Principles & Process (former VGMS IDW)", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-gtt-pil", "name": "GTT PIL", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-emdbu-ai", "name": "EMDBU AI", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-nhtsa", "name": "SDAI & NHTSA", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-eui", "name": "SDAI EUI", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-vce", "name": "VCE - New AI Enabled Services", "url": "https://www.volvotrucks.com/" },
+    { "id": "non-hvia-bus", "name": "AI Assistant Volvo Busses", "url": "https://www.volvotrucks.com/" }
+  ]
+}

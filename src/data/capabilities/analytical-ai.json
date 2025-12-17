@@ -40,33 +40,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 0
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 2
             }
           ]
@@ -104,33 +104,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -168,33 +168,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
@@ -237,33 +237,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 2
             }
           ]
@@ -303,33 +303,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 2
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 2
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -363,33 +363,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 0
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -423,33 +423,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 0
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -466,33 +466,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 0
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -509,33 +509,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -579,33 +579,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 2
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 2
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
@@ -648,33 +648,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
@@ -708,33 +708,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -767,33 +767,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -833,33 +833,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 2
             }
           ]
@@ -896,33 +896,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
@@ -961,33 +961,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 2
             }
           ]
@@ -1021,33 +1021,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
@@ -1085,33 +1085,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 1
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]
@@ -1149,33 +1149,33 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
               "maturity": 0
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
               "maturity": 0
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 1
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
               "maturity": 0
             }
           ]

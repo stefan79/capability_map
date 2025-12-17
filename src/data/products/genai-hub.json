@@ -11,9 +11,9 @@
   },
   "maturityInputs": {
     "process.self-service": { "value": 2, "reason": "Basic self-service via forms; approval mostly manual." },
-    "people.roles": { "value": 2, "reason": "Baseline." },
-    "people.skills": { "value": 2, "reason": "Baseline." },
-    "people.capacity": { "value": 2, "reason": "Baseline." },
-    "people.product-guidance": { "value": 2, "reason": "Baseline." }
+    "people.roles": { "value": 4, "reason": "Rating from Mahesh: Good State." },
+    "people.skills": { "value": 3, "reason": "Rating from Mahesh: Mostly in Place." },
+    "people.capacity": { "value": 3, "reason": "Rating from Mahesh: Mostly in Place." },
+    "people.product-guidance": { "value": 3, "reason": "Rating from Mahesh: Mostly in Place." }
   }
 }

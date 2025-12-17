@@ -1,22 +1,18 @@
 // Statically import HVIA JSONs so Parcel bundles them
-import salesAcceleration from '../hvias/ai-enabled-sales-acceleration.json';
-import warrantyCost from '../hvias/ai-enabled-warranty-cost-reduction.json';
-import newServices from '../hvias/building-new-ai-enabled-services.json';
-import e2eSop from '../hvias/e2e-sop-optimization-automation.json';
-import mack from '../hvias/mack.json';
-import devProductivity from '../hvias/software-developer-productivity.json';
-import whiteCollar from '../hvias/white-collar-productivity.json';
+import hviaVolvo from '../hvias/hvia-volvo.json';
+import hviaPenta from '../hvias/hvia-penta.json';
+import hviaRenault from '../hvias/hvia-renault.json';
+import hviaMack from '../hvias/hvia-mack.json';
+import hviaNonHvia from '../hvias/non-hvia.json';
 import type { HVIA } from '../hvias-model';
 import { sanitizeMaturityEntries } from '../maturity-utils';
 
 const hviaMap: Record<string, HVIA> = {
-  './hvias/e2e-sop-optimization-automation.json': e2eSop as HVIA,
-  './hvias/ai-enabled-warranty-cost-reduction.json': warrantyCost as HVIA,
-  './hvias/ai-enabled-sales-acceleration.json': salesAcceleration as HVIA,
-  './hvias/building-new-ai-enabled-services.json': newServices as HVIA,
-  './hvias/software-developer-productivity.json': devProductivity as HVIA,
-  './hvias/white-collar-productivity.json': whiteCollar as HVIA,
-  './hvias/mack.json': mack as HVIA,
+  './hvias/hvia-volvo.json': hviaVolvo as HVIA,
+  './hvias/hvia-penta.json': hviaPenta as HVIA,
+  './hvias/hvia-renault.json': hviaRenault as HVIA,
+  './hvias/hvia-mack.json': hviaMack as HVIA,
+  './hvias/non-hvia.json': hviaNonHvia as HVIA,
 };
 
 export function loadHVIAs(imports: string[]): HVIA[] {

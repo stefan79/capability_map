@@ -34,13 +34,11 @@
   },
   "hviasData": {
     "imports": [
-      "./hvias/e2e-sop-optimization-automation.json",
-      "./hvias/ai-enabled-warranty-cost-reduction.json",
-      "./hvias/ai-enabled-sales-acceleration.json",
-      "./hvias/building-new-ai-enabled-services.json",
-      "./hvias/software-developer-productivity.json",
-      "./hvias/white-collar-productivity.json",
-      "./hvias/mack.json"
+      "./hvias/hvia-volvo.json",
+      "./hvias/hvia-penta.json",
+      "./hvias/hvia-renault.json",
+      "./hvias/hvia-mack.json",
+      "./hvias/non-hvia.json"
     ],
     "children": []
   },

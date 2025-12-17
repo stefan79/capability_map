@@ -35,8 +35,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 4,
@@ -49,11 +49,82 @@
           },
           "useCaseRefs": [
             {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-finance-agent",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-volvo-gpt",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-dsl",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gto-sml",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-ai-principles",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-emdbu-ai",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-nhtsa",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-eui",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-bus",
+              "maturity": 2
+            },
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
               "hviaId": "mack",
               "useCaseId": "mack-mavis",
               "maturity": 2
             }
-          ]
+
+      ]
         },
         {
           "id": "gai-muf-mg",
@@ -109,8 +180,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 0,
@@ -158,8 +229,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 1,
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 1,
@@ -172,33 +243,68 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-finance-agent",
+              "maturity": 2
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-volvo-gpt",
+              "maturity": 2
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-dsl",
+              "maturity": 2
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gto-sml",
+              "maturity": 2
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-ai-principles",
+              "maturity": 2
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-emdbu-ai",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-nhtsa",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-eui",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
               "maturity": 2
             },
             {
@@ -206,7 +312,7 @@
               "useCaseId": "mack-mavis",
               "maturity": 2
             }
-          ]
+      ]
         },
         {
           "id": "gai-de-ocr",
@@ -227,8 +333,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 1,
@@ -242,36 +348,51 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-volvo-gpt",
+              "maturity": 2
             },
             {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-dsl",
+              "maturity": 2
             },
             {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-ai-principles",
+              "maturity": 2
             },
             {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             },
             {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
-              "maturity": 0
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-emdbu-ai",
+              "maturity": 2
             },
             {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-nhtsa",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-eui",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-bus",
               "maturity": 2
             }
-          ]
+      ]
         },
         {
           "id": "gai-de-c",
@@ -293,8 +414,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 4,
@@ -307,39 +428,9 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gto-sml",
               "maturity": 2
-            },
-            {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
-              "maturity": 1
             }
           ]
         },
@@ -363,8 +454,8 @@
               "reason": "Initial Suggestion from Stijn."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 1,
@@ -377,41 +468,56 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "sales-acceleration",
-              "useCaseId": "sales-acceleration-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "warranty-cost-reduction",
-              "useCaseId": "warranty-cost-reduction-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "new-ai-services",
-              "useCaseId": "new-ai-services-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "e2e-sop",
-              "useCaseId": "e2e-sop-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "dev-productivity",
-              "useCaseId": "dev-productivity-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "white-collar-productivity",
-              "useCaseId": "white-collar-productivity-default",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-finance-agent",
               "maturity": 2
             },
             {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
-              "maturity": 1
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-volvo-gpt",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-dsl",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gto-sml",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-ai-principles",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-emdbu-ai",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-nhtsa",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-eui",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
             }
-          ]
+      ]
         },
         {
           "id": "gai-de-are",
@@ -441,7 +547,7 @@
             },
             "technology.development-activity": {
               "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "reason": "Self-Assessment of the team."
             },
             "process.documentation": {
               "value": 0,

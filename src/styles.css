@@ -521,16 +521,11 @@ rect.treemap-cluster {
   color: var(--volvo-blue);
 }
 
-/* HVIA compound counter (X / Y) */
-.hvia-counter {
+/* Capability maturity indicator */
+.capability-maturity {
   text-align: right;
 }
-.hvia-counter .counter-text {
-  fill: var(--dark-gray);
-  font-weight: 700;
+.capability-maturity .capability-maturity-text {
   font-size: 12px;
-}
-.hvia-counter .counter-text.zero {
-  fill: #9E9E9E;
-  font-weight: 600;
+  font-weight: 700;
 }

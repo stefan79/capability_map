@@ -3,6 +3,7 @@ import hviaVolvo from '../hvias/hvia-volvo.json';
 import hviaPenta from '../hvias/hvia-penta.json';
 import hviaRenault from '../hvias/hvia-renault.json';
 import hviaMack from '../hvias/hvia-mack.json';
+import hviaGto from '../hvias/hvia-gto.json';
 import hviaNonHvia from '../hvias/non-hvia.json';
 import type { HVIA } from '../hvias-model';
 import { sanitizeMaturityEntries } from '../maturity-utils';
@@ -12,6 +13,7 @@ const hviaMap: Record<string, HVIA> = {
   './hvias/hvia-penta.json': hviaPenta as HVIA,
   './hvias/hvia-renault.json': hviaRenault as HVIA,
   './hvias/hvia-mack.json': hviaMack as HVIA,
+  './hvias/hvia-gto.json': hviaGto as HVIA,
   './hvias/non-hvia.json': hviaNonHvia as HVIA,
 };
 

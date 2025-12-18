@@ -806,24 +806,24 @@ export class CapabilityView implements View {
       textSel.selectAll('tspan').attr('fill', color);
     });
 
-    // HVIA compound counter (X / Y), aligned to the right within the capability tile
-    // Y = number of requested HVIA refs (maturity > 0)
-    // X = number of active HVIA refs (maturity > 1)
-    const counterGroup = capabilityNodes.append('g')
-      .attr('class', 'hvia-counter')
-      // position on the second row, right-aligned inside the tile
+    // Capability maturity indicator (one decimal), aligned to the right within the capability tile
+    const maturityGroup = capabilityNodes.append('g')
+      .attr('class', 'capability-maturity')
       .attr('transform', `translate(${capabilityWidth - 6}, 26)`);
 
-    counterGroup.each(function(d){
+    maturityGroup.each(function(d){
       const g = d3.select(this);
       const cap = d.data as Capability;
-      const useCases = cap.useCases ?? [];
       const state = ((d as any).visualState as CapabilityVisualState);
+      const hasImplementation = Boolean(cap.tool);
+
+      if (!hasImplementation) return;
 
       if (hviaSelected) {
         const label = state?.hviaStatusLabel || 'Not Linked';
         const linked = state?.hviaLinked ?? false;
         g.append('text')
+          .attr('class', 'capability-maturity-text')
           .attr('x', 0)
           .attr('y', 14)
           .attr('text-anchor', 'end')
@@ -831,16 +831,17 @@ export class CapabilityView implements View {
           .attr('font-weight', linked ? '700' : '600')
           .text(label);
       } else {
-        const yTotal = useCases.filter(uc => (uc as any).maturity > 0).length;
-        const xActive = useCases.filter(uc => (uc as any).maturity > 1).length;
-        const isZero = yTotal === 0;
+        const maturityTotal = cap.maturity?.total;
+        if (maturityTotal === undefined || maturityTotal === null) return;
+        const maturityValue = clampMaturityValue(maturityTotal);
         g.append('text')
+          .attr('class', 'capability-maturity-text')
           .attr('x', 0) // anchor point at the right edge of the tile
           .attr('y', 14)
           .attr('text-anchor', 'end')
           .attr('fill', state ? state.secondaryTextColor : '#4D4D4D')
-          .attr('font-weight', isZero ? '600' : '700')
-          .text(`${xActive} / ${yTotal}`);
+          .attr('font-weight', '700')
+          .text(maturityValue.toFixed(1));
       }
     });
 

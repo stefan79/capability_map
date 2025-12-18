@@ -39,36 +39,6 @@
             }
           },
           "useCaseRefs": [
-            {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 2
-            }
           ]
         },
         {
@@ -104,34 +74,29 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             }
           ]
         },
@@ -168,42 +133,32 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
             },
             {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
           ]
-        },
+          },
         {
           "id": "aaimloro-dafe-fs",
           "title": "Feature Store",
@@ -237,33 +192,8 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
               "maturity": 2
             }
           ]
@@ -303,34 +233,29 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 2
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
               "hviaId": "renault",
               "useCaseId": "renault-scoring",
               "maturity": 2
             },
             {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             }
           ]
         },
@@ -363,34 +288,29 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             }
           ]
         },
@@ -423,34 +343,29 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             }
           ]
         },
@@ -465,36 +380,6 @@
           "maturityInputs": {
           },
           "useCaseRefs": [
-            {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            }
           ]
         },
         {
@@ -508,36 +393,7 @@
           "maturityInputs": {
           },
           "useCaseRefs": [
-            {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            }
+
           ]
         }
       ]
@@ -579,38 +435,23 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 2
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
               "hviaId": "renault",
               "useCaseId": "renault-scoring",
               "maturity": 2
             },
             {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
             },
             {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
           ]
@@ -648,38 +489,8 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
               "maturity": 2
             }
           ]
@@ -766,36 +577,7 @@
             }
           },
           "useCaseRefs": [
-            {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            }
+
           ]
         }
       ]
@@ -833,33 +615,28 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
           ]
@@ -895,41 +672,6 @@
             }
           },
           "useCaseRefs": [
-            {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
-              "maturity": 0
-            }
           ]
         },
         {
@@ -961,33 +703,28 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
           ]
@@ -1021,39 +758,29 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
             },
             {
-              "hviaId": "mack",
-              "useCaseId": "mack-mavis",
-              "maturity": 1
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             }
           ]
         },
@@ -1084,36 +811,6 @@
             }
           },
           "useCaseRefs": [
-            {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "penta",
-              "useCaseId": "penta-ai-assistant",
-              "maturity": 0
-            },
-            {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
-            }
           ]
         },
         {
@@ -1149,34 +846,29 @@
           },
           "useCaseRefs": [
             {
-              "hviaId": "volvo",
-              "useCaseId": "volvo-warranty",
-              "maturity": 0
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
             },
             {
               "hviaId": "penta",
               "useCaseId": "penta-ai-assistant",
-              "maturity": 0
+              "maturity": 2
             },
             {
-              "hviaId": "renault",
-              "useCaseId": "renault-scoring",
-              "maturity": 1
-            },
-            {
-              "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
             },
             {
               "hviaId": "non-hvia",
-              "useCaseId": "non-hvia-default",
-              "maturity": 0
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
             }
           ]
         }

@@ -38,6 +38,7 @@
       "./hvias/hvia-penta.json",
       "./hvias/hvia-renault.json",
       "./hvias/hvia-mack.json",
+      "./hvias/hvia-gto.json",
       "./hvias/non-hvia.json"
     ],
     "children": []

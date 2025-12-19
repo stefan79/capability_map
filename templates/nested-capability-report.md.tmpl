@@ -12,6 +12,13 @@
 {{#tool}}- Tool: {{name}}{{#vendorName}} ({{vendorName}}){{/vendorName}}{{#url}} ([link]({{url}})){{/url}}{{/tool}}
 {{#documentationLink}}- Documentation: [{{title}}]({{url}}){{/documentationLink}}
 
+{{#dimensionRows.length}}
+| Dimension | Score | Weight |
+| --- | --- | --- |
+{{#dimensionRows}}| {{name}} | {{value}} | {{weight}} |
+{{/dimensionRows}}
+{{/dimensionRows.length}}
+
 {{#maturityRows.length}}
 | Subdimension | Score | Weight | Reason |
 | --- | --- | --- | --- |

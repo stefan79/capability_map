@@ -554,8 +554,15 @@ function main() {
     const maturityRows = [];
     const technologyDimension = cap.maturity?.dimensions?.technology;
     const documentationSnapshot = cap.maturity?.dimensions?.process?.subdimensions?.['process.documentation'];
+    const dimensionRows = [];
     if (cap.maturity?.dimensions) {
       Object.values(cap.maturity.dimensions).forEach((dim) => {
+        dimensionRows.push({
+          id: dim.id,
+          name: dim.name,
+          weight: dim.weight,
+          value: typeof dim.value === 'number' ? dim.value.toFixed(1) : dim.value,
+        });
         Object.values(dim.subdimensions || {}).forEach((subdim) => {
           maturityRows.push(subdim);
         });
@@ -563,6 +570,7 @@ function main() {
     }
     return {
       ...cap,
+      dimensionRows,
       maturityRows,
       technologyRows: technologyDimension ? Object.values(technologyDimension.subdimensions || {}) : [],
       technologyScore: technologyDimension?.value,

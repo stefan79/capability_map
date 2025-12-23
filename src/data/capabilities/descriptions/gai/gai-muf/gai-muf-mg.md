@@ -1,0 +1,1 @@
+Single API routing to multiple providers with common auth/logging. Unified control plane for accessing and governing multiple models/providers with routing, auth, and observability. Reduces integration and compliance burden.

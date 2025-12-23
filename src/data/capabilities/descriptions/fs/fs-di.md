@@ -1,0 +1,1 @@
+Data ingestion moves data from operational systems, streams, and files into analytics platforms using batch and real-time pipelines. Robust ingestion underpins reliable downstream processing and governance.

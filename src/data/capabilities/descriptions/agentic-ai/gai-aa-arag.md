@@ -1,0 +1,1 @@
+Retrieval-augmented generation with agent tool-use and feedback loops. Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.

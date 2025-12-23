@@ -30,7 +30,10 @@ export type CapabilityDocumentationLink = ProductDocumentationLink & {
 export type Capability = {
   id: string;
   title: string;
-  description: string;
+  description?: string;
+  descriptionFile?: string;
+  descriptionMarkdown?: string;
+  descriptionHtml?: string;
   link?: string;
   reviewed?: boolean;
   status: CapabilityStatus | CapabilityMaturity;

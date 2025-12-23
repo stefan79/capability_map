@@ -1,0 +1,1 @@
+Human-in-the-loop tools to tag data (text/images/tables) with QA workflows. Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.

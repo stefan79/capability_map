@@ -1,0 +1,1 @@
+Multi-step tool-using agents with planning/execution. Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.

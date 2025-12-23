@@ -1,0 +1,1 @@
+Reusable feature definitions with online/offline serving and lineage. Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.

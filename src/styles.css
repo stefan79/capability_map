@@ -124,6 +124,23 @@ main {
   line-height: 1.4;
 }
 
+.tooltip-description p {
+  margin: 0 0 0.35rem;
+}
+
+.tooltip-description p:last-child {
+  margin-bottom: 0;
+}
+
+.tooltip-description ul {
+  margin: 0.35rem 0 0 1.1rem;
+  padding: 0;
+}
+
+.tooltip-description li {
+  margin: 0.15rem 0;
+}
+
 .tooltip-details {
   width: 100%;
   border-collapse: collapse;

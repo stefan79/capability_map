@@ -1,0 +1,1 @@
+OCR and table/form extraction with post-processing. Optical character recognition and document understanding to convert scans into machine‑readable text and entities. Critical for enterprise content.

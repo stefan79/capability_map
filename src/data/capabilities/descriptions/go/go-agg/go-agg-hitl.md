@@ -1,0 +1,1 @@
+Route uncertain or flagged outputs to human reviewers. Operational pattern to route uncertain or high‑risk AI decisions to human reviewers. Ensures oversight and auditability for critical interactions.

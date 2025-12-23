@@ -1,0 +1,1 @@
+Standard fact sheets with purpose, risks, metrics, and owners. Standardized documentation describing datasets, models, and agents: purpose, performance, risks, and limitations. Improves transparency and responsible adoption.

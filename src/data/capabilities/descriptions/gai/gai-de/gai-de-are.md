@@ -1,0 +1,1 @@
+Blueprint of several advanced RAG patterns, incl. hybrid search, re-ranking, multi-query, etc. Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.

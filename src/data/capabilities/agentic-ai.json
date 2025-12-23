@@ -9,10 +9,10 @@
       "reviewed": "false",
       "productId": "genai-hub",
       "type": "technology",
-      "description": "Catalog of available and curated agents, alongside metadata e.g., owners. It can be queried by other agents (\u201cdiscovery\u201d). A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
+      "description": "Catalog of available and curated agents, alongside metadata e.g., owners. It can be queried by other agents (“discovery”). A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.",
       "link": "https://developers.googleblog.com/en/a2a-a-new-era-of-agent-interoperability/",
-      "maturityInputs": {
-      }
+      "maturityInputs": {},
+      "descriptionFile": "./descriptions/agentic-ai/gai-aa-ard.md"
     },
     {
       "id": "gai-aa-ao",
@@ -22,8 +22,8 @@
       "type": "technology",
       "description": "Multi-step tool-using agents with planning/execution. Coordinating tasks across multiple agents or tools with planning, scheduling, and error handling. Provides control flow for complex, multi-step automations.",
       "link": "https://langchain-ai.github.io/langgraph/",
-      "maturityInputs": {
-      }
+      "maturityInputs": {},
+      "descriptionFile": "./descriptions/agentic-ai/gai-aa-ao.md"
     },
     {
       "id": "gai-aa-ast",
@@ -33,8 +33,8 @@
       "type": "technology",
       "description": "Standard toolkit for building and publishing agents. Developer kits and starter templates to build, test, and deploy AI agents with tool use, memory, and safety. Accelerates standard patterns and best practices.",
       "link": "https://ai-sdk.dev/docs/introduction",
-      "maturityInputs": {
-      }
+      "maturityInputs": {},
+      "descriptionFile": "./descriptions/agentic-ai/gai-aa-ast.md"
     },
     {
       "id": "gai-aa-mrd",
@@ -57,7 +57,8 @@
           "value": 3,
           "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
         }
-      }
+      },
+      "descriptionFile": "./descriptions/agentic-ai/gai-aa-mrd.md"
     },
     {
       "id": "gai-aa-mm",
@@ -65,10 +66,10 @@
       "reviewed": "false",
       "productId": "genai-hub",
       "type": "technology",
-      "description": "Short/long-term memory stores for agents. Short- and long\u2011term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
+      "description": "Short/long-term memory stores for agents. Short- and long‑term storage for agent context, facts, and summaries to maintain continuity across sessions. Powers personalized and stateful behavior.",
       "link": "https://www.ibm.com/think/topics/ai-agent-memory",
-      "maturityInputs": {
-      }
+      "maturityInputs": {},
+      "descriptionFile": "./descriptions/agentic-ai/gai-aa-mm.md"
     },
     {
       "id": "gai-aa-arag",
@@ -78,8 +79,8 @@
       "type": "pattern",
       "description": "Retrieval-augmented generation with agent tool-use and feedback loops. Agents decide when and how to retrieve, verify, and iterate over external knowledge to complete goals. Improves robustness on multi-step tasks.",
       "link": "https://developer.nvidia.com/blog/traditional-rag-vs-agentic-rag-why-ai-agents-need-dynamic-knowledge-to-get-smarter/",
-      "maturityInputs": {
-      }
+      "maturityInputs": {},
+      "descriptionFile": "./descriptions/agentic-ai/gai-aa-arag.md"
     }
   ]
 }

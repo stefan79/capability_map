@@ -14,7 +14,8 @@
           "productId": "genai-hub",
           "type": "technology",
           "description": "Inventory of supported foundation models. An inventory of available models with versions, metadata, policies, and usage guidance. Simplifies selection and governance.",
-          "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog"
+          "link": "https://azure.microsoft.com/en-us/products/ai-studio/model-catalog",
+          "descriptionFile": "./descriptions/gai/gai-muf/gai-muf-mc.md"
         },
         {
           "id": "gai-muf-fm",
@@ -22,7 +23,7 @@
           "type": "technology",
           "productId": "genai-hub",
           "toolId": "microsoft-azure-openai",
-          "description": "Managed access to general-purpose models. Large pre-trained models adaptable to many downstream tasks via prompting or fine\u2011tuning. Provide strong baselines for generative use cases.",
+          "description": "Managed access to general-purpose models. Large pre-trained models adaptable to many downstream tasks via prompting or fine‑tuning. Provide strong baselines for generative use cases.",
           "link": "https://research.ibm.com/blog/what-are-foundation-models",
           "productDocumentation": {
             "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/openai_model_call.ipynb",
@@ -31,8 +32,8 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Strong documentation and high adoption points to a high score."
             },
             "technology.development-activity": {
               "value": 4,
@@ -123,8 +124,8 @@
               "useCaseId": "mack-mavis",
               "maturity": 2
             }
-
-      ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-muf/gai-muf-fm.md"
         },
         {
           "id": "gai-muf-mg",
@@ -163,7 +164,8 @@
               "useCaseId": "mack-mavis",
               "maturity": 1
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-muf/gai-muf-mg.md"
         },
         {
           "id": "gai-muf-dmr",
@@ -176,8 +178,8 @@
           "link": "https://e2eml.school/blog/model_routing/",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 2,
+              "reason": "Lack of documentation and low adoption indicate a low scor."
             },
             "technology.development-activity": {
               "value": 4,
@@ -191,7 +193,8 @@
               "value": 3,
               "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
-          }
+          },
+          "descriptionFile": "./descriptions/gai/gai-muf/gai-muf-dmr.md"
         },
         {
           "id": "gai-muf-sc",
@@ -201,8 +204,8 @@
           "type": "technology",
           "description": "Cache LLM responses by embedding similarity. Cache responses by semantic similarity to avoid repeated LLM calls, lowering cost and latency. Requires vector similarity with eviction policies.",
           "link": "https://redis.io/blog/what-is-semantic-caching/",
-          "maturityInputs": {
-          }
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/gai/gai-muf/gai-muf-sc.md"
         }
       ]
     },
@@ -225,8 +228,8 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "High Adoption rate could be supported better with a stronger documentation."
             },
             "technology.development-activity": {
               "value": 1,
@@ -312,7 +315,8 @@
               "useCaseId": "mack-mavis",
               "maturity": 2
             }
-      ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-de/gai-de-dp.md"
         },
         {
           "id": "gai-de-ocr",
@@ -321,7 +325,7 @@
           "productId": "genai-hub",
           "type": "technology",
           "toolId": "microsoft-azure-ai-document-intelligence",
-          "description": "OCR and table/form extraction with post-processing. Optical character recognition and document understanding to convert scans into machine\u2011readable text and entities. Critical for enterprise content.",
+          "description": "OCR and table/form extraction with post-processing. Optical character recognition and document understanding to convert scans into machine‑readable text and entities. Critical for enterprise content.",
           "link": "https://aws.amazon.com/textract/",
           "productDocumentation": {
             "url": "https://github.com/VolvoGroup-Internal/GenAIHub-Repo/blob/main/starter-kit-v1.ipynb",
@@ -329,8 +333,8 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "High adoption rates could be improved with better documentation."
             },
             "technology.development-activity": {
               "value": 3,
@@ -344,7 +348,6 @@
               "value": 3,
               "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
-
           },
           "useCaseRefs": [
             {
@@ -392,7 +395,8 @@
               "useCaseId": "non-hvia-bus",
               "maturity": 2
             }
-      ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-de/gai-de-ocr.md"
         },
         {
           "id": "gai-de-c",
@@ -410,8 +414,8 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Strong documentation and custom development present. Will grow with more adoption."
             },
             "technology.development-activity": {
               "value": 3,
@@ -432,7 +436,8 @@
               "useCaseId": "non-hvia-gto-sml",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-de/gai-de-c.md"
         },
         {
           "id": "gai-de-vs",
@@ -441,7 +446,7 @@
           "productId": "genai-hub",
           "type": "technology",
           "toolId": "microsoft-azure-ai-search",
-          "description": "Embedding store with filters. Databases for high\u2011dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
+          "description": "Embedding store with filters. Databases for high‑dimensional embeddings with fast similarity search for RAG and semantic features. Supports filtering and hybrid search.",
           "link": "https://www.pinecone.io/learn/vector-database/",
           "productDocumentation": {
             "url": "httpshttps://dev.azure.com/VolvoGroup-UDP/GenAI-Hub/_wiki/wikis/GenAI-Hub.wiki/6292/Custom-indexes-migration-guide",
@@ -450,8 +455,8 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "High adoption already, can be improved with more documentation."
             },
             "technology.development-activity": {
               "value": 3,
@@ -517,7 +522,8 @@
               "useCaseId": "non-hvia-vce",
               "maturity": 2
             }
-      ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-de/gai-de-vs.md"
         },
         {
           "id": "gai-de-are",
@@ -525,11 +531,11 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "description": "Blueprint of several advanced RAG patterns, incl. hybrid search, re-ranking, multi-query, etc. Enhancements like cross\u2011encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
+          "description": "Blueprint of several advanced RAG patterns, incl. hybrid search, re-ranking, multi-query, etc. Enhancements like cross‑encoder reranking and dense+lexical hybrid retrieval to raise recall and faithfulness. Often boosts answer quality.",
           "link": "https://developer.nvidia.com/blog/enhancing-rag-pipelines-with-re-ranking/",
-          "maturityInputs": {
-          },
-          "useCaseRefs": []
+          "maturityInputs": {},
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/gai/gai-de/gai-de-are.md"
         },
         {
           "id": "gai-de-t2sql",
@@ -538,12 +544,12 @@
           "productId": "genai-hub",
           "toolId": "databricks-genie",
           "type": "technology",
-          "description": "Natural-language to governed SQL with guardrails. Natural\u2011language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
+          "description": "Natural-language to governed SQL with guardrails. Natural‑language to SQL translation over governed schemas for analytics and automation. Requires schema grounding and safeguards.",
           "link": "https://arxiv.org/abs/2204.00498",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Is a standard tool, can be improved with more documentation."
             },
             "technology.development-activity": {
               "value": 1,
@@ -557,7 +563,8 @@
               "value": 3,
               "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
-          }
+          },
+          "descriptionFile": "./descriptions/gai/gai-de/gai-de-t2sql.md"
         }
       ]
     },
@@ -597,7 +604,8 @@
               "useCaseId": "mack-mavis",
               "maturity": 1
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-llmops/gai-l-ot.md"
         },
         {
           "id": "gai-l-por",
@@ -631,7 +639,8 @@
               "useCaseId": "mack-mavis",
               "maturity": 1
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/gai/gai-llmops/gai-l-por.md"
         },
         {
           "id": "gai-l-eidc",
@@ -640,7 +649,8 @@
           "productId": "genai-hub",
           "type": "pattern",
           "description": "Golden sets and automatic task-level evals. Systematic evaluation using curated datasets and metrics to measure quality, safety, and drift. Essential for regression and A/B testing.",
-          "link": "https://arize.com/blog/llm-evaluation-guide/"
+          "link": "https://arize.com/blog/llm-evaluation-guide/",
+          "descriptionFile": "./descriptions/gai/gai-llmops/gai-l-eidc.md"
         },
         {
           "id": "gai-l-po",
@@ -648,7 +658,7 @@
           "reviewed": "false",
           "productId": "genai-hub",
           "type": "pattern",
-          "description": "Improve quality and token efficiency via techniques/tools. Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self\u2011reflection and rewriting. Can be manual or programmatic.",
+          "description": "Improve quality and token efficiency via techniques/tools. Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self‑reflection and rewriting. Can be manual or programmatic.",
           "link": "https://www.promptingguide.ai/guides/optimizing-prompts",
           "maturityInputs": {
             "adoption.effort": {
@@ -667,7 +677,8 @@
               "value": 3,
               "reason": "Monitoring of golden signals on APIs and workloads, pro-active central operations and incident management, and playbooks for rollbacks."
             }
-          }
+          },
+          "descriptionFile": "./descriptions/gai/gai-llmops/gai-l-po.md"
         }
       ]
     }

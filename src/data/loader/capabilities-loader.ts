@@ -1,7 +1,8 @@
 // Statically import known capability JSONs so Parcel bundles them
-import analyticalAi from '../capabilities/analytical-ai.json';
-import foundationServices from '../capabilities/foundation-services.json';
 import agenticAi from '../capabilities/agentic-ai.json';
+import analyticalAi from '../capabilities/analytical-ai.json';
+import { capabilityDescriptionMap } from '../capabilities/description-map';
+import foundationServices from '../capabilities/foundation-services.json';
 import generativeAi from '../capabilities/generative-ai.json';
 import governanceObservability from '../capabilities/governance-observability.json';
 import type {
@@ -12,6 +13,7 @@ import type {
 } from '../capabilities-model';
 import { getStatusMaturity } from '../capability-helpers';
 import type { HVIA } from '../hvias-model';
+import { renderMarkdown } from '../markdown';
 import { MATURITY_DIMENSIONS, type MaturitySource } from '../maturity-config';
 import type { CapabilityMaturitySummary, RawMaturityMap } from '../maturity-types';
 import { createZeroMaturitySummary, mergeMaturityMaps, sanitizeMaturityEntries } from '../maturity-utils';
@@ -85,7 +87,8 @@ const countActiveUseCases = (capability: Capability): { active: number; requeste
 const deriveCapabilityDefaults = (capability: Capability): RawMaturityMap => {
   const statusScore = Math.max(1, getStatusMaturity(capability) || 1);
   const { active } = countActiveUseCases(capability);
-  const documentationLength = (capability.description ?? '').length;
+  const documentationSource = capability.descriptionMarkdown ?? capability.description ?? '';
+  const documentationLength = documentationSource.length;
   let documentationValue = 1;
   if (documentationLength > 400) documentationValue = 4;
   else if (documentationLength > 250) documentationValue = 3;
@@ -269,6 +272,12 @@ function resolveCluster(
     if (Object.keys(productOverrides).length) {
       resolved.productOverrides = productOverrides;
     }
+    resolved.descriptionFile = cap.descriptionFile;
+    const descriptionMarkdown = capabilityDescriptionMap[cap.id];
+    const descriptionText = descriptionMarkdown ?? cap.description ?? '';
+    resolved.descriptionMarkdown = descriptionMarkdown;
+    resolved.description = descriptionText;
+    resolved.descriptionHtml = renderMarkdown(descriptionText);
     const documentationLink = resolveDocumentationLink(resolved, resolved.product);
     if (documentationLink) {
       resolved.documentationLink = documentationLink;

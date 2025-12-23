@@ -1,0 +1,1 @@
+Policies and controls for safety, fairness, transparency, and accountability. Principles and processes to ensure AI is developed and used ethically with accountability and transparency. Establishes governance across the AI lifecycle and compliance with regulations.

@@ -1,0 +1,1 @@
+Improve quality and token efficiency via techniques/tools. Techniques and automation to improve prompts for accuracy, cost, and safety, e.g., self‑reflection and rewriting. Can be manual or programmatic.

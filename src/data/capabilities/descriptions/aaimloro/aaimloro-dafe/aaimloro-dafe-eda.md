@@ -1,0 +1,1 @@
+Reproducible profiling/visualization to validate data quality and patterns. Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.

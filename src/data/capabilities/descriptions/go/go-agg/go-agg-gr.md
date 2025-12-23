@@ -1,0 +1,1 @@
+Pre/post-processing to constrain generation and reduce risk. Safety controls such as validation, filters, and constrained generation to prevent harmful or fabricated outputs. Enforces organizational and legal standards.

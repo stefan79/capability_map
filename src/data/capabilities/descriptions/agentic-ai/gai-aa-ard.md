@@ -1,0 +1,1 @@
+Catalog of available and curated agents, alongside metadata e.g., owners. It can be queried by other agents (“discovery”). A central service where agents publish capabilities and can be looked up for reuse and composition. Enables interoperable multi-agent systems.

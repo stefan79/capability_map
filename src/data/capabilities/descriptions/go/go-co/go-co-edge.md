@@ -1,0 +1,1 @@
+Deploy models to devices/vehicles with offline support. Deploy and monitor AI workloads on edge devices with constrained compute and intermittent connectivity. Requires specialized observability and update strategies.

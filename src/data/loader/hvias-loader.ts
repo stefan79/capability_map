@@ -1,9 +1,9 @@
 // Statically import HVIA JSONs so Parcel bundles them
-import hviaVolvo from '../hvias/hvia-volvo.json';
+import hviaGto from '../hvias/hvia-gto.json';
+import hviaMack from '../hvias/hvia-mack.json';
 import hviaPenta from '../hvias/hvia-penta.json';
 import hviaRenault from '../hvias/hvia-renault.json';
-import hviaMack from '../hvias/hvia-mack.json';
-import hviaGto from '../hvias/hvia-gto.json';
+import hviaVolvo from '../hvias/hvia-volvo.json';
 import hviaNonHvia from '../hvias/non-hvia.json';
 import type { HVIA } from '../hvias-model';
 import { sanitizeMaturityEntries } from '../maturity-utils';

@@ -22,24 +22,24 @@
           "link": "https://www.ibm.com/think/topics/data-labeling",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Provided data labeling via Azure ML Studio; enabled access through SNOW."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 2,
-              "reason": "The documentation includes core processes related to Data Labelling / Annotation, with some version control evident. However, the documentation is incomplete and lacks full coverage and reusable templates. It appears to be actively maintained but does not fully meet the highest standards of completeness and ownership."
+              "value": 3,
+              "reason": "Step by step Instruction of data labeling is available in confluence with examples and screenshots for reference."
             }
           },
-          "useCaseRefs": [
-          ]
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-dla.md"
         },
         {
           "id": "aaimloro-dafe-dsc",
@@ -98,7 +98,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-dsc.md"
         },
         {
           "id": "aaimloro-dafe-eda",
@@ -116,19 +117,19 @@
           "maturityInputs": {
             "adoption.effort": {
               "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "reason": "EDA Requirements are customized by DS needs. No new tool introduced, aligned with Strategy team initially."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 3,
-              "reason": "The documentation for Exploratory Data Analysis (EDA) is available as a detailed PDF document with multiple pages and links, indicating coverage of most capabilities. It includes references and appears to be actively maintained and updated, though there is no explicit evidence of reusable templates or formal ownership stated."
+              "value": 2,
+              "reason": "EDA Capability is well documented in context of central hosting for EDA Functions re-use. Auto EDA functionality needs to be finalize as part of Functional Spec."
             }
           },
           "useCaseRefs": [
@@ -157,8 +158,9 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
-          },
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-eda.md"
+        },
         {
           "id": "aaimloro-dafe-fs",
           "title": "Feature Store",
@@ -174,12 +176,12 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Features once registered in Feature store can be reused by other project team having similar feature requirement for building ML use cases."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
@@ -187,7 +189,7 @@
             },
             "process.documentation": {
               "value": 3,
-              "reason": "The documentation includes detailed functional specifications, links to external resources, and covers most aspects of the Feature Store capability including online/offline serving, lineage, governance, and reuse. It appears actively maintained with examples and references to related documentation, though it does not explicitly mention reusable templates or established version control and ownership to merit a score of 4."
+              "reason": "Documented Feature Store in Confluence and MLOps templates, including batch and real-time usage examples."
             }
           },
           "useCaseRefs": [
@@ -196,7 +198,8 @@
               "useCaseId": "gto-sop",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-fs.md"
         }
       ]
     },
@@ -215,20 +218,20 @@
           "link": "https://www.tensorflow.org/guide/distributed_training",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             }
           },
           "useCaseRefs": [
@@ -257,7 +260,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-tr.md"
         },
         {
           "id": "aaimloro-md-libs",
@@ -312,7 +316,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-libs.md"
         },
         {
           "id": "aaimloro-md-automl",
@@ -367,7 +372,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-automl.md"
         },
         {
           "id": "aaimloro-md-fi",
@@ -377,10 +383,9 @@
           "type": "pattern",
           "description": "Global/local explainability for models (e.g., SHAP/IG). Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
           "link": "https://christophm.github.io/interpretable-ml-book/feature-importance.html",
-          "maturityInputs": {
-          },
-          "useCaseRefs": [
-          ]
+          "maturityInputs": {},
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-fi.md"
         },
         {
           "id": "aaimloro-md-ort",
@@ -390,11 +395,9 @@
           "type": "technology",
           "description": "Operations research modeling (LP/MIP/CP). Operations Research solvers and modeling tools (e.g., MILP, CP) for optimization problems. Provides prescriptive analytics beyond prediction.",
           "link": "https://developers.google.com/optimization",
-          "maturityInputs": {
-          },
-          "useCaseRefs": [
-
-          ]
+          "maturityInputs": {},
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-ort.md"
         }
       ]
     },
@@ -417,12 +420,12 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Enabled endpoint and deployment management via API and UI; Volvo SDK supports API-based customization."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
@@ -430,7 +433,7 @@
             },
             "process.documentation": {
               "value": 3,
-              "reason": "The documentation includes detailed information on batch inference, integration with data lake workflows, orchestration, and links to relevant resources. It covers most capabilities and includes examples, indicating active maintenance and updates. However, there is no explicit mention of reusable templates or established version control and ownership to justify a score of 4."
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed each PI."
             }
           },
           "useCaseRefs": [
@@ -454,7 +457,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-batch.md"
         },
         {
           "id": "aaimloro-deploy-online",
@@ -471,12 +475,12 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Enabled endpoint and deployment management via API and UI; Volvo SDK supports API-based customization."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
@@ -484,7 +488,7 @@
             },
             "process.documentation": {
               "value": 3,
-              "reason": "The documentation provides comprehensive coverage of the Online Inference capability, including details on low-latency API serving, autoscaling, monitoring, rollback, and security considerations. It includes links to external resources and examples, and appears to be actively maintained and updated. However, there is no explicit mention of reusable templates or established version control and ownership, so it does not meet the highest rubric level."
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed each PI."
             }
           },
           "useCaseRefs": [
@@ -493,7 +497,8 @@
               "useCaseId": "penta-ai-assistant",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-online.md"
         },
         {
           "id": "aaimloro-deploy-sim",
@@ -548,7 +553,8 @@
               "useCaseId": "non-hvia-default",
               "maturity": 0
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-sim.md"
         },
         {
           "id": "aaimloro-deploy-mps",
@@ -560,25 +566,24 @@
           "link": "https://www.gurobi.com/resources/what-is-mathematical-optimization/",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Used Databricks Lakehouse Monitoring with API and UI support; Volvo MLOps Python SDK enables API-based customization."
             },
             "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in subsequent PIs."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 3,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed and updated each PI."
             }
           },
-          "useCaseRefs": [
-
-          ]
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-mps.md"
         }
       ]
     },
@@ -597,20 +602,20 @@
           "link": "https://docs.whylabs.ai/docs/glossary/data-drift/",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Lakehouse monitoring of Databricks is used with API and UI; Volvo SDK can be leveraged for API-based customization."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 3,
+              "reason": "SharePoint for functional documentation and example usage; Confluence documentation for technical doc; reviewed each PI."
             }
           },
           "useCaseRefs": [
@@ -639,7 +644,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-dd.md"
         },
         {
           "id": "aaimloro-mlops-ms",
@@ -655,12 +661,12 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Enabled read and write access to Unity Catalog model registry with role-based permissions in Databricks."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
@@ -668,11 +674,11 @@
             },
             "process.documentation": {
               "value": 3,
-              "reason": "The provided documentation includes a detailed functional specification document with links to related resources and images. It covers most aspects of the Model Store capability, including versioning, lineage, governance, and environment promotion. The documentation appears to be actively maintained and updated, with examples and references to governance and security practices. However, there is no explicit mention of reusable templates or established version control and ownership, so it does not reach the highest level."
+              "reason": "Defined MLOps templates to enable model reuse via registry-based promotion across environments; ownership is governed by Unity Catalog."
             }
           },
-          "useCaseRefs": [
-          ]
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-ms.md"
         },
         {
           "id": "aaimloro-mlops-mcdd",
@@ -685,20 +691,20 @@
           "link": "https://docs.evidentlyai.com/user-guide/concept-drift/",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Used Databricks Lakehouse Monitoring with API and UI support; Volvo MLOps Python SDK enables API-based customization."
             },
             "technology.development-activity": {
-              "value": 1,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 3,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed and updated each PI."
             }
           },
           "useCaseRefs": [
@@ -727,7 +733,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-mcdd.md"
         },
         {
           "id": "aaimloro-mlops-et",
@@ -740,20 +747,20 @@
           "link": "https://mlflow.org/docs/latest/tracking.html",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             }
           },
           "useCaseRefs": [
@@ -782,36 +789,38 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-et.md"
         },
         {
           "id": "aaimloro-mlops-mr",
           "title": "Model Retraining (Continuous)",
           "reviewed": "false",
           "productId": "mlops",
-          "type": "process",
+          "type": "technology",
+          "toolId": "databricks-mlflow",
           "description": "Automated retrain pipelines with approvals/rollbacks. Automated pipelines to retrain and redeploy models as data or performance changes. Ensures models remain accurate and compliant.",
           "link": "https://aws.amazon.com/blogs/machine-learning/building-mlops-pipelines/",
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "No documentation found."
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
             }
           },
-          "useCaseRefs": [
-          ]
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-mr.md"
         },
         {
           "id": "aaimloro-mlops-sdk",
@@ -828,20 +837,20 @@
           },
           "maturityInputs": {
             "adoption.effort": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 4,
+              "reason": "Providing DevOps reusable templates and Python SDK for monitoring with minimal input configuration."
             },
             "technology.development-activity": {
-              "value": 2,
-              "reason": "Initial Suggestion from Stijn."
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
             },
             "technology.operations": {
               "value": null,
               "reason": "No central operations reqiured."
             },
             "process.documentation": {
-              "value": 0,
-              "reason": "The document contains only a placeholder introduction with no actual content, guidance, or usable templates."
+              "value": 4,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed and updated each PI."
             }
           },
           "useCaseRefs": [
@@ -870,7 +879,8 @@
               "useCaseId": "non-hvia-gtt-pil",
               "maturity": 2
             }
-          ]
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-sdk.md"
         }
       ]
     }

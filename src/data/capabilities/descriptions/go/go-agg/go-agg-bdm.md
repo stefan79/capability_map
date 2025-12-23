@@ -1,0 +1,1 @@
+Metrics and interventions to reduce disparate impact. Techniques to measure and reduce unfair model behavior across groups and contexts. Improves equity and compliance with non‑discrimination rules.

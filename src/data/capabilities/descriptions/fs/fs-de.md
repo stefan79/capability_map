@@ -1,0 +1,1 @@
+Data encryption protects information at rest and in transit using cryptographic algorithms and key management. It reduces risk of unauthorized access and supports compliance across platforms and workloads.

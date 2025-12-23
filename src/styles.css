@@ -124,6 +124,16 @@ main {
   line-height: 1.4;
 }
 
+.tooltip-description h3,
+.tooltip-description h4,
+.tooltip-description h5,
+.tooltip-description h6 {
+  margin: 0 0 0.25rem;
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--volvo-blue);
+}
+
 .tooltip-description p {
   margin: 0 0 0.35rem;
 }

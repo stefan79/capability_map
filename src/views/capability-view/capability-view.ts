@@ -906,11 +906,10 @@ export class CapabilityView implements View {
         // Title + description with details link
         const titleHtml = `<div class="tooltip-title">${capability.title}${hviaTag ? ` ${hviaTag}` : ''}</div>`;
         const descLink = capability.link ? ` <a href="${capability.link}" target="_blank" rel="noopener noreferrer">Details</a>` : '';
-        const renderedDescription = capability.descriptionHtml
-          ? capability.descriptionHtml
-          : capability.description
-            ? escapeHtml(capability.description)
-            : '';
+        const renderedDescription =
+          capability.descriptionPreviewHtml ||
+          capability.descriptionHtml ||
+          (capability.description ? escapeHtml(capability.description) : '');
         const descriptionHtml = renderedDescription
           ? `<div class="tooltip-description">${renderedDescription}${descLink}</div>`
           : '';

@@ -13,7 +13,7 @@ import type {
 } from '../capabilities-model';
 import { getStatusMaturity } from '../capability-helpers';
 import type { HVIA } from '../hvias-model';
-import { renderMarkdown } from '../markdown';
+import { renderMarkdown, renderMarkdownFirstSection } from '../markdown';
 import { MATURITY_DIMENSIONS, type MaturitySource } from '../maturity-config';
 import type { CapabilityMaturitySummary, RawMaturityMap } from '../maturity-types';
 import { createZeroMaturitySummary, mergeMaturityMaps, sanitizeMaturityEntries } from '../maturity-utils';
@@ -278,6 +278,7 @@ function resolveCluster(
     resolved.descriptionMarkdown = descriptionMarkdown;
     resolved.description = descriptionText;
     resolved.descriptionHtml = renderMarkdown(descriptionText);
+    resolved.descriptionPreviewHtml = renderMarkdownFirstSection(descriptionText) || resolved.descriptionHtml;
     const documentationLink = resolveDocumentationLink(resolved, resolved.product);
     if (documentationLink) {
       resolved.documentationLink = documentationLink;

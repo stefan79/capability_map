@@ -34,6 +34,7 @@ export type Capability = {
   descriptionFile?: string;
   descriptionMarkdown?: string;
   descriptionHtml?: string;
+  descriptionPreviewHtml?: string;
   link?: string;
   reviewed?: boolean;
   status: CapabilityStatus | CapabilityMaturity;

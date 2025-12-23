@@ -165,6 +165,23 @@ const mergeMaturityMaps = (base, overrides) => {
   return { ...base, ...overrides };
 };
 
+const readDescriptionMarkdown = (cap, warnings) => {
+  const rel = cap.descriptionFile || '';
+  if (!rel) return cap.description || '';
+  const relPath = rel.replace(/^\.\//, '');
+  const fullPath = path.join(dataDir, 'capabilities', relPath);
+  if (!fs.existsSync(fullPath)) {
+    if (warnings) warnings.push(`Description file not found for ${cap.id}: ${rel}`);
+    return cap.description || '';
+  }
+  try {
+    return fs.readFileSync(fullPath, 'utf8');
+  } catch (error) {
+    if (warnings) warnings.push(`Failed to read description for ${cap.id} from ${rel}: ${error.message}`);
+    return cap.description || '';
+  }
+};
+
 const createZeroMaturitySummary = (reason) => {
   const dimensions = MATURITY_DIMENSIONS.reduce((dimAcc, dimension) => {
     const subdimensions = dimension.subdimensions.reduce((subAcc, sub) => {
@@ -218,7 +235,7 @@ const countActiveUseCases = (cap) => {
 const deriveCapabilityDefaults = (cap) => {
   const statusScore = Math.max(1, getStatusMaturity(cap) || 1);
   const { active } = countActiveUseCases(cap);
-  const documentationLength = (cap.description ?? '').length;
+  const documentationLength = (cap.descriptionMarkdown ?? cap.description ?? '').length;
   let documentationValue = 1;
   if (documentationLength > 400) documentationValue = 4;
   else if (documentationLength > 250) documentationValue = 3;
@@ -429,9 +446,13 @@ const resolveCapability = (cap, indexes, warnings, inheritedProductId) => {
   const documentationLink = resolveDocumentationLink({ ...cap, productId }, product);
   const productOverrides = sanitizeProductOverrides(cap);
   const productLink = product?.teamLink || product?.documentation?.url || '';
+  const descriptionMarkdown = readDescriptionMarkdown(cap, warnings);
+  const descriptionText = descriptionMarkdown || cap.description || '';
 
   const resolved = {
     ...cap,
+    description: descriptionText,
+    descriptionMarkdown,
     productId,
     product,
     tool,
@@ -616,7 +637,7 @@ function main() {
     warnings,
     renderClusters,
     helpers: {
-      shortDescription: (cap) => sentenceOrTrim(cap.description || ''),
+      shortDescription: (cap) => sentenceOrTrim(cap.descriptionMarkdown || cap.description || ''),
     },
   };
 

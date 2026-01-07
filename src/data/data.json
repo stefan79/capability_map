@@ -50,5 +50,11 @@
       "./products/mlops.json"
     ],
     "children": []
+  },
+  "versionsData": {
+    "imports": [
+      "./versions.json"
+    ],
+    "releases": []
   }
 }

@@ -26,6 +26,7 @@ export class ViewManager {
         viewData = {
           root: data.capabilitiesData,
           hvias: data.hviasData?.children ?? [],
+          versions: data.versionsData?.releases ?? [],
         };
       }
 

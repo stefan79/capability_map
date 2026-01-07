@@ -68,6 +68,15 @@ That document also explains how to create an Atlassian API token, configure stag
 | `npm run start` | Parcel dev server with hot reload. |
 | `npm run build` | Production build with assets copied into `dist/`. |
 | `npm run lint` | ESLint over `src/**/*.{ts,tsx}`. |
+| `npm run generate:aggregated-model` | Export aggregated model Markdown (defaults to `templates/capability-catalog.md.tmpl` → `dist/capabilities.md`). |
 | `npm run deploy:forge -- --environment <env>` | Builds, copies `dist/` into `forge/static/`, then runs `npx forge deploy`. |
+
+You can override the template and output path by passing `--template` and `--out` after `--`:
+
+```sh
+npm run generate:aggregated-model -- --template templates/nested-capability-report.md.tmpl --out dist/report.md
+```
+
+Both flags also accept `--template=...` / `--out=...` forms. Paths can be absolute or relative to the repo root; output directories are created if needed.
 
 Feel free to add tests under `src/__tests__/` once Jest or another runner is integrated (currently `npm test` is a placeholder).

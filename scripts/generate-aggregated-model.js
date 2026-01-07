@@ -409,6 +409,7 @@ const loadVendors = (imports) => imports.map((p) => {
 
 const loadHVIAs = (imports) => imports.map((p) => readJson(p.replace(/^\.\//, '')));
 const loadProducts = (imports) => imports.map((p) => readJson(p.replace(/^\.\//, '')));
+const loadVersions = (imports) => imports.flatMap((p) => readJson(p.replace(/^\.\//, '')));
 
 // ---------- resolve capabilities ----------
 const resolveUseCases = (cap, hviaIndex, warnings) => {
@@ -537,6 +538,7 @@ function main() {
   const vendors = loadVendors(dataJson.toolsData.imports || []);
   const hvias = loadHVIAs(dataJson.hviasData.imports || []);
   const products = loadProducts(dataJson.productsData.imports || []);
+  const versions = loadVersions(dataJson.versionsData?.imports || []);
 
   const toolIndex = {};
   vendors.forEach((vendor) => {
@@ -626,6 +628,15 @@ function main() {
 
   const renderClusters = clusters.map(normalizeForTemplate);
   const templateCapabilities = [...capabilities].sort((a, b) => a.title.localeCompare(b.title)).map(buildTemplateFields);
+  const sortedVersions = [...versions].sort((a, b) => {
+    const aTime = Date.parse(a.date);
+    const bTime = Date.parse(b.date);
+    const aValid = Number.isFinite(aTime);
+    const bValid = Number.isFinite(bTime);
+    if (aValid && bValid && aTime !== bTime) return bTime - aTime;
+    if (aValid !== bValid) return bValid ? 1 : -1;
+    return b.id.localeCompare(a.id);
+  });
 
   const aggregated = {
     clusters,
@@ -634,6 +645,7 @@ function main() {
     tools: Object.values(toolIndex),
     vendors,
     hvias,
+    versions: sortedVersions,
     warnings,
     renderClusters,
     helpers: {

@@ -3,6 +3,7 @@ import * as d3 from 'd3';
 import type { HVIA } from '../../data/hvias-model';
 import { getMaturityBandColor, lightenHexColor,MATURITY_DIMENSIONS, MAX_MATURITY_LEVEL } from '../../data/maturity-config';
 import type { CapabilityMaturitySummary } from '../../data/maturity-types';
+import type { VersionRelease } from '../../data/versions-model';
 import { View } from '../view';
 import { Capability, Cluster, isCluster } from './model';
 
@@ -18,6 +19,7 @@ type CapabilityTreeRoot = {
 type CapabilityViewData = {
   root: CapabilityTreeRoot;
   hvias: HVIA[];
+  versions?: VersionRelease[];
 };
 
 type Rgb = [number, number, number];
@@ -322,6 +324,20 @@ export class CapabilityView implements View {
     this.tooltip = d3.select<HTMLDivElement, unknown>('#tooltip');
   }
 
+  private getLatestVersion(versions: VersionRelease[]): VersionRelease | null {
+    if (!versions || versions.length === 0) return null;
+    const sorted = [...versions].sort((a, b) => {
+      const aTime = Date.parse(a.date);
+      const bTime = Date.parse(b.date);
+      const aValid = Number.isFinite(aTime);
+      const bValid = Number.isFinite(bTime);
+      if (aValid && bValid && aTime !== bTime) return bTime - aTime;
+      if (aValid !== bValid) return bValid ? 1 : -1;
+      return b.id.localeCompare(a.id);
+    });
+    return sorted[0] ?? null;
+  }
+
   render(payload: CapabilityViewData): void {
     this.unmount();
 
@@ -336,6 +352,7 @@ export class CapabilityView implements View {
 
     const data = payload.root;
     const hvias = payload.hvias;
+    const latestVersion = this.getLatestVersion(payload.versions ?? []);
 
     const containerRect = this.container.node()?.getBoundingClientRect();
     const width = Math.max(1600, Math.floor(containerRect?.width ?? 0));
@@ -637,9 +654,11 @@ export class CapabilityView implements View {
     setPositions(root, 0, 0);
 
     const totalHeight = (root as any).height;
+    const versionFootnoteHeight = latestVersion ? 64 : 0;
+    const svgHeight = totalHeight + versionFootnoteHeight;
     const svg = this.container.append('svg')
       .attr('width', canvasWidth)
-      .attr('height', totalHeight)
+      .attr('height', svgHeight)
       .style('font', '12px sans-serif');
 
     const nodes = svg.selectAll('g')
@@ -698,6 +717,44 @@ export class CapabilityView implements View {
         return state ? state.tileStroke : '#CFD3DA';
       })
       .attr('stroke-width', 1);
+
+    if (latestVersion) {
+      const boxPadding = 12;
+      const boxWidth = Math.min(380, Math.max(280, latestVersion.title.length * 7 + 80));
+      const boxHeight = 48;
+      const versionX = Math.max(boxPadding, canvasWidth - boxWidth - boxPadding);
+      const versionY = svgHeight - boxHeight - boxPadding;
+      const metaLine = `Version ${latestVersion.id} · ${latestVersion.date}`;
+
+      const versionGroup = svg.append('g')
+        .attr('class', 'version-footnote')
+        .attr('transform', `translate(${versionX}, ${versionY})`);
+
+      versionGroup.append('rect')
+        .attr('width', boxWidth)
+        .attr('height', boxHeight)
+        .attr('rx', 6)
+        .attr('ry', 6)
+        .attr('fill', '#FFFFFF')
+        .attr('stroke', '#CFD3DA')
+        .attr('stroke-width', 1)
+        .attr('opacity', 0.95);
+
+      versionGroup.append('text')
+        .attr('x', 12)
+        .attr('y', 18)
+        .attr('fill', '#4D4D4D')
+        .attr('font-size', 12)
+        .attr('font-weight', 700)
+        .text(metaLine);
+
+      versionGroup.append('text')
+        .attr('x', 12)
+        .attr('y', 34)
+        .attr('fill', '#4D4D4D')
+        .attr('font-size', 12)
+        .text(latestVersion.title);
+    }
 
     // Icon area: if tool present, show its logo via SVG <image>; otherwise show type icon via foreignObject
     function asUrl(v: any): string | null {

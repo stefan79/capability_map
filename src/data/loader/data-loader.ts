@@ -3,10 +3,12 @@ import globalDataJson from '../data.json';
 import type { HVIA } from '../hvias-model';
 import type { Product } from '../products-model';
 import type { Tool, Vendor } from '../tools-model';
+import type { VersionRelease } from '../versions-model';
 import { loadCapabilities } from './capabilities-loader';
 import { loadHVIAs } from './hvias-loader';
 import { loadProducts } from './products-loader';
 import { loadVendors } from './tools-loader';
+import { loadVersions } from './versions-loader';
 
 export type GlobalData = {
   view1Data: { value: number }[];
@@ -27,6 +29,10 @@ export type GlobalData = {
     imports: string[];
     children: Product[];
   };
+  versionsData: {
+    imports: string[];
+    releases: VersionRelease[];
+  };
 };
 
 export async function loadAllData(): Promise<GlobalData> {
@@ -39,6 +45,7 @@ export async function loadAllData(): Promise<GlobalData> {
     toolsData: base.toolsData ?? { imports: [], children: [] },
     hviasData: base.hviasData ?? { imports: [], children: [] },
     productsData: base.productsData ?? { imports: [], children: [] },
+    versionsData: base.versionsData ?? { imports: [], releases: [] },
   };
 
   // tools (load first)
@@ -78,6 +85,10 @@ export async function loadAllData(): Promise<GlobalData> {
     productIndex,
   });
   globalData.capabilitiesData.children.push(...capabilities);
+
+  // versions (load last)
+  const versions = loadVersions(globalData.versionsData.imports || []);
+  globalData.versionsData.releases.push(...versions);
 
   return globalData;
 }

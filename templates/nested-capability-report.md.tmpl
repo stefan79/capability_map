@@ -1,5 +1,14 @@
 # Capability Report by Cluster
 
+{{#versions.length}}
+## Versions
+| ID | Date | Title | Description |
+| --- | --- | --- | --- |
+{{#versions}}| {{id}} | {{date}} | {{title}} | {{description}} |
+{{/versions}}
+
+{{/versions.length}}
+
 {{#renderClusters}}
 # {{title}}
 {{#subclusters}}

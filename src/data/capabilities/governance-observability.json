@@ -1,6 +1,7 @@
 {
   "id": "go",
   "title": "Governance & Observability",
+  "productId": "genai-hub",
   "children": [
     {
       "id": "go-agg",
@@ -9,92 +10,167 @@
         {
           "id": "go-agg-raf",
           "title": "Responsible AI Framework",
-          "status": 0,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Principles and processes to ensure AI is developed and used ethically with accountability and transparency. Establishes governance across the AI lifecycle and compliance with regulations.",
-          "link": "https://oecd.ai/en/ai-principles"
+          "description": "Policies and controls for safety, fairness, transparency, and accountability. Principles and processes to ensure AI is developed and used ethically with accountability and transparency. Establishes governance across the AI lifecycle and compliance with regulations.",
+          "link": "https://oecd.ai/en/ai-principles",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-raf.md"
         },
         {
           "id": "go-agg-pii",
           "title": "PII detection",
-          "status": 0,
+          "reviewed": "false",
           "type": "technology",
-          "description": "Automated identification of personally identifiable information in text and data to support privacy and compliance. Used to redact or protect sensitive data before model use.",
-          "link": "https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/overview"
+          "description": "Identify/redact sensitive data across inputs/outputs/logs. Automated identification of personally identifiable information in text and data to support privacy and compliance. Used to redact or protect sensitive data before model use.",
+          "link": "https://learn.microsoft.com/azure/ai-services/language-service/personally-identifiable-information/overview",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-pii.md"
         },
         {
           "id": "go-agg-dmc",
           "title": "Data, Model & Agent cards",
-          "status": 0,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Standardized documentation describing datasets, models, and agents: purpose, performance, risks, and limitations. Improves transparency and responsible adoption.",
-          "link": "https://modelcards.withgoogle.com/"
+          "description": "Standard fact sheets with purpose, risks, metrics, and owners. Standardized documentation describing datasets, models, and agents: purpose, performance, risks, and limitations. Improves transparency and responsible adoption.",
+          "link": "https://modelcards.withgoogle.com/",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-dmc.md"
         },
         {
           "id": "go-agg-hitl",
           "title": "Human in the Loop Escalation",
+          "reviewed": "false",
           "status": 1,
           "type": "pattern",
-          "description": "Operational pattern to route uncertain or high‑risk AI decisions to human reviewers. Ensures oversight and auditability for critical interactions.",
-          "link": "https://arxiv.org/abs/2002.01024"
+          "description": "Route uncertain or flagged outputs to human reviewers. Operational pattern to route uncertain or high‑risk AI decisions to human reviewers. Ensures oversight and auditability for critical interactions.",
+          "link": "https://arxiv.org/abs/2002.01024",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-hitl.md"
         },
         {
           "id": "go-agg-owm",
           "title": "Open Weights models",
-          "status": 0,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Guidelines for approving and managing models with open weights, including security and IP considerations. Balances innovation with risk management.",
-          "link": "https://crfm.stanford.edu/2023/05/10/open-foundation-models.html"
+          "description": "Curated OSS models with license and security checks. Guidelines for approving and managing models with open weights, including security and IP considerations. Balances innovation with risk management.",
+          "link": "https://crfm.stanford.edu/2023/05/10/open-foundation-models.html",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-owm.md"
         },
         {
           "id": "go-agg-wuic",
           "title": "Whitelisted UI Channels",
-          "status": 0,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Restrict end‑user access to approved applications and interfaces for AI interactions. Reduces data leakage and shadow AI risks.",
-          "link": "https://www.ncsc.gov.uk/collection/caf/caf-principles/governance"
+          "description": "Approved apps/surfaces for AI use. Restrict end‑user access to approved applications and interfaces for AI interactions. Reduces data leakage and shadow AI risks.",
+          "link": "https://www.ncsc.gov.uk/collection/caf/caf-principles/governance",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-wuic.md"
         },
         {
           "id": "go-agg-cm",
           "title": "Content Moderation",
-          "status": 3,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Policies and automated checks to detect abuse, toxicity, and policy violations in AI inputs and outputs. Protects users and brand safety.",
+          "description": "Safety filters for harmful/illegal content. Policies and automated checks to detect abuse, toxicity, and policy violations in AI inputs and outputs. Protects users and brand safety.",
           "link": "https://platform.openai.com/docs/guides/safety-best-practices",
+          "maturityInputs": {},
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
-          ]          
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 0
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-cm.md"
         },
         {
           "id": "go-agg-gr",
           "title": "Guardrails (toxic, hallucinations…)",
-          "status": 3,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Safety controls such as validation, filters, and constrained generation to prevent harmful or fabricated outputs. Enforces organizational and legal standards.",
+          "description": "Pre/post-processing to constrain generation and reduce risk. Safety controls such as validation, filters, and constrained generation to prevent harmful or fabricated outputs. Enforces organizational and legal standards.",
           "link": "https://www.mckinsey.com/featured-insights/mckinsey-explainers/what-are-ai-guardrails",
+          "maturityInputs": {},
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0},
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
-          ]
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 0
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-gr.md"
         },
         {
           "id": "go-agg-bdm",
           "title": "Bias Detection & Mitigation",
+          "reviewed": "false",
           "status": 0,
           "type": "pattern",
-          "description": "Techniques to measure and reduce unfair model behavior across groups and contexts. Improves equity and compliance with non‑discrimination rules.",
-          "link": "https://developers.google.com/machine-learning/fairness-overview"
+          "description": "Metrics and interventions to reduce disparate impact. Techniques to measure and reduce unfair model behavior across groups and contexts. Improves equity and compliance with non‑discrimination rules.",
+          "link": "https://developers.google.com/machine-learning/fairness-overview",
+          "descriptionFile": "./descriptions/go/go-agg/go-agg-bdm.md"
         }
       ]
     },
@@ -105,51 +181,111 @@
         {
           "id": "go-co-finops",
           "title": "FinOps",
-          "status": 0,
+          "reviewed": "false",
           "type": "policy",
-          "description": "Financial governance for variable AI and cloud spend to maximize value. Enables shared accountability across engineering, finance, and product.",
-          "link": "https://www.finops.org/framework/"
+          "description": "Cost tracking/optimization for infra/GPU/LLM usage. Financial governance for variable AI and cloud spend to maximize value. Enables shared accountability across engineering, finance, and product.",
+          "link": "https://www.finops.org/framework/",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-co/go-co-finops.md"
         },
         {
           "id": "go-co-feedback",
           "title": "Collect Feedback",
-          "status": 3,
+          "reviewed": "false",
           "type": "pattern",
-          "description": "Mechanisms to capture user and annotator feedback on model outputs for continuous improvement. Feeds evaluation and retraining loops.",
+          "description": "Capture user ratings and corrections in workflows. Mechanisms to capture user and annotator feedback on model outputs for continuous improvement. Feeds evaluation and retraining loops.",
           "link": "https://evidentlyai.com/blog/ai-feedback-loops",
+          "maturityInputs": {},
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
-          ]          
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 0
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 1
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 2
+            },
+            {
+              "hviaId": "mack",
+              "useCaseId": "mack-mavis",
+              "maturity": 1
+            }
+          ],
+          "descriptionFile": "./descriptions/go/go-co/go-co-feedback.md"
         },
         {
           "id": "go-co-sdg",
           "title": "Synthetic Data Generation",
-          "status": 3,
+          "reviewed": "false",
           "type": "technology",
-          "description": "Tools and processes to generate privacy‑preserving synthetic datasets for development and testing. Helps overcome data scarcity and privacy limits.",
-          "link": "https://www.nist.gov/itl/ai-risk-management-framework/synthetic-data", 
+          "description": "Tools to augment data with privacy protection. Tools and processes to generate privacy‑preserving synthetic datasets for development and testing. Helps overcome data scarcity and privacy limits.",
+          "link": "https://www.nist.gov/itl/ai-risk-management-framework/synthetic-data",
+          "maturityInputs": {},
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 0
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/go/go-co/go-co-sdg.md"
         },
         {
           "id": "go-co-edge",
           "title": "Edge AI",
-          "status": 0,
+          "reviewed": "false",
           "type": "technology",
-          "description": "Deploy and monitor AI workloads on edge devices with constrained compute and intermittent connectivity. Requires specialized observability and update strategies.",
-          "link": "https://azure.microsoft.com/solutions/edge-computing/what-is-edge-ai"
+          "description": "Deploy models to devices/vehicles with offline support. Deploy and monitor AI workloads on edge devices with constrained compute and intermittent connectivity. Requires specialized observability and update strategies.",
+          "link": "https://azure.microsoft.com/solutions/edge-computing/what-is-edge-ai",
+          "maturityInputs": {},
+          "descriptionFile": "./descriptions/go/go-co/go-co-edge.md"
         }
       ]
     }

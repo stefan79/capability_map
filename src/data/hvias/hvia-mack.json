@@ -1,0 +1,8 @@
+{
+  "id": "mack",
+  "name": "HVIA: Mack Trucks",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "mack-mavis", "name": "Mack Trucks Mavis", "url": "https://www.volvotrucks.com/" }
+  ]
+}

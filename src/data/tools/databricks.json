@@ -24,6 +24,34 @@
       "description": "MLflow is an open-source platform for managing the end-to-end ML lifecycle. It provides experiment tracking, model registry, and reproducible packaging and deployment (MLflow Models).",
       "url": "https://mlflow.org/",
       "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/mlflow.svg"
+    },
+    {
+      "id": "databricks-notebooks",
+      "name": "Databricks Notebooks",
+      "description": "Databricks collaborative notebooks blend SQL, Python, and visual profiling to explore data, run EDA, and build features with managed compute and Delta Lake access.",
+      "url": "https://www.databricks.com/product/notebooks",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
+    },
+    {
+      "id": "databricks-automl",
+      "name": "Databricks AutoML",
+      "description": "Databricks AutoML automatically builds, trains, and evaluates baseline models, producing notebooks, experiment tracking, and SHAP-based feature importance for quick iteration.",
+      "url": "https://www.databricks.com/product/automl",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
+    },
+    {
+      "id": "databricks-compute",
+      "name": "Databricks Compute",
+      "description": "Managed, autoscaling Lakehouse compute that provisions classic clusters and serverless SQL/AI endpoints with optimized runtime images, governance, and cost controls.",
+      "url": "https://www.databricks.com/product/interactive-data-analytics",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
+    },
+    {
+      "id": "databricks-genie",
+      "name": "Databricks Genie",
+      "description": "Databricks Genie is a conversational agent built into the Lakehouse that lets engineers ask natural-language questions, generate SQL and Python, and operationalize AI workflows against governed data.",
+      "url": "https://www.databricks.com",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/databricks.svg"
     }
   ]
 }

@@ -1,0 +1,68 @@
+{
+  "capabilities": [
+    {
+      "id": "aaimloro-dafe-dla",
+      "name": "Data Labelling / Annotation",
+      "description": "Human-in-the-loop tools to tag data (text/images/tables) with QA workflows. Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
+      "documents": [
+        "Connfluece: AIS Data Labeling - https://confluence.it.volvo.net/spaces/IBT/pages/422446905/AIS+-+Data+Labeling"
+      ]
+    },
+    {
+      "id": "aaimloro-dafe-dsc",
+      "name": "Datasets Catalog",
+      "description": "Central registry for datasets with ownership, quality, and access policies. Catalog for discovering datasets, owners, and metadata. Improves findability and governance for analytics and ML.",
+      "documents": [
+        "Confluence: AIS -Model Catalog - https://confluence.it.volvo.net/spaces/IBT/pages/420708673/AIS+-+Model+Catalog"
+      ]
+    },
+    {
+      "id": "aaimloro-dafe-eda",
+      "name": "Exploratory Data Analysis (EDA)",
+      "description": "Reproducible profiling/visualization to validate data quality and patterns. Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.",
+      "documents": [
+        "Confluence: AIS - EDA-Exploratory Data Analysis - https://confluence.it.volvo.net/spaces/IBT/pages/454820517/AIS+-+EDA-Exploratory+Data+Analysis"
+      ]
+    },
+    {
+      "id": "aaimloro-dafe-fs",
+      "name": "Feature Store",
+      "description": "Reusable feature definitions with online/offline serving and lineage. Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.",
+      "documents": [
+        "Confluence: AIS - Feature Store - https://confluence.it.volvo.net/spaces/IBT/pages/374933943/AIS+-+Feature+Store"
+      ]
+    },
+    {
+      "id": "aaimloro-deploy-batch",
+      "name": "Batch Inference",
+      "description": "Scheduled/triggered scoring on large datasets. Scheduled scoring of large datasets for offline use cases. Integrates with data lake workflows and orchestration.",
+      "documents": [
+        "Confluece: AIS - Inference/Prediction Integration - https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
+      ]
+    },
+    {
+      "id": "aaimloro-deploy-online",
+      "name": "Online Inference",
+      "description": "Low-latency API serving for models. Low-latency model serving via APIs for realtime predictions. Requires autoscaling, monitoring, and rollback.",
+      "documents": [
+        "Confluece: AIS - Inference/Prediction Integration - https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
+      ]
+    },
+    {
+      "id": "aaimloro-mlops-ms",
+      "name": "Model Store",
+      "description": "Versioned model artifacts with lineage and signatures. Registry for model versions, artifacts, and lineage. Enables promotion across environments with governance.",
+      "documents": [
+        "Confluence: AIS Model Store - https://confluence.it.volvo.net/spaces/IBT/pages/384796651/AIS+-+Model+Store"
+      ]
+    },
+    {
+      "id": "aaimloro-mlops-sdk",
+      "name": "SDK / Templates / Blueprints",
+      "description": "Opinionated scaffolds/CLI to create and deploy quickly. Reusable code, templates, and scaffolding for common ML patterns. Reduces boilerplate and enforces best practices.",
+      "documents": [
+        "Confluence: AIS - SDK & DevOps Templates - https://confluence.it.volvo.net/spaces/IBT/pages/429720260/AIS+-+SDK+DevOps+Templates"
+      ]
+    }
+  ]
+}

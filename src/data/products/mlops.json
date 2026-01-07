@@ -1,0 +1,19 @@
+{
+  "id": "mlops",
+  "name": "MLOps Platform",
+  "teamName": "MLOps & Data Products",
+  "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
+  "dpo": { "name": "Sareena Samad", "email": "sareena.samad@volvo.com" },
+  "sa": { "name": "Sasi Sekhar Sadam", "email": "sasi.sekhar.sadam@volvo.com" },
+  "documentation": {
+    "url": "https://confluence.it.volvo.net/spaces/IBT/pages/381160901/AI+Strategy+-+Analytical+AI",
+    "title": "Confluence: AI Strategy - Analytical AI"
+  },
+  "maturityInputs": {
+    "process.self-service": { "value": 3, "reason": "Enabled capability ordering via SNOW form with mostly automated approvals; creation remains manual." },
+    "people.roles": { "value": 3.5, "reason": "Escalation Paths and Back-Ups available ad-hoc, group mailboxes existent, main documentaiton in confluence" },
+    "people.skills": { "value": 3.5, "reason": "Two established experts available, onboarding two additional experts at the moment." },
+    "people.capacity": { "value": 2.5, "reason": "Capacity sufficient to support a small group of use-cases withouth introducing lead times." },
+    "people.product-guidance": { "value": 3, "reason": "Playbook exists, constantly updated by/for new develoeprs, but no learning paths or dedicated trainings." }
+  }
+}

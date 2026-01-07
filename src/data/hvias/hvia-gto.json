@@ -1,0 +1,9 @@
+{
+  "id": "gto",
+  "name": "HVIA: GTO",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "gto-sml-claims", "name": "GTO SML EU - Dealer Claim Processing Automation", "url": "https://www.volvotrucks.com/" },
+    { "id": "gto-sop", "name": "GTO SOP Analytics", "url": "https://www.volvotrucks.com/" }
+  ]
+}

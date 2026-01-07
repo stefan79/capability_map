@@ -1,0 +1,16 @@
+# Capability Catalog
+
+{{#capabilities}}
+## {{title}}
+{{description}}
+
+- Type: {{type}}
+{{#product}}- Product: {{name}}{{/product}}
+{{#tool}}- Tool: {{name}}{{/tool}}
+{{#maturity}}- Maturity (overall): {{total}}{{/maturity}}
+{{#useCases}}
+- Use case: {{hviaName}} / {{name}} (maturity {{maturity}})
+{{/useCases}}
+{{#documentationLink}}- Docs: {{url}}{{/documentationLink}}
+
+{{/capabilities}}

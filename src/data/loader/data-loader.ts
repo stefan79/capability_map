@@ -1,10 +1,14 @@
-import type { Capability,Cluster } from '../capabilities-model';
+import type { Capability, Cluster } from '../capabilities-model';
 import globalDataJson from '../data.json';
 import type { HVIA } from '../hvias-model';
-import type { Tool,Vendor } from '../tools-model';
+import type { Product } from '../products-model';
+import type { Tool, Vendor } from '../tools-model';
+import type { VersionRelease } from '../versions-model';
 import { loadCapabilities } from './capabilities-loader';
 import { loadHVIAs } from './hvias-loader';
+import { loadProducts } from './products-loader';
 import { loadVendors } from './tools-loader';
+import { loadVersions } from './versions-loader';
 
 export type GlobalData = {
   view1Data: { value: number }[];
@@ -21,6 +25,14 @@ export type GlobalData = {
     imports: string[];
     children: HVIA[];
   };
+  productsData: {
+    imports: string[];
+    children: Product[];
+  };
+  versionsData: {
+    imports: string[];
+    releases: VersionRelease[];
+  };
 };
 
 export async function loadAllData(): Promise<GlobalData> {
@@ -32,6 +44,8 @@ export async function loadAllData(): Promise<GlobalData> {
     capabilitiesData: base.capabilitiesData ?? { imports: [], children: [] },
     toolsData: base.toolsData ?? { imports: [], children: [] },
     hviasData: base.hviasData ?? { imports: [], children: [] },
+    productsData: base.productsData ?? { imports: [], children: [] },
+    versionsData: base.versionsData ?? { imports: [], releases: [] },
   };
 
   // tools (load first)
@@ -41,6 +55,10 @@ export async function loadAllData(): Promise<GlobalData> {
   // hvias (load second)
   const hvias = loadHVIAs(globalData.hviasData.imports || []);
   globalData.hviasData.children.push(...hvias);
+
+  // products (load third)
+  const products = loadProducts(globalData.productsData.imports || []);
+  globalData.productsData.children.push(...products);
 
   // Build indexes for linking
   const toolIndex: Record<string, Tool> = {};
@@ -54,12 +72,23 @@ export async function loadAllData(): Promise<GlobalData> {
     hviaIndex[h.id] = h;
   }
 
+  // Build product index
+  const productIndex: Record<string, Product> = {};
+  for (const product of globalData.productsData.children) {
+    productIndex[product.id] = product;
+  }
+
   // capabilities (load last, resolving links)
   const capabilities = loadCapabilities(globalData.capabilitiesData.imports, {
     toolIndex,
     hviaIndex,
+    productIndex,
   });
   globalData.capabilitiesData.children.push(...capabilities);
+
+  // versions (load last)
+  const versions = loadVersions(globalData.versionsData.imports || []);
+  globalData.versionsData.releases.push(...versions);
 
   return globalData;
 }

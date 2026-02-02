@@ -1,8 +1,0 @@
-{
-  "id": "white-collar-productivity",
-  "name": "White Collar Productivity",
-  "url": "https://www.volvotrucks.com/",
-  "useCases": [
-    { "id": "white-collar-productivity-default", "name": "Default Use Case", "url": "https://www.volvotrucks.com/" }
-  ]
-}

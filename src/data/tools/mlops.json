@@ -1,0 +1,15 @@
+{
+  "id": "mlops",
+  "name": "Volvo MLOps Platform",
+  "url": "https://www.volvogroup.com/en/news-and-media.html",
+  "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/volvo.svg",
+  "tools": [
+    {
+      "id": "mlops-runtime-sdk",
+      "name": "MLOps Runtime / SDK",
+      "description": "Out of the box environments to set up Analtyical AI workloads and models using Databricks, Inormativa and Micsrosft",
+      "url": "https://www.volvogroup.com/en/news-and-media.html",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/volvo.svg"
+    }
+  ]
+}

@@ -1,6 +1,9 @@
 import * as d3 from 'd3';
 
 import type { HVIA } from '../../data/hvias-model';
+import { getMaturityBandColor, lightenHexColor,MATURITY_DIMENSIONS, MAX_MATURITY_LEVEL } from '../../data/maturity-config';
+import type { CapabilityMaturitySummary } from '../../data/maturity-types';
+import type { VersionRelease } from '../../data/versions-model';
 import { View } from '../view';
 import { Capability, Cluster, isCluster } from './model';
 
@@ -16,8 +19,298 @@ type CapabilityTreeRoot = {
 type CapabilityViewData = {
   root: CapabilityTreeRoot;
   hvias: HVIA[];
+  versions?: VersionRelease[];
 };
 
+type Rgb = [number, number, number];
+type Point = { x: number; y: number };
+
+const hexToRgb = (hex: string): Rgb => {
+  const normalized = hex.replace('#', '');
+  const value = parseInt(normalized, 16);
+  if (Number.isNaN(value)) return [0, 0, 0];
+  if (normalized.length === 3) {
+    const r = ((value >> 8) & 0xf) * 17;
+    const g = ((value >> 4) & 0xf) * 17;
+    const b = (value & 0xf) * 17;
+    return [r, g, b];
+  }
+  const r = (value >> 16) & 255;
+  const g = (value >> 8) & 255;
+  const b = value & 255;
+  return [r, g, b];
+};
+
+const darkenHexColor = (hex: string, amount = 0.2): string => {
+  const [r, g, b] = hexToRgb(hex);
+  const clamp = (channel: number) => Math.max(0, Math.min(255, channel * (1 - amount)));
+  const toHex = (channel: number) => Math.round(channel).toString(16).padStart(2, '0');
+  return `#${toHex(clamp(r))}${toHex(clamp(g))}${toHex(clamp(b))}`;
+};
+
+const getReadableTextColor = (hex: string): string => {
+  const [r, g, b] = hexToRgb(hex);
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  return luminance > 0.6 ? '#1A1F2E' : '#FFFFFF';
+};
+
+const RADAR_SIZE = 220;
+const RADAR_RADIUS = RADAR_SIZE / 2 - 28;
+const RADAR_CENTER = RADAR_SIZE / 2;
+const TWO_PI = Math.PI * 2;
+const RADAR_ANGLE_OFFSET = -Math.PI / 2;
+const clampMaturityValue = (value?: number): number => Math.max(0, Math.min(MAX_MATURITY_LEVEL, value ?? 0));
+const valueToRadius = (value: number): number => (RADAR_RADIUS * value) / MAX_MATURITY_LEVEL;
+
+const polarToCartesian = (cx: number, cy: number, radius: number, angle: number) => ({
+  x: cx + radius * Math.cos(angle),
+  y: cy + radius * Math.sin(angle),
+});
+
+const describeSegmentPath = (radius: number, startAngle: number, endAngle: number): string => {
+  const start = polarToCartesian(RADAR_CENTER, RADAR_CENTER, radius, startAngle);
+  const end = polarToCartesian(RADAR_CENTER, RADAR_CENTER, radius, endAngle);
+  const largeArcFlag = endAngle - startAngle > Math.PI ? 1 : 0;
+  return [
+    `M ${RADAR_CENTER} ${RADAR_CENTER}`,
+    `L ${start.x} ${start.y}`,
+    `A ${radius} ${radius} 0 ${largeArcFlag} 1 ${end.x} ${end.y}`,
+    'Z',
+  ].join(' ');
+};
+
+const describeArc = (radius: number, startAngle: number, endAngle: number): string => {
+  const start = polarToCartesian(RADAR_CENTER, RADAR_CENTER, radius, startAngle);
+  const end = polarToCartesian(RADAR_CENTER, RADAR_CENTER, radius, endAngle);
+  const largeArcFlag = endAngle - startAngle > Math.PI ? 1 : 0;
+  return `M ${start.x} ${start.y} A ${radius} ${radius} 0 ${largeArcFlag} 1 ${end.x} ${end.y}`;
+};
+
+const renderDimensionIcon = (iconPath: string, color: string): string => {
+  const iconSize = 18;
+  const scale = iconSize / 24;
+  return `<g transform="translate(-${iconSize / 2}, -${iconSize / 2}) scale(${scale})"><path d="${iconPath}" fill="${color}" /></g>`;
+};
+
+const buildBlobPath = (() => {
+  const lineGenerator = d3
+    .line<Point>()
+    .x((point) => point.x)
+    .y((point) => point.y)
+    .curve(d3.curveCatmullRomClosed.alpha(0.5));
+  // Centripetal Catmull-Rom keeps the blob rounded without self-intersections.
+  return (points: Point[]): string => {
+    if (points.length === 0) {
+      return `M ${RADAR_CENTER} ${RADAR_CENTER} Z`;
+    }
+    if (points.length === 1) {
+      const [point] = points;
+      return `M ${point.x} ${point.y} Z`;
+    }
+    if (points.length === 2) {
+      return `M ${points[0].x} ${points[0].y} L ${points[1].x} ${points[1].y} Z`;
+    }
+    return lineGenerator(points) ?? `M ${RADAR_CENTER} ${RADAR_CENTER} Z`;
+  };
+})();
+
+const buildRadarSvg = (summary: CapabilityMaturitySummary): string => {
+  const segments: string[] = [];
+  const arcs: string[] = [];
+  const icons: string[] = [];
+  const labels: string[] = [];
+
+  const dimCount = MATURITY_DIMENSIONS.length || 1;
+  const step = TWO_PI / dimCount;
+
+  const polygonPoints: Point[] = [];
+  MATURITY_DIMENSIONS.forEach((dimension, index) => {
+    const dimensionSummary = summary.dimensions[dimension.id];
+    const startAngle = RADAR_ANGLE_OFFSET + index * step;
+    const definitionIds = dimension.subdimensions.map((subdefinition) => subdefinition.id);
+    const summaryIds = Object.keys(dimensionSummary?.subdimensions ?? {});
+    const orderedSubIds = definitionIds.concat(summaryIds.filter((id) => !definitionIds.includes(id)));
+    if (orderedSubIds.length === 0) {
+      const value = clampMaturityValue(dimensionSummary?.value);
+      const angle = startAngle + step / 2;
+      polygonPoints.push(polarToCartesian(RADAR_CENTER, RADAR_CENTER, valueToRadius(value), angle));
+      return;
+    }
+    const subStep = step / orderedSubIds.length;
+    orderedSubIds.forEach((subId, subIndex) => {
+      const subSummary = dimensionSummary?.subdimensions[subId];
+      const value = clampMaturityValue(subSummary?.value);
+      const angle = startAngle + subIndex * subStep + subStep / 2;
+      polygonPoints.push(polarToCartesian(RADAR_CENTER, RADAR_CENTER, valueToRadius(value), angle));
+    });
+  });
+
+  const blobPath = buildBlobPath(polygonPoints);
+
+  MATURITY_DIMENSIONS.forEach((dimension, index) => {
+    const dimensionSummary = summary.dimensions[dimension.id];
+    const startAngle = RADAR_ANGLE_OFFSET + index * step;
+    const endAngle = startAngle + step;
+    const segmentFill = lightenHexColor(dimension.color, 0.55);
+    segments.push(`<path class="radar-segment" d="${describeSegmentPath(RADAR_RADIUS, startAngle, endAngle)}" fill="${segmentFill}" />`);
+
+    const dimensionValue = clampMaturityValue(dimensionSummary?.value);
+    const dimensionArcRadius = valueToRadius(dimensionValue);
+    if (dimensionArcRadius > 0 && dimensionValue > 0) {
+      arcs.push(`<path class="radar-arc radar-arc--average" d="${describeArc(dimensionArcRadius, startAngle, endAngle)}" stroke="${dimension.color}" />`);
+    }
+
+    const iconAngle = startAngle + step / 2;
+    const iconPosition = polarToCartesian(RADAR_CENTER, RADAR_CENTER, RADAR_RADIUS - 24, iconAngle);
+    icons.push(`<g class="radar-icon" transform="translate(${iconPosition.x}, ${iconPosition.y})">${renderDimensionIcon(dimension.iconPath, dimension.color)}</g>`);
+
+    const labelPosition = polarToCartesian(RADAR_CENTER, RADAR_CENTER, RADAR_RADIUS + 18, iconAngle);
+    labels.push(`<text class="radar-label" x="${labelPosition.x}" y="${labelPosition.y}" fill="${dimension.color}" text-anchor="middle" dominant-baseline="middle">${dimension.name}</text>`);
+  });
+
+  return `
+    <svg class="maturity-radar-svg" width="${RADAR_SIZE}" height="${RADAR_SIZE}" viewBox="0 0 ${RADAR_SIZE} ${RADAR_SIZE}">
+      ${segments.join('')}
+      <path class="radar-blob" d="${blobPath}" />
+      ${arcs.join('')}
+      ${icons.join('')}
+      ${labels.join('')}
+    </svg>
+  `;
+};
+
+const buildMaturitySection = (summary?: CapabilityMaturitySummary): string => {
+  if (!summary || summary.total <= 0) return '';
+  const radarSvg = buildRadarSvg(summary);
+  const legendItems = MATURITY_DIMENSIONS.map((dimension) => {
+    const dimensionSummary = summary.dimensions[dimension.id];
+    if (!dimensionSummary) return '';
+    const iconBackground = lightenHexColor(dimension.color, 0.8);
+    const subList = Object.values(dimensionSummary.subdimensions)
+      .map(
+        (sub) => `
+          <li>
+            <span class="sub-name">${sub.name}</span>
+            <span class="sub-value">${sub.value.toFixed(1)}</span>
+          </li>
+        `
+      )
+      .join('');
+
+    return `
+      <li>
+        <div class="legend-header">
+          <span class="legend-icon" style="color:${dimension.color};background:${iconBackground}">
+            <svg viewBox="${dimension.iconViewBox}" width="18" height="18" aria-hidden="true">
+              <path d="${dimension.iconPath}" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="legend-name">${dimension.name}</span>
+          <span class="legend-value">${dimensionSummary.value.toFixed(1)} / ${MAX_MATURITY_LEVEL}</span>
+        </div>
+        <ul class="legend-sublist">
+          ${subList}
+        </ul>
+      </li>
+    `;
+  }).join('');
+
+  return `
+    <div class="tooltip-section maturity-section">
+      <div class="tooltip-section-title">Maturity (${summary.total.toFixed(1)} / ${MAX_MATURITY_LEVEL})</div>
+      <div class="maturity-radar-wrapper">
+        ${radarSvg}
+      </div>
+      <ul class="maturity-legend">
+        ${legendItems}
+      </ul>
+    </div>
+  `;
+};
+
+const escapeHtmlAttr = (value: string): string =>
+  value.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+
+const escapeHtml = (value: string): string =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+
+const formatDocumentationUrl = (url: string): string => {
+  try {
+    const parsed = new URL(url);
+    const host = parsed.host;
+    const path = parsed.pathname.replace(/\/$/, '');
+    const suffix = `${path}${parsed.search}${parsed.hash}`.replace(/^\/$/, '').trim();
+    return suffix ? `${host}${suffix}` : host;
+  } catch {
+    return url;
+  }
+};
+
+const buildDocumentationSection = (capability: Capability): string => {
+  const doc = capability.documentationLink;
+  if (!doc?.url) return '';
+  const label = doc.title ?? capability.product?.name ?? 'Documentation';
+  const displayUrl = formatDocumentationUrl(doc.url);
+  const sourceLabel = doc.source === 'product' ? 'Product default' : 'Capability specific';
+  const badge = `<span class="doc-source-pill">${sourceLabel}</span>`;
+  const icon = `
+    <svg class="doc-link-icon" width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M14 3h7a1 1 0 0 1 1 1v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3Zm5 14v3a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h3v2H4v12h12v-2h2Z" />
+    </svg>
+  `;
+
+  return `
+    <div class="tooltip-section documentation-section">
+      <div class="tooltip-section-title">Documentation ${badge}</div>
+      <a class="doc-link" href="${doc.url}" target="_blank" rel="noopener noreferrer" title="${escapeHtmlAttr(doc.url)}">
+        <div class="doc-link-text">
+          <span class="doc-link-label">${label}</span>
+          <span class="doc-link-url">${displayUrl}</span>
+        </div>
+        ${icon}
+        <span class="sr-only">Opens documentation in a new tab</span>
+      </a>
+    </div>
+  `;
+};
+
+const buildProductSection = (product?: Capability['product']): string => {
+  if (!product) return '';
+  const teamLink = product.teamName
+    ? (product.teamLink
+        ? `<a href="${product.teamLink}" target="_blank" rel="noopener noreferrer">${product.teamName}</a>`
+        : `<span>${product.teamName}</span>`)
+    : '';
+
+  const buildContact = (label: string, contact?: { name: string; email: string }): string => {
+    if (!contact?.name) return '';
+    const link = contact.email
+      ? `<a href="mailto:${contact.email}">${contact.name}</a>`
+      : contact.name;
+    return `<li><span class="contact-label">${label}:</span> ${link}</li>`;
+  };
+
+  const contacts = [buildContact('DPO', product.dpo), buildContact('SA', product.sa)].filter(Boolean).join('');
+  const contactsList = contacts ? `<ul class="product-team-contacts">${contacts}</ul>` : '';
+  const description = product.description ? `<div class="product-team-description">${product.description}</div>` : '';
+
+  return `
+    <div class="tooltip-section product-section">
+      <div class="tooltip-section-title">Product Team</div>
+      <div class="product-team-name">
+        <span class="product-name">${product.name}</span>
+        ${teamLink ? `<span class="team-link">${teamLink}</span>` : ''}
+      </div>
+      ${description}
+      ${contactsList}
+    </div>
+  `;
+};
 export class CapabilityView implements View {
   private hideTooltipTimeout: number | null = null;
   private container: d3.Selection<HTMLElement, unknown, HTMLElement, any>;
@@ -29,6 +322,20 @@ export class CapabilityView implements View {
   constructor(containerId: string) {
     this.container = d3.select(`#${containerId}`);
     this.tooltip = d3.select<HTMLDivElement, unknown>('#tooltip');
+  }
+
+  private getLatestVersion(versions: VersionRelease[]): VersionRelease | null {
+    if (!versions || versions.length === 0) return null;
+    const sorted = [...versions].sort((a, b) => {
+      const aTime = Date.parse(a.date);
+      const bTime = Date.parse(b.date);
+      const aValid = Number.isFinite(aTime);
+      const bValid = Number.isFinite(bTime);
+      if (aValid && bValid && aTime !== bTime) return bTime - aTime;
+      if (aValid !== bValid) return bValid ? 1 : -1;
+      return b.id.localeCompare(a.id);
+    });
+    return sorted[0] ?? null;
   }
 
   render(payload: CapabilityViewData): void {
@@ -45,8 +352,10 @@ export class CapabilityView implements View {
 
     const data = payload.root;
     const hvias = payload.hvias;
+    const latestVersion = this.getLatestVersion(payload.versions ?? []);
 
-    const width = 1600;
+    const containerRect = this.container.node()?.getBoundingClientRect();
+    const width = Math.max(1600, Math.floor(containerRect?.width ?? 0));
     const self = this;
 
     this.renderFilterControls(hvias);
@@ -56,20 +365,6 @@ export class CapabilityView implements View {
     const hviaSelected = this.selectedHviaId !== 'all';
     const selectedHviaName = hviaSelected ? (this.hviaIndex[this.selectedHviaId]?.name ?? this.selectedHviaId) : '';
 
-    const statusBarColor: Record<number, string> = {
-      0: '#E0E0E0',
-      1: '#D9534F',
-      2: '#FF8C00',
-      3: '#FFD100',
-      4: '#5CB85C',
-    };
-    const statusLabelMap: Record<number, string> = {
-      0: 'Not Implemented',
-      1: 'Emerging',
-      2: 'Partially Implemented',
-      3: 'Implemented',
-      4: 'Established',
-    };
     const hviaLabelMap: Record<number, string> = {
       0: 'Not Started',
       1: 'Requested by HVIA',
@@ -83,161 +378,80 @@ export class CapabilityView implements View {
       3: 'established',
     };
 
-    const defaultTileFill = '#F9F9F9';
-    const defaultTileStroke = '#C8C9C7';
-    const defaultTextColor = '#4D4D4D';
-    const emptyBarColor = '#E0E0E0';
 
     type CapabilityVisualState = {
-      segments: number;
       tileFill: string;
       tileStroke: string;
       textColor: string;
       secondaryTextColor: string;
-      barColor: string;
-      barEmpty: string;
-      iconOpacity: number;
-      overallOpacity: number;
+      iconColor: string;
       hviaLinked: boolean;
-      maturitySource: 'status' | 'hvia';
-      maturityLevel: number;
-      tooltipLabel: string;
+      hviaStatusLabel: string;
+      hviaTooltipLabel: string;
+      hviaStatusLevel: number;
+      opacity: number;
+      totalMaturity: number;
+      zeroMaturity: boolean;
     };
-
-    const hviaPalette: Record<number, CapabilityVisualState> = {
-      0: {
-        segments: 0,
-        tileFill: '#F2F5F8',
-        tileStroke: '#D5D9DD',
-        textColor: '#94A0AB',
-        secondaryTextColor: '#A3ACB8',
-        barColor: '#D5D9DD',
-        barEmpty: '#E7EAEE',
-        iconOpacity: 0.42,
-        overallOpacity: 0.55,
-        hviaLinked: true,
-        maturitySource: 'hvia',
-        maturityLevel: 0,
-        tooltipLabel: hviaLabelMap[0],
-      },
-      1: {
-        segments: 1,
-        tileFill: '#FFF4D4',
-        tileStroke: '#F3C980',
-        textColor: '#7A5A1D',
-        secondaryTextColor: '#806631',
-        barColor: '#F3B43A',
-        barEmpty: '#FBE6B5',
-        iconOpacity: 1,
-        overallOpacity: 1,
-        hviaLinked: true,
-        maturitySource: 'hvia',
-        maturityLevel: 1,
-        tooltipLabel: hviaLabelMap[1],
-      },
-      2: {
-        segments: 2,
-        tileFill: '#DFF3FB',
-        tileStroke: '#8CD0F2',
-        textColor: '#0E5D7E',
-        secondaryTextColor: '#1D6C8C',
-        barColor: '#00A3E0',
-        barEmpty: '#C2E9F8',
-        iconOpacity: 1,
-        overallOpacity: 1,
-        hviaLinked: true,
-        maturitySource: 'hvia',
-        maturityLevel: 2,
-        tooltipLabel: hviaLabelMap[2],
-      },
-      3: {
-        segments: 3,
-        tileFill: '#D8F0E6',
-        tileStroke: '#7DC7AC',
-        textColor: '#1B5E3D',
-        secondaryTextColor: '#2B6B49',
-        barColor: '#2E8B57',
-        barEmpty: '#BDE4D1',
-        iconOpacity: 1,
-        overallOpacity: 1,
-        hviaLinked: true,
-        maturitySource: 'hvia',
-        maturityLevel: 3,
-        tooltipLabel: hviaLabelMap[3],
-      },
-    };
-
-    const hviaMissingStyle: CapabilityVisualState = {
-      segments: 0,
-      tileFill: '#EFF1F4',
-      tileStroke: '#D0D5DB',
-      textColor: '#A0ABB8',
-      secondaryTextColor: '#A0ABB8',
-      barColor: '#D0D5DB',
-      barEmpty: '#E7EAEE',
-      iconOpacity: 0.2,
-      overallOpacity: 0.35,
-      hviaLinked: false,
-      maturitySource: 'hvia',
-      maturityLevel: -1,
-      tooltipLabel: selectedHviaName ? `Not linked to ${selectedHviaName}` : 'Not linked to selected HVIA',
-    };
-
-    const getStatusMaturity = (cap: Capability): number => {
-      const raw = (cap as any).maturity as number | undefined;
-      if (raw !== undefined) return Math.max(0, Math.min(4, Math.floor(raw)));
-      if (cap.status === 'implemented') return 4;
-      if (cap.status === 'partially') return 2;
-      if (cap.status === 'not implemented') return 0;
-      if (typeof cap.status === 'number') return Math.max(0, Math.min(4, Math.floor(cap.status)));
-      return 0;
-    };
-
     const computeVisualState = (cap: Capability): CapabilityVisualState => {
-      if (!hviaSelected) {
-        const level = getStatusMaturity(cap);
-        const clamped = Math.max(0, Math.min(4, level));
-        return {
-          segments: clamped,
-          tileFill: defaultTileFill,
-          tileStroke: defaultTileStroke,
-          textColor: defaultTextColor,
-          secondaryTextColor: defaultTextColor,
-          barColor: statusBarColor[clamped] ?? statusBarColor[0],
-          barEmpty: emptyBarColor,
-          iconOpacity: 1,
-          overallOpacity: 1,
-          hviaLinked: true,
-          maturitySource: 'status',
-          maturityLevel: clamped,
-          tooltipLabel: statusLabelMap[clamped] ?? '',
-        };
+      const total = cap.maturity?.total ?? 0;
+      let tileFill = total > 0 ? getMaturityBandColor(total) : '#EFF1F4';
+      let tileStroke = total > 0 ? darkenHexColor(tileFill, 0.35) : '#CFD3DA';
+      let textColor = getReadableTextColor(tileFill);
+      let secondaryTextColor = textColor === '#FFFFFF' ? 'rgba(255,255,255,0.85)' : '#2F3A45';
+      let iconColor = textColor;
+
+      let hviaLinked = true;
+      let hviaStatusLabel = '';
+      let hviaTooltipLabel = '';
+      let hviaStatusLevel = -1;
+      let opacity = 1;
+
+      if (hviaSelected) {
+        const hviaId = self.selectedHviaId;
+        const match = (cap.useCases ?? []).find((uc) => uc.hviaId === hviaId);
+        if (match) {
+          hviaStatusLevel = Math.max(0, Math.min(3, match.maturity));
+          hviaStatusLabel = hviaLabelMap[hviaStatusLevel] ?? '';
+          hviaTooltipLabel = hviaStatusLabel + (selectedHviaName ? ` — ${selectedHviaName}` : '');
+        } else {
+          hviaLinked = false;
+          hviaStatusLabel = 'Not linked';
+          hviaTooltipLabel = selectedHviaName ? `Not linked to ${selectedHviaName}` : 'Not linked to selected HVIA';
+          opacity = 0.45;
+        }
+
+        const hviaUsed = hviaStatusLevel >= 2;
+        const hviaRequested = hviaStatusLevel === 1;
+        const hviaUsedFill = '#5CB85C';
+        const hviaRequestedFill = '#FFB300';
+        const hviaUnusedFill = '#E3E6EA';
+        if (hviaUsed) {
+          tileFill = hviaUsedFill;
+        } else if (hviaRequested) {
+          tileFill = hviaRequestedFill;
+        } else {
+          tileFill = hviaUnusedFill;
+        }
+        tileStroke = hviaUsed ? darkenHexColor(tileFill, 0.35) : hviaRequested ? darkenHexColor(tileFill, 0.3) : '#C0C6D0';
+        textColor = getReadableTextColor(tileFill);
+        secondaryTextColor = textColor === '#FFFFFF' ? 'rgba(255,255,255,0.85)' : '#5F6B7A';
+        iconColor = textColor;
       }
 
-      const hviaId = self.selectedHviaId;
-      const useCases = cap.useCases ?? [];
-      const match = useCases.find((uc) => uc.hviaId === hviaId);
-      if (!match) {
-        return { ...hviaMissingStyle };
-      }
-
-      const maturity = Math.max(0, Math.min(3, match.maturity));
-      const palette = hviaPalette[maturity];
-      if (maturity === 0) {
-        return {
-          ...palette,
-          segments: maturity,
-          iconOpacity: palette.iconOpacity,
-          overallOpacity: palette.overallOpacity,
-          maturityLevel: maturity,
-          tooltipLabel: hviaLabelMap[maturity] + (selectedHviaName ? ` — ${selectedHviaName}` : ''),
-        };
-      }
       return {
-        ...palette,
-        segments: maturity,
-        maturityLevel: maturity,
-        tooltipLabel: hviaLabelMap[maturity] + (selectedHviaName ? ` — ${selectedHviaName}` : ''),
+        tileFill,
+        tileStroke,
+        textColor,
+        secondaryTextColor,
+        iconColor,
+        hviaLinked,
+        hviaStatusLabel,
+        hviaTooltipLabel,
+        hviaStatusLevel,
+        opacity,
+        totalMaturity: total,
+        zeroMaturity: total <= 0,
       };
     };
 
@@ -247,6 +461,9 @@ export class CapabilityView implements View {
     const capabilityPadding = 8;
     const clusterTitleHeight = 30;
     const clusterPadding = 10;
+    const iconPaddingLeft = 8;
+    const iconSize = 24;
+    const contentStartX = iconPaddingLeft + iconSize + 8;
 
     // Custom layout function using two passes: 1. calculate sizes, 2. set positions
     function calculateSizes(node: d3.HierarchyNode<Cluster | Capability>) {
@@ -276,10 +493,14 @@ export class CapabilityView implements View {
         }
       }
 
+      const clusterColsFor = (current: d3.HierarchyNode<Cluster | Capability>, clustersForRow: d3.HierarchyNode<Cluster | Capability>[]) => {
+        return current.depth === 0 ? Math.max(1, clustersForRow.length) : 2;
+      };
+
       if (regularClusters.length > 0) {
         if (capabilities.length > 0) requiredHeight += clusterPadding;
 
-        const clusterCols = node.depth === 0 ? 3 : 2;
+        const clusterCols = clusterColsFor(node, regularClusters);
         const rows: d3.HierarchyNode<Cluster | Capability>[][] = [];
         // Special grouping for non-top-level clusters to isolate large ones
         if (node.depth > 0) {
@@ -357,6 +578,9 @@ export class CapabilityView implements View {
       const clusters = node.children.filter(c => isCluster(c.data));
       const regularClusters = clusters.filter(c => !(c.data as Cluster).foundational);
       const foundationalClusters = clusters.filter(c => (c.data as Cluster).foundational);
+      const clusterColsFor = (current: d3.HierarchyNode<Cluster | Capability>, clustersForRow: d3.HierarchyNode<Cluster | Capability>[]) => {
+        return current.depth === 0 ? Math.max(1, clustersForRow.length) : 2;
+      };
 
       if (capabilities.length > 0) {
         const isFoundational = (node.data as Cluster).foundational;
@@ -376,7 +600,7 @@ export class CapabilityView implements View {
 
       if (regularClusters.length > 0) {
         if (capabilities.length > 0) y_cursor += clusterPadding;
-        const clusterCols = node.depth === 0 ? 3 : 2;
+        const clusterCols = clusterColsFor(node, regularClusters);
         const rows: d3.HierarchyNode<Cluster | Capability>[][] = [];
         if (node.depth > 0) {
           let i = 0;
@@ -425,13 +649,16 @@ export class CapabilityView implements View {
     }
 
     calculateSizes(root);
-    (root as any).width = Math.max((root as any).width, width); // Ensure root is at least the minimum width
+    const canvasWidth = Math.max((root as any).width, width);
+    (root as any).width = canvasWidth; // Keep layout consistent with rendered width
     setPositions(root, 0, 0);
 
     const totalHeight = (root as any).height;
+    const versionFootnoteHeight = latestVersion ? 64 : 0;
+    const svgHeight = totalHeight + versionFootnoteHeight;
     const svg = this.container.append('svg')
-      .attr('width', width)
-      .attr('height', totalHeight)
+      .attr('width', canvasWidth)
+      .attr('height', svgHeight)
       .style('font', '12px sans-serif');
 
     const nodes = svg.selectAll('g')
@@ -462,11 +689,15 @@ export class CapabilityView implements View {
     capabilityNodes
       .style('opacity', d => {
         const state = ((d as any).visualState as CapabilityVisualState);
-        return state ? String(state.overallOpacity) : '1';
+        return state ? String(state.opacity) : '1';
       })
       .classed('hvia-unlinked', d => {
         const state = ((d as any).visualState as CapabilityVisualState);
         return state ? !state.hviaLinked : false;
+      })
+      .attr('data-doc-url', (d) => {
+        const cap = d.data as Capability;
+        return cap.documentationLink?.url ?? null;
       });
 
     const ICON_TECHNOLOGY = `<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg width="24px" height="24px" viewBox="0 0 24 24" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><g transform="translate(0 -1028.4)"><path d="m16 1030.4v1c-0.312 0.1-0.617 0.2-0.875 0.4l-0.75-0.8-0.719 0.7 0.75 0.8c-0.168 0.2-0.28 0.6-0.344 0.9h-1.062v1h1.062c0.064 0.3 0.176 0.6 0.344 0.8l-0.75 0.8 0.719 0.7 0.75-0.7c0.258 0.1 0.563 0.2 0.875 0.3v1.1h1v-1.1c0.312-0.1 0.617-0.2 0.875-0.3l0.75 0.7 0.719-0.7-0.75-0.8c0.168-0.2 0.28-0.5 0.344-0.8h1.062v-1h-1.062c-0.064-0.3-0.176-0.7-0.344-0.9l0.75-0.8-0.719-0.7-0.75 0.8c-0.258-0.2-0.563-0.3-0.875-0.4v-1h-1zm0.5 2c0.828 0 1.5 0.6 1.5 1.5 0 0.8-0.672 1.5-1.5 1.5s-1.5-0.7-1.5-1.5c0-0.9 0.672-1.5 1.5-1.5z" fill="#808080"/><path d="m19 1035.3v1.1c-0.27 0-0.534 0.1-0.781 0.2l-0.531-0.9-0.876 0.5 0.532 0.9c-0.224 0.2-0.419 0.4-0.594 0.6l-0.906-0.6-0.5 0.9 0.906 0.5c-0.096 0.3-0.181 0.6-0.219 0.8h-1.031v1h1.031c0.038 0.3 0.123 0.6 0.219 0.8l-0.906 0.5 0.5 0.9 0.906-0.5c0.175 0.2 0.37 0.4 0.594 0.6l-0.532 0.9 0.876 0.5 0.531-0.9c0.247 0.1 0.511 0.2 0.781 0.2v1h1v-1c0.27 0 0.534-0.1 0.781-0.2l0.531 0.9 0.876-0.5-0.532-0.9c0.224-0.2 0.419-0.4 0.594-0.6l0.906 0.5 0.5-0.9-0.906-0.5c0.096-0.2 0.181-0.5 0.219-0.8h1.031v-1h-1.031c-0.038-0.2-0.123-0.5-0.219-0.8l0.906-0.5-0.5-0.9-0.906 0.6c-0.175-0.2-0.37-0.4-0.594-0.6l0.532-0.9-0.876-0.5-0.531 0.9c-0.247-0.1-0.511-0.2-0.781-0.2v-1.1h-1zm0.5 2c1.381 0 2.5 1.2 2.5 2.5 0 1.4-1.119 2.5-2.5 2.5s-2.5-1.1-2.5-2.5c0-1.3 1.119-2.5 2.5-2.5z" fill="#808080"/><path d="m10 1033.3-2.0312 0.1v2.1c-0.3602 0-0.712 0.1-1.0626 0.2l-1.0624-1.8-1.7188 1 1.0312 1.8c-0.2891 0.3-0.5468 0.5-0.7812 0.8l-1.8125-1-1 1.7 1.8125 1.1c-0.1343 0.3-0.2489 0.7-0.3125 1.1h-2.0938l0.00005 2h2.125c0.0627 0.4 0.1498 0.7 0.2812 1.1l-1.8125 1 1 1.7 1.8125-1c0.2379 0.3 0.5008 0.5 0.7812 0.8l-1.0624 1.8 1.75 1 1.0312-1.8c0.3599 0.1 0.7461 0.2 1.125 0.3v2.1h2v-2.1c0.36-0.1 0.712-0.2 1.062-0.3l1.063 1.8 1.719-1-1.032-1.8c0.29-0.3 0.547-0.5 0.782-0.8l1.812 1 1.032-1.7-1.844-1c0.134-0.4 0.249-0.8 0.312-1.1h2.094v-2.1h-2.125c-0.063-0.3-0.15-0.7-0.281-1l1.812-1.1-1-1.7-1.812 1c-0.238-0.2-0.501-0.5-0.782-0.7l1.063-1.9-1.75-1-1.031 1.8c-0.36-0.1-0.746-0.2-1.1252-0.2l0.0312-2.2zm-1 5.1c1.657 0 3 1.3 3 3 0 1.6-1.343 3-3 3-1.6569 0-3-1.4-3-3 0-1.7 1.3431-3 3-3z" fill="#808080"/></g></svg>`;
@@ -479,43 +710,51 @@ export class CapabilityView implements View {
       .attr('height', capabilityHeight)
       .attr('fill', d => {
         const state = ((d as any).visualState as CapabilityVisualState);
-        return state ? state.tileFill : defaultTileFill;
+        return state ? state.tileFill : '#EFF1F4';
       })
       .attr('stroke', d => {
         const state = ((d as any).visualState as CapabilityVisualState);
-        return state ? state.tileStroke : defaultTileStroke;
+        return state ? state.tileStroke : '#CFD3DA';
       })
       .attr('stroke-width', 1);
 
-    // 5-step vertical maturity bar at the very left
-    const barWidth = 8;
-    const barPadding = 2;
-    const segmentCount = 4; // fixed (four segments)
-    const segmentHeight = (capabilityHeight - (segmentCount - 1) * barPadding) / segmentCount;
+    if (latestVersion) {
+      const boxPadding = 12;
+      const boxWidth = Math.min(380, Math.max(280, latestVersion.title.length * 7 + 80));
+      const boxHeight = 48;
+      const versionX = Math.max(boxPadding, canvasWidth - boxWidth - boxPadding);
+      const versionY = svgHeight - boxHeight - boxPadding;
+      const metaLine = `Version ${latestVersion.id} · ${latestVersion.date}`;
 
-    const maturityGroups = capabilityNodes.append('g')
-      .attr('class', 'maturity-bar')
-      .attr('transform', `translate(0,0)`);
+      const versionGroup = svg.append('g')
+        .attr('class', 'version-footnote')
+        .attr('transform', `translate(${versionX}, ${versionY})`);
 
-    maturityGroups.each(function (d) {
-      const g = d3.select(this);
-      const state = ((d as any).visualState as CapabilityVisualState) ?? null;
-      const filledSegments = state ? state.segments : 0;
-      const color = state ? state.barColor : statusBarColor[0];
-      const emptyColor = state ? state.barEmpty : emptyBarColor;
-      for (let i = 0; i < segmentCount; i++) {
-        const y = capabilityHeight - (i + 1) * segmentHeight - i * barPadding;
-        g.append('rect')
-          .attr('x', 0)
-          .attr('y', y)
-          .attr('width', barWidth)
-          .attr('height', segmentHeight)
-          .attr('rx', 2)
-          .attr('ry', 2)
-          .attr('fill', i < filledSegments ? color : emptyColor)
-          .attr('stroke', 'none');
-      }
-    });
+      versionGroup.append('rect')
+        .attr('width', boxWidth)
+        .attr('height', boxHeight)
+        .attr('rx', 6)
+        .attr('ry', 6)
+        .attr('fill', '#FFFFFF')
+        .attr('stroke', '#CFD3DA')
+        .attr('stroke-width', 1)
+        .attr('opacity', 0.95);
+
+      versionGroup.append('text')
+        .attr('x', 12)
+        .attr('y', 18)
+        .attr('fill', '#4D4D4D')
+        .attr('font-size', 12)
+        .attr('font-weight', 700)
+        .text(metaLine);
+
+      versionGroup.append('text')
+        .attr('x', 12)
+        .attr('y', 34)
+        .attr('fill', '#4D4D4D')
+        .attr('font-size', 12)
+        .text(latestVersion.title);
+    }
 
     // Icon area: if tool present, show its logo via SVG <image>; otherwise show type icon via foreignObject
     function asUrl(v: any): string | null {
@@ -530,12 +769,10 @@ export class CapabilityView implements View {
       const g = d3.select(this);
       const cap = d.data as Capability;
       const state = ((d as any).visualState as CapabilityVisualState) ?? null;
-      if (state) {
-        g.attr('opacity', state.iconOpacity);
-      }
-      const x = barWidth + 6;
-      const y = 26;
-      const size = 24;
+      const iconFill = state?.iconColor ?? '#5F6B7A';
+      const x = iconPaddingLeft;
+      const y = (capabilityHeight - iconSize) / 2;
+      const size = iconSize;
       if (cap.tool && cap.tool.logo) {
         const url = asUrl((cap.tool as any).logo);
         if (url) {
@@ -547,29 +784,6 @@ export class CapabilityView implements View {
             .attr('preserveAspectRatio', 'xMidYMid meet')
             .attr('href', url)
             .attr('xlink:href', url);
-        } else {
-          // Fallback: inject pure-SVG icon markup inside a translated group
-          const icon = (() => {
-            const type = cap.type;
-            if (type === 'technology') return ICON_TECHNOLOGY;
-            if (type === 'pattern') return ICON_PATTERN;
-            if (type === 'policy') return ICON_POLICY;
-            return '';
-          })();
-          const container = g.append('g')
-            .attr('transform', `translate(${x},${y})`);
-          // insert raw SVG markup
-          (container.node() as SVGGElement).innerHTML = icon;
-          // Constrain inserted SVG to the desired icon size
-          const inner = container.select('svg');
-          if (!inner.empty()) {
-            inner
-              .attr('x', 0)
-              .attr('y', 0)
-              .attr('width', size)
-              .attr('height', size)
-              .attr('preserveAspectRatio', 'xMidYMid meet');
-          }
         }
       } else {
         const icon = (() => {
@@ -581,16 +795,13 @@ export class CapabilityView implements View {
         })();
         const container = g.append('g')
           .attr('transform', `translate(${x},${y})`);
-        (container.node() as SVGGElement).innerHTML = icon;
-        const inner = container.select('svg');
-        if (!inner.empty()) {
-          inner
-            .attr('x', 0)
-            .attr('y', 0)
-            .attr('width', size)
-            .attr('height', size)
-            .attr('preserveAspectRatio', 'xMidYMid meet');
-        }
+        (container.node() as SVGGElement).innerHTML = icon.replace(/#808080/gi, iconFill);
+        container.select('svg')
+          .attr('x', 0)
+          .attr('y', 0)
+          .attr('width', size)
+          .attr('height', size)
+          .attr('preserveAspectRatio', 'xMidYMid meet');
       }
     });
 
@@ -645,60 +856,92 @@ export class CapabilityView implements View {
     }
 
     // Title on first row (top) using pure SVG text (avoid foreignObject for export compatibility)
-    const titleWidth = capabilityWidth - (barWidth + 36) - 8;
+    const titleWidth = capabilityWidth - contentStartX - 8;
     const titleText = capabilityNodes.append('text')
       .attr('class', 'capability-title-text')
-      .attr('x', barWidth + 36)
+      .attr('x', contentStartX)
       .attr('y', 16)
       .attr('text-anchor', 'start');
     wrapSvgText(titleText as any, titleWidth, 2);
     titleText.each(function(d) {
       const state = ((d as any).visualState as CapabilityVisualState);
-      const color = state ? state.textColor : defaultTextColor;
+      const color = state ? state.textColor : '#4D4D4D';
       const textSel = d3.select(this);
       textSel.attr('fill', color);
       textSel.selectAll('tspan').attr('fill', color);
     });
 
-    // HVIA compound counter (X / Y), aligned to the right within the capability tile
-    // Y = number of requested HVIA refs (maturity > 0)
-    // X = number of active HVIA refs (maturity > 1)
-    const counterGroup = capabilityNodes.append('g')
-      .attr('class', 'hvia-counter')
-      // position on the second row, right-aligned inside the tile
+    // Capability maturity indicator (one decimal), aligned to the right within the capability tile
+    const maturityGroup = capabilityNodes.append('g')
+      .attr('class', 'capability-maturity')
       .attr('transform', `translate(${capabilityWidth - 6}, 26)`);
 
-    counterGroup.each(function(d){
+    maturityGroup.each(function(d){
       const g = d3.select(this);
       const cap = d.data as Capability;
-      const useCases = cap.useCases ?? [];
       const state = ((d as any).visualState as CapabilityVisualState);
+      const hasImplementation = Boolean(cap.tool);
+
+      if (!hasImplementation) return;
 
       if (hviaSelected) {
-        const match = useCases.find(uc => uc.hviaId === self.selectedHviaId);
-        const shortLabel = state?.hviaLinked && state?.maturityLevel >= 0
-          ? (hviaLabelMap[state.maturityLevel] ?? '')
-          : 'Not Linked';
+        const label = state?.hviaStatusLabel || 'Not Linked';
+        const linked = state?.hviaLinked ?? false;
         g.append('text')
+          .attr('class', 'capability-maturity-text')
           .attr('x', 0)
           .attr('y', 14)
           .attr('text-anchor', 'end')
-          .attr('fill', state ? state.secondaryTextColor : defaultTextColor)
-          .attr('font-weight', match ? '700' : '600')
-          .text(shortLabel || 'Not Linked');
+          .attr('fill', state ? state.secondaryTextColor : '#4D4D4D')
+          .attr('font-weight', linked ? '700' : '600')
+          .text(label);
       } else {
-        const yTotal = useCases.filter(uc => (uc as any).maturity > 0).length;
-        const xActive = useCases.filter(uc => (uc as any).maturity > 1).length;
-        const isZero = yTotal === 0;
+        const maturityTotal = cap.maturity?.total;
+        if (maturityTotal === undefined || maturityTotal === null) return;
+        const maturityValue = clampMaturityValue(maturityTotal);
         g.append('text')
+          .attr('class', 'capability-maturity-text')
           .attr('x', 0) // anchor point at the right edge of the tile
           .attr('y', 14)
           .attr('text-anchor', 'end')
-          .attr('fill', state ? state.secondaryTextColor : defaultTextColor)
-          .attr('font-weight', isZero ? '600' : '700')
-          .text(`${xActive} / ${yTotal}`);
+          .attr('fill', state ? state.secondaryTextColor : '#4D4D4D')
+          .attr('font-weight', '700')
+          .text(maturityValue.toFixed(1));
       }
     });
+
+    const positionTooltip = (event: MouseEvent): void => {
+      const tooltipNode = self.tooltip.node();
+      if (!tooltipNode) return;
+      const padding = 12;
+      const rect = tooltipNode.getBoundingClientRect();
+      const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+      const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+      const scrollX = window.scrollX || window.pageXOffset;
+      const scrollY = window.scrollY || window.pageYOffset;
+
+      let left = event.pageX + 16;
+      let top = event.pageY - rect.height - 16;
+
+      if (left + rect.width + padding > scrollX + viewportWidth) {
+        left = event.pageX - rect.width - 16;
+      }
+      if (left < scrollX + padding) {
+        left = scrollX + padding;
+      }
+
+      if (top < scrollY + padding) {
+        top = event.pageY + 16;
+      }
+      const maxTop = scrollY + viewportHeight - rect.height - padding;
+      if (top > maxTop) {
+        top = maxTop;
+      }
+
+      self.tooltip
+        .style('left', `${left}px`)
+        .style('top', `${top}px`);
+    };
 
     capabilityNodes.on('mouseover', (event, d) => {
         if (self.hideTooltipTimeout) {
@@ -710,14 +953,23 @@ export class CapabilityView implements View {
 
         const capability = d.data as Capability;
         const tool = capability.tool;
+        const product = capability.product;
         const useCases = (capability.useCases ?? []) as any[];
         const state = ((d as any).visualState as CapabilityVisualState) ?? null;
-        const maturityLabel = state?.tooltipLabel ?? '';
+        const hviaTag = hviaSelected && state?.hviaTooltipLabel
+          ? `<span class="tooltip-pill">${state.hviaTooltipLabel}</span>`
+          : '';
 
         // Title + description with details link
-        const titleHtml = `<div class="tooltip-title">${capability.title} ${maturityLabel ? `(${maturityLabel})` : ''}</div>`;
+        const titleHtml = `<div class="tooltip-title">${capability.title}${hviaTag ? ` ${hviaTag}` : ''}</div>`;
         const descLink = capability.link ? ` <a href="${capability.link}" target="_blank" rel="noopener noreferrer">Details</a>` : '';
-        const descriptionHtml = `<div class="tooltip-description">${capability.description}${descLink}</div>`;
+        const renderedDescription =
+          capability.descriptionPreviewHtml ||
+          capability.descriptionHtml ||
+          (capability.description ? escapeHtml(capability.description) : '');
+        const descriptionHtml = renderedDescription
+          ? `<div class="tooltip-description">${renderedDescription}${descLink}</div>`
+          : '';
 
         // Implementation section (only if a tool is linked)
         let implementationHtml = '';
@@ -788,17 +1040,23 @@ export class CapabilityView implements View {
           hviasHtml += missingBlock;
         }
 
+        const productHtml = buildProductSection(product);
+        const documentationHtml = buildDocumentationSection(capability);
+        const maturityHtml = buildMaturitySection(capability.maturity);
+
         const tooltipHtml = `
           <div class="tooltip-content">
             ${titleHtml}
             ${descriptionHtml}
             ${implementationHtml}
+            ${productHtml}
+            ${documentationHtml}
+            ${maturityHtml}
             ${hviasHtml}
           </div>
         `;
-        self.tooltip.html(tooltipHtml)
-          .style('left', `${event.pageX + 10}px`)
-          .style('top', `${event.pageY - 28}px`);
+        self.tooltip.html(tooltipHtml);
+        positionTooltip(event);
       })
       .on('mouseout', () => {
         self.hideTooltipTimeout = window.setTimeout(() => {

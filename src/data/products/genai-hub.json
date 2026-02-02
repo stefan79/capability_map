@@ -1,0 +1,19 @@
+{
+  "id": "genai-hub",
+  "name": "GenAI Hub",
+  "teamName": "GenAI Enablement Hub",
+  "teamLink": "https://www.volvogroup.com/en/news-and-media.html",
+  "dpo": { "name": "Kumara Datta Malladi", "email": "kumara.datta.malladi@volvo.com" },
+  "sa": { "name": "Ipsum Lipsum", "email": "ipsum.lipsum@volvo.com" },
+  "documentation": {
+    "url": "https://www.volvogroup.com/en/innovation.html#genai-hub-docs",
+    "title": "GenAI Hub Runbook"
+  },
+  "maturityInputs": {
+    "process.self-service": { "value": 2, "reason": "Basic self-service via forms; approval mostly manual." },
+    "people.roles": { "value": 4, "reason": "Rating from Mahesh: Good State." },
+    "people.skills": { "value": 3, "reason": "Rating from Mahesh: Mostly in Place." },
+    "people.capacity": { "value": 3, "reason": "Rating from Mahesh: Mostly in Place." },
+    "people.product-guidance": { "value": 3, "reason": "Rating from Mahesh: Mostly in Place." }
+  }
+}

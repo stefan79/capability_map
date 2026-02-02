@@ -1,3 +1,5 @@
+import type { RawMaturityMap } from './maturity-types';
+
 export type UseCase = {
   id: string;
   name: string;
@@ -8,6 +10,8 @@ export type HVIA = {
   id: string;
   name: string;
   url: string;
+  reviewed?: boolean;
+  maturityInputs?: RawMaturityMap;
   useCases: UseCase[];
 };
 

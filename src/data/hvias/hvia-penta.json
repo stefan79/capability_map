@@ -1,0 +1,8 @@
+{
+  "id": "penta",
+  "name": "HVIA: Penta",
+  "url": "https://www.volvotrucks.com/",
+  "useCases": [
+    { "id": "penta-ai-assistant", "name": "Penta AI Assistant - Easy Connect", "url": "https://www.volvotrucks.com/" }
+  ]
+}

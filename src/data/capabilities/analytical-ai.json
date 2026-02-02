@@ -1,6 +1,7 @@
 {
   "id": "aaimloro",
   "title": "Analytical AI (Machine Learning, Operations Research, etc.)",
+  "productId": "mlops",
   "children": [
     {
       "id": "aaimloro-dafe",
@@ -9,70 +10,196 @@
         {
           "id": "aaimloro-dafe-dla",
           "title": "Data Labelling / Annotation",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
+          "productDocumentation": {
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/422446905/AIS+-+Data+Labeling",
+            "title": "Connfluece: AIS Data Labeling"
+          },
           "type": "pattern",
           "toolId": "microsoft-azure-ml",
-          "description": "Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
+          "description": "Human-in-the-loop tools to tag data (text/images/tables) with QA workflows. Processes and tools to annotate raw data so supervised models can learn from it. Quality labels improve model accuracy and reduce bias.",
           "link": "https://www.ibm.com/think/topics/data-labeling",
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 3,
+              "reason": "Provided data labeling via Azure ML Studio; enabled access through SNOW."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Step by step Instruction of data labeling is available in confluence with examples and screenshots for reference."
+            }
+          },
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-dla.md"
         },
         {
           "id": "aaimloro-dafe-dsc",
           "title": "Datasets Catalog",
-          "status": 2,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
           "toolId": "databricks-unity-catalog",
-          "description": "Catalog for discovering datasets, owners, and metadata. Improves findability and governance for analytics and ML.",
+          "description": "Central registry for datasets with ownership, quality, and access policies. Catalog for discovering datasets, owners, and metadata. Improves findability and governance for analytics and ML.",
           "link": "https://www.ibm.com/think/topics/data-catalog",
+          "productDocumentation": {
+            "title": "Confluence: AIS -Model Catalog",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/420708673/AIS+-+Model+Catalog"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "The documentation explains the core model lifecycle and centralization flow, but lacks operational depth, troubleshooting guidance, setup details, and reusable templates needed for higher maturity."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-dsc.md"
         },
         {
           "id": "aaimloro-dafe-eda",
           "title": "Exploratory Data Analysis (EDA)",
-          "status": 2,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "pattern",
-          "description": "Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.",
+          "toolId": "databricks-unity-catalog",
+          "description": "Reproducible profiling/visualization to validate data quality and patterns. Statistical profiling and visualization to understand data distributions and quality. Guides feature engineering and model selection.",
           "link": "https://en.wikipedia.org/wiki/Exploratory_data_analysis",
+          "productDocumentation": {
+            "title": "Confluence: AIS - EDA-Exploratory Data Analysis",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/454820517/AIS+-+EDA-Exploratory+Data+Analysis"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 2,
+              "reason": "EDA Requirements are customized by DS needs. No new tool introduced, aligned with Strategy team initially."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 2,
+              "reason": "EDA Capability is well documented in context of central hosting for EDA Functions re-use. Auto EDA functionality needs to be finalize as part of Functional Spec."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-eda.md"
         },
         {
           "id": "aaimloro-dafe-fs",
           "title": "Feature Store",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
           "toolId": "databricks-unity-catalog",
-          "description": "Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.",
+          "description": "Reusable feature definitions with online/offline serving and lineage. Central platform to register, compute, and serve features consistently for training and inference. Enables reuse and governance of features.",
           "link": "https://www.featureform.com/post/what-is-a-feature-store",
+          "productDocumentation": {
+            "title": "Confluence: AIS - Feature Store",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/374933943/AIS+-+Feature+Store"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Features once registered in Feature store can be reused by other project team having similar feature requirement for building ML use cases."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Documented Feature Store in Confluence and MLOps templates, including batch and real-time usage examples."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-dafe/aaimloro-dafe-fs.md"
         }
       ]
     },
@@ -83,84 +210,194 @@
         {
           "id": "aaimloro-md-tr",
           "title": "Training Runtime",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-platform",
-          "description": "Compute environments and schedulers for distributed training jobs. Supports GPUs/accelerators, checkpoints, and scaling.",
+          "toolId": "databricks-compute",
+          "description": "Standard containers/runtimes (CUDA/drivers/libs) for model training. Compute environments and schedulers for distributed training jobs. Supports GPUs/accelerators, checkpoints, and scaling.",
           "link": "https://www.tensorflow.org/guide/distributed_training",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            },
+            "technology.development-activity": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 2 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 2 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-tr.md"
         },
         {
           "id": "aaimloro-md-libs",
           "title": "ML/DL libraries: training/tuning",
-          "status": 2,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
           "toolId": "python-data-libraries",
-          "description": "Frameworks and toolkits for model training, tuning, and evaluation. Includes hyperparameter search and experiment tracking hooks.",
+          "description": "Curated libraries for training and hyper-parameter tuning. Frameworks and toolkits for model training, tuning, and evaluation. Includes hyperparameter search and experiment tracking hooks.",
           "link": "https://scikit-learn.org/stable/modules/grid_search.html",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 0,
+              "reason": "No documentation found."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-libs.md"
         },
         {
           "id": "aaimloro-md-automl",
           "title": "Auto ML",
-          "status": 0,
+          "reviewed": "false",
           "type": "technology",
-          "description": "Automated pipelines to select features, models, and hyperparameters. Accelerates prototyping with guardrails for quality.",
+          "productId": "mlops",
+          "toolId": "databricks-automl",
+          "description": "Automated baseline model building with search and leaderboard. Automated pipelines to select features, models, and hyperparameters. Accelerates prototyping with guardrails for quality.",
           "link": "https://cloud.google.com/automl",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 2,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 0,
+              "reason": "No documentation found."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-automl.md"
         },
         {
           "id": "aaimloro-md-fi",
           "title": "Feature Importance",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "pattern",
-          "description": "Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
+          "description": "Global/local explainability for models (e.g., SHAP/IG). Techniques to interpret model behavior by ranking feature impact. Aids explainability and debugging.",
           "link": "https://christophm.github.io/interpretable-ml-book/feature-importance.html",
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 0 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+          "maturityInputs": {},
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-fi.md"
         },
         {
           "id": "aaimloro-md-ort",
           "title": "OR Tooling",
-          "status": 0,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "description": "Operations Research solvers and modeling tools (e.g., MILP, CP) for optimization problems. Provides prescriptive analytics beyond prediction.",
+          "description": "Operations research modeling (LP/MIP/CP). Operations Research solvers and modeling tools (e.g., MILP, CP) for optimization problems. Provides prescriptive analytics beyond prediction.",
           "link": "https://developers.google.com/optimization",
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+          "maturityInputs": {},
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-md/aaimloro-md-ort.md"
         }
       ]
     },
@@ -171,70 +408,182 @@
         {
           "id": "aaimloro-deploy-batch",
           "title": "Batch Inference",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-platform",
-          "description": "Scheduled scoring of large datasets for offline use cases. Integrates with data lake workflows and orchestration.",
+          "toolId": "mlops-runtime-sdk",
+          "description": "Scheduled/triggered scoring on large datasets. Scheduled scoring of large datasets for offline use cases. Integrates with data lake workflows and orchestration.",
           "link": "https://docs.databricks.com/en/machine-learning/model-serving/batch.html",
+          "productDocumentation": {
+            "title": "Confluece: AIS - Inference/Prediction Integration",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Enabled endpoint and deployment management via API and UI; Volvo SDK supports API-based customization."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed each PI."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 2 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 2 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-batch.md"
         },
         {
           "id": "aaimloro-deploy-online",
           "title": "Online Inference",
-          "status": 2,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-platform",
-          "description": "Low-latency model serving via APIs for realtime predictions. Requires autoscaling, monitoring, and rollback.",
+          "toolId": "mlops-runtime-sdk",
+          "description": "Low-latency API serving for models. Low-latency model serving via APIs for realtime predictions. Requires autoscaling, monitoring, and rollback.",
           "link": "https://seldon.io/solutions/model-serving/",
+          "productDocumentation": {
+            "title": "Confluece: AIS - Inference/Prediction Integration",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/359761548/AIS+-+Inference+Prediction+Integration?src=contextnavpagetreemode"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Enabled endpoint and deployment management via API and UI; Volvo SDK supports API-based customization."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed each PI."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
-          ]
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-online.md"
         },
         {
           "id": "aaimloro-deploy-sim",
           "title": "Simulation",
-          "status": 1,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "description": "Scenario simulation and what-if analysis engines to test policies and systems. Useful for planning and risk analysis.",
-          "link": "https://en.wikipedia.org/wiki/Discrete-event_simulation",  
+          "description": "Scenario engines/digital twins to test decisions. Scenario simulation and what-if analysis engines to test policies and systems. Useful for planning and risk analysis.",
+          "link": "https://en.wikipedia.org/wiki/Discrete-event_simulation",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "technology.development-activity": {
+              "value": 1,
+              "reason": "Initial Suggestion from Stijn."
+            },
+            "process.documentation": {
+              "value": 0,
+              "reason": "No documentation found."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+            {
+              "hviaId": "volvo",
+              "useCaseId": "volvo-warranty",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 0
+            },
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 1
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-default",
+              "maturity": 0
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-sim.md"
         },
         {
           "id": "aaimloro-deploy-mps",
           "title": "Mathematical Problem Solver",
-          "status": 1,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "description": "Services to formulate and solve mathematical optimization and equation systems. Targets complex planning and scheduling problems.",
+          "description": "Services for solving mathematical problems (LP/MIP/CP). Services to formulate and solve mathematical optimization and equation systems. Targets complex planning and scheduling problems.",
           "link": "https://www.gurobi.com/resources/what-is-mathematical-optimization/",
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 3,
+              "reason": "Used Databricks Lakehouse Monitoring with API and UI support; Volvo MLOps Python SDK enables API-based customization."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in subsequent PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed and updated each PI."
+            }
+          },
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-deploy/aaimloro-deploy-mps.md"
         }
       ]
     },
@@ -245,106 +594,293 @@
         {
           "id": "aaimloro-mlops-dd",
           "title": "Data Drift Detection",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-platform",
-          "description": "Monitoring to detect shifts in input data distributions over time. Triggers retraining or investigation when thresholds are breached.",
+          "toolId": "mlops-runtime-sdk",
+          "description": "Detect training vs. production data distribution shifts. Monitoring to detect shifts in input data distributions over time. Triggers retraining or investigation when thresholds are breached.",
           "link": "https://docs.whylabs.ai/docs/glossary/data-drift/",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 3,
+              "reason": "Lakehouse monitoring of Databricks is used with API and UI; Volvo SDK can be leveraged for API-based customization."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "SharePoint for functional documentation and example usage; Confluence documentation for technical doc; reviewed each PI."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-dd.md"
         },
         {
           "id": "aaimloro-mlops-ms",
           "title": "Model Store",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-unity-catalog",
-          "description": "Registry for model versions, artifacts, and lineage. Enables promotion across environments with governance.",
+          "description": "Versioned model artifacts with lineage and signatures. Registry for model versions, artifacts, and lineage. Enables promotion across environments with governance.",
           "link": "https://mlflow.org/docs/latest/model-registry.html",
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 2 }
-          ]
+          "productDocumentation": {
+            "title": "Confluence: AIS Model Store",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/384796651/AIS+-+Model+Store"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Enabled read and write access to Unity Catalog model registry with role-based permissions in Databricks."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Defined MLOps templates to enable model reuse via registry-based promotion across environments; ownership is governed by Unity Catalog."
+            }
+          },
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-ms.md"
         },
         {
           "id": "aaimloro-mlops-mcdd",
           "title": "Model/Concept Drift Detection",
-          "status": 3,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-platform",
-          "description": "Techniques to detect performance degradation due to changing relationships in data. Supports alerts and retraining workflows.",
+          "toolId": "mlops-runtime-sdk",
+          "description": "Track performance and ground-truth drift over time. Techniques to detect performance degradation due to changing relationships in data. Supports alerts and retraining workflows.",
           "link": "https://docs.evidentlyai.com/user-guide/concept-drift/",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 3,
+              "reason": "Used Databricks Lakehouse Monitoring with API and UI support; Volvo MLOps Python SDK enables API-based customization."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 3,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed and updated each PI."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 2 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-mcdd.md"
         },
         {
           "id": "aaimloro-mlops-et",
           "title": "Experiment Tracking",
-          "status": 2,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
-          "toolId": "databricks-mlflow",
-          "description": "Track runs, parameters, metrics, and artifacts for reproducibility. Facilitates collaboration and comparison across experiments.",
+          "toolId": "databricks-platform",
+          "description": "Params/metrics/artifacts captured per run. Track runs, parameters, metrics, and artifacts for reproducibility. Facilitates collaboration and comparison across experiments.",
           "link": "https://mlflow.org/docs/latest/tracking.html",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "technology.development-activity": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            },
+            "process.documentation": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 },
-            { "hviaId": "mack", "useCaseId": "mack-mavis", "maturity": 1 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-et.md"
         },
         {
           "id": "aaimloro-mlops-mr",
           "title": "Model Retraining (Continuous)",
-          "status": 2,
-          "type": "process",
-          "toolId": "databricks-platform",
-          "description": "Automated pipelines to retrain and redeploy models as data or performance changes. Ensures models remain accurate and compliant.",
-          "link": "https://aws.amazon.com/blogs/machine-learning/building-mlops-pipelines/",  
-          "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 1 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+          "reviewed": "false",
+          "productId": "mlops",
+          "type": "technology",
+          "toolId": "databricks-mlflow",
+          "description": "Automated retrain pipelines with approvals/rollbacks. Automated pipelines to retrain and redeploy models as data or performance changes. Ensures models remain accurate and compliant.",
+          "link": "https://aws.amazon.com/blogs/machine-learning/building-mlops-pipelines/",
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            },
+            "technology.development-activity": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 4,
+              "reason": "Direct Reuse of a DBX component."
+            }
+          },
+          "useCaseRefs": [],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-mr.md"
         },
         {
           "id": "aaimloro-mlops-sdk",
           "title": "SDK / Templates / Blueprints",
-          "status": 2,
+          "reviewed": "false",
+          "productId": "mlops",
           "type": "technology",
           "toolId": "databricks-platform",
-          "description": "Reusable code, templates, and scaffolding for common ML patterns. Reduces boilerplate and enforces best practices.",
+          "description": "Opinionated scaffolds/CLI to create and deploy quickly. Reusable code, templates, and scaffolding for common ML patterns. Reduces boilerplate and enforces best practices.",
           "link": "https://cookiecutter-data-science.drivendata.org/",
+          "productDocumentation": {
+            "title": "Confluence: AIS - SDK & DevOps Templates",
+            "url": "https://confluence.it.volvo.net/spaces/IBT/pages/429720260/AIS+-+SDK+DevOps+Templates"
+          },
+          "maturityInputs": {
+            "adoption.effort": {
+              "value": 4,
+              "reason": "Providing DevOps reusable templates and Python SDK for monitoring with minimal input configuration."
+            },
+            "technology.development-activity": {
+              "value": 3,
+              "reason": "Captured DS feedback, prioritized via strategy and PI planning, and delivered fixes in next PIs."
+            },
+            "technology.operations": {
+              "value": null,
+              "reason": "No central operations reqiured."
+            },
+            "process.documentation": {
+              "value": 4,
+              "reason": "Maintained functional docs and usage examples in SharePoint and technical docs in Confluence; reviewed and updated each PI."
+            }
+          },
           "useCaseRefs": [
-            { "hviaId": "sales-acceleration", "useCaseId": "sales-acceleration-default", "maturity": 0 },
-            { "hviaId": "warranty-cost-reduction", "useCaseId": "warranty-cost-reduction-default", "maturity": 0 },
-            { "hviaId": "new-ai-services", "useCaseId": "new-ai-services-default", "maturity": 0 },
-            { "hviaId": "e2e-sop", "useCaseId": "e2e-sop-default", "maturity": 1 },
-            { "hviaId": "dev-productivity", "useCaseId": "dev-productivity-default", "maturity": 0 },
-            { "hviaId": "white-collar-productivity", "useCaseId": "white-collar-productivity-default", "maturity": 0 }
-          ]
+            {
+              "hviaId": "renault",
+              "useCaseId": "renault-scoring",
+              "maturity": 2
+            },
+            {
+              "hviaId": "penta",
+              "useCaseId": "penta-ai-assistant",
+              "maturity": 2
+            },
+            {
+              "hviaId": "gto",
+              "useCaseId": "gto-sop",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-vce",
+              "maturity": 2
+            },
+            {
+              "hviaId": "non-hvia",
+              "useCaseId": "non-hvia-gtt-pil",
+              "maturity": 2
+            }
+          ],
+          "descriptionFile": "./descriptions/aaimloro/aaimloro-mlops/aaimloro-mlops-sdk.md"
         }
       ]
     }

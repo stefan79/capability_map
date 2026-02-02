@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 import { view } from '@forge/bridge';
 
-=======
->>>>>>> 919aaca152c4bf82a87b30128a1426b551750e00
 import { loadAllData } from './data/loader/data-loader';
 import { ViewManager } from './view-manager/view-manager';
 import { CapabilityView } from './views/capability-view/capability-view';
@@ -15,12 +12,9 @@ const MACRO_HEIGHT_PADDING = 48;
 let resizeFrameId: number | undefined;
 let forgeResizeDisabled = false;
 let contentResizeObserver: ResizeObserver | undefined;
-<<<<<<< HEAD
-=======
 let forgeViewPromise: Promise<ForgeViewApi | null> | null = null;
 
 type ForgeViewApi = typeof import('@forge/bridge')['view'];
->>>>>>> 919aaca152c4bf82a87b30128a1426b551750e00
 
 const isRunningInIframe = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -287,6 +281,29 @@ async function main(): Promise<void> {
     } catch (e) {
       console.warn('Failed to enforce rect styles for export', e);
     }
+
+    // Inject clickable links for documented capabilities so exported SVG retains hyperlinks
+    const applyDocumentationLinks = (root: SVGSVGElement): void => {
+      const ns = 'http://www.w3.org/2000/svg';
+      const xlinkNs = 'http://www.w3.org/1999/xlink';
+      const groups = Array.from(root.querySelectorAll('g.treemap-capability[data-doc-url]')) as SVGGElement[];
+      groups.forEach((group) => {
+        const url = group.getAttribute('data-doc-url');
+        if (!url) return;
+        const anchor = document.createElementNS(ns, 'a');
+        anchor.setAttribute('class', 'svg-doc-link');
+        anchor.setAttribute('target', '_blank');
+        anchor.setAttribute('rel', 'noopener noreferrer');
+        anchor.setAttribute('href', url);
+        anchor.setAttributeNS(xlinkNs, 'href', url);
+        while (group.firstChild) {
+          anchor.appendChild(group.firstChild);
+        }
+        group.appendChild(anchor);
+      });
+    };
+
+    applyDocumentationLinks(clone);
 
     // Inline external images (<image href=...>) as data URIs so converters don't need network
     async function inlineExternalImages(root: SVGSVGElement): Promise<void> {

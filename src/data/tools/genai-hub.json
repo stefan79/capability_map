@@ -1,0 +1,15 @@
+{
+  "id": "genai-hub",
+  "name": "Volvo GenAI Hub",
+  "url": "https://www.volvogroup.com/en/innovation.html",
+  "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/volvo.svg",
+  "tools": [
+    {
+      "id": "genai-hub-custom-chunker",
+      "name": "Custom Chunker",
+      "description": "Production chunking engine with semantic, LLM-powered, markup, tabular, and hybrid strategies plus unlimited async processing, real-time tracking, and high-throughput performance.",
+      "url": "https://www.volvogroup.com/en/innovation.html",
+      "logo": "https://cdn.jsdelivr.net/npm/simple-icons@11.13.0/icons/volvo.svg"
+    }
+  ]
+}

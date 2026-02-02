@@ -1,0 +1,47 @@
+# Capability Report by Cluster
+
+{{#versions.length}}
+## Versions
+| ID | Date | Title | Description |
+| --- | --- | --- | --- |
+{{#versions}}| {{id}} | {{date}} | {{title}} | {{description}} |
+{{/versions}}
+
+{{/versions.length}}
+
+{{#renderClusters}}
+# {{title}}
+{{#subclusters}}
+## {{title}}
+{{#capabilities}}
+### {{title}}
+{{#description}}{{description}}{{/description}}{{#link}} ([details]({{link}})){{/link}}
+
+{{#productDisplay}}- Product: {{productDisplay}}{{/productDisplay}}
+{{#tool}}- Tool: {{name}}{{#vendorName}} ({{vendorName}}){{/vendorName}}{{#url}} ([link]({{url}})){{/url}}{{/tool}}
+{{#documentationLink}}- Documentation: [{{title}}]({{url}}){{/documentationLink}}
+
+{{#dimensionRows.length}}
+| Dimension | Score | Weight |
+| --- | --- | --- |
+{{#dimensionRows}}| {{name}} | {{value}} | {{weight}} |
+{{/dimensionRows}}
+{{/dimensionRows.length}}
+
+{{#maturityRows.length}}
+| Subdimension | Score | Weight | Reason |
+| --- | --- | --- | --- |
+{{#maturityRows}}| {{name}} | {{value}} | {{weight}} | {{reason}} |
+{{/maturityRows}}
+{{/maturityRows.length}}
+
+{{#useCaseRows.length}}
+| HVIA | Use Case | Maturity |
+| --- | --- | --- |
+{{#useCaseRows}}| {{hviaName}} | {{name}} | {{maturity}} |
+{{/useCaseRows}}
+{{/useCaseRows.length}}
+
+{{/capabilities}}
+{{/subclusters}}
+{{/renderClusters}}
